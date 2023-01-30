@@ -1,0 +1,5 @@
+package rpc
+
+func UserInit() {
+	
+}
