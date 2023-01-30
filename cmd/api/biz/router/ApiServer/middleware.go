@@ -4,6 +4,7 @@ package ApiServer
 
 import (
 	"github.com/cloudwego/hertz/pkg/app"
+	mw "github.com/xiaohei366/TinyTiktok/cmd/api/biz/middleware"
 )
 
 func rootMw() []app.HandlerFunc {
@@ -107,8 +108,10 @@ func _userMw() []app.HandlerFunc {
 }
 
 func _getuserinfoMw() []app.HandlerFunc {
-	// your code...
-	return nil
+	return []app.HandlerFunc{
+		// use jwt mw
+		mw.JwtMiddleware.MiddlewareFunc(),
+	}
 }
 
 func _loginMw() []app.HandlerFunc {

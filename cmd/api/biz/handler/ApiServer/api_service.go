@@ -7,7 +7,11 @@ import (
 
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
+	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/UserServer"
+	mw "github.com/xiaohei366/TinyTiktok/cmd/api/biz/middleware"
 	ApiServer "github.com/xiaohei366/TinyTiktok/cmd/api/biz/model/ApiServer"
+	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/rpc"
+	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
 
 // Register .
@@ -15,31 +19,40 @@ import (
 func Register(ctx context.Context, c *app.RequestContext) {
 	var err error
 	var req ApiServer.DouyinUserRegisterRequest
+	var user_id int64
+	var token string
 	err = c.BindAndValidate(&req)
 	if err != nil {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
-
-	resp := new(ApiServer.DouyinUserRegisterResponse)
-
-	c.JSON(consts.StatusOK, resp)
+	//调用PRC方法，完成注册操作
+	user_id, err = rpc.Register(context.Background(), &UserServer.DouyinUserRegisterRequest{
+		Username: req.Username,
+		Password: req.Password,
+	})
+	if err != nil {
+		SendRegisterResponse(c, errno.ConvertErr(err), -1, "")
+		return
+	}
+	// 使用JWT来产生Token--注意是使用id，因为这个将作为存储信息在token中
+	token, _, err = mw.JwtMiddleware.TokenGenerator(user_id)
+	if err != nil {
+		SendRegisterResponse(c, errno.ConvertErr(err), -1, "")
+		return
+	}
+	//成功响应
+	SendRegisterResponse(c, errno.Success, user_id, token)
 }
 
 // Login .
 // @router /douyin/user/login/ [POST]
 func Login(ctx context.Context, c *app.RequestContext) {
-	var err error
-	var req ApiServer.DouyinUserLoginRequest
-	err = c.BindAndValidate(&req)
-	if err != nil {
-		c.String(consts.StatusBadRequest, err.Error())
-		return
-	}
-
-	resp := new(ApiServer.DouyinUserLoginResponse)
-
-	c.JSON(consts.StatusOK, resp)
+	//先执行Authenticator--期间失败则执行unauthorized&HTTPStatusMessageFunc
+	//随后创建token
+	//若PayloadFunc不为空，则此时执行PayloadFunc
+	//最后执行LoginResponse返回信息
+	mw.JwtMiddleware.LoginHandler(ctx, c)
 }
 
 // GetUserInfo .
@@ -47,15 +60,22 @@ func Login(ctx context.Context, c *app.RequestContext) {
 func GetUserInfo(ctx context.Context, c *app.RequestContext) {
 	var err error
 	var req ApiServer.DouyinUserRequest
+	var u *UserServer.User
 	err = c.BindAndValidate(&req)
 	if err != nil {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
-
-	resp := new(ApiServer.DouyinUserResponse)
-
-	c.JSON(consts.StatusOK, resp)
+	//调用PRC方法，获得用户信息
+	u, err = rpc.GetUserInfo(context.Background(), &UserServer.DouyinUserRequest{
+		UserId: req.UserId,
+	})
+	if err != nil {
+		SendUesrInfoResponse(c, errno.ConvertErr(err), nil)
+		return
+	}
+	//成功响应
+	SendUesrInfoResponse(c, errno.Success, u)
 }
 
 // Feed .

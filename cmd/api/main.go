@@ -4,31 +4,33 @@ package main
 
 import (
 	"github.com/cloudwego/hertz/pkg/app/server"
-	"github.com/hertz-contrib/pprof"
 	"github.com/cloudwego/hertz/pkg/common/hlog"
 	hertzlogrus "github.com/hertz-contrib/obs-opentelemetry/logging/logrus"
-	//mw "github.com/xiaohei366/TinyTiktok/cmd/api/biz/middleware"
+	"github.com/hertz-contrib/pprof"
+
+	//"github.com/hertz-contrib/obs-opentelemetry/tracing"
+	mw "github.com/xiaohei366/TinyTiktok/cmd/api/biz/middleware"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/rpc"
-	"github.com/xiaohei366/TinyTiktok/pkg/configs"
+	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 )
 
 func Init() {
 	//RPC框架初始化
 	rpc.Init()
 	//中间件jwt鉴权
-	//mw.InitJWT()
+	mw.InitJWT()
 	// 日志 初始化
 	hlog.SetLogger(hertzlogrus.NewLogger())
 	hlog.SetLevel(hlog.LevelInfo)
 }
 
-
 func main() {
 	Init()
-
+	//tracer, cfg := tracing.NewServerTracer()
 	h := server.New(
-		server.WithHostPorts(configs.ApiServiceAddr),
+		server.WithHostPorts(shared.ApiServiceAddr),
 		server.WithHandleMethodNotAllowed(true), // coordinate with NoMethod
+		//tracer,
 	)
 	// use pprof mw
 	pprof.Register(h)

@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package UserServer;
+
+option go_package = "UserServer";
+
+message User {
+    int64 id = 1; // 用户id
+    string name = 2; // 用户名称
+    int64 follow_count = 3; // 关注总数--可选
+    int64 follower_count = 4; // 粉丝总数--可选
+    bool is_follow = 5; // true-已关注，false-未关注
+}
+
+message BaseResp {
+    int32 status_code = 1; // 状态码，0-成功，其他值-失败
+    string status_msg = 2; // 返回状态描述--可选
+}
+
+// User register
+message DouyinUserRegisterRequest {
+    string username = 1;// 注册用户名，最长32个字符
+    string password = 2;// 密码，最长32个字符
+}   
+
+message DouyinUserRegisterResponse {
+    BaseResp base_resp = 1;
+    int64 user_id = 2; // 用户id
+}
+
+// User login
+message DouyinUserLoginRequest {
+    string username = 1;// 注册用户名，最长32个字符
+    string password = 2;// 密码，最长32个字符
+}
+
+message DouyinUserLoginResponse {
+    BaseResp base_resp = 1;
+    int64 user_id = 2; // 用户id
+}
+
+//User info
+message DouyinUserRequest {
+    int64 user_id = 1;// 用户id
+}
+
+message DouyinUserResponse {
+    BaseResp base_resp = 1;
+    User user = 2; // 用户信息
+}
+
+service UserService {
+    rpc Register (DouyinUserRegisterRequest) returns (DouyinUserRegisterResponse) {}  
+    rpc Login (DouyinUserLoginRequest ) returns (DouyinUserLoginResponse) {}
+    rpc GetUserInfo (DouyinUserRequest) returns (DouyinUserResponse) {}
+}
