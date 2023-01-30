@@ -4,11 +4,37 @@ package main
 
 import (
 	"github.com/cloudwego/hertz/pkg/app/server"
+	"github.com/hertz-contrib/pprof"
+	"github.com/cloudwego/hertz/pkg/common/hlog"
+	hertzlogrus "github.com/hertz-contrib/obs-opentelemetry/logging/logrus"
+	//mw "github.com/xiaohei366/TinyTiktok/cmd/api/biz/middleware"
+	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/rpc"
+	"github.com/xiaohei366/TinyTiktok/pkg/configs"
 )
 
-func main() {
-	h := server.Default()
+func Init() {
+	//RPC框架初始化
+	rpc.Init()
+	//中间件jwt鉴权
+	//mw.InitJWT()
+	// 日志 初始化
+	hlog.SetLogger(hertzlogrus.NewLogger())
+	hlog.SetLevel(hlog.LevelInfo)
+}
 
+
+func main() {
+	Init()
+
+	h := server.New(
+		server.WithHostPorts(configs.ApiServiceAddr),
+		server.WithHandleMethodNotAllowed(true), // coordinate with NoMethod
+	)
+	// use pprof mw
+	pprof.Register(h)
+
+	//设定好路由并启动
 	register(h)
 	h.Spin()
 }
+

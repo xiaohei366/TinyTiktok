@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package API;
 
-option go_package = "cmd/api";
+option go_package = "API";
 
 import "api.proto";
 
@@ -95,7 +95,7 @@ message DouyinPublishActionResponse {
     BaseResp base_resp = 1;
 }
 // Publish-list
-message douyinPublishListRequest {
+message DouyinPublishListRequest {
     int64 user_id = 1[(api.query)="user_id"];// 用户id
     string token = 2[(api.query)="token"];// 用户鉴权token
 }
@@ -111,7 +111,7 @@ message DouyinFavoriteActionRequest {
     int32 action_type = 3[(api.query)="action_type"];// 1-点赞，2-取消点赞
 }
 
-message douyinFavoriteActionResponse {
+message DouyinFavoriteActionResponse {
     BaseResp base_resp = 1;
 }
 
@@ -158,12 +158,12 @@ service ApiService {
     //Video
     rpc Feed (DouyinFeedRequest) returns (DouyinFeedResponse) {option (api.get) = "/douyin/feed/";}
     rpc PublishAction (DouyinPublishActionRequest) returns (DouyinPublishActionResponse) {option (api.post) = "/douyin/publish/action/";}
-    rpc PublishList (douyinPublishListRequest) returns (DouyinPublishListResponse) {option (api.get) = "/douyin/publish/list/";}
+    rpc PublishList (DouyinPublishListRequest) returns (DouyinPublishListResponse) {option (api.get) = "/douyin/publish/list/";}
 
     //Extra-api-I
     //Favorite
-    rpc FavoriteAction  (DouyinFavoriteActionRequest) returns (douyinFavoriteActionResponse) {option (api.post) = "/douyin/favorite/action/";}
-    rpc FavoriteList   (DouyinFavoriteListRequest) returns (douyinFavoriteActionResponse) {option (api.get) = "/douyin/favorite/list/";}
+    rpc FavoriteAction  (DouyinFavoriteActionRequest) returns (DouyinFavoriteActionResponse) {option (api.post) = "/douyin/favorite/action/";}
+    rpc FavoriteList   (DouyinFavoriteListRequest) returns (DouyinFavoriteActionResponse) {option (api.get) = "/douyin/favorite/list/";}
     //Comment
     rpc CommentAction  (DouyinCommentActionRequest) returns (DouyinCommentActionResponse) {option (api.post) = "/douyin/comment/action/";}
     rpc CommentList  (DouyinCommentListRequest) returns (DouyinCommentListResponse) {option (api.get) = "/douyin/comment/list/";}
