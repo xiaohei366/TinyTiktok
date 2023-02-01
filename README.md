@@ -1,5 +1,4 @@
-# 一起搞定TinyTiktok
-
+# TinyTiktok项目
 ## 一、如何测试框架的项目
 ### 1.首先需要对环境初始化：
 - 根据`./cmd/user/initialize/db`内的sql文件进行MYSQL初始化（PS：数据库名建议"TinyTiktok"（shared处可修改））
