@@ -77,8 +77,8 @@ func InitJWT() {
 		//用于设置 jwt 验证流程失败的响应函数，当前 demo 返回了错误码和错误信息。
 		Unauthorized: func(ctx context.Context, c *app.RequestContext, code int, message string) {
 			c.JSON(http.StatusOK, utils.H{
-				"code":    errno.AuthorizationFailedErr.ErrCode,
-				"message": message,
+				"status_code": errno.AuthorizationFailedErr.ErrCode,
+				"status_msg":  message,
 			})
 		},
 		//用于设置 jwt 校验流程发生错误时响应所包含的错误信息，你可以自行包装这些内容
