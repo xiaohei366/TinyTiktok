@@ -19,3 +19,5 @@ go run .
 ### 3.测试
 我未经postman测试，根据日志直接在抖声app上测试的。进入抖声直接打开“我的”，随后测试注册、登录以及返回的用户粉丝和关注数(测试值为10)
 ## 二、service如何插入框架（以我的user模块制作过程为例）
+<font color = red>我们默认的根目录为`github.com/xiaohei366/TinyTiktok/`，在开发过程中，后面直接加相对路径</font>
+1. 首先在`idl`写好user文件夹下的idl/UserServer.proto文件，对应暴露的接口和服务。随后在cmd文件夹下，创建自己模块的文件夹，并通过定义好的idl文件来自动的生成服务端的微服务框架。
