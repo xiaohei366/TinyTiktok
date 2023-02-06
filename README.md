@@ -79,6 +79,8 @@ go run .
 【正规来说，一共如下的步骤】
 1. 一旦需要开发新的功能，就在`remote`的`master`分支的基础上创建一个`feature xxx`分支
 2. 本地创建对应的`feature xxx`分支
-3. 每次开发前将`remote库`的`feature xxx`分支拉取到本地，处理冲突
-4. 然后在本地`feature xxx`分支上开发，当**开发测试**完毕之后。就`push`到remote的`feature xxx`分支
-5. 在项目主页上发起`pull request`（如果是gitlab则是`merge request`，作用相同），本意是提出将`feature xxx`分支合并入`master`分支的请求
+3. 每次开发前将`remote库`的`feature xxx`分支拉取到本地，处理冲突（即`git pull`命令）
+4. 然后在本地`feature xxx`分支上开发
+5. 开发结束后，需要继续`git pull`，防止此时已经有人上传新的代码，继续更新并同时处理冲突(若存在)。
+6. 最后功能完成后，就可以`push`到`remote`，并同时使用`git push`，将代码上传到远程仓库的`feature xxx`分支
+7. 负责人继续review你这个PR或者MR，通过之后会将`feature xxx`分支**区别于master的改动**合并入`master`，删除remote的`feature xxx`分支，代表这个功能开发完毕
