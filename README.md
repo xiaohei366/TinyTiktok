@@ -84,3 +84,45 @@ go run .
 5. 开发结束后，需要继续`git pull`，防止此时已经有人上传新的代码，继续更新并同时处理冲突(若存在)。
 6. 最后功能完成后，就可以`push`到`remote`，并同时使用`git push`，将代码上传到远程仓库的`feature xxx`分支
 7. 负责人继续review你这个PR或者MR，通过之后会将`feature xxx`分支**区别于master的改动**合并入`master`，删除remote的`feature xxx`分支，代表这个功能开发完毕
+## 五、目录说明
+```
+
+.
+├── cmd
+│   ├── api	//api服务器，用来对接抖声app客户端
+│   │   └── biz
+│   │       ├── handler //开发完自己的模块，需要在此处完成响应操作
+│   │       │   └── ApiServer //pack.go负责响应格式，api_service负责逻辑
+│   │       ├── kitex_gen //勿忘将自己模块kitex生成的接口文件夹放到此处
+│   │       │   └── UserServer//这是我的userservice
+│   │       │       └── userservice
+│   │       ├── middleware //api服务器的中间件
+│   │       ├── model //hertz自动生成--无需管
+│   │       │   ├── ApiServer
+│   │       │   └── api
+│   │       ├── router 
+│   │       │   └── ApiServer //此处路由可插入中间件
+│   │       └── rpc //该文件夹下自己创建rpc模块的客户端对接函数go文件
+│   └── user //用户RPC服务器--模块就像这样放在cmd文件夹下
+│       ├── config	//自己的一些全局变量
+│       ├── initialize //初始化的部件---如数据库的建表建库、数据库的gorm初始化
+│       │   └── db
+│       ├── kitex_gen //自动生成--勿忘将文件及文件夹放一份至api/biz/kitex_gen下
+│       │   └── UserServer
+│       │       └── userservice
+│       ├── output //运行的输出文件，无视即可
+│       │   ├── bin
+│       │   └── log
+│       │       ├── app
+│       │       └── rpc
+│       ├── script //运行的输出文件，无视即可
+│       └── service //该模块的逻辑处理
+│           ├── dal //对数据库的操作
+│           └── pack //响应报文or结构体等拼接
+├── idl	//自己的RPC接口文档，主要与api服务器交互，也有一些接口可能开放给其他模块使用
+├── image //放readme的图片
+└── pkg
+    ├── errno //定义的响应错误，全局适用，在此处需要自己创建编辑关于自己模块的错误码
+    ├── middleware // 全局中间件，此处可以用来配合api输出日志
+    └── shared //全局变量常量等声明处
+```
