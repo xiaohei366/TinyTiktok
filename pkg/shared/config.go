@@ -19,4 +19,8 @@ const (
 	UserServiceName     = "user"
 	
 	DefaultLimit    = 10
+
+	//日志的输出路径
+	HlogFilePath = "./tmp/hlog/logs/"
+	KlogFilePath = "./tmp/klog/logs/"
 )
