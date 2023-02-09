@@ -58,7 +58,7 @@ go run .
 
 2. 如何在token中携带信息？如何提取jwt中token中携带的信息
 
-  - 首先要像note项目中，在中间件部分加入鉴权`mw.JwtMiddleware.MiddlewareFunc(),`，这个函数会将信息自动保存在`RequestContext`中
+  - 首先要像note项目中，在中间件部分`cmd/api/biz/router/ApiServer/middleware.go`中加入鉴权`mw.JwtMiddleware.MiddlewareFunc(),`，这个函数会将信息自动保存在`RequestContext`中
 
   - `cmd/api/biz/middleware/jwt.go`中的`IdentityHandler`以及`PayloadFunc`负责将信息注入`app.RequestContext`中。（但是请注意，默认携带的是userId，如想带其他的，可以联系我修改Authenticator函数的返回值，从而带上其他的信息）
     - ```go LoginResponse: func(ctx context.Context, c *app.RequestContext, code int, token string, expire time.Time) {
