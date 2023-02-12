@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/cloudwego/kitex/pkg/klog"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/config"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
-	"github.com/cloudwego/kitex/pkg/klog"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"

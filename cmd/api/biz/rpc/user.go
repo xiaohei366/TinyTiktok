@@ -3,19 +3,19 @@ package rpc
 import (
 	"context"
 
-	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/UserServer"
-	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/UserServer/userservice"
-	"github.com/xiaohei366/TinyTiktok/pkg/shared"
-	"github.com/xiaohei366/TinyTiktok/pkg/errno"
-	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 	"github.com/cloudwego/kitex/client"
 	"github.com/cloudwego/kitex/pkg/rpcinfo"
+	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/UserServer"
+	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/UserServer/userservice"
+	"github.com/xiaohei366/TinyTiktok/pkg/errno"
+	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
+	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 	//"github.com/kitex-contrib/obs-opentelemetry/provider"
 	//"github.com/kitex-contrib/obs-opentelemetry/tracing"
 	etcd "github.com/kitex-contrib/registry-etcd"
 )
 
-var userClient userservice.Client 
+var userClient userservice.Client
 
 func initUser() {
 	r, err := etcd.NewEtcdResolver([]string{shared.ETCDAddress})
@@ -74,5 +74,5 @@ func GetUserInfo(ctx context.Context, req *UserServer.DouyinUserRequest) (*UserS
 	if resp.BaseResp.StatusCode != 0 {
 		return &UserServer.User{}, errno.NewErrNo(resp.BaseResp.StatusCode, resp.BaseResp.StatusMsg)
 	}
-	return resp.User, nil	//两种不同名但相同的结构体需要用指针来传递
+	return resp.User, nil //两种不同名但相同的结构体需要用指针来传递
 }

@@ -3,15 +3,19 @@
 package ApiServer
 
 import (
+	"bytes"
 	"context"
-
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
+	"github.com/cloudwego/kitex/pkg/klog"
+	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/FeedServer"
+	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/PublishServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/UserServer"
 	mw "github.com/xiaohei366/TinyTiktok/cmd/api/biz/middleware"
-	ApiServer "github.com/xiaohei366/TinyTiktok/cmd/api/biz/model/ApiServer"
+	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/model/ApiServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/rpc"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
+	"io"
 )
 
 // Register .
@@ -88,26 +92,67 @@ func Feed(ctx context.Context, c *app.RequestContext) {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
-
-	resp := new(ApiServer.DouyinFeedResponse)
-
-	c.JSON(consts.StatusOK, resp)
+	request := &FeedServer.DouyinFeedRequest{
+		LatestTime: req.LatestTime,
+		Token:      req.Token,
+	}
+	videos, err := rpc.FeedVideos(context.Background(), request)
+	if err != nil {
+		SendResponse(c, errno.ConvertErr(err), nil)
+	}
+	SendResponse(c, errno.Success, videos) //这个只有测试才知道对不对
 }
 
 // PublishAction .
 // @router /douyin/publish/action/ [POST]
 func PublishAction(ctx context.Context, c *app.RequestContext) {
 	var err error
-	var req ApiServer.DouyinPublishActionRequest
+	var req ApiServer.DouyinPublishActionRequest //这儿绑定似乎有些问题data绑定不上。
+
 	err = c.BindAndValidate(&req)
+	klog.Info("req:", req.Title, req.Token)
 	if err != nil {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
 
-	resp := new(ApiServer.DouyinPublishActionResponse)
+	//拿userid
+	uid := mw.JwtMiddleware.IdentityHandler(ctx, c).(*ApiServer.User)
 
-	c.JSON(consts.StatusOK, resp)
+	fileHeader, err := c.FormFile("data")
+	klog.Info("datainfo:", fileHeader)
+	if err != nil {
+		SendResponse(c, errno.ConvertErr(err), nil)
+		return
+	}
+
+	file, err := fileHeader.Open()
+	if err != nil {
+		SendResponse(c, errno.ConvertErr(err), nil)
+		return
+	}
+	defer file.Close()
+
+	buf := bytes.NewBuffer(nil)
+	if _, err := io.Copy(buf, file); err != nil {
+		SendResponse(c, errno.ConvertErr(err), nil)
+		return
+	}
+
+	request := &PublishServer.DouyinPublishActionRequest{
+		User: &UserServer.User{
+			Id: uid.Id,
+		},
+		Token: req.Token,
+		Title: req.Title,
+		Data:  buf.Bytes(),
+	}
+	resp, err := rpc.PublishVideos(ctx, request)
+	if err != nil {
+		SendResponse(c, errno.ConvertErr(err), nil)
+	}
+	SendResponse(c, errno.Success, resp) //这个只有测试才知道对不对
+
 }
 
 // PublishList .
@@ -115,15 +160,24 @@ func PublishAction(ctx context.Context, c *app.RequestContext) {
 func PublishList(ctx context.Context, c *app.RequestContext) {
 	var err error
 	var req ApiServer.DouyinPublishListRequest
-	err = c.BindAndValidate(&req)
+	err = c.BindAndValidate(&req) //这里是ok的
+	//klog.Info("req:", req.UserId, req.Token)
 	if err != nil {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
+	request := &PublishServer.DouyinPublishListRequest{
+		UserId: req.UserId,
+		Token:  req.Token,
+	}
 
-	resp := new(ApiServer.DouyinPublishListResponse)
-
-	c.JSON(consts.StatusOK, resp)
+	//rpc
+	resp, err := rpc.PublishList(ctx, request)
+	//klog.Info("response:", resp)
+	if err != nil {
+		SendResponse(c, errno.ConvertErr(err), nil)
+	}
+	SendResponse(c, errno.Success, resp) //这个只有测试才知道对不对
 }
 
 // FavoriteAction .
@@ -148,6 +202,7 @@ func FavoriteList(ctx context.Context, c *app.RequestContext) {
 	var err error
 	var req ApiServer.DouyinFavoriteListRequest
 	err = c.BindAndValidate(&req)
+	klog.Info("req:", req.Token, req.UserId)
 	if err != nil {
 		c.String(consts.StatusBadRequest, err.Error())
 		return

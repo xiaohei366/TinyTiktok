@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/xiaohei366/TinyTiktok/cmd/user/kitex_gen/UserServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/service/dal"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
-	"github.com/xiaohei366/TinyTiktok/cmd/user/kitex_gen/UserServer"
 )
 
 type RegisterService struct {
@@ -39,7 +39,7 @@ func (s *RegisterService) CreateUser(req *UserServer.DouyinUserRegisterRequest) 
 	password := fmt.Sprintf("%x", h.Sum(nil))
 	//完成写入账号操作
 	return dal.CreateUser(s.ctx, &dal.User{
-		Name: req.Username,
+		Name:     req.Username,
 		Password: password,
 	})
 }
