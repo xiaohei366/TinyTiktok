@@ -3,9 +3,9 @@ package main
 import (
 	"context"
 
+	"github.com/xiaohei366/TinyTiktok/cmd/user/initialize/db"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/kitex_gen/UserServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/service"
-	"github.com/xiaohei366/TinyTiktok/cmd/user/service/dal"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/service/pack"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
@@ -29,7 +29,7 @@ func (s *UserServiceImpl) Register(ctx context.Context, req *UserServer.DouyinUs
 		resp.UserId = -1 // -1 代表 用户有问题
 		return resp, nil
 	}
-	var ua dal.User
+	var ua db.User
 	//获得自增键后的id
 	ua, err = service.NewGetUserService(ctx).GetUserByName(req.Username)
 	if err != nil {

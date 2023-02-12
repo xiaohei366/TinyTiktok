@@ -5,7 +5,7 @@ import (
 	"crypto/sha256"
 	"fmt"
 	"io"
-
+	"github.com/xiaohei366/TinyTiktok/cmd/user/initialize/db"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/service/dal"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/kitex_gen/UserServer"
@@ -38,7 +38,7 @@ func (s *RegisterService) CreateUser(req *UserServer.DouyinUserRegisterRequest) 
 	}
 	password := fmt.Sprintf("%x", h.Sum(nil))
 	//完成写入账号操作
-	return dal.CreateUser(s.ctx, &dal.User{
+	return dal.CreateUser(s.ctx, &db.User{
 		Name: req.Username,
 		Password: password,
 	})
