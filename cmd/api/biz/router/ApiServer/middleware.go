@@ -133,3 +133,49 @@ func _register0Mw() []app.HandlerFunc {
 	// your code...
 	return nil
 }
+
+func _relationMw() []app.HandlerFunc {
+	return []app.HandlerFunc{
+		// use jwt mw
+		mw.JwtMiddleware.MiddlewareFunc(),
+	}
+}
+
+func _action2Mw() []app.HandlerFunc {
+	// your code...
+	return nil
+}
+
+func _relation_ctionMw() []app.HandlerFunc {
+	// your code...
+	return nil
+}
+
+func _followMw() []app.HandlerFunc {
+	// your code...
+	return nil
+}
+
+func _list2Mw() []app.HandlerFunc {
+	// your code...
+	return nil
+}
+
+func _relationfollowlistMw() []app.HandlerFunc {
+	// your code...
+	return nil
+}
+
+func _followerMw() []app.HandlerFunc {
+	// your code...
+	return nil
+}
+
+func _list3Mw() []app.HandlerFunc {
+	// your code...
+	return nil
+}
+
+func _relationfollowerlistMw() []app.HandlerFunc {
+	return nil
+}

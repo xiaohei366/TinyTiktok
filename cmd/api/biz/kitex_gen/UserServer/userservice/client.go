@@ -14,6 +14,8 @@ type Client interface {
 	Register(ctx context.Context, Req *UserServer.DouyinUserRegisterRequest, callOptions ...callopt.Option) (r *UserServer.DouyinUserRegisterResponse, err error)
 	Login(ctx context.Context, Req *UserServer.DouyinUserLoginRequest, callOptions ...callopt.Option) (r *UserServer.DouyinUserLoginResponse, err error)
 	GetUserInfo(ctx context.Context, Req *UserServer.DouyinUserRequest, callOptions ...callopt.Option) (r *UserServer.DouyinUserResponse, err error)
+	MGetUserInfo(ctx context.Context, Req *UserServer.DouyinMUserRequest, callOptions ...callopt.Option) (r *UserServer.DouyinMUserResponse, err error)
+	ChangeUserFollowCount(ctx context.Context, Req *UserServer.DouyinChangeUserFollowRequest, callOptions ...callopt.Option) (r *UserServer.BaseResp, err error)
 }
 
 // NewClient creates a client for the service defined in IDL.
@@ -58,4 +60,14 @@ func (p *kUserServiceClient) Login(ctx context.Context, Req *UserServer.DouyinUs
 func (p *kUserServiceClient) GetUserInfo(ctx context.Context, Req *UserServer.DouyinUserRequest, callOptions ...callopt.Option) (r *UserServer.DouyinUserResponse, err error) {
 	ctx = client.NewCtxWithCallOptions(ctx, callOptions)
 	return p.kClient.GetUserInfo(ctx, Req)
+}
+
+func (p *kUserServiceClient) MGetUserInfo(ctx context.Context, Req *UserServer.DouyinMUserRequest, callOptions ...callopt.Option) (r *UserServer.DouyinMUserResponse, err error) {
+	ctx = client.NewCtxWithCallOptions(ctx, callOptions)
+	return p.kClient.MGetUserInfo(ctx, Req)
+}
+
+func (p *kUserServiceClient) ChangeUserFollowCount(ctx context.Context, Req *UserServer.DouyinChangeUserFollowRequest, callOptions ...callopt.Option) (r *UserServer.BaseResp, err error) {
+	ctx = client.NewCtxWithCallOptions(ctx, callOptions)
+	return p.kClient.ChangeUserFollowCount(ctx, Req)
 }

@@ -22,9 +22,11 @@ func NewServiceInfo() *kitex.ServiceInfo {
 	serviceName := "UserService"
 	handlerType := (*UserServer.UserService)(nil)
 	methods := map[string]kitex.MethodInfo{
-		"Register":    kitex.NewMethodInfo(registerHandler, newRegisterArgs, newRegisterResult, false),
-		"Login":       kitex.NewMethodInfo(loginHandler, newLoginArgs, newLoginResult, false),
-		"GetUserInfo": kitex.NewMethodInfo(getUserInfoHandler, newGetUserInfoArgs, newGetUserInfoResult, false),
+		"Register":              kitex.NewMethodInfo(registerHandler, newRegisterArgs, newRegisterResult, false),
+		"Login":                 kitex.NewMethodInfo(loginHandler, newLoginArgs, newLoginResult, false),
+		"GetUserInfo":           kitex.NewMethodInfo(getUserInfoHandler, newGetUserInfoArgs, newGetUserInfoResult, false),
+		"MGetUserInfo":          kitex.NewMethodInfo(mGetUserInfoHandler, newMGetUserInfoArgs, newMGetUserInfoResult, false),
+		"ChangeUserFollowCount": kitex.NewMethodInfo(changeUserFollowCountHandler, newChangeUserFollowCountArgs, newChangeUserFollowCountResult, false),
 	}
 	extra := map[string]interface{}{
 		"PackageName": "UserServer",
@@ -475,6 +477,296 @@ func (p *GetUserInfoResult) IsSetSuccess() bool {
 	return p.Success != nil
 }
 
+func mGetUserInfoHandler(ctx context.Context, handler interface{}, arg, result interface{}) error {
+	switch s := arg.(type) {
+	case *streaming.Args:
+		st := s.Stream
+		req := new(UserServer.DouyinMUserRequest)
+		if err := st.RecvMsg(req); err != nil {
+			return err
+		}
+		resp, err := handler.(UserServer.UserService).MGetUserInfo(ctx, req)
+		if err != nil {
+			return err
+		}
+		if err := st.SendMsg(resp); err != nil {
+			return err
+		}
+	case *MGetUserInfoArgs:
+		success, err := handler.(UserServer.UserService).MGetUserInfo(ctx, s.Req)
+		if err != nil {
+			return err
+		}
+		realResult := result.(*MGetUserInfoResult)
+		realResult.Success = success
+	}
+	return nil
+}
+func newMGetUserInfoArgs() interface{} {
+	return &MGetUserInfoArgs{}
+}
+
+func newMGetUserInfoResult() interface{} {
+	return &MGetUserInfoResult{}
+}
+
+type MGetUserInfoArgs struct {
+	Req *UserServer.DouyinMUserRequest
+}
+
+func (p *MGetUserInfoArgs) FastRead(buf []byte, _type int8, number int32) (n int, err error) {
+	if !p.IsSetReq() {
+		p.Req = new(UserServer.DouyinMUserRequest)
+	}
+	return p.Req.FastRead(buf, _type, number)
+}
+
+func (p *MGetUserInfoArgs) FastWrite(buf []byte) (n int) {
+	if !p.IsSetReq() {
+		return 0
+	}
+	return p.Req.FastWrite(buf)
+}
+
+func (p *MGetUserInfoArgs) Size() (n int) {
+	if !p.IsSetReq() {
+		return 0
+	}
+	return p.Req.Size()
+}
+
+func (p *MGetUserInfoArgs) Marshal(out []byte) ([]byte, error) {
+	if !p.IsSetReq() {
+		return out, fmt.Errorf("No req in MGetUserInfoArgs")
+	}
+	return proto.Marshal(p.Req)
+}
+
+func (p *MGetUserInfoArgs) Unmarshal(in []byte) error {
+	msg := new(UserServer.DouyinMUserRequest)
+	if err := proto.Unmarshal(in, msg); err != nil {
+		return err
+	}
+	p.Req = msg
+	return nil
+}
+
+var MGetUserInfoArgs_Req_DEFAULT *UserServer.DouyinMUserRequest
+
+func (p *MGetUserInfoArgs) GetReq() *UserServer.DouyinMUserRequest {
+	if !p.IsSetReq() {
+		return MGetUserInfoArgs_Req_DEFAULT
+	}
+	return p.Req
+}
+
+func (p *MGetUserInfoArgs) IsSetReq() bool {
+	return p.Req != nil
+}
+
+type MGetUserInfoResult struct {
+	Success *UserServer.DouyinMUserResponse
+}
+
+var MGetUserInfoResult_Success_DEFAULT *UserServer.DouyinMUserResponse
+
+func (p *MGetUserInfoResult) FastRead(buf []byte, _type int8, number int32) (n int, err error) {
+	if !p.IsSetSuccess() {
+		p.Success = new(UserServer.DouyinMUserResponse)
+	}
+	return p.Success.FastRead(buf, _type, number)
+}
+
+func (p *MGetUserInfoResult) FastWrite(buf []byte) (n int) {
+	if !p.IsSetSuccess() {
+		return 0
+	}
+	return p.Success.FastWrite(buf)
+}
+
+func (p *MGetUserInfoResult) Size() (n int) {
+	if !p.IsSetSuccess() {
+		return 0
+	}
+	return p.Success.Size()
+}
+
+func (p *MGetUserInfoResult) Marshal(out []byte) ([]byte, error) {
+	if !p.IsSetSuccess() {
+		return out, fmt.Errorf("No req in MGetUserInfoResult")
+	}
+	return proto.Marshal(p.Success)
+}
+
+func (p *MGetUserInfoResult) Unmarshal(in []byte) error {
+	msg := new(UserServer.DouyinMUserResponse)
+	if err := proto.Unmarshal(in, msg); err != nil {
+		return err
+	}
+	p.Success = msg
+	return nil
+}
+
+func (p *MGetUserInfoResult) GetSuccess() *UserServer.DouyinMUserResponse {
+	if !p.IsSetSuccess() {
+		return MGetUserInfoResult_Success_DEFAULT
+	}
+	return p.Success
+}
+
+func (p *MGetUserInfoResult) SetSuccess(x interface{}) {
+	p.Success = x.(*UserServer.DouyinMUserResponse)
+}
+
+func (p *MGetUserInfoResult) IsSetSuccess() bool {
+	return p.Success != nil
+}
+
+func changeUserFollowCountHandler(ctx context.Context, handler interface{}, arg, result interface{}) error {
+	switch s := arg.(type) {
+	case *streaming.Args:
+		st := s.Stream
+		req := new(UserServer.DouyinChangeUserFollowRequest)
+		if err := st.RecvMsg(req); err != nil {
+			return err
+		}
+		resp, err := handler.(UserServer.UserService).ChangeUserFollowCount(ctx, req)
+		if err != nil {
+			return err
+		}
+		if err := st.SendMsg(resp); err != nil {
+			return err
+		}
+	case *ChangeUserFollowCountArgs:
+		success, err := handler.(UserServer.UserService).ChangeUserFollowCount(ctx, s.Req)
+		if err != nil {
+			return err
+		}
+		realResult := result.(*ChangeUserFollowCountResult)
+		realResult.Success = success
+	}
+	return nil
+}
+func newChangeUserFollowCountArgs() interface{} {
+	return &ChangeUserFollowCountArgs{}
+}
+
+func newChangeUserFollowCountResult() interface{} {
+	return &ChangeUserFollowCountResult{}
+}
+
+type ChangeUserFollowCountArgs struct {
+	Req *UserServer.DouyinChangeUserFollowRequest
+}
+
+func (p *ChangeUserFollowCountArgs) FastRead(buf []byte, _type int8, number int32) (n int, err error) {
+	if !p.IsSetReq() {
+		p.Req = new(UserServer.DouyinChangeUserFollowRequest)
+	}
+	return p.Req.FastRead(buf, _type, number)
+}
+
+func (p *ChangeUserFollowCountArgs) FastWrite(buf []byte) (n int) {
+	if !p.IsSetReq() {
+		return 0
+	}
+	return p.Req.FastWrite(buf)
+}
+
+func (p *ChangeUserFollowCountArgs) Size() (n int) {
+	if !p.IsSetReq() {
+		return 0
+	}
+	return p.Req.Size()
+}
+
+func (p *ChangeUserFollowCountArgs) Marshal(out []byte) ([]byte, error) {
+	if !p.IsSetReq() {
+		return out, fmt.Errorf("No req in ChangeUserFollowCountArgs")
+	}
+	return proto.Marshal(p.Req)
+}
+
+func (p *ChangeUserFollowCountArgs) Unmarshal(in []byte) error {
+	msg := new(UserServer.DouyinChangeUserFollowRequest)
+	if err := proto.Unmarshal(in, msg); err != nil {
+		return err
+	}
+	p.Req = msg
+	return nil
+}
+
+var ChangeUserFollowCountArgs_Req_DEFAULT *UserServer.DouyinChangeUserFollowRequest
+
+func (p *ChangeUserFollowCountArgs) GetReq() *UserServer.DouyinChangeUserFollowRequest {
+	if !p.IsSetReq() {
+		return ChangeUserFollowCountArgs_Req_DEFAULT
+	}
+	return p.Req
+}
+
+func (p *ChangeUserFollowCountArgs) IsSetReq() bool {
+	return p.Req != nil
+}
+
+type ChangeUserFollowCountResult struct {
+	Success *UserServer.BaseResp
+}
+
+var ChangeUserFollowCountResult_Success_DEFAULT *UserServer.BaseResp
+
+func (p *ChangeUserFollowCountResult) FastRead(buf []byte, _type int8, number int32) (n int, err error) {
+	if !p.IsSetSuccess() {
+		p.Success = new(UserServer.BaseResp)
+	}
+	return p.Success.FastRead(buf, _type, number)
+}
+
+func (p *ChangeUserFollowCountResult) FastWrite(buf []byte) (n int) {
+	if !p.IsSetSuccess() {
+		return 0
+	}
+	return p.Success.FastWrite(buf)
+}
+
+func (p *ChangeUserFollowCountResult) Size() (n int) {
+	if !p.IsSetSuccess() {
+		return 0
+	}
+	return p.Success.Size()
+}
+
+func (p *ChangeUserFollowCountResult) Marshal(out []byte) ([]byte, error) {
+	if !p.IsSetSuccess() {
+		return out, fmt.Errorf("No req in ChangeUserFollowCountResult")
+	}
+	return proto.Marshal(p.Success)
+}
+
+func (p *ChangeUserFollowCountResult) Unmarshal(in []byte) error {
+	msg := new(UserServer.BaseResp)
+	if err := proto.Unmarshal(in, msg); err != nil {
+		return err
+	}
+	p.Success = msg
+	return nil
+}
+
+func (p *ChangeUserFollowCountResult) GetSuccess() *UserServer.BaseResp {
+	if !p.IsSetSuccess() {
+		return ChangeUserFollowCountResult_Success_DEFAULT
+	}
+	return p.Success
+}
+
+func (p *ChangeUserFollowCountResult) SetSuccess(x interface{}) {
+	p.Success = x.(*UserServer.BaseResp)
+}
+
+func (p *ChangeUserFollowCountResult) IsSetSuccess() bool {
+	return p.Success != nil
+}
+
 type kClient struct {
 	c client.Client
 }
@@ -510,6 +802,26 @@ func (p *kClient) GetUserInfo(ctx context.Context, Req *UserServer.DouyinUserReq
 	_args.Req = Req
 	var _result GetUserInfoResult
 	if err = p.c.Call(ctx, "GetUserInfo", &_args, &_result); err != nil {
+		return
+	}
+	return _result.GetSuccess(), nil
+}
+
+func (p *kClient) MGetUserInfo(ctx context.Context, Req *UserServer.DouyinMUserRequest) (r *UserServer.DouyinMUserResponse, err error) {
+	var _args MGetUserInfoArgs
+	_args.Req = Req
+	var _result MGetUserInfoResult
+	if err = p.c.Call(ctx, "MGetUserInfo", &_args, &_result); err != nil {
+		return
+	}
+	return _result.GetSuccess(), nil
+}
+
+func (p *kClient) ChangeUserFollowCount(ctx context.Context, Req *UserServer.DouyinChangeUserFollowRequest) (r *UserServer.BaseResp, err error) {
+	var _args ChangeUserFollowCountArgs
+	_args.Req = Req
+	var _result ChangeUserFollowCountResult
+	if err = p.c.Call(ctx, "ChangeUserFollowCount", &_args, &_result); err != nil {
 		return
 	}
 	return _result.GetSuccess(), nil

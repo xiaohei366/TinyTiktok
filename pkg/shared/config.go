@@ -14,9 +14,11 @@ const (
 	ETCDAddress     = "127.0.0.1:2379"
 	ApiServiceAddr  = ":8888"
 	UserServiceAddr = ":9000"
+	RelationServiceAddr = ":9001"
 
 	ApiServiceName      = "api"
 	UserServiceName     = "user"
+	RelationServiceName = "relation"
 	
 	DefaultLimit    = 10
 
