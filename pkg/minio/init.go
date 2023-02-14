@@ -4,7 +4,7 @@ import (
 	"github.com/cloudwego/kitex/pkg/klog"
 	"github.com/minio/minio-go/v7"
 	"github.com/minio/minio-go/v7/pkg/credentials"
-	"github.com/xiaohei366/TinyTiktok/cmd/publish/config"
+	"github.com/xiaohei366/TinyTiktok/cmd/video/config"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 )
 

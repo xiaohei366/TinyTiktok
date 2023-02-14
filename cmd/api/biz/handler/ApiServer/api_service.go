@@ -8,9 +8,8 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 	"github.com/cloudwego/kitex/pkg/klog"
-	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/FeedServer"
-	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/PublishServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/UserServer"
+	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/VideoServer"
 	mw "github.com/xiaohei366/TinyTiktok/cmd/api/biz/middleware"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/model/ApiServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/rpc"
@@ -87,12 +86,12 @@ func GetUserInfo(ctx context.Context, c *app.RequestContext) {
 func Feed(ctx context.Context, c *app.RequestContext) {
 	var err error
 	var req ApiServer.DouyinFeedRequest
-	err = c.BindAndValidate(&req)
+	err = c.BindAndValidate(&req) //验证参数
 	if err != nil {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
-	request := &FeedServer.DouyinFeedRequest{
+	request := &VideoServer.DouyinFeedRequest{
 		LatestTime: req.LatestTime,
 		Token:      req.Token,
 	}
@@ -100,27 +99,26 @@ func Feed(ctx context.Context, c *app.RequestContext) {
 	if err != nil {
 		SendResponse(c, errno.ConvertErr(err), nil)
 	}
-	SendResponse(c, errno.Success, videos) //这个只有测试才知道对不对
+	SendResponse(c, errno.Success, videos)
 }
 
 // PublishAction .
 // @router /douyin/publish/action/ [POST]
 func PublishAction(ctx context.Context, c *app.RequestContext) {
 	var err error
-	var req ApiServer.DouyinPublishActionRequest //这儿绑定似乎有些问题data绑定不上。
+	var req ApiServer.DouyinPublishActionRequest
 
 	err = c.BindAndValidate(&req)
-	klog.Info("req:", req.Title, req.Token)
 	if err != nil {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
 
-	//拿userid
+	//拿userid //这儿没验证
 	uid := mw.JwtMiddleware.IdentityHandler(ctx, c).(*ApiServer.User)
-
+	klog.Info("uid:", uid.Id, uid.Name)
+	//拿取视频文件。
 	fileHeader, err := c.FormFile("data")
-	klog.Info("datainfo:", fileHeader)
 	if err != nil {
 		SendResponse(c, errno.ConvertErr(err), nil)
 		return
@@ -139,7 +137,7 @@ func PublishAction(ctx context.Context, c *app.RequestContext) {
 		return
 	}
 
-	request := &PublishServer.DouyinPublishActionRequest{
+	request := &VideoServer.DouyinPublishActionRequest{
 		User: &UserServer.User{
 			Id: uid.Id,
 		},
@@ -158,22 +156,20 @@ func PublishAction(ctx context.Context, c *app.RequestContext) {
 // PublishList .
 // @router /douyin/publish/list/ [GET]
 func PublishList(ctx context.Context, c *app.RequestContext) {
+	//测试可用
 	var err error
 	var req ApiServer.DouyinPublishListRequest
-	err = c.BindAndValidate(&req) //这里是ok的
-	//klog.Info("req:", req.UserId, req.Token)
+	err = c.BindAndValidate(&req)
 	if err != nil {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
-	request := &PublishServer.DouyinPublishListRequest{
+	request := &VideoServer.DouyinPublishListRequest{
 		UserId: req.UserId,
 		Token:  req.Token,
 	}
 
-	//rpc
 	resp, err := rpc.PublishList(ctx, request)
-	//klog.Info("response:", resp)
 	if err != nil {
 		SendResponse(c, errno.ConvertErr(err), nil)
 	}

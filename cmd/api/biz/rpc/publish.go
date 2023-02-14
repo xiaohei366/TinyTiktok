@@ -3,9 +3,8 @@ package rpc
 import (
 	"context"
 	"github.com/cloudwego/kitex/pkg/rpcinfo"
-	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/FeedServer"
-	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/PublishServer"
-	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/PublishServer/publishsrv"
+	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/VideoServer"
+	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/VideoServer/videosrv"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
@@ -14,15 +13,16 @@ import (
 	etcd "github.com/kitex-contrib/registry-etcd"
 )
 
-var publishClient publishsrv.Client
+var publishClient videosrv.Client
 
+// initPublishRpc init the publish client.
 func initPublishRpc() {
 	r, err := etcd.NewEtcdResolver([]string{shared.ETCDAddress})
 	if err != nil {
 		panic(err)
 	}
 
-	c, err := publishsrv.NewClient(
+	c, err := videosrv.NewClient(
 		shared.PublishServiceName,
 		client.WithResolver(r),
 		client.WithMuxConnection(1),
@@ -37,8 +37,8 @@ func initPublishRpc() {
 	publishClient = c
 }
 
-// CreateNote create note info //这些后面的全部要改
-func PublishVideos(ctx context.Context, req *PublishServer.DouyinPublishActionRequest) (*PublishServer.DouyinPublishActionResponse, error) {
+// PublishVideos is used to publish videos by user.
+func PublishVideos(ctx context.Context, req *VideoServer.DouyinPublishActionRequest) (*VideoServer.DouyinPublishActionResponse, error) {
 	resp, err := publishClient.PublishAction(ctx, req)
 	if err != nil {
 		return nil, err
@@ -49,7 +49,8 @@ func PublishVideos(ctx context.Context, req *PublishServer.DouyinPublishActionRe
 	return resp, nil
 }
 
-func PublishList(ctx context.Context, req *PublishServer.DouyinPublishListRequest) ([]*FeedServer.Video, error) {
+// PublishList get the video list by user id or token.
+func PublishList(ctx context.Context, req *VideoServer.DouyinPublishListRequest) ([]*VideoServer.Video, error) {
 	resp, err := publishClient.PublishList(ctx, req)
 	if err != nil {
 		return nil, err

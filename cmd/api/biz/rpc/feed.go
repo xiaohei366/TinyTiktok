@@ -4,8 +4,8 @@ import (
 	"context"
 	"github.com/cloudwego/kitex/client"
 	"github.com/cloudwego/kitex/pkg/rpcinfo"
-	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/FeedServer"
-	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/FeedServer/feedsrv"
+	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/VideoServer"
+	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/VideoServer/videosrv"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
@@ -14,19 +14,16 @@ import (
 	etcd "github.com/kitex-contrib/registry-etcd"
 )
 
-var feedClient feedsrv.Client
+var feedClient videosrv.Client
 
+// initFeed init the Feed client.
 func initFeed() {
 	r, err := etcd.NewEtcdResolver([]string{shared.ETCDAddress})
 	if err != nil {
 		panic(err)
 	}
-	// provider.NewOpenTelemetryProvider(
-	// 	provider.WithServiceName(shared.ApiServiceName),
-	// 	provider.WithExportEndpoint(shared.ExportEndpoint),
-	// 	provider.WithInsecure(),
-	// )
-	c, err := feedsrv.NewClient(
+
+	c, err := videosrv.NewClient(
 		shared.FeedServiceName,
 		client.WithResolver(r),
 		client.WithMuxConnection(1),
@@ -41,9 +38,9 @@ func initFeed() {
 	feedClient = c
 }
 
-// CreateNote create note info //这些后面的全部要改
-func FeedVideos(ctx context.Context, req *FeedServer.DouyinFeedRequest) ([]*FeedServer.Video, error) {
-	resp, err := feedClient.DouyinFeed(ctx, req) //这边是有点疑问的
+// FeedVideos Get the videos by latestTime without user id.
+func FeedVideos(ctx context.Context, req *VideoServer.DouyinFeedRequest) ([]*VideoServer.Video, error) {
+	resp, err := feedClient.Feed(ctx, req)
 	if err != nil {
 		return nil, err
 	}
