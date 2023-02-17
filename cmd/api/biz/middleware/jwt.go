@@ -42,7 +42,7 @@ func InitJWT() {
 				Username: req.Username,
 				Password: req.Password,
 			})
-			c.Set("id", id) //将ID存到上下文中，然后返回报文时再取
+			c.Set(shared.IdentityKey, id) //将ID存到上下文中，然后返回报文时再取
 			return id, err
 		},
 		//用于设置获取身份信息的函数，此处提取 token 的负载，并配合 IdentityKey 将用户id存入上下文信息。

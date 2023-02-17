@@ -7,7 +7,7 @@ import (
 	"github.com/cloudwego/kitex/pkg/limit"
 	"github.com/cloudwego/kitex/pkg/rpcinfo"
 	"github.com/cloudwego/kitex/server"
-	//"github.com/kitex-contrib/obs-opentelemetry/provider"
+	"github.com/kitex-contrib/obs-opentelemetry/provider"
 	"github.com/kitex-contrib/obs-opentelemetry/tracing"
 	etcd "github.com/kitex-contrib/registry-etcd"
 	Init "github.com/xiaohei366/TinyTiktok/cmd/user/initialize"
@@ -30,11 +30,11 @@ func main() {
 		panic(err)
 	}
 	//链路追踪相关设置
-	// provider.NewOpenTelemetryProvider(
-	// 	provider.WithServiceName(shared.UserServiceName),
-	// 	provider.WithExportEndpoint(shared.ExportEndpoint),
-	// 	provider.WithInsecure(),
-	// )
+	provider.NewOpenTelemetryProvider(
+		provider.WithServiceName(shared.UserServiceName),
+		provider.WithExportEndpoint(shared.ExportEndpoint),
+		provider.WithInsecure(),
+	)
 	//启动服务器
 	svr := userservice.NewServer(new(UserServiceImpl),
 		server.WithServiceAddr(addr),

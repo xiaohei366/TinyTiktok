@@ -10,7 +10,7 @@ import (
 	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 	"github.com/cloudwego/kitex/client"
 	"github.com/cloudwego/kitex/pkg/rpcinfo"
-	//"github.com/kitex-contrib/obs-opentelemetry/provider"
+	"github.com/kitex-contrib/obs-opentelemetry/provider"
 	"github.com/kitex-contrib/obs-opentelemetry/tracing"
 	etcd "github.com/kitex-contrib/registry-etcd"
 )
@@ -22,11 +22,11 @@ func initRelation() {
 	if err != nil {
 		panic(err)
 	}
-	// provider.NewOpenTelemetryProvider(
-	// 	provider.WithServiceName(shared.RelationServiceName),
-	// 	provider.WithExportEndpoint(shared.ExportEndpoint),
-	// 	provider.WithInsecure(),
-	// )
+	provider.NewOpenTelemetryProvider(
+		provider.WithServiceName(shared.RelationServiceName),
+		provider.WithExportEndpoint(shared.ExportEndpoint),
+		provider.WithInsecure(),
+	)
 	c, err := relationservice.NewClient(
 		shared.RelationServiceName,
 		client.WithResolver(r),
