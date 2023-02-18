@@ -3,8 +3,8 @@ package rpc
 import (
 	"context"
 
-	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/UserServer"
-	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/UserServer/userservice"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer/userservice"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"

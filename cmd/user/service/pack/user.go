@@ -2,7 +2,7 @@ package pack
 
 import (
 	"github.com/xiaohei366/TinyTiktok/cmd/user/initialize/db"
-	"github.com/xiaohei366/TinyTiktok/cmd/user/kitex_gen/UserServer"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
 )
 
 /* 拼接用户信息--将db.User转化成user.User*/

@@ -1,8 +1,8 @@
 # TinyTiktok项目
 ## 一、如何测试框架的项目
 ### 1.首先需要对环境初始化：
-- 根据`./cmd/user/initialize/db`内的sql文件进行MYSQL初始化（PS：数据库名建议"TinyTiktok"（shared处可修改））
-- 下载etcd，并在一个bash挂机下运行（直接运行即可）。
+- 首先注意修改自己模块里的config，用户名&密码参考user的设置。
+- 随后执行下面在项目的根目录执行命令`docker-compose up -d`, 当docker-desktop出现该容器后，证明环境初始化成功：![image-20230217221835356](./image/image-20230217221835356.png)此时，根据下面的命令启动几个server即可。
 ### 2.启动指令
 设定项目路径为当前根目录
 #### Run User RPC Server

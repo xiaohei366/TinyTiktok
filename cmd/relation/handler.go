@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/xiaohei366/TinyTiktok/cmd/relation/initialize/db"
-	RelationServer "github.com/xiaohei366/TinyTiktok/cmd/relation/kitex_gen/RelationServer"
+	RelationServer "github.com/xiaohei366/TinyTiktok/kitex_gen/RelationServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/relation/service"
 	"github.com/xiaohei366/TinyTiktok/cmd/relation/service/pack"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"

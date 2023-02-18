@@ -4,7 +4,7 @@ import (
 	"errors"
 
 
-	"github.com/xiaohei366/TinyTiktok/cmd/relation/kitex_gen/RelationServer"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/RelationServer"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
 /* 根据状态码来拼接基础的响应报文（包括状态码和信息）--这里完成一个RPC响应类型的完整包装*/

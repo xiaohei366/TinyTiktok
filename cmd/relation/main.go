@@ -12,7 +12,7 @@ import (
 	"github.com/kitex-contrib/obs-opentelemetry/tracing"
 	etcd "github.com/kitex-contrib/registry-etcd"
 	Init "github.com/xiaohei366/TinyTiktok/cmd/relation/initialize"
-	"github.com/xiaohei366/TinyTiktok/cmd/relation/kitex_gen/RelationServer/relationservice"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/RelationServer/relationservice"
 	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 )

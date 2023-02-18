@@ -31,6 +31,7 @@ func (e ErrNo) WithMessage(msg string) ErrNo {
 // ConvertErr convert error to Errno
 func ConvertErr(err error) ErrNo {
 	Err := ErrNo{}
+	//// Errno格式直接返回即可
 	if errors.As(err, &Err) {
 		return Err
 	}

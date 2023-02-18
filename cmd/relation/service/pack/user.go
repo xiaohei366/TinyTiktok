@@ -2,8 +2,8 @@ package pack
 
 import (
 	
-	"github.com/xiaohei366/TinyTiktok/cmd/relation/kitex_gen/UserServer"
-	"github.com/xiaohei366/TinyTiktok/cmd/relation/kitex_gen/RelationServer"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/RelationServer"
 )
 
 /* 拼接用户信息--将UserServer.User转化成RelationServer.User*/

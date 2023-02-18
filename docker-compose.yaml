@@ -5,7 +5,7 @@ services:
   mysql:
     image: mysql:latest
     volumes:
-      - ./pkg/data/mysql_data:/var/lib/mysql 
+      #- ./pkg/data/mysql_data:/var/lib/mysql 
       - ./pkg/configs/sql:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
