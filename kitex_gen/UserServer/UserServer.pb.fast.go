@@ -34,11 +34,6 @@ func (x *User) FastRead(buf []byte, _type int8, number int32) (offset int, err e
 		if err != nil {
 			goto ReadFieldError
 		}
-	case 5:
-		offset, err = x.fastReadField5(buf, _type)
-		if err != nil {
-			goto ReadFieldError
-		}
 	default:
 		offset, err = fastpb.Skip(buf, _type, number)
 		if err != nil {
@@ -69,11 +64,6 @@ func (x *User) fastReadField3(buf []byte, _type int8) (offset int, err error) {
 
 func (x *User) fastReadField4(buf []byte, _type int8) (offset int, err error) {
 	x.FollowerCount, offset, err = fastpb.ReadInt64(buf, _type)
-	return offset, err
-}
-
-func (x *User) fastReadField5(buf []byte, _type int8) (offset int, err error) {
-	x.IsFollow, offset, err = fastpb.ReadBool(buf, _type)
 	return offset, err
 }
 
@@ -332,6 +322,130 @@ func (x *DouyinUserResponse) fastReadField2(buf []byte, _type int8) (offset int,
 	return offset, nil
 }
 
+func (x *DouyinMUserRequest) FastRead(buf []byte, _type int8, number int32) (offset int, err error) {
+	switch number {
+	case 1:
+		offset, err = x.fastReadField1(buf, _type)
+		if err != nil {
+			goto ReadFieldError
+		}
+	default:
+		offset, err = fastpb.Skip(buf, _type, number)
+		if err != nil {
+			goto SkipFieldError
+		}
+	}
+	return offset, nil
+SkipFieldError:
+	return offset, fmt.Errorf("%T cannot parse invalid wire-format data, error: %s", x, err)
+ReadFieldError:
+	return offset, fmt.Errorf("%T read field %d '%s' error: %s", x, number, fieldIDToName_DouyinMUserRequest[number], err)
+}
+
+func (x *DouyinMUserRequest) fastReadField1(buf []byte, _type int8) (offset int, err error) {
+	offset, err = fastpb.ReadList(buf, _type,
+		func(buf []byte, _type int8) (n int, err error) {
+			var v int64
+			v, offset, err = fastpb.ReadInt64(buf, _type)
+			if err != nil {
+				return offset, err
+			}
+			x.UserId = append(x.UserId, v)
+			return offset, err
+		})
+	return offset, err
+}
+
+func (x *DouyinMUserResponse) FastRead(buf []byte, _type int8, number int32) (offset int, err error) {
+	switch number {
+	case 1:
+		offset, err = x.fastReadField1(buf, _type)
+		if err != nil {
+			goto ReadFieldError
+		}
+	case 2:
+		offset, err = x.fastReadField2(buf, _type)
+		if err != nil {
+			goto ReadFieldError
+		}
+	default:
+		offset, err = fastpb.Skip(buf, _type, number)
+		if err != nil {
+			goto SkipFieldError
+		}
+	}
+	return offset, nil
+SkipFieldError:
+	return offset, fmt.Errorf("%T cannot parse invalid wire-format data, error: %s", x, err)
+ReadFieldError:
+	return offset, fmt.Errorf("%T read field %d '%s' error: %s", x, number, fieldIDToName_DouyinMUserResponse[number], err)
+}
+
+func (x *DouyinMUserResponse) fastReadField1(buf []byte, _type int8) (offset int, err error) {
+	var v BaseResp
+	offset, err = fastpb.ReadMessage(buf, _type, &v)
+	if err != nil {
+		return offset, err
+	}
+	x.BaseResp = &v
+	return offset, nil
+}
+
+func (x *DouyinMUserResponse) fastReadField2(buf []byte, _type int8) (offset int, err error) {
+	var v User
+	offset, err = fastpb.ReadMessage(buf, _type, &v)
+	if err != nil {
+		return offset, err
+	}
+	x.User = append(x.User, &v)
+	return offset, nil
+}
+
+func (x *DouyinChangeUserFollowRequest) FastRead(buf []byte, _type int8, number int32) (offset int, err error) {
+	switch number {
+	case 1:
+		offset, err = x.fastReadField1(buf, _type)
+		if err != nil {
+			goto ReadFieldError
+		}
+	case 2:
+		offset, err = x.fastReadField2(buf, _type)
+		if err != nil {
+			goto ReadFieldError
+		}
+	case 3:
+		offset, err = x.fastReadField3(buf, _type)
+		if err != nil {
+			goto ReadFieldError
+		}
+	default:
+		offset, err = fastpb.Skip(buf, _type, number)
+		if err != nil {
+			goto SkipFieldError
+		}
+	}
+	return offset, nil
+SkipFieldError:
+	return offset, fmt.Errorf("%T cannot parse invalid wire-format data, error: %s", x, err)
+ReadFieldError:
+	return offset, fmt.Errorf("%T read field %d '%s' error: %s", x, number, fieldIDToName_DouyinChangeUserFollowRequest[number], err)
+}
+
+func (x *DouyinChangeUserFollowRequest) fastReadField1(buf []byte, _type int8) (offset int, err error) {
+	x.UserId, offset, err = fastpb.ReadInt64(buf, _type)
+	return offset, err
+}
+
+func (x *DouyinChangeUserFollowRequest) fastReadField2(buf []byte, _type int8) (offset int, err error) {
+	x.ToUserId, offset, err = fastpb.ReadInt64(buf, _type)
+	return offset, err
+}
+
+func (x *DouyinChangeUserFollowRequest) fastReadField3(buf []byte, _type int8) (offset int, err error) {
+	x.IsFollow, offset, err = fastpb.ReadBool(buf, _type)
+	return offset, err
+}
+
 func (x *User) FastWrite(buf []byte) (offset int) {
 	if x == nil {
 		return offset
@@ -340,7 +454,6 @@ func (x *User) FastWrite(buf []byte) (offset int) {
 	offset += x.fastWriteField2(buf[offset:])
 	offset += x.fastWriteField3(buf[offset:])
 	offset += x.fastWriteField4(buf[offset:])
-	offset += x.fastWriteField5(buf[offset:])
 	return offset
 }
 
@@ -373,14 +486,6 @@ func (x *User) fastWriteField4(buf []byte) (offset int) {
 		return offset
 	}
 	offset += fastpb.WriteInt64(buf[offset:], 4, x.FollowerCount)
-	return offset
-}
-
-func (x *User) fastWriteField5(buf []byte) (offset int) {
-	if !x.IsFollow {
-		return offset
-	}
-	offset += fastpb.WriteBool(buf[offset:], 5, x.IsFollow)
 	return offset
 }
 
@@ -550,6 +655,88 @@ func (x *DouyinUserResponse) fastWriteField2(buf []byte) (offset int) {
 	return offset
 }
 
+func (x *DouyinMUserRequest) FastWrite(buf []byte) (offset int) {
+	if x == nil {
+		return offset
+	}
+	offset += x.fastWriteField1(buf[offset:])
+	return offset
+}
+
+func (x *DouyinMUserRequest) fastWriteField1(buf []byte) (offset int) {
+	if len(x.UserId) == 0 {
+		return offset
+	}
+	offset += fastpb.WriteListPacked(buf[offset:], 1, len(x.UserId),
+		func(buf []byte, numTagOrKey, numIdxOrVal int32) int {
+			offset := 0
+			offset += fastpb.WriteInt64(buf[offset:], numTagOrKey, x.UserId[numIdxOrVal])
+			return offset
+		})
+	return offset
+}
+
+func (x *DouyinMUserResponse) FastWrite(buf []byte) (offset int) {
+	if x == nil {
+		return offset
+	}
+	offset += x.fastWriteField1(buf[offset:])
+	offset += x.fastWriteField2(buf[offset:])
+	return offset
+}
+
+func (x *DouyinMUserResponse) fastWriteField1(buf []byte) (offset int) {
+	if x.BaseResp == nil {
+		return offset
+	}
+	offset += fastpb.WriteMessage(buf[offset:], 1, x.BaseResp)
+	return offset
+}
+
+func (x *DouyinMUserResponse) fastWriteField2(buf []byte) (offset int) {
+	if x.User == nil {
+		return offset
+	}
+	for i := range x.User {
+		offset += fastpb.WriteMessage(buf[offset:], 2, x.User[i])
+	}
+	return offset
+}
+
+func (x *DouyinChangeUserFollowRequest) FastWrite(buf []byte) (offset int) {
+	if x == nil {
+		return offset
+	}
+	offset += x.fastWriteField1(buf[offset:])
+	offset += x.fastWriteField2(buf[offset:])
+	offset += x.fastWriteField3(buf[offset:])
+	return offset
+}
+
+func (x *DouyinChangeUserFollowRequest) fastWriteField1(buf []byte) (offset int) {
+	if x.UserId == 0 {
+		return offset
+	}
+	offset += fastpb.WriteInt64(buf[offset:], 1, x.UserId)
+	return offset
+}
+
+func (x *DouyinChangeUserFollowRequest) fastWriteField2(buf []byte) (offset int) {
+	if x.ToUserId == 0 {
+		return offset
+	}
+	offset += fastpb.WriteInt64(buf[offset:], 2, x.ToUserId)
+	return offset
+}
+
+func (x *DouyinChangeUserFollowRequest) fastWriteField3(buf []byte) (offset int) {
+	if !x.IsFollow {
+		return offset
+	}
+	offset += fastpb.WriteBool(buf[offset:], 3, x.IsFollow)
+	return offset
+}
+
 func (x *User) Size() (n int) {
 	if x == nil {
 		return n
@@ -558,7 +745,6 @@ func (x *User) Size() (n int) {
 	n += x.sizeField2()
 	n += x.sizeField3()
 	n += x.sizeField4()
-	n += x.sizeField5()
 	return n
 }
 
@@ -591,14 +777,6 @@ func (x *User) sizeField4() (n int) {
 		return n
 	}
 	n += fastpb.SizeInt64(4, x.FollowerCount)
-	return n
-}
-
-func (x *User) sizeField5() (n int) {
-	if !x.IsFollow {
-		return n
-	}
-	n += fastpb.SizeBool(5, x.IsFollow)
 	return n
 }
 
@@ -768,12 +946,93 @@ func (x *DouyinUserResponse) sizeField2() (n int) {
 	return n
 }
 
+func (x *DouyinMUserRequest) Size() (n int) {
+	if x == nil {
+		return n
+	}
+	n += x.sizeField1()
+	return n
+}
+
+func (x *DouyinMUserRequest) sizeField1() (n int) {
+	if len(x.UserId) == 0 {
+		return n
+	}
+	n += fastpb.SizeListPacked(1, len(x.UserId),
+		func(numTagOrKey, numIdxOrVal int32) int {
+			n := 0
+			n += fastpb.SizeInt64(numTagOrKey, x.UserId[numIdxOrVal])
+			return n
+		})
+	return n
+}
+
+func (x *DouyinMUserResponse) Size() (n int) {
+	if x == nil {
+		return n
+	}
+	n += x.sizeField1()
+	n += x.sizeField2()
+	return n
+}
+
+func (x *DouyinMUserResponse) sizeField1() (n int) {
+	if x.BaseResp == nil {
+		return n
+	}
+	n += fastpb.SizeMessage(1, x.BaseResp)
+	return n
+}
+
+func (x *DouyinMUserResponse) sizeField2() (n int) {
+	if x.User == nil {
+		return n
+	}
+	for i := range x.User {
+		n += fastpb.SizeMessage(2, x.User[i])
+	}
+	return n
+}
+
+func (x *DouyinChangeUserFollowRequest) Size() (n int) {
+	if x == nil {
+		return n
+	}
+	n += x.sizeField1()
+	n += x.sizeField2()
+	n += x.sizeField3()
+	return n
+}
+
+func (x *DouyinChangeUserFollowRequest) sizeField1() (n int) {
+	if x.UserId == 0 {
+		return n
+	}
+	n += fastpb.SizeInt64(1, x.UserId)
+	return n
+}
+
+func (x *DouyinChangeUserFollowRequest) sizeField2() (n int) {
+	if x.ToUserId == 0 {
+		return n
+	}
+	n += fastpb.SizeInt64(2, x.ToUserId)
+	return n
+}
+
+func (x *DouyinChangeUserFollowRequest) sizeField3() (n int) {
+	if !x.IsFollow {
+		return n
+	}
+	n += fastpb.SizeBool(3, x.IsFollow)
+	return n
+}
+
 var fieldIDToName_User = map[int32]string{
 	1: "Id",
 	2: "Name",
 	3: "FollowCount",
 	4: "FollowerCount",
-	5: "IsFollow",
 }
 
 var fieldIDToName_BaseResp = map[int32]string{
@@ -808,4 +1067,19 @@ var fieldIDToName_DouyinUserRequest = map[int32]string{
 var fieldIDToName_DouyinUserResponse = map[int32]string{
 	1: "BaseResp",
 	2: "User",
+}
+
+var fieldIDToName_DouyinMUserRequest = map[int32]string{
+	1: "UserId",
+}
+
+var fieldIDToName_DouyinMUserResponse = map[int32]string{
+	1: "BaseResp",
+	2: "User",
+}
+
+var fieldIDToName_DouyinChangeUserFollowRequest = map[int32]string{
+	1: "UserId",
+	2: "ToUserId",
+	3: "IsFollow",
 }

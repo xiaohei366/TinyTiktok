@@ -16,6 +16,19 @@ import (
 
 var DB *gorm.DB
 
+// 用户数据库表结构--自动创建
+type User struct {
+	Id            int64  `json:"id" gorm:"primarykey"`
+	Name          string `json:"name" gorm:"unique;type:varchar(40);not null"`
+	Password      string `json:"password" gorm:"type:varchar(256);not null"`
+	FollowCount   int64  `json:"follow_count" gorm:"default:0"`
+	FollowerCount int64  `json:"follower_count" gorm:"default:0"`
+}
+
+func (u *User) TableName() string {
+	return config.UserTableName
+}
+
 // 初始化数据库
 func Init() {
 	dsn := fmt.Sprintf(shared.MySqlDSN, config.SqlName, config.SqlPassword, config.SqlHost, config.SqlPort, shared.DBName)
@@ -39,4 +52,10 @@ func Init() {
 	if err := DB.Use(tracing.NewPlugin()); err != nil {
 		klog.Fatalf("use tracing plugin failed: %s", err.Error())
 	}
+	// AutoMigrate 会创建表、缺失的外键、约束、列和索引。 它不会删除未使用的列,只会增加没有的东西。
+	err = DB.AutoMigrate(&User{})
+	if err != nil {
+		klog.Fatalf("建表失败: %s", err.Error())
+	}
+
 }
