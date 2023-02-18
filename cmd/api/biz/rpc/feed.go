@@ -4,8 +4,9 @@ import (
 	"context"
 	"github.com/cloudwego/kitex/client"
 	"github.com/cloudwego/kitex/pkg/rpcinfo"
-	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/VideoServer"
-	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/VideoServer/videosrv"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer/videosrv"
+
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"

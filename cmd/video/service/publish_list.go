@@ -2,9 +2,9 @@ package service
 
 import (
 	"context"
-	"github.com/xiaohei366/TinyTiktok/cmd/video/kitex_gen/VideoServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/dal"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/pack"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
 )
 
 type PublishListService struct {
@@ -22,5 +22,9 @@ func (s *PublishListService) PublishList(req *VideoServer.DouyinPublishListReque
 	if err != nil {
 		return nil, err
 	}
-	return pack.VideoList(UserVideos), nil //这边pack还要改，改成只返回videosList的格式。后续每个服务再自己封装就行了
+	videos, err := pack.Videos(s.ctx, UserVideos, req.UserId)
+	if err != nil {
+		return nil, err
+	}
+	return videos, nil //这边pack还要改，改成只返回videosList的格式。后续每个服务再自己封装就行了
 }

@@ -4,15 +4,18 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"github.com/cloudwego/kitex/pkg/klog"
 	"github.com/nacos-group/nacos-sdk-go/inner/uuid"
 	ffmpeg "github.com/u2takey/ffmpeg-go"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/config"
-	"github.com/xiaohei366/TinyTiktok/cmd/video/kitex_gen/VideoServer"
+	"github.com/xiaohei366/TinyTiktok/cmd/video/initialize/db"
 	dal2 "github.com/xiaohei366/TinyTiktok/cmd/video/service/dal"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
 	"github.com/xiaohei366/TinyTiktok/pkg/minio"
 	"image"
 	"image/jpeg"
 	"os"
+	"strings"
 )
 
 type PublishActionService struct { //还是没太明白为什么要new一个videoPost
@@ -25,14 +28,11 @@ func NewPublishActionService(ctx context.Context) *PublishActionService {
 }
 
 // PublishAction post video into the minio buckets and database.
-func (s *PublishActionService) PublishAction(req *VideoServer.DouyinPublishActionRequest) (*dal2.Video, error) {
+func (s *PublishActionService) PublishAction(req *VideoServer.DouyinPublishActionRequest) (*db.Video, error) {
+	klog.Info("Publish action start:")
 	// link minio
 	minioCli := minio.GetMinioClient()
-	// crate video bucket
-	err := minio.CreateBucket(s.ctx, minioCli.Client, config.PublishVideosBucket)
-	if err != nil {
-		return nil, err
-	}
+	klog.Info("minioCli:", minioCli)
 	// prepare videos data
 	videoData := []byte(req.Data)
 	u2, err := uuid.NewV4() //给视频文件加编号
@@ -41,12 +41,15 @@ func (s *PublishActionService) PublishAction(req *VideoServer.DouyinPublishActio
 	}
 	// prepare videoName
 	fileName := u2.String() + "." + "mp4"
+	klog.Info("filename:", fileName)
 	videoReader := bytes.NewReader(videoData)
 	// upload video into minio video bucket and get video playUrl
-	playUrl, err := minio.UploadObject(minioCli.Client, "video", config.PublishVideosBucket, fileName, videoReader, int64(len(videoData))) //
+	url, err := minio.UploadObject(minioCli.Client, "video", config.PublishVideosBucket, fileName, videoReader, int64(len(videoData)), 0) //
 	if err != nil {
 		return nil, err
 	}
+	playUrl := strings.Split(url.String(), "?")[0] //做截取
+	klog.Info("playUrl:", playUrl)
 	// prepare cover name
 	u3, err := uuid.NewV4()
 	if err != nil {
@@ -60,19 +63,22 @@ func (s *PublishActionService) PublishAction(req *VideoServer.DouyinPublishActio
 		return nil, err
 	}
 	// upload cover image and get coverUrl
-	coverUrl, err := minio.UploadObject(minioCli.Client, "image", config.PublishImagesBucket, coverName, coverReader, int64(len(coverImages)))
+	url2, err := minio.UploadObject(minioCli.Client, "image", config.PublishImagesBucket, coverName, coverReader, int64(len(coverImages)), 0)
+	coverUrl := strings.Split(url2.String(), "?")[0] // 做截取
 	if err != nil {
 		return nil, err
 	}
+	klog.Info("coverUrl", coverUrl)
 	// publish action response model prepare
-	videoModel := &dal2.Video{
-		AuthorID: req.User.Id,
+	videoModel := &db.Video{
+		AuthorID: req.UserId,
 		PlayUrl:  playUrl,
 		CoverUrl: coverUrl,
 		FavCount: 0,
 		ComCount: 0,
 		Title:    req.Title,
 	}
+
 	// store video info into mysql video model.
 	err = dal2.PublishVideo(s.ctx, videoModel)
 	if err != nil {
@@ -94,11 +100,12 @@ func readFrameAsJpeg(url string) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
+	klog.Info("ffmpeg input success:")
 	img, _, err := image.Decode(reader)
 	if err != nil {
 		return nil, err
 	}
-
+	klog.Info("ffmpeg image Decode success:")
 	buf := new(bytes.Buffer)
 	jpeg.Encode(buf, img, nil)
 	return buf.Bytes(), nil

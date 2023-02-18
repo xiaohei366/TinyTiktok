@@ -2,9 +2,9 @@ package service
 
 import (
 	"context"
-	"github.com/xiaohei366/TinyTiktok/cmd/video/kitex_gen/VideoServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/dal"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/pack"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
 	"time"
 )
 
@@ -20,19 +20,24 @@ func NewFeedService(ctx context.Context) *FeedService {
 }
 
 // Feed used for feed service, get videos by latestTime.
-func (s *FeedService) Feed(req *VideoServer.DouyinFeedRequest) (res *VideoServer.DouyinFeedResponse, err error) {
+func (s *FeedService) Feed(req *VideoServer.DouyinFeedRequest) (videos []*VideoServer.Video, nextTime int64, err error) {
 	var latestTime *int64
 	if &req.LatestTime == nil || req.LatestTime == 0 {
 		cur_time := int64(time.Now().UnixMilli())
 		latestTime = &cur_time
 	}
 	feedModels, err := dal.MGetVideos(s.ctx, latestTime)
-	if err != nil {
-		return nil, err
+	if len(feedModels) == 0 {
+		nextTime = time.Now().UnixMilli()
+		return videos, nextTime, err
+	} else {
+		nextTime = feedModels[len(feedModels)-1].UpdatedAt.UnixMilli()
 	}
-	feeds := pack.VideoList(feedModels)
 
-	return &VideoServer.DouyinFeedResponse{
-		VideoList: feeds,
-	}, nil
+	if videos, err = pack.Videos(s.ctx, feedModels, 0); err != nil {
+		nextTime = time.Now().UnixMilli()
+		return videos, nextTime, err
+	}
+
+	return videos, nextTime, nil
 }

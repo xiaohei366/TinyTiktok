@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer/userservice"
 	"net"
 
 	"github.com/cloudwego/kitex/pkg/klog"
@@ -11,7 +12,6 @@ import (
 	//"github.com/kitex-contrib/obs-opentelemetry/tracing"
 	etcd "github.com/kitex-contrib/registry-etcd"
 	Init "github.com/xiaohei366/TinyTiktok/cmd/user/initialize"
-	"github.com/xiaohei366/TinyTiktok/cmd/user/kitex_gen/UserServer/userservice"
 	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 )

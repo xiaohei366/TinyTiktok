@@ -8,12 +8,13 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 	"github.com/cloudwego/kitex/pkg/klog"
-	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/UserServer"
-	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/VideoServer"
 	mw "github.com/xiaohei366/TinyTiktok/cmd/api/biz/middleware"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/model/ApiServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/rpc"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
+	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 	"io"
 )
 
@@ -87,15 +88,19 @@ func Feed(ctx context.Context, c *app.RequestContext) {
 	var err error
 	var req ApiServer.DouyinFeedRequest
 	err = c.BindAndValidate(&req) //验证参数
+	klog.Info("feed time:", req.LatestTime)
 	if err != nil {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
-	request := &VideoServer.DouyinFeedRequest{
+	//todo 后续要确认feed如果是登录状态下怎么推荐。
+	//user, _ := c.Get(shared.IdentityKey)
+
+	videos, err := rpc.FeedVideos(context.Background(), &VideoServer.DouyinFeedRequest{
 		LatestTime: req.LatestTime,
 		Token:      req.Token,
-	}
-	videos, err := rpc.FeedVideos(context.Background(), request)
+	})
+	klog.Info("feed videos:", videos)
 	if err != nil {
 		SendResponse(c, errno.ConvertErr(err), nil)
 	}
@@ -105,20 +110,15 @@ func Feed(ctx context.Context, c *app.RequestContext) {
 // PublishAction .
 // @router /douyin/publish/action/ [POST]
 func PublishAction(ctx context.Context, c *app.RequestContext) {
+
 	var err error
 	var req ApiServer.DouyinPublishActionRequest
+	//_ = c.BindAndValidate(&req) //验证参数
 
-	err = c.BindAndValidate(&req)
-	if err != nil {
-		c.String(consts.StatusBadRequest, err.Error())
-		return
-	}
-
-	//拿userid //这儿没验证
-	uid := mw.JwtMiddleware.IdentityHandler(ctx, c).(*ApiServer.User)
-	klog.Info("uid:", uid.Id, uid.Name)
+	req.Title = c.PostForm("title")
+	req.Token = c.PostForm("token")
 	//拿取视频文件。
-	fileHeader, err := c.FormFile("data")
+	fileHeader, err := c.Request.FormFile("data")
 	if err != nil {
 		SendResponse(c, errno.ConvertErr(err), nil)
 		return
@@ -132,25 +132,26 @@ func PublishAction(ctx context.Context, c *app.RequestContext) {
 	defer file.Close()
 
 	buf := bytes.NewBuffer(nil)
-	if _, err := io.Copy(buf, file); err != nil {
+	_, _ = io.Copy(buf, file)
+	if err != nil {
 		SendResponse(c, errno.ConvertErr(err), nil)
 		return
 	}
-
+	klog.Info("publish action title:", req.Title)
+	//拿userid
+	userId, _ := c.Get(shared.IdentityKey)
+	klog.Info("publish action userID---：", userId.(*ApiServer.User).Id)
 	request := &VideoServer.DouyinPublishActionRequest{
-		User: &UserServer.User{
-			Id: uid.Id,
-		},
-		Token: req.Token,
-		Title: req.Title,
-		Data:  buf.Bytes(),
+		Token:  req.Token,
+		Title:  req.Title,
+		Data:   buf.Bytes(),
+		UserId: userId.(*ApiServer.User).Id,
 	}
 	resp, err := rpc.PublishVideos(ctx, request)
 	if err != nil {
 		SendResponse(c, errno.ConvertErr(err), nil)
 	}
-	SendResponse(c, errno.Success, resp) //这个只有测试才知道对不对
-
+	SendResponse(c, errno.Success, resp)
 }
 
 // PublishList .

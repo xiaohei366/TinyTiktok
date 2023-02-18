@@ -2,8 +2,8 @@ package main
 
 import (
 	"context"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
 
-	"github.com/xiaohei366/TinyTiktok/cmd/user/kitex_gen/UserServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/service"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/service/dal"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/service/pack"

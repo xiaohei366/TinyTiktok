@@ -1,36 +1,57 @@
 package pack
 
 import (
-	"github.com/xiaohei366/TinyTiktok/cmd/video/kitex_gen/UserServer"
-	"github.com/xiaohei366/TinyTiktok/cmd/video/kitex_gen/VideoServer"
-	"github.com/xiaohei366/TinyTiktok/cmd/video/service/dal"
+	"context"
+	"errors"
+	"github.com/cloudwego/kitex/pkg/klog"
+	"github.com/xiaohei366/TinyTiktok/cmd/user/service/dal"
+	"github.com/xiaohei366/TinyTiktok/cmd/user/service/pack"
+	"github.com/xiaohei366/TinyTiktok/cmd/video/initialize/db"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
+	"gorm.io/gorm"
 )
 
-// Video pack video info
-func Video(v *dal.Video) *VideoServer.Video { //这个没问题
+// Video pack feed info
+func Video(ctx context.Context, v *db.Video, uid int64) (*VideoServer.Video, error) {
 	if v == nil {
-		return nil
+		return nil, nil
 	}
+	//打包的时候不应该这样去拿userInfo
+	user, err := dal.GetUserById(ctx, int64(v.AuthorID))
+	if err != nil && !errors.Is(err, gorm.ErrRecordNotFound) {
+		return nil, err
+	}
+
+	author := pack.UserInfo(&user)
+	klog.Info("pack video user info")
+	favorite_count := int64(v.FavCount)
+	comment_count := int64(v.ComCount)
+
+	//todo is Fav
 	return &VideoServer.Video{
-		Author: &UserServer.User{
-			Id: v.AuthorID,
-		},
+		Id:            v.BaseModel.ID,
+		Author:        author,
 		PlayUrl:       v.PlayUrl,
 		CoverUrl:      v.CoverUrl,
-		FavoriteCount: v.FavCount,
-		CommentCount:  v.ComCount, //这个地方是写错字了。
-		IsFavorite:    v.IsFavorite,
+		FavoriteCount: favorite_count,
+		CommentCount:  comment_count,
+		IsFavorite:    false,
 		Title:         v.Title,
-	}
+	}, nil
 }
 
-// VideoList pack list of videos
-func VideoList(vs []*dal.Video) []*VideoServer.Video {
-	feedList := make([]*VideoServer.Video, 0)
+// Videos pack list of video info
+func Videos(ctx context.Context, vs []*db.Video, uid int64) ([]*VideoServer.Video, error) {
+	videos := make([]*VideoServer.Video, 0)
 	for _, v := range vs {
-		if video2 := Video(v); video2 != nil {
-			feedList = append(feedList, video2)
+		video2, err := Video(ctx, v, uid)
+		if err != nil {
+			return nil, err
+		}
+		//todo is fav
+		if video2 != nil {
+			videos = append(videos, video2)
 		}
 	}
-	return feedList
+	return videos, nil
 }

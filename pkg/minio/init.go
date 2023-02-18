@@ -11,7 +11,8 @@ import (
 type MinioClient struct {
 	Client      *minio.Client
 	endPoint    string
-	videoBucket string
+	VideoBucket string
+	ImageBucket string
 }
 
 var client MinioClient
@@ -24,15 +25,25 @@ func Init_minio() { //这个地方链接似乎可以放到别的地方
 	//初始化配置
 	minioEndpoint := shared.MinioUrl + ":" + shared.MinioPort
 
-	minioClient, err := minio.New(minioEndpoint, &minio.Options{Creds: credentials.NewStaticV4(shared.MinioAccessKey, shared.MinioSecretKey, "")})
+	minioClient, err := minio.New(minioEndpoint,
+		&minio.Options{Creds: credentials.NewStaticV4(shared.MinioAccessKey, shared.MinioSecretKey, "")})
 	if err != nil {
-		klog.Fatalf("conetct minio server fail %s url %s ", err.Error(), minioEndpoint)
+		klog.Fatalf("connect minio server fail %s url %s ", err.Error(), minioEndpoint)
 		return
 	}
+	// fmt.Println(client)
+	klog.Debug("minio client init successfully")
 	client = MinioClient{
 		Client:      minioClient,
 		endPoint:    minioEndpoint,
-		videoBucket: config.PublishVideosBucket,
+		VideoBucket: config.PublishVideosBucket,
+		ImageBucket: config.PublishImagesBucket,
+	}
+	if err := CreateBucket(client.Client, client.VideoBucket); err != nil {
+		klog.Errorf("minio client init video bucket failed: %v", err)
+	}
+	if err := CreateBucket(client.Client, client.ImageBucket); err != nil {
+		klog.Errorf("minio client init image bucket failed: %v", err)
 	}
 	return
 }

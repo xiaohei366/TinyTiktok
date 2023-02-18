@@ -2,13 +2,13 @@ package middleware
 
 import (
 	"context"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
 	"net/http"
 	"time"
 
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/common/utils"
 	"github.com/hertz-contrib/jwt"
-	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/UserServer"
 	api "github.com/xiaohei366/TinyTiktok/cmd/api/biz/model/ApiServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/rpc"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"

@@ -3,8 +3,8 @@ package ApiServer
 import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
-	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/UserServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/model/ApiServer"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
 

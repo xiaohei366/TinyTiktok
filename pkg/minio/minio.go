@@ -6,15 +6,19 @@ import (
 	"github.com/minio/minio-go/v7"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 	"io"
+	"net/url"
 	"os"
+	"time"
 )
 
 // 创建桶
-func CreateBucket(ctx context.Context, minioClient *minio.Client, bucketName string) error {
+func CreateBucket(minioClient *minio.Client, bucketName string) error {
 	if len(bucketName) <= 0 {
 		klog.Error("Oss bucket name invalid")
 	}
-	err := minioClient.MakeBucket(ctx, bucketName, minio.MakeBucketOptions{Region: shared.MinioLocation})
+	ctx := context.Background()
+	err := minioClient.MakeBucket(ctx, bucketName,
+		minio.MakeBucketOptions{Region: shared.MinioLocation})
 	if err != nil {
 		exist, errBucketExists := minioClient.BucketExists(ctx, bucketName)
 		if errBucketExists == nil && exist {
@@ -30,7 +34,8 @@ func CreateBucket(ctx context.Context, minioClient *minio.Client, bucketName str
 }
 
 // 上传对象
-func UploadObject(minioClient *minio.Client, filetype string, bulkName, objectName string, reader io.Reader, size int64) (string, error) {
+func UploadObject(minioClient *minio.Client, filetype string,
+	bulkName, objectName string, reader io.Reader, size int64, expires time.Duration) (*url.URL, error) {
 	var contentType string
 	if filetype == "video" {
 		contentType = "video/mp4"
@@ -47,11 +52,23 @@ func UploadObject(minioClient *minio.Client, filetype string, bulkName, objectNa
 		})
 	if err != nil {
 		klog.Fatalf("upload object error " + err.Error())
-		return "", err
+		return nil, err
 	}
 	klog.Infof("upload %s success", objectName)
-	url := "http://" + client.endPoint + "/" + bulkName + "/" + objectName
-	return url, nil
+	//返回url
+	ctx := context.Background()
+	reqParams := make(url.Values)
+	if expires <= 0 {
+		expires = time.Second * 60 * 60 * 24
+	}
+	presignedUrl, err := minioClient.PresignedGetObject(ctx, bulkName, objectName, expires, reqParams)
+	if err != nil {
+		klog.Errorf("get url of file %s from bucket %s failed, %s", objectName, bulkName, err)
+		return nil, err
+	}
+	klog.Info("presignedUrl:", presignedUrl)
+
+	return presignedUrl, nil
 }
 
 // localFileName是下载下来的目标地址
@@ -83,19 +100,18 @@ func RemoveObject(minioClient *minio.Client, bulkName, objectName string) {
 	}
 }
 
-// 从OSS获取文件Url//用流式传输的方法?
-func GetFileUrl(ctx context.Context, minioClient *minio.Client, bucketName string, fileName string, localFilePath string) ([]byte, error) {
-	//下载文件
-	body, err := DownObject(minioClient, bucketName, fileName, localFilePath)
+// GetFileUrl 从 minio 获取文件Url
+func GetFileUrl(minioClient *minio.Client, bucketName string, fileName string, expires time.Duration) (*url.URL, error) {
+	ctx := context.Background()
+	reqParams := make(url.Values)
+	if expires <= 0 {
+		expires = time.Second * 60 * 60 * 24
+	}
+	presignedUrl, err := minioClient.PresignedGetObject(ctx, bucketName, fileName, expires, reqParams)
 	if err != nil {
-		klog.Errorf("get obj file %s failed:%v", fileName, err)
+		klog.Errorf("get url of file %s from bucket %s failed, %s", fileName, bucketName, err)
 		return nil, err
 	}
-	defer body.Close()
-	data, err := io.ReadAll(body)
-	if err != nil {
-		klog.Errorf("read obj file %s failed:%v", fileName, err)
-		return nil, err
-	}
-	return data, nil
+	// TODO: url可能要做截取
+	return presignedUrl, nil
 }

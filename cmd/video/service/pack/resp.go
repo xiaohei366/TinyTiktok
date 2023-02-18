@@ -2,7 +2,7 @@ package pack
 
 import (
 	"errors"
-	"github.com/xiaohei366/TinyTiktok/cmd/video/kitex_gen/VideoServer"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
 
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
