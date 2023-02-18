@@ -69,16 +69,12 @@ func _favoritelistMw() []app.HandlerFunc {
 
 func _feedMw() []app.HandlerFunc {
 	// your code...
-	return []app.HandlerFunc{
-		mw.JwtMiddleware.MiddlewareFunc(),
-	}
+	return nil
 }
 
 func _feed0Mw() []app.HandlerFunc {
 	// your code...
-	return []app.HandlerFunc{
-		mw.JwtMiddleware.MiddlewareFunc(),
-	}
+	return nil
 }
 
 func _publishMw() []app.HandlerFunc {

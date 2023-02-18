@@ -62,3 +62,15 @@ func PublishList(ctx context.Context, req *VideoServer.DouyinPublishListRequest)
 	}
 	return resp.VideoList, nil
 }
+
+// FeedVideos Get the videos by latestTime without user id.
+func FeedVideos(ctx context.Context, req *VideoServer.DouyinFeedRequest) ([]*VideoServer.Video, error) {
+	resp, err := publishClient.Feed(ctx, req)
+	if err != nil {
+		return nil, err
+	}
+	if resp.BaseResp.StatusCode != 0 {
+		return nil, errno.NewErrNo(resp.BaseResp.StatusCode, resp.BaseResp.StatusMsg)
+	}
+	return resp.VideoList, nil
+}
