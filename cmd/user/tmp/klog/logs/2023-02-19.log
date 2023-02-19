@@ -1,0 +1,26 @@
+{"level":"info","msg":"KITEX: server listen at addr=[::]:9011","time":"2023-02-19T11:56:13+08:00"}
+{"level":"info","msg":"start keepalive lease 694d8663bb2a5c88 for etcd registry","time":"2023-02-19T11:56:14+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:username:\"1\" password:\"123123\"}\n","time":"2023-02-19T12:00:07+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: Login\n","time":"2023-02-19T12:00:07+08:00"}
+{"level":"info","msg":"client address: [::1]:37130\n","time":"2023-02-19T12:00:07+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10003 status_msg:\"Authorization failed\"} user_id:-1}\n","time":"2023-02-19T12:00:07+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:username:\"1\" password:\"123456\"}\n","time":"2023-02-19T12:00:14+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: Login\n","time":"2023-02-19T12:00:14+08:00"}
+{"level":"info","msg":"client address: [::1]:37130\n","time":"2023-02-19T12:00:14+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10003 status_msg:\"Authorization failed\"} user_id:-1}\n","time":"2023-02-19T12:00:14+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:username:\"123\" password:\"123123\"}\n","time":"2023-02-19T12:00:20+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: Register\n","time":"2023-02-19T12:00:20+08:00"}
+{"level":"info","msg":"client address: [::1]:37130\n","time":"2023-02-19T12:00:20+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user_id:4}\n","time":"2023-02-19T12:00:20+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-19T12:00:21+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-19T12:00:21+08:00"}
+{"level":"info","msg":"client address: [::1]:37130\n","time":"2023-02-19T12:00:21+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:4 name:\"123\"}}\n","time":"2023-02-19T12:00:21+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:username:\"123\" password:\"123123\"}\n","time":"2023-02-19T12:09:08+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: Login\n","time":"2023-02-19T12:09:08+08:00"}
+{"level":"info","msg":"client address: [::1]:47474\n","time":"2023-02-19T12:09:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user_id:4}\n","time":"2023-02-19T12:09:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-19T12:09:08+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-19T12:09:08+08:00"}
+{"level":"info","msg":"client address: [::1]:47474\n","time":"2023-02-19T12:09:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:4 name:\"123\"}}\n","time":"2023-02-19T12:09:08+08:00"}

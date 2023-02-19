@@ -5,6 +5,7 @@ import (
 
 	"github.com/cloudwego/kitex/client"
 	"github.com/cloudwego/kitex/pkg/rpcinfo"
+	"github.com/kitex-contrib/obs-opentelemetry/provider"
 	"github.com/kitex-contrib/obs-opentelemetry/tracing"
 	etcd "github.com/kitex-contrib/registry-etcd"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
@@ -21,11 +22,11 @@ func initUser() {
 	if err != nil {
 		panic(err)
 	}
-	//provider.NewOpenTelemetryProvider(
-	//	provider.WithServiceName(shared.ApiServiceName),
-	//	provider.WithExportEndpoint(shared.ExportEndpoint),
-	//	provider.WithInsecure(),
-	//)
+	provider.NewOpenTelemetryProvider(
+		provider.WithServiceName(shared.ApiServiceName),
+		provider.WithExportEndpoint(shared.ExportEndpoint),
+		provider.WithInsecure(),
+	)
 	c, err := userservice.NewClient(
 		shared.UserServiceName,
 		client.WithResolver(r),

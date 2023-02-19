@@ -2,15 +2,18 @@ package rpc
 
 import (
 	"context"
+
 	"github.com/cloudwego/kitex/pkg/klog"
 	"github.com/cloudwego/kitex/pkg/rpcinfo"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer/videosrv"
 
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
+	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 
 	"github.com/cloudwego/kitex/client"
+	"github.com/kitex-contrib/obs-opentelemetry/tracing"
 	etcd "github.com/kitex-contrib/registry-etcd"
 )
 
@@ -27,9 +30,9 @@ func initPublishRpc() {
 		shared.PublishServiceName,
 		client.WithResolver(r),
 		client.WithMuxConnection(1),
-		//client.WithMiddleware(mw.CommonMiddleware),
-		//client.WithInstanceMW(mw.ClientMiddleware),
-		//client.WithSuite(tracing.NewClientSuite()),
+		client.WithMiddleware(mw.CommonMiddleware),
+		client.WithInstanceMW(mw.ClientMiddleware),
+		client.WithSuite(tracing.NewClientSuite()),
 		client.WithClientBasicInfo(&rpcinfo.EndpointBasicInfo{ServiceName: shared.ApiServiceName}),
 	)
 	if err != nil {

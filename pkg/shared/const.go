@@ -29,8 +29,8 @@ const (
 	//minio
 	MinioUrl       = "127.0.0.1"
 	MinioPort      = "9000"
-	MinioAccessKey = "jacob"
-	MinioSecretKey = "jacobminio"
+	MinioAccessKey = "admin"
+	MinioSecretKey = "admin123456"
 	MinioLocation  = "cn-northwest-1"
 
 	//日志的输出路径
