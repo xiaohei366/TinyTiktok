@@ -1,9 +1,8 @@
 package initialize
 
 import (
-	"github.com/cloudwego/kitex/pkg/klog"
-	kitexlogrus "github.com/kitex-contrib/obs-opentelemetry/logging/logrus"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/initialize/db"
+
 )
 
 func Init() {
@@ -11,6 +10,5 @@ func Init() {
 	db.Init()
 
 	//klog日志初始化
-	klog.SetLogger(kitexlogrus.NewLogger())
-	klog.SetLevel(klog.LevelInfo)
+	InitLogger()
 }

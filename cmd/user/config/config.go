@@ -4,7 +4,7 @@ const (
 	//数据库
 	SqlName       = "admin"
 	SqlPassword   = "admin"
-	SqlHost       = "127.0.0.1"
+	SqlHost       = "localhost"
 	SqlPort       = 3306
 	UserTableName = "user"
 )

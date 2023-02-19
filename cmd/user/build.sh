@@ -11,4 +11,3 @@ else
     go test -c -covermode=set -o output/bin/${RUN_NAME} -coverpkg=./...
 fi
 
-
