@@ -11,23 +11,29 @@ const (
 	IdentityKey = "id"         //jwt携带的识别信息
 
 	//各个服务器的设置
-	ExportEndpoint   = ":4317" //链路追踪地址
-	ETCDAddress      = "192.168.52.128:2379"
-	ApiServiceAddr   = ":8888"
-	UserServiceAddr  = ":9000"
-	VideoServiceAddr = ":9001"
+	ExportEndpoint      = ":4317" //链路追踪地址
+	ETCDAddress         = "127.0.0.1:2379"
+	ApiServiceAddr      = ":8888"
+	UserServiceAddr     = ":9011"
+	VideoServiceAddr    = ":9001"
+	RelationServiceAddr = ":9002"
 
-	ApiServiceName     = "api"
-	UserServiceName    = "user"
-	FeedServiceName    = "feed"
-	PublishServiceName = "publish"
+	ApiServiceName      = "api"
+	UserServiceName     = "user"
+	FeedServiceName     = "feed"
+	PublishServiceName  = "publish"
+	RelationServiceName = "relation"
 
 	DefaultLimit = 10
 
 	//minio
-	MinioUrl       = "192.168.52.128"
+	MinioUrl       = "127.0.0.1"
 	MinioPort      = "9000"
 	MinioAccessKey = "jacob"
 	MinioSecretKey = "jacobminio"
 	MinioLocation  = "cn-northwest-1"
+
+	//日志的输出路径
+	HlogFilePath = "./tmp/hlog/logs/"
+	KlogFilePath = "./tmp/klog/logs/"
 )

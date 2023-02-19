@@ -2,9 +2,9 @@ package config
 
 const (
 	//数据库
-	SqlName       = "root"
-	SqlPassword   = "123456"
-	SqlHost       = "192.168.52.128"
+	SqlName       = "admin"
+	SqlPassword   = "admin"
+	SqlHost       = "127.0.0.1"
 	SqlPort       = 3306
 	UserTableName = "user"
 )

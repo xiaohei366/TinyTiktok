@@ -4,11 +4,10 @@ import (
 	"context"
 	"crypto/md5"
 	"fmt"
-	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
 	"io"
 
-	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/service/dal"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
 

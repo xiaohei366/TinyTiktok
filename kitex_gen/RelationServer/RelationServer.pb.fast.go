@@ -247,76 +247,7 @@ func (x *DouyinRelationFollowListResponse) fastReadField1(buf []byte, _type int8
 	return offset, nil
 }
 
-<<<<<<<< HEAD:kitex_gen/UserServer/UserServer.pb.fast.go
-func (x *DouyinUserLoginResponse) fastReadField2(buf []byte, _type int8) (offset int, err error) {
-	x.UserId, offset, err = fastpb.ReadInt64(buf, _type)
-	return offset, err
-}
-
-func (x *DouyinUserRequest) FastRead(buf []byte, _type int8, number int32) (offset int, err error) {
-	switch number {
-	case 1:
-		offset, err = x.fastReadField1(buf, _type)
-		if err != nil {
-			goto ReadFieldError
-		}
-	default:
-		offset, err = fastpb.Skip(buf, _type, number)
-		if err != nil {
-			goto SkipFieldError
-		}
-	}
-	return offset, nil
-SkipFieldError:
-	return offset, fmt.Errorf("%T cannot parse invalid wire-format data, error: %s", x, err)
-ReadFieldError:
-	return offset, fmt.Errorf("%T read field %d '%s' error: %s", x, number, fieldIDToName_DouyinUserRequest[number], err)
-}
-
-func (x *DouyinUserRequest) fastReadField1(buf []byte, _type int8) (offset int, err error) {
-	x.UserId, offset, err = fastpb.ReadInt64(buf, _type)
-	return offset, err
-}
-
-func (x *DouyinUserResponse) FastRead(buf []byte, _type int8, number int32) (offset int, err error) {
-	switch number {
-	case 1:
-		offset, err = x.fastReadField1(buf, _type)
-		if err != nil {
-			goto ReadFieldError
-		}
-	case 2:
-		offset, err = x.fastReadField2(buf, _type)
-		if err != nil {
-			goto ReadFieldError
-		}
-	default:
-		offset, err = fastpb.Skip(buf, _type, number)
-		if err != nil {
-			goto SkipFieldError
-		}
-	}
-	return offset, nil
-SkipFieldError:
-	return offset, fmt.Errorf("%T cannot parse invalid wire-format data, error: %s", x, err)
-ReadFieldError:
-	return offset, fmt.Errorf("%T read field %d '%s' error: %s", x, number, fieldIDToName_DouyinUserResponse[number], err)
-}
-
-func (x *DouyinUserResponse) fastReadField1(buf []byte, _type int8) (offset int, err error) {
-	var v BaseResp
-	offset, err = fastpb.ReadMessage(buf, _type, &v)
-	if err != nil {
-		return offset, err
-	}
-	x.BaseResp = &v
-	return offset, nil
-}
-
-func (x *DouyinUserResponse) fastReadField2(buf []byte, _type int8) (offset int, err error) {
-========
 func (x *DouyinRelationFollowListResponse) fastReadField2(buf []byte, _type int8) (offset int, err error) {
->>>>>>>> origin/user&follow:kitex_gen/RelationServer/RelationServer.pb.fast.go
 	var v User
 	offset, err = fastpb.ReadMessage(buf, _type, &v)
 	if err != nil {
@@ -558,110 +489,7 @@ func (x *DouyinRelationActionRequest) FastWrite(buf []byte) (offset int) {
 	return offset
 }
 
-<<<<<<<< HEAD:kitex_gen/UserServer/UserServer.pb.fast.go
-func (x *DouyinUserRegisterRequest) fastWriteField1(buf []byte) (offset int) {
-	if x.Username == "" {
-		return offset
-	}
-	offset += fastpb.WriteString(buf[offset:], 1, x.Username)
-	return offset
-}
-
-func (x *DouyinUserRegisterRequest) fastWriteField2(buf []byte) (offset int) {
-	if x.Password == "" {
-		return offset
-	}
-	offset += fastpb.WriteString(buf[offset:], 2, x.Password)
-	return offset
-}
-
-func (x *DouyinUserRegisterResponse) FastWrite(buf []byte) (offset int) {
-	if x == nil {
-		return offset
-	}
-	offset += x.fastWriteField1(buf[offset:])
-	offset += x.fastWriteField2(buf[offset:])
-	return offset
-}
-
-func (x *DouyinUserRegisterResponse) fastWriteField1(buf []byte) (offset int) {
-	if x.BaseResp == nil {
-		return offset
-	}
-	offset += fastpb.WriteMessage(buf[offset:], 1, x.BaseResp)
-	return offset
-}
-
-func (x *DouyinUserRegisterResponse) fastWriteField2(buf []byte) (offset int) {
-	if x.UserId == 0 {
-		return offset
-	}
-	offset += fastpb.WriteInt64(buf[offset:], 2, x.UserId)
-	return offset
-}
-
-func (x *DouyinUserLoginRequest) FastWrite(buf []byte) (offset int) {
-	if x == nil {
-		return offset
-	}
-	offset += x.fastWriteField1(buf[offset:])
-	offset += x.fastWriteField2(buf[offset:])
-	return offset
-}
-
-func (x *DouyinUserLoginRequest) fastWriteField1(buf []byte) (offset int) {
-	if x.Username == "" {
-		return offset
-	}
-	offset += fastpb.WriteString(buf[offset:], 1, x.Username)
-	return offset
-}
-
-func (x *DouyinUserLoginRequest) fastWriteField2(buf []byte) (offset int) {
-	if x.Password == "" {
-		return offset
-	}
-	offset += fastpb.WriteString(buf[offset:], 2, x.Password)
-	return offset
-}
-
-func (x *DouyinUserLoginResponse) FastWrite(buf []byte) (offset int) {
-	if x == nil {
-		return offset
-	}
-	offset += x.fastWriteField1(buf[offset:])
-	offset += x.fastWriteField2(buf[offset:])
-	return offset
-}
-
-func (x *DouyinUserLoginResponse) fastWriteField1(buf []byte) (offset int) {
-	if x.BaseResp == nil {
-		return offset
-	}
-	offset += fastpb.WriteMessage(buf[offset:], 1, x.BaseResp)
-	return offset
-}
-
-func (x *DouyinUserLoginResponse) fastWriteField2(buf []byte) (offset int) {
-	if x.UserId == 0 {
-		return offset
-	}
-	offset += fastpb.WriteInt64(buf[offset:], 2, x.UserId)
-	return offset
-}
-
-func (x *DouyinUserRequest) FastWrite(buf []byte) (offset int) {
-	if x == nil {
-		return offset
-	}
-	offset += x.fastWriteField1(buf[offset:])
-	return offset
-}
-
-func (x *DouyinUserRequest) fastWriteField1(buf []byte) (offset int) {
-========
 func (x *DouyinRelationActionRequest) fastWriteField1(buf []byte) (offset int) {
->>>>>>>> origin/user&follow:kitex_gen/RelationServer/RelationServer.pb.fast.go
 	if x.UserId == 0 {
 		return offset
 	}
@@ -1113,35 +941,10 @@ var fieldIDToName_BaseResp = map[int32]string{
 	2: "StatusMsg",
 }
 
-<<<<<<<< HEAD:kitex_gen/UserServer/UserServer.pb.fast.go
-var fieldIDToName_DouyinUserRegisterRequest = map[int32]string{
-	1: "Username",
-	2: "Password",
-}
-
-var fieldIDToName_DouyinUserRegisterResponse = map[int32]string{
-	1: "BaseResp",
-	2: "UserId",
-}
-
-var fieldIDToName_DouyinUserLoginRequest = map[int32]string{
-	1: "Username",
-	2: "Password",
-}
-
-var fieldIDToName_DouyinUserLoginResponse = map[int32]string{
-	1: "BaseResp",
-	2: "UserId",
-}
-
-var fieldIDToName_DouyinUserRequest = map[int32]string{
-	1: "UserId",
-========
 var fieldIDToName_DouyinRelationActionRequest = map[int32]string{
 	1: "UserId",
 	2: "ToUserId",
 	3: "ActionType",
->>>>>>>> origin/user&follow:kitex_gen/RelationServer/RelationServer.pb.fast.go
 }
 
 var fieldIDToName_DouyinRelationActionResponse = map[int32]string{

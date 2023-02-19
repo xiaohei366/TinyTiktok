@@ -3,6 +3,7 @@ package pack
 import (
 	"context"
 	"errors"
+
 	"github.com/cloudwego/kitex/pkg/klog"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/service/dal"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/service/pack"
@@ -22,7 +23,7 @@ func Video(ctx context.Context, v *db.Video, uid int64) (*VideoServer.Video, err
 		return nil, err
 	}
 
-	author := pack.UserInfo(&user)
+	author := pack.UserInfoConvert(&user)
 	klog.Info("pack video user info")
 	favorite_count := int64(v.FavCount)
 	comment_count := int64(v.ComCount)

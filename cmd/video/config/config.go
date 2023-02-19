@@ -2,9 +2,9 @@ package config
 
 const (
 	//数据库
-	SqlName        = "root"
-	SqlPassword    = "123456"
-	SqlHost        = "192.168.52.128" // 这个是我虚拟机的端口号
+	SqlName        = "admin"
+	SqlPassword    = "admin"
+	SqlHost        = "127.0.0.1" // 这个是我虚拟机的端口号
 	SqlPort        = 3306
 	VideoTableName = "Video"
 	Limit          = 30 //限制视频条数
