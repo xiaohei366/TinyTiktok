@@ -12,7 +12,7 @@ const (
 
 	//各个服务器的设置
 	ExportEndpoint      = ":4317" //链路追踪地址
-	ETCDAddress         = "127.0.0.1:2379"
+	ETCDAddress         = "localhost:2379"
 	ApiServiceAddr      = ":8888"
 	UserServiceAddr     = ":9011"
 	VideoServiceAddr    = ":9001"
@@ -27,11 +27,12 @@ const (
 	DefaultLimit = 10
 
 	//minio
-	MinioUrl       = "127.0.0.1"
+	MinioUrl       = "localhost"
 	MinioPort      = "9000"
 	MinioAccessKey = "admin"
 	MinioSecretKey = "admin123456"
-	MinioLocation  = "cn-northwest-1"
+
+	MinioLocation = "cn-northwest-1"
 
 	//日志的输出路径
 	HlogFilePath = "./tmp/hlog/logs/"

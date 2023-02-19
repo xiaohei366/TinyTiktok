@@ -13,13 +13,16 @@ import (
 // MGetVideos multiple get list of videos info. Feed interface.
 func MGetVideos(ctx context.Context, latestTime *int64) ([]*db.Video, error) {
 	videoFeed := make([]*db.Video, 0)
+	if latestTime == nil || *latestTime == 0 {
+		cur_time := int64(time.Now().UnixMilli())
+		latestTime = &cur_time
+	}
 	//TODO 这个时间是怎么处理的。
 	res := db.DB.WithContext(ctx).Limit(config.Limit).Order("update_time desc").
 		Find(&videoFeed, "update_time < ?", time.UnixMilli(*latestTime))
 	if res.RowsAffected == 0 {
 		return nil, kerrors.NewBizStatusError(404, "Video feed not exist")
 	}
-	klog.Info("feed MgetVideos")
 	if res.Error != nil {
 		return nil, res.Error
 	}

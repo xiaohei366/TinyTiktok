@@ -9,3 +9,46 @@
 {"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-19T12:09:08+08:00"}
 {"level":"info","msg":"client address: [::1]:33160\n","time":"2023-02-19T12:09:08+08:00"}
 {"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-19T12:09:08+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:9002","time":"2023-02-19T16:23:17+08:00"}
+{"level":"info","msg":"start keepalive lease 694d8668c017370a for etcd registry","time":"2023-02-19T16:23:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:1}\n","time":"2023-02-19T16:26:05+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-19T16:26:05+08:00"}
+{"level":"info","msg":"client address: [::1]:37116\n","time":"2023-02-19T16:26:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-19T16:26:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2  to_user_id:2}\n","time":"2023-02-19T16:53:52+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-19T16:53:52+08:00"}
+{"level":"info","msg":"client address: [::1]:41824\n","time":"2023-02-19T16:53:52+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-19T16:53:52+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2  to_user_id:2}\n","time":"2023-02-19T16:56:08+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-19T16:56:08+08:00"}
+{"level":"info","msg":"client address: [::1]:41824\n","time":"2023-02-19T16:56:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-19T16:56:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2  to_user_id:2}\n","time":"2023-02-19T17:24:07+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-19T17:24:07+08:00"}
+{"level":"info","msg":"client address: [::1]:41824\n","time":"2023-02-19T17:24:07+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-19T17:24:07+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:9002","time":"2023-02-19T17:29:56+08:00"}
+{"level":"info","msg":"start keepalive lease 694d8668c017380d for etcd registry","time":"2023-02-19T17:29:57+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2 to_user_id:2}\n","time":"2023-02-19T17:31:16+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-19T17:31:16+08:00"}
+{"level":"info","msg":"client address: [::1]:51168\n","time":"2023-02-19T17:31:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-19T17:31:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3 to_user_id:3}\n","time":"2023-02-19T17:37:26+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-19T17:37:26+08:00"}
+{"level":"info","msg":"client address: [::1]:60128\n","time":"2023-02-19T17:37:26+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-19T17:37:26+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4 to_user_id:4}\n","time":"2023-02-19T17:53:43+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-19T17:53:43+08:00"}
+{"level":"info","msg":"client address: [::1]:60128\n","time":"2023-02-19T17:53:43+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-19T17:53:43+08:00"}
+{"level":"warning","msg":"KITEX: signal connection closing error:protobuf just support 'framed' trans proto[::]:9002=\u003e[::1]:60128","time":"2023-02-19T17:56:17+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:9002","time":"2023-02-19T17:57:24+08:00"}
+{"level":"info","msg":"start keepalive lease 694d8668c01738b8 for etcd registry","time":"2023-02-19T17:57:25+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5 to_user_id:5}\n","time":"2023-02-19T17:58:29+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-19T17:58:29+08:00"}
+{"level":"info","msg":"client address: [::1]:44180\n","time":"2023-02-19T17:58:29+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-19T17:58:29+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 to_user_id:6}\n","time":"2023-02-19T18:07:27+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-19T18:07:27+08:00"}
+{"level":"info","msg":"client address: [::1]:44180\n","time":"2023-02-19T18:07:27+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-19T18:07:27+08:00"}

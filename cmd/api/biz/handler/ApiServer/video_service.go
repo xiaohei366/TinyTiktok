@@ -14,7 +14,7 @@ import (
 
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
-	ApiServer "github.com/xiaohei366/TinyTiktok/cmd/api/biz/model/ApiServer"
+	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/model/ApiServer"
 )
 
 // Feed .
@@ -76,10 +76,9 @@ func PublishAction(ctx context.Context, c *app.RequestContext) {
 		pack.SendPublishActionResponse(c, errno.ConvertErr(err), nil)
 		return
 	}
-	klog.Info("publish action title:", req.Title)
 	//拿userid
 	userId, _ := c.Get(shared.IdentityKey)
-	klog.Info("publish action userID---：", userId.(*ApiServer.User).Id)
+	klog.Info("publish action:", req.Title, userId)
 	request := &VideoServer.DouyinPublishActionRequest{
 		Token:  req.Token,
 		Title:  req.Title,

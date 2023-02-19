@@ -3,6 +3,7 @@
 ### 1.首先需要对环境初始化：
 - 首先注意修改自己模块里的config，用户名&密码参考user的设置。
 - 随后执行下面在项目的根目录执行命令`docker-compose up -d`, 当docker-desktop出现该容器后，证明环境初始化成功：![image-20230217221835356](./image/image-20230217221835356.png)此时，根据下面的命令启动几个server即可。
+- 需要再环境中下载ffmpeg完成视频截取图片功能：linux下命令`sudo apt-get install ffmpeg`。
 ### 2.启动指令
 设定项目路径为当前根目录
 #### Run User RPC Server
@@ -11,11 +12,18 @@ cd ./cmd/user
 sh build.sh
 sh output/bootstrap.sh
 ```
+#### Run Video RPC Server
+```bash
+cd ./cmd/video
+sh build.sh
+sh output/bootstrap.sh
+```
 #### Run API Server
 ```bash
 cd ./cmd/api
 go run .
 ```
+
 ### 3.测试
 我未经postman测试，根据日志直接在抖声app上测试的。进入抖声直接打开“我的”，随后测试注册、登录以及返回的用户粉丝和关注数(测试值为10)
 ## 二、service如何插入框架（以我的user模块制作过程为例）

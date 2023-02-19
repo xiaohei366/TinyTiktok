@@ -83,9 +83,7 @@ services:
 
   # Minio
   minio:
-    image: 'minio/minio:latest'
-    container_name: minio
-    hostname: "minio"
+    image: quay.io/minio/minio
     volumes:
       - "./minio/data1:/data1"
       - "./minio/data2:/data2"

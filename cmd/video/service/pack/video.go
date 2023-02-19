@@ -2,14 +2,11 @@ package pack
 
 import (
 	"context"
-	"errors"
-
-	"github.com/cloudwego/kitex/pkg/klog"
-	"github.com/xiaohei366/TinyTiktok/cmd/user/service/dal"
-	"github.com/xiaohei366/TinyTiktok/cmd/user/service/pack"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/initialize/db"
+	"github.com/xiaohei366/TinyTiktok/cmd/video/rpc"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
-	"gorm.io/gorm"
+	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
 
 // Video pack feed info
@@ -17,21 +14,22 @@ func Video(ctx context.Context, v *db.Video, uid int64) (*VideoServer.Video, err
 	if v == nil {
 		return nil, nil
 	}
-	//打包的时候不应该这样去拿userInfo
-	user, err := dal.GetUserById(ctx, int64(v.AuthorID))
-	if err != nil && !errors.Is(err, gorm.ErrRecordNotFound) {
-		return nil, err
+
+	//随后通过RPC 由这些ID获得 用户信息
+	authorInfo, err := rpc.GetUserInfo(ctx, &UserServer.DouyinUserRequest{
+		UserId: v.AuthorID,
+	})
+	if err != nil {
+		return nil, errno.UserRPCErr
 	}
 
-	author := pack.UserInfoConvert(&user)
-	klog.Info("pack video user info")
 	favorite_count := int64(v.FavCount)
 	comment_count := int64(v.ComCount)
 
 	//todo is Fav
 	return &VideoServer.Video{
 		Id:            v.BaseModel.ID,
-		Author:        author,
+		Author:        authorInfo,
 		PlayUrl:       v.PlayUrl,
 		CoverUrl:      v.CoverUrl,
 		FavoriteCount: favorite_count,

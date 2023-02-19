@@ -5,6 +5,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/cloudwego/kitex/pkg/klog"
+	"github.com/disintegration/imaging"
 	"github.com/nacos-group/nacos-sdk-go/inner/uuid"
 	ffmpeg "github.com/u2takey/ffmpeg-go"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/config"
@@ -12,7 +13,6 @@ import (
 	dal2 "github.com/xiaohei366/TinyTiktok/cmd/video/service/dal"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
 	"github.com/xiaohei366/TinyTiktok/pkg/minio"
-	"image"
 	"image/jpeg"
 	"os"
 	"strings"
@@ -33,16 +33,19 @@ func (s *PublishActionService) PublishAction(req *VideoServer.DouyinPublishActio
 	// link minio
 	minioCli := minio.GetMinioClient()
 	klog.Info("minioCli:", minioCli)
+
 	// prepare videos data
 	videoData := []byte(req.Data)
 	u2, err := uuid.NewV4() //给视频文件加编号
 	if err != nil {
 		return nil, err
 	}
+
 	// prepare videoName
 	fileName := u2.String() + "." + "mp4"
 	klog.Info("filename:", fileName)
 	videoReader := bytes.NewReader(videoData)
+
 	// upload video into minio video bucket and get video playUrl
 	url, err := minio.UploadObject(minioCli.Client, "video", config.PublishVideosBucket, fileName, videoReader, int64(len(videoData)), 0) //
 	if err != nil {
@@ -50,11 +53,13 @@ func (s *PublishActionService) PublishAction(req *VideoServer.DouyinPublishActio
 	}
 	playUrl := strings.Split(url.String(), "?")[0] //做截取
 	klog.Info("playUrl:", playUrl)
+
 	// prepare cover name
 	u3, err := uuid.NewV4()
 	if err != nil {
 		return nil, err
 	}
+
 	// prepare cover image data
 	coverName := u3.String() + "." + "jpg"
 	coverImages, err := readFrameAsJpeg(playUrl) //封面数据
@@ -62,13 +67,15 @@ func (s *PublishActionService) PublishAction(req *VideoServer.DouyinPublishActio
 	if err != nil {
 		return nil, err
 	}
+
 	// upload cover image and get coverUrl
 	url2, err := minio.UploadObject(minioCli.Client, "image", config.PublishImagesBucket, coverName, coverReader, int64(len(coverImages)), 0)
 	coverUrl := strings.Split(url2.String(), "?")[0] // 做截取
 	if err != nil {
 		return nil, err
 	}
-	klog.Info("coverUrl", coverUrl)
+	klog.Info("coverUrl:", coverUrl)
+
 	// publish action response model prepare
 	videoModel := &db.Video{
 		AuthorID: req.UserId,
@@ -98,15 +105,18 @@ func readFrameAsJpeg(url string) ([]byte, error) {
 		WithOutput(reader, os.Stdout).
 		Run()
 	if err != nil {
-		return nil, err
+		panic(err)
 	}
 	klog.Info("ffmpeg input success:")
-	img, _, err := image.Decode(reader)
+	img, err := imaging.Decode(reader)
 	if err != nil {
 		return nil, err
 	}
 	klog.Info("ffmpeg image Decode success:")
 	buf := new(bytes.Buffer)
-	jpeg.Encode(buf, img, nil)
+	err = jpeg.Encode(buf, img, nil)
+	if err != nil {
+		return nil, err
+	}
 	return buf.Bytes(), nil
 }

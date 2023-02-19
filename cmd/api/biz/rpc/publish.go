@@ -3,13 +3,11 @@ package rpc
 import (
 	"context"
 
-	"github.com/cloudwego/kitex/pkg/klog"
 	"github.com/cloudwego/kitex/pkg/rpcinfo"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer/videosrv"
 
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
-	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 
 	"github.com/cloudwego/kitex/client"
@@ -30,8 +28,8 @@ func initPublishRpc() {
 		shared.PublishServiceName,
 		client.WithResolver(r),
 		client.WithMuxConnection(1),
-		client.WithMiddleware(mw.CommonMiddleware),
-		client.WithInstanceMW(mw.ClientMiddleware),
+		//client.WithMiddleware(mw.CommonMiddleware),
+		//client.WithInstanceMW(mw.ClientMiddleware),
 		client.WithSuite(tracing.NewClientSuite()),
 		client.WithClientBasicInfo(&rpcinfo.EndpointBasicInfo{ServiceName: shared.ApiServiceName}),
 	)
@@ -56,7 +54,6 @@ func PublishVideos(ctx context.Context, req *VideoServer.DouyinPublishActionRequ
 // PublishList get the video list by user id or token.
 func PublishList(ctx context.Context, req *VideoServer.DouyinPublishListRequest) ([]*VideoServer.Video, error) {
 	resp, err := publishClient.PublishList(ctx, req)
-	klog.Info("publist_resp:", resp)
 	if err != nil {
 		return nil, err
 	}
