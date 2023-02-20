@@ -6,11 +6,11 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/handler/pack"
-	"github.com/xiaohei366/TinyTiktok/kitex_gen/RelationServer"
-	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
 	mw "github.com/xiaohei366/TinyTiktok/cmd/api/biz/middleware"
 	ApiServer "github.com/xiaohei366/TinyTiktok/cmd/api/biz/model/ApiServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/rpc"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/RelationServer"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 )

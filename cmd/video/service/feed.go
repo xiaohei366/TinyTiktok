@@ -2,10 +2,11 @@ package service
 
 import (
 	"context"
+	"time"
+
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/dal"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/pack"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
-	"time"
 )
 
 type FeedService struct {
@@ -22,7 +23,7 @@ func NewFeedService(ctx context.Context) *FeedService {
 // Feed used for feed service, get videos by latestTime.
 func (s *FeedService) Feed(req *VideoServer.DouyinFeedRequest) (videos []*VideoServer.Video, nextTime int64, err error) {
 	var latestTime *int64
-	if &req.LatestTime == nil || req.LatestTime == 0 {
+	if req.LatestTime == 0 {
 		cur_time := int64(time.Now().UnixMilli())
 		latestTime = &cur_time
 	}
@@ -34,7 +35,7 @@ func (s *FeedService) Feed(req *VideoServer.DouyinFeedRequest) (videos []*VideoS
 		nextTime = feedModels[len(feedModels)-1].UpdatedAt.UnixMilli()
 	}
 
-	if videos, err = pack.Videos(s.ctx, feedModels, 0); err != nil {
+	if videos, err = pack.VideoLists(s.ctx, feedModels, req.UserId); err != nil {
 		nextTime = time.Now().UnixMilli()
 		return videos, nextTime, err
 	}

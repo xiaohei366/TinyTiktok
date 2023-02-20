@@ -3,11 +3,11 @@ package service
 import (
 	"context"
 
+	"github.com/xiaohei366/TinyTiktok/cmd/relation/rpc"
+	"github.com/xiaohei366/TinyTiktok/cmd/relation/service/dal"
+	"github.com/xiaohei366/TinyTiktok/cmd/relation/service/pack"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/RelationServer"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
-	"github.com/xiaohei366/TinyTiktok/cmd/relation/rpc"
-	"github.com/xiaohei366/TinyTiktok/cmd/relation/service/pack"
-	"github.com/xiaohei366/TinyTiktok/cmd/relation/service/dal"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
 
@@ -15,12 +15,11 @@ type MGetUserRelationFollowerService struct {
 	ctx context.Context
 }
 
-
 func NewMGetUserRelationFollowerService(ctx context.Context) *MGetUserRelationFollowerService {
 	return &MGetUserRelationFollowerService{ctx: ctx}
 }
 
-//获得粉丝列表
+// 获得粉丝列表
 func (s *MGetUserRelationFollowerService) MGetUserRelationFollower(userID int64) ([]*RelationServer.User, error) {
 	//先取出所有粉丝的ID
 	followers, err := dal.MGetFollowerList(s.ctx, userID)
@@ -40,7 +39,7 @@ func (s *MGetUserRelationFollowerService) MGetUserRelationFollower(userID int64)
 	users, err = rpc.MGetUserInfo(s.ctx, &UserServer.DouyinMUserRequest{
 		UserId: followerIDs,
 	})
-	if(err != nil) {
+	if err != nil {
 		return nil, errno.UserRPCErr
 	}
 
@@ -54,11 +53,10 @@ func (s *MGetUserRelationFollowerService) MGetUserRelationFollower(userID int64)
 	r_users := make([]*RelationServer.User, 0)
 	for _, u := range users {
 		_, IsFollow := followSet[u.Id]
-		r_users = append(r_users, pack.UserInfoConvert(u, IsFollow)) 
+		r_users = append(r_users, pack.UserInfoConvert(u, IsFollow))
 	}
 	if len(users) != len(r_users) {
 		return nil, errno.StructConvertFailedErr
 	}
-
 	return r_users, nil
 }

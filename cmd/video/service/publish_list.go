@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/dal"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/pack"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
@@ -22,7 +23,7 @@ func (s *PublishListService) PublishList(req *VideoServer.DouyinPublishListReque
 	if err != nil {
 		return nil, err
 	}
-	videos, err := pack.Videos(s.ctx, UserVideos, req.UserId)
+	videos, err := pack.VideoLists(s.ctx, UserVideos, req.UserId)
 	if err != nil {
 		return nil, err
 	}

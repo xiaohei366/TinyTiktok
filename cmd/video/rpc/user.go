@@ -23,7 +23,7 @@ func initUser() {
 		panic(err)
 	}
 	provider.NewOpenTelemetryProvider(
-		provider.WithServiceName(shared.RelationServiceName),
+		provider.WithServiceName(shared.VideoServiceName),
 		provider.WithExportEndpoint(shared.ExportEndpoint),
 		provider.WithInsecure(),
 	)
@@ -34,7 +34,7 @@ func initUser() {
 		client.WithMiddleware(mw.CommonMiddleware),
 		client.WithInstanceMW(mw.ClientMiddleware),
 		client.WithSuite(tracing.NewClientSuite()),
-		client.WithClientBasicInfo(&rpcinfo.EndpointBasicInfo{ServiceName: shared.RelationServiceName}),
+		client.WithClientBasicInfo(&rpcinfo.EndpointBasicInfo{ServiceName: shared.VideoServiceName}),
 	)
 	if err != nil {
 		panic(err)

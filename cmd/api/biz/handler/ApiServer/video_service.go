@@ -3,14 +3,15 @@ package ApiServer
 import (
 	"bytes"
 	"context"
+	"io"
+	"strconv"
+
 	"github.com/cloudwego/kitex/pkg/klog"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/handler/pack"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/rpc"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
-	"io"
-	"strconv"
 
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
@@ -32,12 +33,10 @@ func Feed(ctx context.Context, c *app.RequestContext) {
 		}
 	}
 	//todo 后续要确认feed如果是登录状态下怎么推荐。
-	//user, _ := c.Get(shared.IdentityKey)
-	token := c.Query("token")
-	klog.Info("latestTime:", laststTime, token)
+	user, _ := c.Get(shared.IdentityKey)
 	videos, err := rpc.FeedVideos(context.Background(), &VideoServer.DouyinFeedRequest{
 		LatestTime: laststTime,
-		Token:      token,
+		UserId:     user.(*ApiServer.User).Id,
 	})
 	klog.Info("feed videos:", videos)
 	if err != nil {
@@ -103,8 +102,10 @@ func PublishList(ctx context.Context, c *app.RequestContext) {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
+	//拿userid
+	userId, _ := c.Get(shared.IdentityKey)
 	request := &VideoServer.DouyinPublishListRequest{
-		UserId: req.UserId,
+		UserId: userId.(*ApiServer.User).Id,
 		Token:  req.Token,
 	}
 

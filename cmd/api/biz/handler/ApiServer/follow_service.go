@@ -17,12 +17,13 @@ import (
 func RelationAction(ctx context.Context, c *app.RequestContext) {
 	var err error
 	var req ApiServer.DouyinRelationActionRequest
-	err = c.BindAndValidate(&req)
+	err = c.Bind(&req)
 	if err != nil {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
 	v, _ := c.Get(shared.IdentityKey) // 取出token的id
+
 	//调用PRC方法，在follow服务器上完成关注操作
 	resp, err := rpc.FollowAction(context.Background(), &RelationServer.DouyinRelationActionRequest{
 		UserId:     v.(*ApiServer.User).Id,
@@ -42,7 +43,7 @@ func RelationAction(ctx context.Context, c *app.RequestContext) {
 func RelationFollowList(ctx context.Context, c *app.RequestContext) {
 	var err error
 	var req ApiServer.DouyinRelationFollowListRequest
-	err = c.BindAndValidate(&req)
+	err = c.Bind(&req)
 	if err != nil {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
@@ -63,7 +64,7 @@ func RelationFollowList(ctx context.Context, c *app.RequestContext) {
 func RelationFollowerList(ctx context.Context, c *app.RequestContext) {
 	var err error
 	var req ApiServer.DouyinRelationFollowerListRequest
-	err = c.BindAndValidate(&req)
+	err = c.Bind(&req)
 	if err != nil {
 		c.String(consts.StatusBadRequest, err.Error())
 		return

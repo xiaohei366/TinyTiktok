@@ -4,7 +4,6 @@ package VideoServer;
 
 option go_package = "VideoServer";
 
-import "UserServer.proto";
 
 service VideoSrv{
   rpc Feed(douyin_feed_request) returns (douyin_feed_response);//视频流Feed
@@ -16,7 +15,7 @@ service VideoSrv{
 
 message douyin_feed_request{
   int64 latest_time = 1; // 可选参数，限制返回视频的最新投稿时间戳，精确到秒，不填表示当前时间。
-  string token = 2; // 可选参数，登录用户设置。
+  int64 user_id = 2;//用户id
 }
 message BaseResp {
   int32 status_code = 1; // 状态码，0-成功，其他值-失败
@@ -29,9 +28,18 @@ message douyin_feed_response{
   int64 next_time = 3; // 本次返回的视频中，发布最早的时间，作为下次请求的latest_time
 }
 
+message User {
+  int64 id = 1; // 用户id
+  string name = 2; // 用户名称
+  int64 follow_count = 3; // 关注总数--可选
+  int64 follower_count = 4; // 粉丝总数--可选
+  bool is_follow = 5; // true-已关注，false-未关注
+}
+
+
 message Video {
   int64 id = 1;
-  UserServer.User author = 2;
+  User author = 2;
   string play_url = 3;
   string cover_url = 4;
   int64 favorite_count = 5;

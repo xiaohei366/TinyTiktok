@@ -11,6 +11,7 @@ import (
 	etcd "github.com/kitex-contrib/registry-etcd"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/initialize"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer/videosrv"
+	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 )
 
@@ -33,10 +34,10 @@ func main() {
 		server.WithRegistry(r),
 		server.WithLimit(&limit.Option{MaxConnections: 1000, MaxQPS: 100}),
 		server.WithMuxTransport(),
-		//server.WithMiddleware(mw.CommonMiddleware),
-		//server.WithMiddleware(mw.ServerMiddleware),
+		server.WithMiddleware(mw.CommonMiddleware),
+		server.WithMiddleware(mw.ServerMiddleware),
 		server.WithSuite(tracing.NewServerSuite()),
-		server.WithServerBasicInfo(&rpcinfo.EndpointBasicInfo{ServiceName: shared.PublishServiceName}),
+		server.WithServerBasicInfo(&rpcinfo.EndpointBasicInfo{ServiceName: shared.VideoServiceName}),
 	)
 	//run video server
 	err = svr.Run()

@@ -19,8 +19,8 @@ var DB *gorm.DB
 // 用户数据库表结构--自动创建(关注、被关注)
 type Follow struct {
 	gorm.Model
-	UserID   int64 `json:"user_id" gorm:"unique;not null" `
-	ToUserID int64 `json:"to_user_id" gorm:"unique;not null" `
+	UserID   int64 `json:"user_id" gorm:"not null" `
+	ToUserID int64 `json:"to_user_id" gorm:"not null" `
 }
 
 func (u *Follow) TableName() string {

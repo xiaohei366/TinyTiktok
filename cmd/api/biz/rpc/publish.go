@@ -8,6 +8,7 @@ import (
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer/videosrv"
 
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
+	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 
 	"github.com/cloudwego/kitex/client"
@@ -25,11 +26,11 @@ func initPublishRpc() {
 	}
 
 	c, err := videosrv.NewClient(
-		shared.PublishServiceName,
+		shared.VideoServiceName,
 		client.WithResolver(r),
 		client.WithMuxConnection(1),
-		//client.WithMiddleware(mw.CommonMiddleware),
-		//client.WithInstanceMW(mw.ClientMiddleware),
+		client.WithMiddleware(mw.CommonMiddleware),
+		client.WithInstanceMW(mw.ClientMiddleware),
 		client.WithSuite(tracing.NewClientSuite()),
 		client.WithClientBasicInfo(&rpcinfo.EndpointBasicInfo{ServiceName: shared.ApiServiceName}),
 	)

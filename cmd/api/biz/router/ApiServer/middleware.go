@@ -68,8 +68,9 @@ func _favoritelistMw() []app.HandlerFunc {
 }
 
 func _feedMw() []app.HandlerFunc {
-	// your code...
-	return nil
+	return []app.HandlerFunc{
+		mw.JwtMiddleware.MiddlewareFunc(),
+	}
 }
 
 func _feed0Mw() []app.HandlerFunc {
@@ -78,8 +79,9 @@ func _feed0Mw() []app.HandlerFunc {
 }
 
 func _publishMw() []app.HandlerFunc {
-	// your code...
-	return nil
+	return []app.HandlerFunc{
+		mw.JwtMiddleware.MiddlewareFunc(),
+	}
 }
 
 func _action1Mw() []app.HandlerFunc {
@@ -100,10 +102,7 @@ func _list1Mw() []app.HandlerFunc {
 }
 
 func _publishlistMw() []app.HandlerFunc {
-	// your code...
-	return []app.HandlerFunc{
-		mw.JwtMiddleware.MiddlewareFunc(),
-	}
+	return nil
 }
 
 func _userMw() []app.HandlerFunc {

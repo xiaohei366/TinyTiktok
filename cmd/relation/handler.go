@@ -4,9 +4,9 @@ import (
 	"context"
 
 	"github.com/xiaohei366/TinyTiktok/cmd/relation/initialize/db"
-	RelationServer "github.com/xiaohei366/TinyTiktok/kitex_gen/RelationServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/relation/service"
 	"github.com/xiaohei366/TinyTiktok/cmd/relation/service/pack"
+	RelationServer "github.com/xiaohei366/TinyTiktok/kitex_gen/RelationServer"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
 
@@ -31,19 +31,19 @@ func (s *RelationServerImpl) RelationAction(ctx context.Context, req *RelationSe
 		resp = pack.BuildrelationActionResp(err)
 		return resp, nil
 	}
-	resp = pack.BuildrelationActionResp(errno.Success)
+	resp = pack.BuildrelationActionResp(nil)
 	return resp, nil
 }
 
 // MGetRelationFollowList implements the RelationServerImpl interface.
 func (s *RelationServerImpl) MGetRelationFollowList(ctx context.Context, req *RelationServer.DouyinRelationFollowListRequest) (resp *RelationServer.DouyinRelationFollowListResponse, err error) {
 	// 调用相应服务即可
-	users, err := service.NewMGetUserRelationFollowerService(ctx).MGetUserRelationFollower(req.UserId)
+	users, err := service.NewMGetUserRelationFollowService(ctx).MGetUserRelationFollow(req.UserId)
 	if err != nil {
 		resp = pack.BuildgetFollowListResp(err, users)
 		return resp, nil
 	}
-	resp = pack.BuildgetFollowListResp(errno.Success, users)
+	resp = pack.BuildgetFollowListResp(nil, users)
 	return resp, nil
 }
 
@@ -55,7 +55,7 @@ func (s *RelationServerImpl) MGetUserRelationFollowerList(ctx context.Context, r
 		resp = pack.BuildgetFollowerListResp(err, users)
 		return resp, nil
 	}
-	resp = pack.BuildgetFollowerListResp(errno.Success, users)
+	resp = pack.BuildgetFollowerListResp(nil, users)
 	return resp, nil
 }
 
@@ -73,6 +73,6 @@ func (s *RelationServerImpl) QueryRelation(ctx context.Context, req *RelationSer
 		resp = pack.BuildrelationQueryResp(err, false)
 		return resp, nil
 	}
-	resp = pack.BuildrelationQueryResp(errno.Success, isFollow)
+	resp = pack.BuildrelationQueryResp(nil, isFollow)
 	return resp, nil
 }

@@ -14,14 +14,13 @@ const (
 	ExportEndpoint      = ":4317" //链路追踪地址
 	ETCDAddress         = "localhost:2379"
 	ApiServiceAddr      = ":8888"
-	UserServiceAddr     = ":9011"
-	VideoServiceAddr    = ":9001"
+	UserServiceAddr     = ":13123"
+	VideoServiceAddr    = ":9021"
 	RelationServiceAddr = ":9002"
 
 	ApiServiceName      = "api"
 	UserServiceName     = "user"
-	FeedServiceName     = "feed"
-	PublishServiceName  = "publish"
+	VideoServiceName    = "video"
 	RelationServiceName = "relation"
 
 	DefaultLimit = 10
@@ -29,8 +28,8 @@ const (
 	//minio
 	MinioUrl       = "localhost"
 	MinioPort      = "9000"
-	MinioAccessKey = "admin"
-	MinioSecretKey = "admin123456"
+	MinioAccessKey = "minio"
+	MinioSecretKey = "minio123"
 
 	MinioLocation = "cn-northwest-1"
 

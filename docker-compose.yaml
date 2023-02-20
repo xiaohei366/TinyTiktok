@@ -83,7 +83,7 @@ services:
 
   # Minio
   minio:
-    image: quay.io/minio/minio
+    image: 'minio/minio:latest'
     volumes:
       - "./minio/data1:/data1"
       - "./minio/data2:/data2"

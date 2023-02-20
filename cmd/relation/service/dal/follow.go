@@ -14,8 +14,23 @@ func AddFollow(ctx context.Context, userId int64, toUserId int64) error {
 		UserID:   userId,
 		ToUserID: toUserId,
 	}
-	if err := db.DB.WithContext(ctx).Create(follow).Error; err != nil {
-		klog.Info("数据库插入出现问题")
+	err := db.DB.WithContext(ctx).Transaction(func(tx *gorm.DB) error {
+		// 先判断是否存在关系
+		ok := new(db.Follow)
+		err := tx.Where("user_id = ? And to_user_id = ?", userId, toUserId).Find(&ok).Error
+		if err != nil || ok.ID != 0 {
+			klog.Info("数据库查询出现问题Or用户已存在")
+			return err
+		}
+		//如果不存在，则可以插入
+		if err := db.DB.WithContext(ctx).Select("user_id", "to_user_id").Create(&follow).Error; err != nil {
+			klog.Info("数据库插入出现问题")
+			return err
+		}
+		return nil
+	})
+	if err != nil {
+		klog.Info("添加关系的事务出现问题！")
 		return err
 	}
 	return nil
