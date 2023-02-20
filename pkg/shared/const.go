@@ -26,7 +26,7 @@ const (
 	DefaultLimit = 10
 
 	//minio
-	MinioUrl       = "localhost"
+	MinioUrl       = "172.27.51.171"
 	MinioPort      = "9000"
 	MinioAccessKey = "minio"
 	MinioSecretKey = "minio123"

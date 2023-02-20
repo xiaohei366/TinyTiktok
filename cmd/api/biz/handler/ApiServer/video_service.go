@@ -3,6 +3,7 @@ package ApiServer
 import (
 	"bytes"
 	"context"
+	"fmt"
 	"io"
 	"strconv"
 
@@ -22,7 +23,7 @@ import (
 // @router /douyin/feed/ [GET]
 func Feed(ctx context.Context, c *app.RequestContext) {
 	var err error
-	var laststTime int64
+	var laststTime, useID int64
 	lastst_time := c.Query("latest_time")
 	if len(lastst_time) != 0 {
 		if latesttime, err := strconv.Atoi(lastst_time); err != nil {
@@ -34,9 +35,15 @@ func Feed(ctx context.Context, c *app.RequestContext) {
 	}
 	//todo 后续要确认feed如果是登录状态下怎么推荐。
 	user, _ := c.Get(shared.IdentityKey)
+	if user == nil {
+		useID = 0
+	} else {
+		useID = user.(*ApiServer.User).Id
+	}
+	fmt.Print("**************************************", useID)
 	videos, err := rpc.FeedVideos(context.Background(), &VideoServer.DouyinFeedRequest{
 		LatestTime: laststTime,
-		UserId:     user.(*ApiServer.User).Id,
+		UserId:     useID,
 	})
 	klog.Info("feed videos:", videos)
 	if err != nil {
