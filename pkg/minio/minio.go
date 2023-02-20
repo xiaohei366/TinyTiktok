@@ -4,6 +4,7 @@ import (
 	"context"
 	"github.com/cloudwego/kitex/pkg/klog"
 	"github.com/minio/minio-go/v7"
+	"github.com/prometheus/common/log"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 	"io"
 	"net/url"
@@ -29,6 +30,21 @@ func CreateBucket(minioClient *minio.Client, bucketName string) error {
 		}
 	} else {
 		klog.Infof("bucket create successfully %s:\n", bucketName)
+	}
+	//设置桶策略
+	policy := `{"Version": "2012-10-17",
+				"Statement": 
+					[{
+						"Action":["s3:GetObject"],
+						"Effect": "Allow",
+						"Principal": {"AWS": ["*"]},
+						"Resource": ["arn:aws:s3:::` + bucketName + `/*"],
+						"Sid": ""
+					}]
+				}`
+	err = minioClient.SetBucketPolicy(ctx, bucketName, policy)
+	if err != nil {
+		log.Errorf("SetBucketPolicy %s  err:%s", bucketName, err.Error())
 	}
 	return nil
 }

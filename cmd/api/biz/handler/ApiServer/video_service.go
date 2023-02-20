@@ -23,7 +23,7 @@ import (
 func Feed(ctx context.Context, c *app.RequestContext) {
 	var err error
 	var laststTime int64
-	lastst_time := c.Query("latest_time")
+	lastst_time := c.PostForm("latest_time")
 	if len(lastst_time) != 0 {
 		if latesttime, err := strconv.Atoi(lastst_time); err != nil {
 			pack.SendFeedResponse(c, errno.ConvertErr(err), nil)
@@ -32,13 +32,12 @@ func Feed(ctx context.Context, c *app.RequestContext) {
 			laststTime = int64(latesttime)
 		}
 	}
-	//todo 后续要确认feed如果是登录状态下怎么推荐。
 	user, _ := c.Get(shared.IdentityKey)
 	videos, err := rpc.FeedVideos(context.Background(), &VideoServer.DouyinFeedRequest{
 		LatestTime: laststTime,
 		UserId:     user.(*ApiServer.User).Id,
 	})
-	klog.Info("feed videos:", videos)
+
 	if err != nil {
 		pack.SendFeedResponse(c, errno.ConvertErr(err), nil)
 	}
@@ -97,15 +96,24 @@ func PublishList(ctx context.Context, c *app.RequestContext) {
 	//测试可用
 	var err error
 	var req ApiServer.DouyinPublishListRequest
-	err = c.BindAndValidate(&req)
+	userid := c.Query("user_id")
+	req.Token = c.Query("token")
+	klog.Info("user_id", userid)
+	if userid != "" {
+		uid, err := strconv.Atoi(userid)
+		if err != nil {
+			return
+		}
+		req.UserId = int64(uid)
+	}
 	if err != nil {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
 	//拿userid
-	userId, _ := c.Get(shared.IdentityKey)
+
 	request := &VideoServer.DouyinPublishListRequest{
-		UserId: userId.(*ApiServer.User).Id,
+		UserId: req.UserId,
 		Token:  req.Token,
 	}
 

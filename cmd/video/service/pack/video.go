@@ -2,6 +2,7 @@ package pack
 
 import (
 	"context"
+	"github.com/cloudwego/kitex/pkg/klog"
 
 	"github.com/xiaohei366/TinyTiktok/cmd/video/initialize/db"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/rpc"
@@ -20,6 +21,7 @@ func VideoList(ctx context.Context, v *db.Video, uid int64) (*VideoServer.Video,
 	authorInfo, err := rpc.GetUserInfo(ctx, &UserServer.DouyinUserRequest{
 		UserId: v.AuthorID,
 	})
+	klog.Info("authorInfo:", authorInfo)
 	if err != nil {
 		return nil, errno.UserRPCErr
 	}
@@ -28,6 +30,7 @@ func VideoList(ctx context.Context, v *db.Video, uid int64) (*VideoServer.Video,
 		UserId:   uid,
 		ToUserId: v.AuthorID,
 	})
+	klog.Info("is follow:", isFollow)
 	//fmt.Print("********************", uid, v.AuthorID)
 	if err != nil {
 		return nil, errno.RelationRPCErr

@@ -19,7 +19,7 @@ func NewPublishListService(ctx context.Context) *PublishListService {
 
 // PublishList get the videoList by user id.
 func (s *PublishListService) PublishList(req *VideoServer.DouyinPublishListRequest) ([]*VideoServer.Video, error) {
-	UserVideos, err := dal.MGetUserVideos(s.ctx, req.UserId) //这个ctx实际没用到，后续改。
+	UserVideos, err := dal.MGetUserVideos(s.ctx, req.UserId)
 	if err != nil {
 		return nil, err
 	}

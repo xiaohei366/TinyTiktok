@@ -2,13 +2,13 @@ package rpc
 
 import (
 	"context"
+	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 
 	"github.com/cloudwego/kitex/pkg/rpcinfo"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer/videosrv"
 
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
-	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 
 	"github.com/cloudwego/kitex/client"

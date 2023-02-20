@@ -1,6 +1,7 @@
 package main
 
 import (
+	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 	"net"
 
 	"github.com/cloudwego/kitex/pkg/klog"
@@ -11,7 +12,6 @@ import (
 	etcd "github.com/kitex-contrib/registry-etcd"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/initialize"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer/videosrv"
-	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 )
 

@@ -81,7 +81,7 @@ services:
     ports:
       - "3000:3000"
 
-  # Minio
+  # Minio#已成功，注意minioUrl要写wsl2虚拟机的IP，不能写localhost
   minio:
     image: 'minio/minio:latest'
     volumes:
@@ -89,8 +89,8 @@ services:
       - "./minio/data2:/data2"
     command: server --console-address ":9090" http://minio/data{1...2}
     environment:
-      - MINIO_ROOT_USER=admin
-      - MINIO_ROOT_PASSWORD=admin123456
+      - MINIO_ROOT_USER=minio
+      - MINIO_ROOT_PASSWORD=minio123
     ports:
       - "9000:9000"
       - "9090:9090" #console控制台

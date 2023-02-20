@@ -17,6 +17,7 @@ require (
 	github.com/kitex-contrib/registry-etcd v0.1.0
 	github.com/minio/minio-go/v7 v7.0.47
 	github.com/nacos-group/nacos-sdk-go v1.1.4
+	github.com/prometheus/common v0.26.0
 	github.com/u2takey/ffmpeg-go v0.4.1
 	google.golang.org/protobuf v1.28.1
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
@@ -26,6 +27,8 @@ require (
 )
 
 require (
+	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751 // indirect
+	github.com/alecthomas/units v0.0.0-20190924025748-f65c72e2690d // indirect
 	github.com/apache/thrift v0.13.0 // indirect
 	github.com/aws/aws-sdk-go v1.38.20 // indirect
 	github.com/bytedance/go-tagexpr/v2 v2.9.2 // indirect
@@ -102,6 +105,7 @@ require (
 	golang.org/x/text v0.7.0 // indirect
 	google.golang.org/genproto v0.0.0-20211118181313-81c1377c94b1 // indirect
 	google.golang.org/grpc v1.46.2 // indirect
+	gopkg.in/alecthomas/kingpin.v2 v2.2.6 // indirect
 	gopkg.in/ini.v1 v1.66.6 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
