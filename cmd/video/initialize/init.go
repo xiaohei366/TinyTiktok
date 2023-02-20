@@ -10,6 +10,7 @@ import (
 func Init() {
 	//DB init
 	db.Init_DB()
+	//Minio init
 	minio.Init_minio()
 
 	//RPC init

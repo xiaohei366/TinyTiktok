@@ -4660,3 +4660,56 @@
 {"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T16:29:21+08:00"}
 {"level":"info","msg":"is follow:false","time":"2023-02-20T16:29:21+08:00"}
 {"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:8  author:{id:4  name:\"jacob233\"}  play_url:\"http://172.27.28.184:9000/videos/1600074e-d746-415d-a571-f8d61042eccd.mp4\"  cover_url:\"http://172.27.28.184:9000/images/fd1377be-7cb3-4eff-a000-cf18aabc69a7.jpg\"  title:\"jacob233\"}}\n","time":"2023-02-20T16:29:21+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:9021","time":"2023-02-20T18:04:02+08:00"}
+{"level":"info","msg":"start keepalive lease 694d866dc13063c2 for etcd registry","time":"2023-02-20T18:04:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTEwODMsImlkIjo1LCJvcmlnX2lhdCI6MTY3Njg4NzQ4M30.xnOkG_HHW_Z0N4YEX5P96V5RIkJ666UzuT5t4DnaPOA\"}\n","time":"2023-02-20T18:04:44+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T18:04:44+08:00"}
+{"level":"info","msg":"client address: [::1]:54552\n","time":"2023-02-20T18:04:44+08:00"}
+{"level":"info","msg":"publish list DB req user id :5","time":"2023-02-20T18:04:44+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:1  status_msg:\"biz error: code=404, msg=User videos not exist\"}}\n","time":"2023-02-20T18:04:44+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTEwODMsImlkIjo1LCJvcmlnX2lhdCI6MTY3Njg4NzQ4M30.xnOkG_HHW_Z0N4YEX5P96V5RIkJ666UzuT5t4DnaPOA\"}\n","time":"2023-02-20T18:04:57+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T18:04:57+08:00"}
+{"level":"info","msg":"client address: [::1]:54552\n","time":"2023-02-20T18:04:57+08:00"}
+{"level":"info","msg":"publish list DB req user id :5","time":"2023-02-20T18:04:57+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:1  status_msg:\"biz error: code=404, msg=User videos not exist\"}}\n","time":"2023-02-20T18:04:57+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishAction\n","time":"2023-02-20T18:06:19+08:00"}
+{"level":"info","msg":"client address: [::1]:54552\n","time":"2023-02-20T18:06:19+08:00"}
+{"level":"info","msg":"Publish action start:","time":"2023-02-20T18:06:19+08:00"}
+{"level":"info","msg":"minioCli:{0xc0004f48f0 172.27.28.184:9000 videos images}","time":"2023-02-20T18:06:19+08:00"}
+{"level":"info","msg":"filename:277654d5-759d-4979-8575-d6a6831f4412.mp4","time":"2023-02-20T18:06:19+08:00"}
+{"level":"info","msg":"upload 277654d5-759d-4979-8575-d6a6831f4412.mp4 success","time":"2023-02-20T18:06:19+08:00"}
+{"level":"info","msg":"presignedUrl:http://172.27.28.184:9000/videos/277654d5-759d-4979-8575-d6a6831f4412.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Credential=minio%2F20230220%2Fus-east-1%2Fs3%2Faws4_request\u0026X-Amz-Date=20230220T100619Z\u0026X-Amz-Expires=86400\u0026X-Amz-SignedHeaders=host\u0026X-Amz-Signature=fedf2a102d36f9817b6ba2b96ebf05c55db7a3cddeae3942319d26214f3ff594","time":"2023-02-20T18:06:19+08:00"}
+{"level":"info","msg":"playUrl:http://172.27.28.184:9000/videos/277654d5-759d-4979-8575-d6a6831f4412.mp4","time":"2023-02-20T18:06:19+08:00"}
+{"level":"info","msg":"ffmpeg input success:","time":"2023-02-20T18:06:20+08:00"}
+{"level":"info","msg":"ffmpeg image Decode success:","time":"2023-02-20T18:06:20+08:00"}
+{"level":"info","msg":"upload 16d65362-1646-4c7c-a00d-729aa589b802.jpg success","time":"2023-02-20T18:06:20+08:00"}
+{"level":"info","msg":"presignedUrl:http://172.27.28.184:9000/images/16d65362-1646-4c7c-a00d-729aa589b802.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Credential=minio%2F20230220%2Fus-east-1%2Fs3%2Faws4_request\u0026X-Amz-Date=20230220T100620Z\u0026X-Amz-Expires=86400\u0026X-Amz-SignedHeaders=host\u0026X-Amz-Signature=321e88ddcd1cb5e6af8159d8a1099aec7fbfae28e14a4755d1998cf849ab55aa","time":"2023-02-20T18:06:20+08:00"}
+{"level":"info","msg":"coverUrl:http://172.27.28.184:9000/images/16d65362-1646-4c7c-a00d-729aa589b802.jpg","time":"2023-02-20T18:06:20+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T18:06:20+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTEwODMsImlkIjo1LCJvcmlnX2lhdCI6MTY3Njg4NzQ4M30.xnOkG_HHW_Z0N4YEX5P96V5RIkJ666UzuT5t4DnaPOA\"}\n","time":"2023-02-20T18:06:25+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T18:06:25+08:00"}
+{"level":"info","msg":"client address: [::1]:54552\n","time":"2023-02-20T18:06:25+08:00"}
+{"level":"info","msg":"publish list DB req user id :5","time":"2023-02-20T18:06:25+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5}\n","time":"2023-02-20T18:06:25+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T18:06:25+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T18:06:25+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:5  name:\"jacob2020\"}}\n","time":"2023-02-20T18:06:25+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5  to_user_id:5}\n","time":"2023-02-20T18:06:25+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T18:06:25+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T18:06:25+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T18:06:25+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:9  author:{id:5  name:\"jacob2020\"}  play_url:\"http://172.27.28.184:9000/videos/277654d5-759d-4979-8575-d6a6831f4412.mp4\"  cover_url:\"http://172.27.28.184:9000/images/16d65362-1646-4c7c-a00d-729aa589b802.jpg\"  title:\"test2213\"}}\n","time":"2023-02-20T18:06:25+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishAction\n","time":"2023-02-20T18:06:50+08:00"}
+{"level":"info","msg":"client address: [::1]:54552\n","time":"2023-02-20T18:06:50+08:00"}
+{"level":"info","msg":"Publish action start:","time":"2023-02-20T18:06:50+08:00"}
+{"level":"info","msg":"minioCli:{0xc0004f48f0 172.27.28.184:9000 videos images}","time":"2023-02-20T18:06:50+08:00"}
+{"level":"info","msg":"filename:bfa3b54e-5b61-4bde-b8a2-e6a4bb08477c.mp4","time":"2023-02-20T18:06:50+08:00"}
+{"level":"info","msg":"upload bfa3b54e-5b61-4bde-b8a2-e6a4bb08477c.mp4 success","time":"2023-02-20T18:06:50+08:00"}
+{"level":"info","msg":"presignedUrl:http://172.27.28.184:9000/videos/bfa3b54e-5b61-4bde-b8a2-e6a4bb08477c.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Credential=minio%2F20230220%2Fus-east-1%2Fs3%2Faws4_request\u0026X-Amz-Date=20230220T100650Z\u0026X-Amz-Expires=86400\u0026X-Amz-SignedHeaders=host\u0026X-Amz-Signature=bec65ae21b7494063a86980b13ee4227f629fecbd5d9ba40f3a84b6621c9fd30","time":"2023-02-20T18:06:50+08:00"}
+{"level":"info","msg":"playUrl:http://172.27.28.184:9000/videos/bfa3b54e-5b61-4bde-b8a2-e6a4bb08477c.mp4","time":"2023-02-20T18:06:50+08:00"}
+{"level":"info","msg":"ffmpeg input success:","time":"2023-02-20T18:06:50+08:00"}
+{"level":"info","msg":"ffmpeg image Decode success:","time":"2023-02-20T18:06:50+08:00"}
+{"level":"info","msg":"upload 214dff94-0fcf-4b47-91d1-2cd48d2cce58.jpg success","time":"2023-02-20T18:06:50+08:00"}
+{"level":"info","msg":"presignedUrl:http://172.27.28.184:9000/images/214dff94-0fcf-4b47-91d1-2cd48d2cce58.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Credential=minio%2F20230220%2Fus-east-1%2Fs3%2Faws4_request\u0026X-Amz-Date=20230220T100650Z\u0026X-Amz-Expires=86400\u0026X-Amz-SignedHeaders=host\u0026X-Amz-Signature=2ea8333cb82652f38e733ce310bbd8579088aadc7d946500c6bfcd24a9ecdff7","time":"2023-02-20T18:06:50+08:00"}
+{"level":"info","msg":"coverUrl:http://172.27.28.184:9000/images/214dff94-0fcf-4b47-91d1-2cd48d2cce58.jpg","time":"2023-02-20T18:06:50+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T18:06:50+08:00"}

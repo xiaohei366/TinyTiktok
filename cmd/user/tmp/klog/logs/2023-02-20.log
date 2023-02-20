@@ -2157,3 +2157,19 @@
 {"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T16:29:21+08:00"}
 {"level":"info","msg":"client address: [::1]:34584\n","time":"2023-02-20T16:29:21+08:00"}
 {"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:4 name:\"jacob233\"}}\n","time":"2023-02-20T16:29:21+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:username:\"jacob2020\" password:\"jacob2020\"}\n","time":"2023-02-20T18:04:41+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: Login\n","time":"2023-02-20T18:04:41+08:00"}
+{"level":"info","msg":"client address: [::1]:47892\n","time":"2023-02-20T18:04:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10003 status_msg:\"Authorization failed\"} user_id:-1}\n","time":"2023-02-20T18:04:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:username:\"jacob2020\" password:\"jacob2020\"}\n","time":"2023-02-20T18:04:43+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: Register\n","time":"2023-02-20T18:04:43+08:00"}
+{"level":"info","msg":"client address: [::1]:47892\n","time":"2023-02-20T18:04:43+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user_id:5}\n","time":"2023-02-20T18:04:43+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5}\n","time":"2023-02-20T18:04:44+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T18:04:44+08:00"}
+{"level":"info","msg":"client address: [::1]:47892\n","time":"2023-02-20T18:04:44+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:5 name:\"jacob2020\"}}\n","time":"2023-02-20T18:04:44+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5}\n","time":"2023-02-20T18:06:25+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T18:06:25+08:00"}
+{"level":"info","msg":"client address: [::1]:49908\n","time":"2023-02-20T18:06:25+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:5 name:\"jacob2020\"}}\n","time":"2023-02-20T18:06:25+08:00"}

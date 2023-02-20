@@ -23,7 +23,7 @@ func initRelation() {
 		panic(err)
 	}
 	provider.NewOpenTelemetryProvider(
-		provider.WithServiceName(shared.RelationServiceName),
+		provider.WithServiceName(shared.VideoServiceName),
 		provider.WithExportEndpoint(shared.ExportEndpoint),
 		provider.WithInsecure(),
 	)

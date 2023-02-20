@@ -13,6 +13,7 @@ import (
 // MGetVideos multiple get list of videos info. Feed interface.
 func MGetVideos(ctx context.Context, latestTime *int64) ([]*db.Video, error) {
 	videoFeed := make([]*db.Video, 0)
+	//处理时间
 	if latestTime == nil || *latestTime == 0 {
 		cur_time := int64(time.Now().UnixMilli())
 		latestTime = &cur_time

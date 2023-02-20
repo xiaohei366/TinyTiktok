@@ -28,7 +28,7 @@ func NewPublishActionService(ctx context.Context) *PublishActionService {
 }
 
 // PublishAction post video into the minio buckets and database.
-func (s *PublishActionService) PublishAction(req *VideoServer.DouyinPublishActionRequest) (*db.Video, error) {
+func (s *PublishActionService) PublishAction(req *VideoServer.DouyinPublishActionRequest) error {
 	klog.Info("Publish action start:")
 	// link minio
 	minioCli := minio.GetMinioClient()
@@ -38,7 +38,7 @@ func (s *PublishActionService) PublishAction(req *VideoServer.DouyinPublishActio
 	videoData := []byte(req.Data)
 	u2, err := uuid.NewV4() //给视频文件加编号
 	if err != nil {
-		return nil, err
+		return err
 	}
 
 	// prepare videoName
@@ -49,7 +49,7 @@ func (s *PublishActionService) PublishAction(req *VideoServer.DouyinPublishActio
 	// upload video into minio video bucket and get video playUrl
 	url, err := minio.UploadObject(minioCli.Client, "video", config.PublishVideosBucket, fileName, videoReader, int64(len(videoData)), 0) //
 	if err != nil {
-		return nil, err
+		return err
 	}
 	playUrl := strings.Split(url.String(), "?")[0] //做截取
 	klog.Info("playUrl:", playUrl)
@@ -57,7 +57,7 @@ func (s *PublishActionService) PublishAction(req *VideoServer.DouyinPublishActio
 	// prepare cover name
 	u3, err := uuid.NewV4()
 	if err != nil {
-		return nil, err
+		return err
 	}
 
 	// prepare cover image data
@@ -65,14 +65,14 @@ func (s *PublishActionService) PublishAction(req *VideoServer.DouyinPublishActio
 	coverImages, err := readFrameAsJpeg(playUrl) //封面数据
 	coverReader := bytes.NewReader(coverImages)
 	if err != nil {
-		return nil, err
+		return err
 	}
 
 	// upload cover image and get coverUrl
 	url2, err := minio.UploadObject(minioCli.Client, "image", config.PublishImagesBucket, coverName, coverReader, int64(len(coverImages)), 0)
 	coverUrl := strings.Split(url2.String(), "?")[0] // 做截取
 	if err != nil {
-		return nil, err
+		return err
 	}
 	klog.Info("coverUrl:", coverUrl)
 
@@ -89,9 +89,9 @@ func (s *PublishActionService) PublishAction(req *VideoServer.DouyinPublishActio
 	// store video info into mysql video model.
 	err = dal2.PublishVideo(s.ctx, videoModel)
 	if err != nil {
-		return nil, err
+		return err
 	}
-	return videoModel, nil
+	return nil
 }
 
 // 从视频流中截取一帧并返

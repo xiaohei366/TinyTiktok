@@ -2,6 +2,10 @@ package service
 
 import (
 	"context"
+	"github.com/xiaohei366/TinyTiktok/cmd/video/rpc"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/RelationServer"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
+	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/dal"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/pack"
@@ -18,14 +22,37 @@ func NewPublishListService(ctx context.Context) *PublishListService {
 }
 
 // PublishList get the videoList by user id.
-func (s *PublishListService) PublishList(req *VideoServer.DouyinPublishListRequest) ([]*VideoServer.Video, error) {
+func (s *PublishListService) PublishList(req *VideoServer.DouyinPublishListRequest) (videoList []*VideoServer.Video, err error) {
 	UserVideos, err := dal.MGetUserVideos(s.ctx, req.UserId)
 	if err != nil {
 		return nil, err
 	}
-	videos, err := pack.VideoLists(s.ctx, UserVideos, req.UserId)
-	if err != nil {
-		return nil, err
+	//rpc调用拿取user信息
+	users := []*UserServer.User{}
+	for _, v := range UserVideos {
+		user, err := rpc.GetUserInfo(s.ctx, &UserServer.DouyinUserRequest{
+			UserId: v.AuthorID,
+		})
+
+		if err != nil {
+			return videoList, errno.UserRPCErr
+		}
+		users = append(users, user)
 	}
-	return videos, nil //这边pack还要改，改成只返回videosList的格式。后续每个服务再自己封装就行了
+
+	//queryRelation
+	relations := []bool{}
+	for _, u := range users {
+		relation, err := rpc.QueryRelation(s.ctx, &RelationServer.DouyinQueryRelationRequest{
+			UserId:   u.Id,
+			ToUserId: req.UserId,
+		})
+		if err != nil {
+			return videoList, errno.RelationRPCErr
+		}
+		relations = append(relations, relation)
+	}
+
+	videoList = pack.VideoList(UserVideos, users, relations)
+	return videoList, nil
 }

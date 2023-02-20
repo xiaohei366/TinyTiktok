@@ -42,7 +42,7 @@ func initUser() {
 	userClient = c
 }
 
-// 获取用户信息
+// 批量获得用户信息
 func GetUserInfo(ctx context.Context, req *UserServer.DouyinUserRequest) (*UserServer.User, error) {
 	resp, err := userClient.GetUserInfo(ctx, req)
 	if err != nil {
