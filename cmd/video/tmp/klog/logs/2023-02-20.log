@@ -4713,3 +4713,471 @@
 {"level":"info","msg":"presignedUrl:http://172.27.28.184:9000/images/214dff94-0fcf-4b47-91d1-2cd48d2cce58.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Credential=minio%2F20230220%2Fus-east-1%2Fs3%2Faws4_request\u0026X-Amz-Date=20230220T100650Z\u0026X-Amz-Expires=86400\u0026X-Amz-SignedHeaders=host\u0026X-Amz-Signature=2ea8333cb82652f38e733ce310bbd8579088aadc7d946500c6bfcd24a9ecdff7","time":"2023-02-20T18:06:50+08:00"}
 {"level":"info","msg":"coverUrl:http://172.27.28.184:9000/images/214dff94-0fcf-4b47-91d1-2cd48d2cce58.jpg","time":"2023-02-20T18:06:50+08:00"}
 {"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T18:06:50+08:00"}
+{"level":"warning","msg":"KITEX: signal connection closing error:protobuf just support 'framed' trans proto[::]:9021=\u003e[::1]:54552","time":"2023-02-20T19:59:47+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:9021","time":"2023-02-20T19:59:56+08:00"}
+{"level":"info","msg":"start keepalive lease 694d866dc13063ef for etcd registry","time":"2023-02-20T19:59:57+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:00:53+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:00:53+08:00"}
+{"level":"info","msg":"client address: [::1]:59170\n","time":"2023-02-20T20:00:53+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:00:53+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:1  status_msg:\"biz error: code=404, msg=User videos not exist\"}}\n","time":"2023-02-20T20:00:53+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishAction\n","time":"2023-02-20T20:01:09+08:00"}
+{"level":"info","msg":"client address: [::1]:59170\n","time":"2023-02-20T20:01:09+08:00"}
+{"level":"info","msg":"Publish action start:","time":"2023-02-20T20:01:09+08:00"}
+{"level":"info","msg":"minioCli:{0xc0014aa8f0 172.27.28.184:9000 videos images}","time":"2023-02-20T20:01:09+08:00"}
+{"level":"info","msg":"filename:94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4","time":"2023-02-20T20:01:09+08:00"}
+{"level":"info","msg":"upload 94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4 success","time":"2023-02-20T20:01:10+08:00"}
+{"level":"info","msg":"presignedUrl:http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Credential=minio%2F20230220%2Fus-east-1%2Fs3%2Faws4_request\u0026X-Amz-Date=20230220T120110Z\u0026X-Amz-Expires=86400\u0026X-Amz-SignedHeaders=host\u0026X-Amz-Signature=58779b743485d77315146068f779978c99192a0311f91d09320062f14423d63b","time":"2023-02-20T20:01:10+08:00"}
+{"level":"info","msg":"playUrl:http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4","time":"2023-02-20T20:01:10+08:00"}
+{"level":"info","msg":"ffmpeg input success:","time":"2023-02-20T20:01:13+08:00"}
+{"level":"info","msg":"ffmpeg image Decode success:","time":"2023-02-20T20:01:13+08:00"}
+{"level":"info","msg":"upload b9645289-b115-452d-8083-64a75550118e.jpg success","time":"2023-02-20T20:01:13+08:00"}
+{"level":"info","msg":"presignedUrl:http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Credential=minio%2F20230220%2Fus-east-1%2Fs3%2Faws4_request\u0026X-Amz-Date=20230220T120113Z\u0026X-Amz-Expires=86400\u0026X-Amz-SignedHeaders=host\u0026X-Amz-Signature=041b19de6b3ab9fcaf3015854bd666a9c523c83ea6f243e33188743b456ca864","time":"2023-02-20T20:01:13+08:00"}
+{"level":"info","msg":"coverUrl:http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg","time":"2023-02-20T20:01:13+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:01:13+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:01:14+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:01:14+08:00"}
+{"level":"info","msg":"client address: [::1]:59170\n","time":"2023-02-20T20:01:14+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:01:14+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:01:14+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:01:14+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:01:14+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"}}\n","time":"2023-02-20T20:01:14+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:01:14+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:01:14+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:01:14+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:01:14+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}}\n","time":"2023-02-20T20:01:14+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:01:18+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:01:18+08:00"}
+{"level":"info","msg":"client address: [::1]:59170\n","time":"2023-02-20T20:01:18+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:01:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:01:18+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:01:18+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:01:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"}}\n","time":"2023-02-20T20:01:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:01:18+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:01:18+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:01:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:01:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}}\n","time":"2023-02-20T20:01:18+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:9021","time":"2023-02-20T20:07:29+08:00"}
+{"level":"info","msg":"start keepalive lease 694d866dc1306413 for etcd registry","time":"2023-02-20T20:07:30+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:08:00+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:08:00+08:00"}
+{"level":"info","msg":"client address: [::1]:33126\n","time":"2023-02-20T20:08:00+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:08:00+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:00+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:00+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:00+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"}}\n","time":"2023-02-20T20:08:00+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:08:00+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:00+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:00+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:00+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}}\n","time":"2023-02-20T20:08:00+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"client address: [::1]:33126\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:5  name:\"jacob2020\"}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:5  name:\"jacob2020\"}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"jacob233\"}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:3  name:\"jacob1\"  follow_count:2  follower_count:1}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:3  name:\"jacob1\"  follow_count:2  follower_count:1}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:3  name:\"jacob1\"  follow_count:2  follower_count:1}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:3  name:\"jacob1\"  follow_count:2  follower_count:1}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"jacob02\"  follower_count:2}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"jacob02\"  follower_count:2}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"jacob02\"  follower_count:2}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5  to_user_id:6}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5  to_user_id:6}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4  to_user_id:6}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3  to_user_id:6}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3  to_user_id:6}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3  to_user_id:6}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3  to_user_id:6}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:6}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:6}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:6}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}  video_list:{id:10  author:{id:5  name:\"jacob2020\"}  play_url:\"http://172.27.28.184:9000/videos/bfa3b54e-5b61-4bde-b8a2-e6a4bb08477c.mp4\"  cover_url:\"http://172.27.28.184:9000/images/214dff94-0fcf-4b47-91d1-2cd48d2cce58.jpg\"  title:\"sadjknk\"}  video_list:{id:9  author:{id:5  name:\"jacob2020\"}  play_url:\"http://172.27.28.184:9000/videos/277654d5-759d-4979-8575-d6a6831f4412.mp4\"  cover_url:\"http://172.27.28.184:9000/images/16d65362-1646-4c7c-a00d-729aa589b802.jpg\"  title:\"test2213\"}  video_list:{id:8  author:{id:4  name:\"jacob233\"}  play_url:\"http://172.27.28.184:9000/videos/1600074e-d746-415d-a571-f8d61042eccd.mp4\"  cover_url:\"http://172.27.28.184:9000/images/fd1377be-7cb3-4eff-a000-cf18aabc69a7.jpg\"  title:\"jacob233\"}  video_list:{id:7  author:{id:3  name:\"jacob1\"  follow_count:2  follower_count:1}  play_url:\"http://172.27.28.184:9000/videos/3890b03f-fdc3-4b01-8554-facd30baf42a.mp4\"  cover_url:\"http://172.27.28.184:9000/images/8df4e989-073f-491d-97ab-a2351075e85b.jpg\"  title:\"jsadohwqi\"}  video_list:{id:6  author:{id:3  name:\"jacob1\"  follow_count:2  follower_count:1}  play_url:\"http://172.27.28.184:9000/videos/f63574eb-3ab0-4e56-9c4d-1ceb96d7ac44.mp4\"  cover_url:\"http://172.27.28.184:9000/images/8c6e2ceb-5ccb-403b-89dc-12809ec8f9ec.jpg\"  title:\"test123\"}  video_list:{id:5  author:{id:3  name:\"jacob1\"  follow_count:2  follower_count:1}  play_url:\"http://localhost:9000/videos/ebabad4a-3df7-4a3c-948c-59aa98f1fc5e.mp4\"  cover_url:\"http://localhost:9000/images/44471d49-180d-4d2d-b749-e09732db38df.jpg\"  title:\"test2\"}  video_list:{id:4  author:{id:3  name:\"jacob1\"  follow_count:2  follower_count:1}  play_url:\"http://localhost:9000/videos/53543bcf-76d7-4198-a4b0-be3e86fde6a7.mp4\"  cover_url:\"http://localhost:9000/images/e5e944b1-e30d-4e93-968f-52d804a38bf5.jpg\"  title:\"test1\"}  video_list:{id:3  author:{id:1  name:\"jacob02\"  follower_count:2}  play_url:\"http://localhost:9000/videos/efae1e84-8fae-494c-9c0a-c0d4626e35df.mp4\"  cover_url:\"http://localhost:9000/images/502985da-adbb-43af-a999-78d42b290c56.jpg\"  title:\"etstjacob2\"}  video_list:{id:2  author:{id:1  name:\"jacob02\"  follower_count:2}  play_url:\"http://localhost:9000/videos/9c0c0790-61ac-411a-9e43-511c9f43e60c.mp4\"  cover_url:\"http://localhost:9000/images/173edb39-f38d-4115-ad25-10b9ba082708.jpg\"  title:\"jacob02test\"}  video_list:{id:1  author:{id:1  name:\"jacob02\"  follower_count:2}  play_url:\"http://localhost:9000/videos/a43e7c15-c2c1-4628-af73-d718e46389f5.mp4\"  cover_url:\"http://localhost:9000/images/c17b5274-433f-487b-af35-69519688020d.jpg\"  title:\"jacob02test\"}  next_time:1676878711590}\n","time":"2023-02-20T20:08:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:08:07+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:08:07+08:00"}
+{"level":"info","msg":"client address: [::1]:33126\n","time":"2023-02-20T20:08:07+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:08:07+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:07+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:07+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:07+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"}}\n","time":"2023-02-20T20:08:07+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:08:07+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:07+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:07+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:07+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}}\n","time":"2023-02-20T20:08:07+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:08:08+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:08:08+08:00"}
+{"level":"info","msg":"client address: [::1]:33126\n","time":"2023-02-20T20:08:08+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:08:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:08+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:08+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"}}\n","time":"2023-02-20T20:08:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:08:08+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:08+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}}\n","time":"2023-02-20T20:08:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:08:09+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:08:09+08:00"}
+{"level":"info","msg":"client address: [::1]:33126\n","time":"2023-02-20T20:08:09+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:08:09+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:09+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:09+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:09+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"}}\n","time":"2023-02-20T20:08:09+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:08:09+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:09+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:09+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:09+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}}\n","time":"2023-02-20T20:08:09+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"client address: [::1]:33126\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"}}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"client address: [::1]:33126\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"}}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"client address: [::1]:33126\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"}}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"client address: [::1]:33126\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"}}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}}\n","time":"2023-02-20T20:08:10+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"client address: [::1]:33126\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"}}\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}}\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"client address: [::1]:33126\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"}}\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}}\n","time":"2023-02-20T20:08:11+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:08:13+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:08:13+08:00"}
+{"level":"info","msg":"client address: [::1]:33126\n","time":"2023-02-20T20:08:13+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:08:13+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:13+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:13+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:13+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"}}\n","time":"2023-02-20T20:08:13+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:08:13+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:13+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:13+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:13+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}}\n","time":"2023-02-20T20:08:13+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"client address: [::1]:33126\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"}}\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}}\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"client address: [::1]:33126\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"}}\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}}\n","time":"2023-02-20T20:08:20+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:08:29+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:08:29+08:00"}
+{"level":"info","msg":"client address: [::1]:33126\n","time":"2023-02-20T20:08:29+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:08:29+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:29+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:29+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:29+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"}}\n","time":"2023-02-20T20:08:29+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:08:29+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:29+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:29+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:29+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}}\n","time":"2023-02-20T20:08:29+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:08:30+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:08:30+08:00"}
+{"level":"info","msg":"client address: [::1]:33126\n","time":"2023-02-20T20:08:30+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:08:30+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:30+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:30+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:30+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"}}\n","time":"2023-02-20T20:08:30+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:08:30+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:30+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:30+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:30+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}}\n","time":"2023-02-20T20:08:30+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:08:37+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:08:37+08:00"}
+{"level":"info","msg":"client address: [::1]:33126\n","time":"2023-02-20T20:08:37+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:08:37+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:37+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:37+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:37+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"  follow_count:1}}\n","time":"2023-02-20T20:08:37+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:08:37+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:37+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:37+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:37+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"  follow_count:1}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}}\n","time":"2023-02-20T20:08:37+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:08:40+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:08:40+08:00"}
+{"level":"info","msg":"client address: [::1]:33126\n","time":"2023-02-20T20:08:40+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:08:40+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:40+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:40+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:40+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"  follow_count:1}}\n","time":"2023-02-20T20:08:40+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:08:40+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:40+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:40+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:40+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"  follow_count:1}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}}\n","time":"2023-02-20T20:08:40+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY4OTgwNTIsImlkIjo2LCJvcmlnX2lhdCI6MTY3Njg5NDQ1Mn0.yWvYwZAeH32IbYXo9-_3a1I-YzRGKPKTZq5c4GkLmrM\"}\n","time":"2023-02-20T20:08:46+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-20T20:08:46+08:00"}
+{"level":"info","msg":"client address: [::1]:33126\n","time":"2023-02-20T20:08:46+08:00"}
+{"level":"info","msg":"publish list DB req user id :6","time":"2023-02-20T20:08:46+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:46+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:46+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:46+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"  follow_count:2}}\n","time":"2023-02-20T20:08:46+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6  to_user_id:6}\n","time":"2023-02-20T20:08:46+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:46+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:46+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:46+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"  follow_count:2}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}}\n","time":"2023-02-20T20:08:46+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:latest_time:1676894927477}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"client address: [::1]:33126\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:6  name:\"jacob01\"  follow_count:2}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:5  name:\"jacob2020\"  follower_count:1}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:5  name:\"jacob2020\"  follower_count:1}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"jacob233\"  follower_count:1}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:3  name:\"jacob1\"  follow_count:2  follower_count:1}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:3  name:\"jacob1\"  follow_count:2  follower_count:1}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:3  name:\"jacob1\"  follow_count:2  follower_count:1}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:3  name:\"jacob1\"  follow_count:2  follower_count:1}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"jacob02\"  follower_count:2}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"jacob02\"  follower_count:2}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"jacob02\"  follower_count:2}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-20T20:08:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  video_list:{id:11  author:{id:6  name:\"jacob01\"  follow_count:2}  play_url:\"http://172.27.28.184:9000/videos/94ebaae2-42df-4f78-ab83-0b230f835cbe.mp4\"  cover_url:\"http://172.27.28.184:9000/images/b9645289-b115-452d-8083-64a75550118e.jpg\"  title:\"test1\"}  video_list:{id:10  author:{id:5  name:\"jacob2020\"  follower_count:1}  play_url:\"http://172.27.28.184:9000/videos/bfa3b54e-5b61-4bde-b8a2-e6a4bb08477c.mp4\"  cover_url:\"http://172.27.28.184:9000/images/214dff94-0fcf-4b47-91d1-2cd48d2cce58.jpg\"  title:\"sadjknk\"}  video_list:{id:9  author:{id:5  name:\"jacob2020\"  follower_count:1}  play_url:\"http://172.27.28.184:9000/videos/277654d5-759d-4979-8575-d6a6831f4412.mp4\"  cover_url:\"http://172.27.28.184:9000/images/16d65362-1646-4c7c-a00d-729aa589b802.jpg\"  title:\"test2213\"}  video_list:{id:8  author:{id:4  name:\"jacob233\"  follower_count:1}  play_url:\"http://172.27.28.184:9000/videos/1600074e-d746-415d-a571-f8d61042eccd.mp4\"  cover_url:\"http://172.27.28.184:9000/images/fd1377be-7cb3-4eff-a000-cf18aabc69a7.jpg\"  title:\"jacob233\"}  video_list:{id:7  author:{id:3  name:\"jacob1\"  follow_count:2  follower_count:1}  play_url:\"http://172.27.28.184:9000/videos/3890b03f-fdc3-4b01-8554-facd30baf42a.mp4\"  cover_url:\"http://172.27.28.184:9000/images/8df4e989-073f-491d-97ab-a2351075e85b.jpg\"  title:\"jsadohwqi\"}  video_list:{id:6  author:{id:3  name:\"jacob1\"  follow_count:2  follower_count:1}  play_url:\"http://172.27.28.184:9000/videos/f63574eb-3ab0-4e56-9c4d-1ceb96d7ac44.mp4\"  cover_url:\"http://172.27.28.184:9000/images/8c6e2ceb-5ccb-403b-89dc-12809ec8f9ec.jpg\"  title:\"test123\"}  video_list:{id:5  author:{id:3  name:\"jacob1\"  follow_count:2  follower_count:1}  play_url:\"http://localhost:9000/videos/ebabad4a-3df7-4a3c-948c-59aa98f1fc5e.mp4\"  cover_url:\"http://localhost:9000/images/44471d49-180d-4d2d-b749-e09732db38df.jpg\"  title:\"test2\"}  video_list:{id:4  author:{id:3  name:\"jacob1\"  follow_count:2  follower_count:1}  play_url:\"http://localhost:9000/videos/53543bcf-76d7-4198-a4b0-be3e86fde6a7.mp4\"  cover_url:\"http://localhost:9000/images/e5e944b1-e30d-4e93-968f-52d804a38bf5.jpg\"  title:\"test1\"}  video_list:{id:3  author:{id:1  name:\"jacob02\"  follower_count:2}  play_url:\"http://localhost:9000/videos/efae1e84-8fae-494c-9c0a-c0d4626e35df.mp4\"  cover_url:\"http://localhost:9000/images/502985da-adbb-43af-a999-78d42b290c56.jpg\"  title:\"etstjacob2\"}  video_list:{id:2  author:{id:1  name:\"jacob02\"  follower_count:2}  play_url:\"http://localhost:9000/videos/9c0c0790-61ac-411a-9e43-511c9f43e60c.mp4\"  cover_url:\"http://localhost:9000/images/173edb39-f38d-4115-ad25-10b9ba082708.jpg\"  title:\"jacob02test\"}  video_list:{id:1  author:{id:1  name:\"jacob02\"  follower_count:2}  play_url:\"http://localhost:9000/videos/a43e7c15-c2c1-4628-af73-d718e46389f5.mp4\"  cover_url:\"http://localhost:9000/images/c17b5274-433f-487b-af35-69519688020d.jpg\"  title:\"jacob02test\"}  next_time:1676878711590}\n","time":"2023-02-20T20:08:47+08:00"}
