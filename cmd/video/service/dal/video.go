@@ -17,7 +17,6 @@ func MGetVideos(ctx context.Context, latestTime *int64) ([]*db.Video, error) {
 		cur_time := int64(time.Now().UnixMilli())
 		latestTime = &cur_time
 	}
-	//TODO 这个时间是怎么处理的。
 	res := db.DB.WithContext(ctx).Limit(config.Limit).Order("update_time desc").
 		Find(&videoFeed, "update_time < ?", time.UnixMilli(*latestTime))
 	if res.RowsAffected == 0 {

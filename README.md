@@ -13,6 +13,7 @@ sh build.sh
 sh output/bootstrap.sh
 ```
 #### Run Video RPC Server
+##### 在起服务之前，minioUrl需要设置为当前虚拟机的ip，不能是localhost
 ```bash
 cd ./cmd/video
 sh build.sh
