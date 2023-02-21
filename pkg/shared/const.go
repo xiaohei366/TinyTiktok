@@ -36,4 +36,8 @@ const (
 	//日志的输出路径
 	HlogFilePath = "./tmp/hlog/logs/"
 	KlogFilePath = "./tmp/klog/logs/"
+
+	//消息队列
+	RabbitMqURI = "amqp://%s:%s@%s:%d/"
+
 )

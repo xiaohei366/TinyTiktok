@@ -3,7 +3,6 @@ package ApiServer
 import (
 	"bytes"
 	"context"
-	"fmt"
 	"io"
 	"strconv"
 
@@ -40,7 +39,7 @@ func Feed(ctx context.Context, c *app.RequestContext) {
 	} else {
 		useID = user.(*ApiServer.User).Id
 	}
-	fmt.Print("**************************************", useID)
+
 	videos, err := rpc.FeedVideos(context.Background(), &VideoServer.DouyinFeedRequest{
 		LatestTime: laststTime,
 		UserId:     useID,

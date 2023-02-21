@@ -10,6 +10,10 @@ import (
 
 // 增加关系操作
 func AddFollow(ctx context.Context, userId int64, toUserId int64) error {
+	//不可以自己加自己
+	if userId == toUserId {
+		return nil
+	}
 	follow := db.Follow{
 		UserID:   userId,
 		ToUserID: toUserId,
@@ -38,6 +42,10 @@ func AddFollow(ctx context.Context, userId int64, toUserId int64) error {
 
 // 删除关系操作
 func DelFollow(ctx context.Context, userId int64, toUserId int64) error {
+	//不可以自己删除自己
+	if userId == toUserId {
+		return nil
+	}
 	// 因为不止一步CRUD，因此采用事务处理机制
 	err := db.DB.WithContext(ctx).Transaction(func(tx *gorm.DB) error {
 		// 先判断是否存在关系
