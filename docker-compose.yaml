@@ -100,7 +100,7 @@ services:
       timeout: 20s
       retries: 3
     restart: always
-    # RabbitMQ
+  # RabbitMQ
   rabbitmq:
     image: rabbitmq:management
     ports:
@@ -109,3 +109,11 @@ services:
     environment:
       - RABBITMQ_DEFAULT_USER=admin
       - RABBITMQ_DEFAULT_PASS=admin
+  # Redis
+  redis:
+    image: 'redis'
+    ports:
+      - 6379:6379
+    volumes:
+      - ./pkg/configs/redis/redis.conf:/etc/redis/redis.conf
+    command: "redis-server /etc/redis/redis.conf"

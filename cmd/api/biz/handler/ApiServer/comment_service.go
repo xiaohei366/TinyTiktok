@@ -2,12 +2,12 @@ package ApiServer
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 	ApiServer "github.com/xiaohei366/TinyTiktok/cmd/api/biz/model/ApiServer"
 )
-
 
 // CommentAction .
 // @router /douyin/comment/action/ [POST]
@@ -19,7 +19,7 @@ func CommentAction(ctx context.Context, c *app.RequestContext) {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
-
+	fmt.Print(req.Token, req.VideoId, req.ActionType)
 	resp := new(ApiServer.DouyinCommentActionResponse)
 
 	c.JSON(consts.StatusOK, resp)

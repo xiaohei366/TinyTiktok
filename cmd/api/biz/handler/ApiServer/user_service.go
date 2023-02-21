@@ -2,9 +2,11 @@ package ApiServer
 
 import (
 	"context"
+	"sync"
 
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
+	"github.com/cloudwego/kitex/pkg/klog"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/handler/pack"
 	mw "github.com/xiaohei366/TinyTiktok/cmd/api/biz/middleware"
 	ApiServer "github.com/xiaohei366/TinyTiktok/cmd/api/biz/model/ApiServer"
@@ -61,6 +63,7 @@ func Login(ctx context.Context, c *app.RequestContext) {
 func GetUserInfo(ctx context.Context, c *app.RequestContext) {
 	var err error
 	var req ApiServer.DouyinUserRequest
+	var wg sync.WaitGroup
 	var u *UserServer.User
 	var isFollow bool
 	err = c.BindAndValidate(&req)
@@ -68,24 +71,31 @@ func GetUserInfo(ctx context.Context, c *app.RequestContext) {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
-	//调用PRC方法，获得用户信息
-	u, err = rpc.GetUserInfo(context.Background(), &UserServer.DouyinUserRequest{
-		UserId: req.UserId,
-	})
-	if err != nil {
-		pack.SendUesrInfoResponse(c, errno.ConvertErr(err), nil, false)
-		return
-	}
-	//调用PRC方法，知道token用户是否关注查询的用户
-	v, _ := c.Get(shared.IdentityKey) // 取出token的id
-	isFollow, err = rpc.QueryRelation(context.Background(), &RelationServer.DouyinQueryRelationRequest{
-		UserId:   v.(*ApiServer.User).Id,
-		ToUserId: req.UserId,
-	})
-	if err != nil {
-		pack.SendUesrInfoResponse(c, errno.ConvertErr(err), nil, false)
-		return
-	}
+	//开协程调用两个RPC方法
+	//如果出现错误，不能直接返回失败，将默认值返回，保证稳定
+	wg.Add(2)
+	go func() {
+		u, err = rpc.GetUserInfo(context.Background(), &UserServer.DouyinUserRequest{
+			UserId: req.UserId,
+		})
+		if err != nil {
+			klog.Errorf("调用用户模块失败:%v", err)
+		}
+		wg.Done()
+	}()
+	go func() {
+		v, _ := c.Get(shared.IdentityKey) // 取出token的id
+		isFollow, err = rpc.QueryRelation(context.Background(), &RelationServer.DouyinQueryRelationRequest{
+			UserId:   v.(*ApiServer.User).Id,
+			ToUserId: req.UserId,
+		})
+		if err != nil {
+			klog.Errorf("调用关系模块失败:%v", err)
+			return
+		}
+		wg.Done()
+	}()
+	wg.Wait()
 	//成功响应
 	pack.SendUesrInfoResponse(c, errno.Success, u, isFollow)
 }

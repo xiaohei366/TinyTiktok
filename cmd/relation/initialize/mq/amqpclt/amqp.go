@@ -44,6 +44,7 @@ func (a *Actor) Publish(_ context.Context, message string) error {
 
 // 关注动作的消费
 func (a *Actor) Consumer(_ context.Context) {
+	//指定队列
 	// 队列名，持久化，自动删除，exclusive，是否阻塞，额外参数
 	_, err := a.channel.QueueDeclare(a.queueName, false, false, false, false, nil)
 
@@ -51,7 +52,7 @@ func (a *Actor) Consumer(_ context.Context) {
 		klog.Errorf("cannot declare queue: %v", err)
 	}
 
-	//队列名 消费者名 自动应答(是否批量处理) exclusive 自产自消 阻塞 额外参数
+	//队列名 消费者名 自动应答(自动的进行削峰处理) exclusive 自产自消 阻塞 额外参数
 	msgs, err := a.channel.Consume(a.queueName, "", true, false, false, false, nil)
 	if err != nil {
 		klog.Errorf("cannot Consume queue: %v", err)

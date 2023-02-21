@@ -21,7 +21,7 @@ func NewRelationActionService(ctx context.Context) *RelationActionService {
 	return &RelationActionService{ctx: ctx}
 }
 
-// 关注/取关操作
+// 关注/取关操作---先保证user服务器是正常的，才能实行关注与否操作
 func (s *RelationActionService) FollowAction(isFollow bool, relation db.Follow) error {
 	//组装成一个消息，为发送至消息队列作准备
 	sb := strings.Builder{}

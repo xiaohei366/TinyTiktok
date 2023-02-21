@@ -1957,3 +1957,410 @@
 {"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T15:51:05+08:00"}
 {"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:2 author:{id:2 name:\"2\" follow_count:3 follower_count:9 is_follow:true} play_url:\"http://172.27.51.171:9000/videos/75ea79ad-36da-435e-bdab-f2eefba4efb1.mp4\" cover_url:\"http://172.27.51.171:9000/images/6353e7a4-4229-484f-8429-3a64d22fbc77.jpg\" title:\"2\"} video_list:{id:1 author:{id:1 name:\"1\" follow_count:1 follower_count:3} play_url:\"http://172.27.51.171:9000/videos/0e9e6ef2-2f1c-40c9-9178-e0cb3ace5d04.mp4\" cover_url:\"http://172.27.51.171:9000/images/bcab2333-7b13-444c-a0c1-90ca49f720a0.jpg\" title:\"1\"} next_time:1676907608807}\n","time":"2023-02-21T15:51:05+08:00"}
 {"level":"warning","msg":"KITEX: signal connection closing error:protobuf just support 'framed' trans proto[::]:9021=\u003e[::1]:44702","time":"2023-02-21T16:01:27+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:9021","time":"2023-02-21T20:26:01+08:00"}
+{"level":"info","msg":"start keepalive lease 694d8671c1f3306a for etcd registry","time":"2023-02-21T20:26:02+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:\u003cnil\u003e}\n","time":"2023-02-21T20:26:02+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T20:26:02+08:00"}
+{"level":"info","msg":"client address: [::1]:38442\n","time":"2023-02-21T20:26:02+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=api, remoteAddr=[::1]:38442, error=panic: [happened in biz handler] runtime error: invalid memory address or nil pointer dereference\nstack=goroutine 136 [running]:\nruntime/debug.Stack()\n\t/usr/local/go/src/runtime/debug/stack.go:24 +0x65\ngithub.com/cloudwego/kitex/server.(*server).invokeHandleEndpoint.func1.1()\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/server/server.go:282 +0xba\npanic({0x1c7d1c0, 0x2ee8720})\n\t/usr/local/go/src/runtime/panic.go:884 +0x212\ngithub.com/xiaohei366/TinyTiktok/cmd/video/service.(*FeedService).Feed(0xc0018058c8, 0x0)\n\t/home/angryhei/code/project_bytes_camp/TinyTiktok/cmd/video/service/feed.go:31 +0x39\nmain.(*VideoSrvImpl).Feed(0x1c799e0?, {0x22b9160?, 0xc0005b9980?}, 0x81a301?)\n\t/home/angryhei/code/project_bytes_camp/TinyTiktok/cmd/video/handler.go:17 +0x3f\ngithub.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer/videosrv.feedHandler({0x22b9160, 0xc0005b9980}, {0x1cb43e0?, 0x2f4b378}, {0x1d51b40?, 0xc0005c40f0}, {0x1d6cba0?, 0xc0005c40f8})\n\t/home/angryhei/code/project_bytes_camp/TinyTiktok/kitex_gen/VideoServer/videosrv/videosrv.go:59 +0x19e\ngithub.com/cloudwego/kitex/server.(*server).invokeHandleEndpoint.func1({0x22b9160, 0xc0005b9980}, {0x1d51b40, 0xc0005c40f0}, {0x1d6cba0, 0xc0005c40f8})\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/server/server.go:290 +0x291\ngithub.com/kitex-contrib/obs-opentelemetry/tracing.ServerMiddleware.func1.1({0x22b9160, 0xc0005b9530}, {0x1d51b40, 0xc0005c40f0}, {0x1d6cba0, 0xc0005c40f8})\n\t/home/angryhei/gopath/pkg/mod/github.com/kitex-contrib/obs-opentelemetry@v0.2.0/tracing/middleware.go:88 +0x471\ngithub.com/xiaohei366/TinyTiktok/pkg/middleware.ServerMiddleware.func1({0x22b9160, 0xc0005b9530}, {0x1d51b40, 0xc0005c40f0}, {0x1d6cba0, 0xc0005c40f8})\n\t/home/angryhei/code/project_bytes_camp/TinyTiktok/pkg/middleware/server_log.go:19 +0x133\ngithub.com/xiaohei366/TinyTiktok/pkg/middleware.CommonMiddleware.func1({0x22b9160, 0xc0005b9530}, {0x1d51b40?, 0xc0005c40f0}, {0x1d6cba0?, 0xc0005c40f8})\n\t/home/angryhei/code/project_bytes_camp/TinyTiktok/pkg/middleware/common_log.go:21 +0x248\ngithub.com/cloudwego/kitex/pkg/remote/trans/netpollmux.(*svrTransHandler).OnMessage(0xc001273400, {0x22b9160, 0xc0005b9530}, {0x22c4268?, 0xc0005d0880?}, {0x22c4268, 0xc0005d0900})\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/pkg/remote/trans/netpollmux/server_handler.go:277 +0x90\ngithub.com/cloudwego/kitex/pkg/remote.(*TransPipeline).OnMessage(0xc0014fe780, {0x22b9160?, 0xc0005b9320?}, {0x22c4268, 0xc0005d0880}, {0x22c4268?, 0xc0005d0900?})\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/pkg/remote/trans_pipeline.go:158 +0xdd\ngithub.com/cloudwego/kitex/pkg/remote/trans/netpollmux.(*svrTransHandler).task(0xc001273400, {0x22b9160, 0xc0006b19e0}, {0x7f28204451c8, 0xc001784280}, {0x22c0708, 0xc0005c2cd0})\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/pkg/remote/trans/netpollmux/server_handler.go:256 +0x498\ngithub.com/cloudwego/kitex/pkg/remote/trans/netpollmux.(*svrTransHandler).OnRead.func1()\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/pkg/remote/trans/netpollmux/server_handler.go:174 +0x35\ngithub.com/cloudwego/kitex/pkg/gofunc.init.0.func1.1()\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/pkg/gofunc/go.go:40 +0x3e\ngithub.com/bytedance/gopkg/util/gopool.(*worker).run.func1.1(0xc0012367d0?, 0x169b98e?)\n\t/home/angryhei/gopath/pkg/mod/github.com/bytedance/gopkg@v0.0.0-20220623074550-9d6d3df70991/util/gopool/worker.go:69 +0x66\ngithub.com/bytedance/gopkg/util/gopool.(*worker).run.func1()\n\t/home/angryhei/gopath/pkg/mod/github.com/bytedance/gopkg@v0.0.0-20220623074550-9d6d3df70991/util/gopool/worker.go:70 +0xe5\ncreated by github.com/bytedance/gopkg/util/gopool.(*worker).run\n\t/home/angryhei/gopath/pkg/mod/github.com/bytedance/gopkg@v0.0.0-20220623074550-9d6d3df70991/util/gopool/worker.go:41 +0x56\n","span_id":"0000000000000000","time":"2023-02-21T20:26:02+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:\u003cnil\u003e}\n","time":"2023-02-21T20:26:08+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T20:26:08+08:00"}
+{"level":"info","msg":"client address: [::1]:38442\n","time":"2023-02-21T20:26:08+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=api, remoteAddr=[::1]:38442, error=panic: [happened in biz handler] runtime error: invalid memory address or nil pointer dereference\nstack=goroutine 149 [running]:\nruntime/debug.Stack()\n\t/usr/local/go/src/runtime/debug/stack.go:24 +0x65\ngithub.com/cloudwego/kitex/server.(*server).invokeHandleEndpoint.func1.1()\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/server/server.go:282 +0xba\npanic({0x1c7d1c0, 0x2ee8720})\n\t/usr/local/go/src/runtime/panic.go:884 +0x212\ngithub.com/xiaohei366/TinyTiktok/cmd/video/service.(*FeedService).Feed(0xc0010d58c8, 0x0)\n\t/home/angryhei/code/project_bytes_camp/TinyTiktok/cmd/video/service/feed.go:31 +0x39\nmain.(*VideoSrvImpl).Feed(0x1c799e0?, {0x22b9160?, 0xc0002f0de0?}, 0x81a301?)\n\t/home/angryhei/code/project_bytes_camp/TinyTiktok/cmd/video/handler.go:17 +0x3f\ngithub.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer/videosrv.feedHandler({0x22b9160, 0xc0002f0de0}, {0x1cb43e0?, 0x2f4b378}, {0x1d51b40?, 0xc0002fa028}, {0x1d6cba0?, 0xc0002fa030})\n\t/home/angryhei/code/project_bytes_camp/TinyTiktok/kitex_gen/VideoServer/videosrv/videosrv.go:59 +0x19e\ngithub.com/cloudwego/kitex/server.(*server).invokeHandleEndpoint.func1({0x22b9160, 0xc0002f0de0}, {0x1d51b40, 0xc0002fa028}, {0x1d6cba0, 0xc0002fa030})\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/server/server.go:290 +0x291\ngithub.com/kitex-contrib/obs-opentelemetry/tracing.ServerMiddleware.func1.1({0x22b9160, 0xc0002f09f0}, {0x1d51b40, 0xc0002fa028}, {0x1d6cba0, 0xc0002fa030})\n\t/home/angryhei/gopath/pkg/mod/github.com/kitex-contrib/obs-opentelemetry@v0.2.0/tracing/middleware.go:88 +0x471\ngithub.com/xiaohei366/TinyTiktok/pkg/middleware.ServerMiddleware.func1({0x22b9160, 0xc0002f09f0}, {0x1d51b40, 0xc0002fa028}, {0x1d6cba0, 0xc0002fa030})\n\t/home/angryhei/code/project_bytes_camp/TinyTiktok/pkg/middleware/server_log.go:19 +0x133\ngithub.com/xiaohei366/TinyTiktok/pkg/middleware.CommonMiddleware.func1({0x22b9160, 0xc0002f09f0}, {0x1d51b40?, 0xc0002fa028}, {0x1d6cba0?, 0xc0002fa030})\n\t/home/angryhei/code/project_bytes_camp/TinyTiktok/pkg/middleware/common_log.go:21 +0x248\ngithub.com/cloudwego/kitex/pkg/remote/trans/netpollmux.(*svrTransHandler).OnMessage(0xc001273400, {0x22b9160, 0xc0002f09f0}, {0x22c4268?, 0xc0005d0900?}, {0x22c4268, 0xc0002fe300})\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/pkg/remote/trans/netpollmux/server_handler.go:277 +0x90\ngithub.com/cloudwego/kitex/pkg/remote.(*TransPipeline).OnMessage(0xc0014fe780, {0x22b9160?, 0xc0002f0870?}, {0x22c4268, 0xc0005d0900}, {0x22c4268?, 0xc0002fe300?})\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/pkg/remote/trans_pipeline.go:158 +0xdd\ngithub.com/cloudwego/kitex/pkg/remote/trans/netpollmux.(*svrTransHandler).task(0xc001273400, {0x22b9160, 0xc0006b19e0}, {0x7f28204451c8, 0xc001784280}, {0x22c0708, 0xc0002f8410})\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/pkg/remote/trans/netpollmux/server_handler.go:256 +0x498\ngithub.com/cloudwego/kitex/pkg/remote/trans/netpollmux.(*svrTransHandler).OnRead.func1()\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/pkg/remote/trans/netpollmux/server_handler.go:174 +0x35\ngithub.com/cloudwego/kitex/pkg/gofunc.init.0.func1.1()\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/pkg/gofunc/go.go:40 +0x3e\ngithub.com/bytedance/gopkg/util/gopool.(*worker).run.func1.1(0x0?, 0x0?)\n\t/home/angryhei/gopath/pkg/mod/github.com/bytedance/gopkg@v0.0.0-20220623074550-9d6d3df70991/util/gopool/worker.go:69 +0x66\ngithub.com/bytedance/gopkg/util/gopool.(*worker).run.func1()\n\t/home/angryhei/gopath/pkg/mod/github.com/bytedance/gopkg@v0.0.0-20220623074550-9d6d3df70991/util/gopool/worker.go:70 +0xe5\ncreated by github.com/bytedance/gopkg/util/gopool.(*worker).run\n\t/home/angryhei/gopath/pkg/mod/github.com/bytedance/gopkg@v0.0.0-20220623074550-9d6d3df70991/util/gopool/worker.go:41 +0x56\n","span_id":"0000000000000000","time":"2023-02-21T20:26:08+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:latest_time:1676982373214}\n","time":"2023-02-21T20:26:13+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T20:26:13+08:00"}
+{"level":"info","msg":"client address: [::1]:38442\n","time":"2023-02-21T20:26:13+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T20:26:13+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T20:26:13+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=api, remoteAddr=[::1]:38442, error=biz error: err_code=10104, err_msg=Failed to use user RPC","span_id":"0000000000000000","time":"2023-02-21T20:26:13+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:\u003cnil\u003e}\n","time":"2023-02-21T20:26:14+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T20:26:14+08:00"}
+{"level":"info","msg":"client address: [::1]:38442\n","time":"2023-02-21T20:26:14+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=api, remoteAddr=[::1]:38442, error=panic: [happened in biz handler] runtime error: invalid memory address or nil pointer dereference\nstack=goroutine 211 [running]:\nruntime/debug.Stack()\n\t/usr/local/go/src/runtime/debug/stack.go:24 +0x65\ngithub.com/cloudwego/kitex/server.(*server).invokeHandleEndpoint.func1.1()\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/server/server.go:282 +0xba\npanic({0x1c7d1c0, 0x2ee8720})\n\t/usr/local/go/src/runtime/panic.go:884 +0x212\ngithub.com/xiaohei366/TinyTiktok/cmd/video/service.(*FeedService).Feed(0xc0005c98c8, 0x0)\n\t/home/angryhei/code/project_bytes_camp/TinyTiktok/cmd/video/service/feed.go:31 +0x39\nmain.(*VideoSrvImpl).Feed(0x1c799e0?, {0x22b9160?, 0xc00031c1e0?}, 0x81a301?)\n\t/home/angryhei/code/project_bytes_camp/TinyTiktok/cmd/video/handler.go:17 +0x3f\ngithub.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer/videosrv.feedHandler({0x22b9160, 0xc00031c1e0}, {0x1cb43e0?, 0x2f4b378}, {0x1d51b40?, 0xc0001acb30}, {0x1d6cba0?, 0xc0001acb38})\n\t/home/angryhei/code/project_bytes_camp/TinyTiktok/kitex_gen/VideoServer/videosrv/videosrv.go:59 +0x19e\ngithub.com/cloudwego/kitex/server.(*server).invokeHandleEndpoint.func1({0x22b9160, 0xc00031c1e0}, {0x1d51b40, 0xc0001acb30}, {0x1d6cba0, 0xc0001acb38})\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/server/server.go:290 +0x291\ngithub.com/kitex-contrib/obs-opentelemetry/tracing.ServerMiddleware.func1.1({0x22b9160, 0xc000f96cf0}, {0x1d51b40, 0xc0001acb30}, {0x1d6cba0, 0xc0001acb38})\n\t/home/angryhei/gopath/pkg/mod/github.com/kitex-contrib/obs-opentelemetry@v0.2.0/tracing/middleware.go:88 +0x471\ngithub.com/xiaohei366/TinyTiktok/pkg/middleware.ServerMiddleware.func1({0x22b9160, 0xc000f96cf0}, {0x1d51b40, 0xc0001acb30}, {0x1d6cba0, 0xc0001acb38})\n\t/home/angryhei/code/project_bytes_camp/TinyTiktok/pkg/middleware/server_log.go:19 +0x133\ngithub.com/xiaohei366/TinyTiktok/pkg/middleware.CommonMiddleware.func1({0x22b9160, 0xc000f96cf0}, {0x1d51b40?, 0xc0001acb30}, {0x1d6cba0?, 0xc0001acb38})\n\t/home/angryhei/code/project_bytes_camp/TinyTiktok/pkg/middleware/common_log.go:21 +0x248\ngithub.com/cloudwego/kitex/pkg/remote/trans/netpollmux.(*svrTransHandler).OnMessage(0xc001273400, {0x22b9160, 0xc000f96cf0}, {0x22c4268?, 0xc0002fe300?}, {0x22c4268, 0xc000fac000})\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/pkg/remote/trans/netpollmux/server_handler.go:277 +0x90\ngithub.com/cloudwego/kitex/pkg/remote.(*TransPipeline).OnMessage(0xc0014fe780, {0x22b9160?, 0xc000f96390?}, {0x22c4268, 0xc0002fe300}, {0x22c4268?, 0xc000fac000?})\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/pkg/remote/trans_pipeline.go:158 +0xdd\ngithub.com/cloudwego/kitex/pkg/remote/trans/netpollmux.(*svrTransHandler).task(0xc001273400, {0x22b9160, 0xc0006b19e0}, {0x7f28204451c8, 0xc001784280}, {0x22c0708, 0xc001136870})\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/pkg/remote/trans/netpollmux/server_handler.go:256 +0x498\ngithub.com/cloudwego/kitex/pkg/remote/trans/netpollmux.(*svrTransHandler).OnRead.func1()\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/pkg/remote/trans/netpollmux/server_handler.go:174 +0x35\ngithub.com/cloudwego/kitex/pkg/gofunc.init.0.func1.1()\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/pkg/gofunc/go.go:40 +0x3e\ngithub.com/bytedance/gopkg/util/gopool.(*worker).run.func1.1(0x12d3992?, 0x1cdb080?)\n\t/home/angryhei/gopath/pkg/mod/github.com/bytedance/gopkg@v0.0.0-20220623074550-9d6d3df70991/util/gopool/worker.go:69 +0x66\ngithub.com/bytedance/gopkg/util/gopool.(*worker).run.func1()\n\t/home/angryhei/gopath/pkg/mod/github.com/bytedance/gopkg@v0.0.0-20220623074550-9d6d3df70991/util/gopool/worker.go:70 +0xe5\ncreated by github.com/bytedance/gopkg/util/gopool.(*worker).run\n\t/home/angryhei/gopath/pkg/mod/github.com/bytedance/gopkg@v0.0.0-20220623074550-9d6d3df70991/util/gopool/worker.go:41 +0x56\n","span_id":"0000000000000000","time":"2023-02-21T20:26:14+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:latest_time:1676982383410}\n","time":"2023-02-21T20:26:23+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T20:26:23+08:00"}
+{"level":"info","msg":"client address: [::1]:38442\n","time":"2023-02-21T20:26:23+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T20:26:23+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T20:26:23+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:26:23+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\" follow_count:3 follower_count:9}}\n","time":"2023-02-21T20:26:23+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T20:26:23+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T20:26:23+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:26:23+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T20:26:23+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:to_user_id:2}\n","time":"2023-02-21T20:26:23+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T20:26:23+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=api, remoteAddr=[::1]:38442, error=biz error: err_code=10006, err_msg=Failed to use relation RPC","span_id":"0000000000000000","time":"2023-02-21T20:26:23+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:\u003cnil\u003e}\n","time":"2023-02-21T20:26:24+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T20:26:24+08:00"}
+{"level":"info","msg":"client address: [::1]:38442\n","time":"2023-02-21T20:26:24+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=api, remoteAddr=[::1]:38442, error=panic: [happened in biz handler] runtime error: invalid memory address or nil pointer dereference\nstack=goroutine 205 [running]:\nruntime/debug.Stack()\n\t/usr/local/go/src/runtime/debug/stack.go:24 +0x65\ngithub.com/cloudwego/kitex/server.(*server).invokeHandleEndpoint.func1.1()\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/server/server.go:282 +0xba\npanic({0x1c7d1c0, 0x2ee8720})\n\t/usr/local/go/src/runtime/panic.go:884 +0x212\ngithub.com/xiaohei366/TinyTiktok/cmd/video/service.(*FeedService).Feed(0xc0011d78c8, 0x0)\n\t/home/angryhei/code/project_bytes_camp/TinyTiktok/cmd/video/service/feed.go:31 +0x39\nmain.(*VideoSrvImpl).Feed(0x1c799e0?, {0x22b9160?, 0xc0002f1b90?}, 0x81a301?)\n\t/home/angryhei/code/project_bytes_camp/TinyTiktok/cmd/video/handler.go:17 +0x3f\ngithub.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer/videosrv.feedHandler({0x22b9160, 0xc0002f1b90}, {0x1cb43e0?, 0x2f4b378}, {0x1d51b40?, 0xc0002fa3a0}, {0x1d6cba0?, 0xc0002fa3a8})\n\t/home/angryhei/code/project_bytes_camp/TinyTiktok/kitex_gen/VideoServer/videosrv/videosrv.go:59 +0x19e\ngithub.com/cloudwego/kitex/server.(*server).invokeHandleEndpoint.func1({0x22b9160, 0xc0002f1b90}, {0x1d51b40, 0xc0002fa3a0}, {0x1d6cba0, 0xc0002fa3a8})\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/server/server.go:290 +0x291\ngithub.com/kitex-contrib/obs-opentelemetry/tracing.ServerMiddleware.func1.1({0x22b9160, 0xc0002f17a0}, {0x1d51b40, 0xc0002fa3a0}, {0x1d6cba0, 0xc0002fa3a8})\n\t/home/angryhei/gopath/pkg/mod/github.com/kitex-contrib/obs-opentelemetry@v0.2.0/tracing/middleware.go:88 +0x471\ngithub.com/xiaohei366/TinyTiktok/pkg/middleware.ServerMiddleware.func1({0x22b9160, 0xc0002f17a0}, {0x1d51b40, 0xc0002fa3a0}, {0x1d6cba0, 0xc0002fa3a8})\n\t/home/angryhei/code/project_bytes_camp/TinyTiktok/pkg/middleware/server_log.go:19 +0x133\ngithub.com/xiaohei366/TinyTiktok/pkg/middleware.CommonMiddleware.func1({0x22b9160, 0xc0002f17a0}, {0x1d51b40?, 0xc0002fa3a0}, {0x1d6cba0?, 0xc0002fa3a8})\n\t/home/angryhei/code/project_bytes_camp/TinyTiktok/pkg/middleware/common_log.go:21 +0x248\ngithub.com/cloudwego/kitex/pkg/remote/trans/netpollmux.(*svrTransHandler).OnMessage(0xc001273400, {0x22b9160, 0xc0002f17a0}, {0x22c4268?, 0xc0005d0900?}, {0x22c4268, 0xc00131c080})\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/pkg/remote/trans/netpollmux/server_handler.go:277 +0x90\ngithub.com/cloudwego/kitex/pkg/remote.(*TransPipeline).OnMessage(0xc0014fe780, {0x22b9160?, 0xc0002f16b0?}, {0x22c4268, 0xc0005d0900}, {0x22c4268?, 0xc00131c080?})\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/pkg/remote/trans_pipeline.go:158 +0xdd\ngithub.com/cloudwego/kitex/pkg/remote/trans/netpollmux.(*svrTransHandler).task(0xc001273400, {0x22b9160, 0xc0006b19e0}, {0x7f28204451c8, 0xc001784280}, {0x22c0708, 0xc0014209b0})\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/pkg/remote/trans/netpollmux/server_handler.go:256 +0x498\ngithub.com/cloudwego/kitex/pkg/remote/trans/netpollmux.(*svrTransHandler).OnRead.func1()\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/pkg/remote/trans/netpollmux/server_handler.go:174 +0x35\ngithub.com/cloudwego/kitex/pkg/gofunc.init.0.func1.1()\n\t/home/angryhei/gopath/pkg/mod/github.com/cloudwego/kitex@v0.4.4/pkg/gofunc/go.go:40 +0x3e\ngithub.com/bytedance/gopkg/util/gopool.(*worker).run.func1.1(0xc0002ef500?, 0x1cdb080?)\n\t/home/angryhei/gopath/pkg/mod/github.com/bytedance/gopkg@v0.0.0-20220623074550-9d6d3df70991/util/gopool/worker.go:69 +0x66\ngithub.com/bytedance/gopkg/util/gopool.(*worker).run.func1()\n\t/home/angryhei/gopath/pkg/mod/github.com/bytedance/gopkg@v0.0.0-20220623074550-9d6d3df70991/util/gopool/worker.go:70 +0xe5\ncreated by github.com/bytedance/gopkg/util/gopool.(*worker).run\n\t/home/angryhei/gopath/pkg/mod/github.com/bytedance/gopkg@v0.0.0-20220623074550-9d6d3df70991/util/gopool/worker.go:41 +0x56\n","span_id":"0000000000000000","time":"2023-02-21T20:26:24+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:9021","time":"2023-02-21T20:30:11+08:00"}
+{"level":"info","msg":"start keepalive lease 694d8671c1f3308d for etcd registry","time":"2023-02-21T20:30:12+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:latest_time:1676982616230 user_id:1}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"client address: [::1]:34960\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\" follow_count:3 follower_count:9}}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 to_user_id:2}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} is_follow:true}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 to_user_id:1}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} is_follow:true}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:2 author:{id:2 name:\"2\" follow_count:3 follower_count:9 is_follow:true} play_url:\"http://172.27.51.171:9000/videos/75ea79ad-36da-435e-bdab-f2eefba4efb1.mp4\" cover_url:\"http://172.27.51.171:9000/images/6353e7a4-4229-484f-8429-3a64d22fbc77.jpg\" title:\"2\"} video_list:{id:1 author:{id:1 name:\"1\" follow_count:1 follower_count:3 is_follow:true} play_url:\"http://172.27.51.171:9000/videos/0e9e6ef2-2f1c-40c9-9178-e0cb3ace5d04.mp4\" cover_url:\"http://172.27.51.171:9000/images/bcab2333-7b13-444c-a0c1-90ca49f720a0.jpg\" title:\"1\"} next_time:1676907608807}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:latest_time:1676982616303 user_id:1}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"client address: [::1]:34960\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY5ODU5ODksImlkIjoxLCJvcmlnX2lhdCI6MTY3Njk4MjM4OX0.M7HgNzUHMgtPm4k5ivljhEdXhD13_oI7o4WaYqqwAUE\"}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"client address: [::1]:34960\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"publish list DB req user id :1","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\" follow_count:3 follower_count:9}}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 to_user_id:2}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 to_user_id:1}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} is_follow:true}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 to_user_id:1}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} is_follow:true}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:1 author:{id:1 name:\"1\" follow_count:1 follower_count:3 is_follow:true} play_url:\"http://172.27.51.171:9000/videos/0e9e6ef2-2f1c-40c9-9178-e0cb3ace5d04.mp4\" cover_url:\"http://172.27.51.171:9000/images/bcab2333-7b13-444c-a0c1-90ca49f720a0.jpg\" title:\"1\"}}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} is_follow:true}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:2 author:{id:2 name:\"2\" follow_count:3 follower_count:9 is_follow:true} play_url:\"http://172.27.51.171:9000/videos/75ea79ad-36da-435e-bdab-f2eefba4efb1.mp4\" cover_url:\"http://172.27.51.171:9000/images/6353e7a4-4229-484f-8429-3a64d22fbc77.jpg\" title:\"2\"} video_list:{id:1 author:{id:1 name:\"1\" follow_count:1 follower_count:3 is_follow:true} play_url:\"http://172.27.51.171:9000/videos/0e9e6ef2-2f1c-40c9-9178-e0cb3ace5d04.mp4\" cover_url:\"http://172.27.51.171:9000/images/bcab2333-7b13-444c-a0c1-90ca49f720a0.jpg\" title:\"1\"} next_time:1676907608807}\n","time":"2023-02-21T20:30:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY5ODYyMjAsImlkIjoxLCJvcmlnX2lhdCI6MTY3Njk4MjYyMH0.wddOFvaoFCwhVtbo_e0zcCWV4xItVV29a85FF34yYCE\"}\n","time":"2023-02-21T20:30:20+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-21T20:30:20+08:00"}
+{"level":"info","msg":"client address: [::1]:34960\n","time":"2023-02-21T20:30:20+08:00"}
+{"level":"info","msg":"publish list DB req user id :1","time":"2023-02-21T20:30:20+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T20:30:20+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T20:30:20+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:20+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T20:30:20+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 to_user_id:1}\n","time":"2023-02-21T20:30:20+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T20:30:20+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:20+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} is_follow:true}\n","time":"2023-02-21T20:30:20+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:1 author:{id:1 name:\"1\" follow_count:1 follower_count:3 is_follow:true} play_url:\"http://172.27.51.171:9000/videos/0e9e6ef2-2f1c-40c9-9178-e0cb3ace5d04.mp4\" cover_url:\"http://172.27.51.171:9000/images/bcab2333-7b13-444c-a0c1-90ca49f720a0.jpg\" title:\"1\"}}\n","time":"2023-02-21T20:30:20+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY5ODYyMjAsImlkIjoxLCJvcmlnX2lhdCI6MTY3Njk4MjYyMH0.wddOFvaoFCwhVtbo_e0zcCWV4xItVV29a85FF34yYCE\"}\n","time":"2023-02-21T20:30:25+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-21T20:30:25+08:00"}
+{"level":"info","msg":"client address: [::1]:34960\n","time":"2023-02-21T20:30:25+08:00"}
+{"level":"info","msg":"publish list DB req user id :1","time":"2023-02-21T20:30:25+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T20:30:25+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T20:30:25+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:25+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T20:30:25+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 to_user_id:1}\n","time":"2023-02-21T20:30:25+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T20:30:25+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:25+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} is_follow:true}\n","time":"2023-02-21T20:30:25+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:1 author:{id:1 name:\"1\" follow_count:1 follower_count:3 is_follow:true} play_url:\"http://172.27.51.171:9000/videos/0e9e6ef2-2f1c-40c9-9178-e0cb3ace5d04.mp4\" cover_url:\"http://172.27.51.171:9000/images/bcab2333-7b13-444c-a0c1-90ca49f720a0.jpg\" title:\"1\"}}\n","time":"2023-02-21T20:30:25+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY5ODYyMjAsImlkIjoxLCJvcmlnX2lhdCI6MTY3Njk4MjYyMH0.wddOFvaoFCwhVtbo_e0zcCWV4xItVV29a85FF34yYCE\"}\n","time":"2023-02-21T20:30:28+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-21T20:30:28+08:00"}
+{"level":"info","msg":"client address: [::1]:34960\n","time":"2023-02-21T20:30:28+08:00"}
+{"level":"info","msg":"publish list DB req user id :1","time":"2023-02-21T20:30:28+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T20:30:28+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T20:30:28+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:28+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T20:30:28+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 to_user_id:1}\n","time":"2023-02-21T20:30:28+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T20:30:28+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:28+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} is_follow:true}\n","time":"2023-02-21T20:30:28+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:1 author:{id:1 name:\"1\" follow_count:1 follower_count:3 is_follow:true} play_url:\"http://172.27.51.171:9000/videos/0e9e6ef2-2f1c-40c9-9178-e0cb3ace5d04.mp4\" cover_url:\"http://172.27.51.171:9000/images/bcab2333-7b13-444c-a0c1-90ca49f720a0.jpg\" title:\"1\"}}\n","time":"2023-02-21T20:30:28+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:latest_time:1676982616462 user_id:1}\n","time":"2023-02-21T20:30:30+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T20:30:30+08:00"}
+{"level":"info","msg":"client address: [::1]:34960\n","time":"2023-02-21T20:30:30+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T20:30:30+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T20:30:30+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:30+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\" follow_count:3 follower_count:9}}\n","time":"2023-02-21T20:30:30+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T20:30:30+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T20:30:30+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:30+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T20:30:30+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 to_user_id:2}\n","time":"2023-02-21T20:30:30+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T20:30:30+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:30+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} is_follow:true}\n","time":"2023-02-21T20:30:30+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 to_user_id:1}\n","time":"2023-02-21T20:30:30+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T20:30:30+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:30+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} is_follow:true}\n","time":"2023-02-21T20:30:30+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:2 author:{id:2 name:\"2\" follow_count:3 follower_count:9 is_follow:true} play_url:\"http://172.27.51.171:9000/videos/75ea79ad-36da-435e-bdab-f2eefba4efb1.mp4\" cover_url:\"http://172.27.51.171:9000/images/6353e7a4-4229-484f-8429-3a64d22fbc77.jpg\" title:\"2\"} video_list:{id:1 author:{id:1 name:\"1\" follow_count:1 follower_count:3 is_follow:true} play_url:\"http://172.27.51.171:9000/videos/0e9e6ef2-2f1c-40c9-9178-e0cb3ace5d04.mp4\" cover_url:\"http://172.27.51.171:9000/images/bcab2333-7b13-444c-a0c1-90ca49f720a0.jpg\" title:\"1\"} next_time:1676907608807}\n","time":"2023-02-21T20:30:30+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzY5ODYyMjAsImlkIjoxLCJvcmlnX2lhdCI6MTY3Njk4MjYyMH0.wddOFvaoFCwhVtbo_e0zcCWV4xItVV29a85FF34yYCE\"}\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: PublishList\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"client address: [::1]:34960\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"publish list DB req user id :1","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:latest_time:1676982630612 user_id:1}\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"client address: [::1]:34960\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 to_user_id:1}\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} is_follow:true}\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:1 author:{id:1 name:\"1\" follow_count:1 follower_count:3 is_follow:true} play_url:\"http://172.27.51.171:9000/videos/0e9e6ef2-2f1c-40c9-9178-e0cb3ace5d04.mp4\" cover_url:\"http://172.27.51.171:9000/images/bcab2333-7b13-444c-a0c1-90ca49f720a0.jpg\" title:\"1\"}}\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\" follow_count:3 follower_count:9}}\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 to_user_id:2}\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} is_follow:true}\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 to_user_id:1}\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} is_follow:true}\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:2 author:{id:2 name:\"2\" follow_count:3 follower_count:9 is_follow:true} play_url:\"http://172.27.51.171:9000/videos/75ea79ad-36da-435e-bdab-f2eefba4efb1.mp4\" cover_url:\"http://172.27.51.171:9000/images/6353e7a4-4229-484f-8429-3a64d22fbc77.jpg\" title:\"2\"} video_list:{id:1 author:{id:1 name:\"1\" follow_count:1 follower_count:3 is_follow:true} play_url:\"http://172.27.51.171:9000/videos/0e9e6ef2-2f1c-40c9-9178-e0cb3ace5d04.mp4\" cover_url:\"http://172.27.51.171:9000/images/bcab2333-7b13-444c-a0c1-90ca49f720a0.jpg\" title:\"1\"} next_time:1676907608807}\n","time":"2023-02-21T20:30:31+08:00"}
+{"level":"warning","msg":"KITEX: signal connection closing error:protobuf just support 'framed' trans proto[::]:9021=\u003e[::1]:34960","time":"2023-02-21T20:42:21+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:9021","time":"2023-02-21T23:08:30+08:00"}
+{"level":"info","msg":"start keepalive lease 694d8671c1f330cc for etcd registry","time":"2023-02-21T23:08:31+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:latest_time:1676992168597}\n","time":"2023-02-21T23:09:28+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T23:09:28+08:00"}
+{"level":"info","msg":"client address: [::1]:60996\n","time":"2023-02-21T23:09:28+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T23:09:28+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:09:28+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:09:28+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\" follow_count:3 follower_count:9}}\n","time":"2023-02-21T23:09:28+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T23:09:28+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:09:28+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:09:28+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T23:09:28+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:to_user_id:2}\n","time":"2023-02-21T23:09:28+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T23:09:28+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:09:28+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=api, remoteAddr=[::1]:60996, error=biz error: err_code=10006, err_msg=Failed to use relation RPC","span_id":"0000000000000000","time":"2023-02-21T23:09:28+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:latest_time:1676992221304 user_id:3}\n","time":"2023-02-21T23:10:21+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T23:10:21+08:00"}
+{"level":"info","msg":"client address: [::1]:60996\n","time":"2023-02-21T23:10:21+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T23:10:21+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:10:21+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:10:21+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\" follow_count:3 follower_count:9}}\n","time":"2023-02-21T23:10:21+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T23:10:21+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:10:21+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:10:21+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T23:10:21+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3 to_user_id:2}\n","time":"2023-02-21T23:10:21+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T23:10:21+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:10:21+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=api, remoteAddr=[::1]:60996, error=biz error: err_code=10006, err_msg=Failed to use relation RPC","span_id":"0000000000000000","time":"2023-02-21T23:10:21+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3}\n","time":"2023-02-21T23:10:22+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T23:10:22+08:00"}
+{"level":"info","msg":"client address: [::1]:60996\n","time":"2023-02-21T23:10:22+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T23:10:22+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:10:22+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:10:22+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\" follow_count:3 follower_count:9}}\n","time":"2023-02-21T23:10:22+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T23:10:22+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:10:22+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:10:22+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T23:10:22+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3 to_user_id:2}\n","time":"2023-02-21T23:10:22+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T23:10:22+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:10:22+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=api, remoteAddr=[::1]:60996, error=biz error: err_code=10006, err_msg=Failed to use relation RPC","span_id":"0000000000000000","time":"2023-02-21T23:10:22+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"warning","msg":"KITEX: resolver refresh failed, key=relation error=no instance remains for relation","time":"2023-02-21T23:10:36+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:9021","time":"2023-02-21T23:11:02+08:00"}
+{"level":"info","msg":"start keepalive lease 694d8674871fd704 for etcd registry","time":"2023-02-21T23:11:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:latest_time:1676992316674 user_id:3}\n","time":"2023-02-21T23:11:56+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T23:11:56+08:00"}
+{"level":"info","msg":"client address: [::1]:37710\n","time":"2023-02-21T23:11:56+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T23:11:56+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:11:56+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:11:56+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\" follow_count:3 follower_count:9}}\n","time":"2023-02-21T23:11:56+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T23:11:56+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:11:56+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:11:56+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T23:11:56+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3 to_user_id:2}\n","time":"2023-02-21T23:11:56+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T23:11:56+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:11:56+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=api, remoteAddr=[::1]:37710, error=biz error: err_code=10006, err_msg=Failed to use relation RPC","span_id":"0000000000000000","time":"2023-02-21T23:11:56+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3}\n","time":"2023-02-21T23:11:58+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T23:11:58+08:00"}
+{"level":"info","msg":"client address: [::1]:37710\n","time":"2023-02-21T23:11:58+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T23:11:58+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:11:58+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:11:58+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\" follow_count:3 follower_count:9}}\n","time":"2023-02-21T23:11:58+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T23:11:58+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:11:58+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:11:58+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T23:11:58+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3 to_user_id:2}\n","time":"2023-02-21T23:11:58+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T23:11:58+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:11:58+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=api, remoteAddr=[::1]:37710, error=biz error: err_code=10006, err_msg=Failed to use relation RPC","span_id":"0000000000000000","time":"2023-02-21T23:11:58+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:latest_time:1676992389695 user_id:3}\n","time":"2023-02-21T23:13:09+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T23:13:09+08:00"}
+{"level":"info","msg":"client address: [::1]:37710\n","time":"2023-02-21T23:13:09+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T23:13:09+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:13:09+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:13:09+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\" follow_count:3 follower_count:9}}\n","time":"2023-02-21T23:13:09+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T23:13:09+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:13:09+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:13:09+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T23:13:09+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3 to_user_id:2}\n","time":"2023-02-21T23:13:09+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T23:13:09+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:13:09+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=api, remoteAddr=[::1]:37710, error=biz error: err_code=10006, err_msg=Failed to use relation RPC","span_id":"0000000000000000","time":"2023-02-21T23:13:09+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3}\n","time":"2023-02-21T23:13:11+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T23:13:11+08:00"}
+{"level":"info","msg":"client address: [::1]:37710\n","time":"2023-02-21T23:13:11+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T23:13:11+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:13:11+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:13:11+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\" follow_count:3 follower_count:9}}\n","time":"2023-02-21T23:13:11+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T23:13:11+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:13:11+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:13:11+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T23:13:11+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3 to_user_id:2}\n","time":"2023-02-21T23:13:11+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T23:13:11+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:13:11+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=api, remoteAddr=[::1]:37710, error=biz error: err_code=10006, err_msg=Failed to use relation RPC","span_id":"0000000000000000","time":"2023-02-21T23:13:11+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3}\n","time":"2023-02-21T23:13:18+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T23:13:18+08:00"}
+{"level":"info","msg":"client address: [::1]:37710\n","time":"2023-02-21T23:13:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T23:13:18+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:13:18+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:13:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\" follow_count:3 follower_count:9}}\n","time":"2023-02-21T23:13:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T23:13:18+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:13:18+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:13:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T23:13:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3 to_user_id:2}\n","time":"2023-02-21T23:13:18+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T23:13:18+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:13:18+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=api, remoteAddr=[::1]:37710, error=biz error: err_code=10006, err_msg=Failed to use relation RPC","span_id":"0000000000000000","time":"2023-02-21T23:13:18+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"warning","msg":"KITEX: signal connection closing error:protobuf just support 'framed' trans proto[::]:9021=\u003e[::1]:37710","time":"2023-02-21T23:14:09+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:9021","time":"2023-02-21T23:14:39+08:00"}
+{"level":"info","msg":"start keepalive lease 694d8674871fd74a for etcd registry","time":"2023-02-21T23:14:40+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T23:14:43+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T23:14:43+08:00"}
+{"level":"info","msg":"client address: [::1]:43938\n","time":"2023-02-21T23:14:43+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T23:14:43+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:14:43+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:14:43+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\" follow_count:3 follower_count:9}}\n","time":"2023-02-21T23:14:43+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T23:14:43+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:14:43+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:14:43+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T23:14:43+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 to_user_id:2}\n","time":"2023-02-21T23:14:43+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T23:14:43+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:14:43+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=api, remoteAddr=[::1]:43938, error=biz error: err_code=10006, err_msg=Failed to use relation RPC","span_id":"0000000000000000","time":"2023-02-21T23:14:43+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T23:14:45+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T23:14:45+08:00"}
+{"level":"info","msg":"client address: [::1]:43938\n","time":"2023-02-21T23:14:45+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T23:14:45+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:14:45+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:14:45+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\" follow_count:3 follower_count:9}}\n","time":"2023-02-21T23:14:45+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T23:14:45+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:14:45+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:14:45+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T23:14:45+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 to_user_id:2}\n","time":"2023-02-21T23:14:45+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T23:14:45+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:14:45+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=api, remoteAddr=[::1]:43938, error=biz error: err_code=10006, err_msg=Failed to use relation RPC","span_id":"0000000000000000","time":"2023-02-21T23:14:45+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T23:15:09+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T23:15:09+08:00"}
+{"level":"info","msg":"client address: [::1]:43938\n","time":"2023-02-21T23:15:09+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T23:15:09+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:15:09+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:15:09+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\" follow_count:3 follower_count:9}}\n","time":"2023-02-21T23:15:09+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T23:15:09+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:15:09+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:15:09+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T23:15:09+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2 to_user_id:2}\n","time":"2023-02-21T23:15:09+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T23:15:09+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:15:09+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=api, remoteAddr=[::1]:43938, error=biz error: err_code=10006, err_msg=Failed to use relation RPC","span_id":"0000000000000000","time":"2023-02-21T23:15:09+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:latest_time:1676992520432 user_id:2}\n","time":"2023-02-21T23:15:20+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T23:15:20+08:00"}
+{"level":"info","msg":"client address: [::1]:43938\n","time":"2023-02-21T23:15:20+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T23:15:20+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:15:20+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:15:20+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\" follow_count:3 follower_count:9}}\n","time":"2023-02-21T23:15:20+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T23:15:20+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:15:20+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:15:20+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T23:15:20+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2 to_user_id:2}\n","time":"2023-02-21T23:15:20+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T23:15:20+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:15:20+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=api, remoteAddr=[::1]:43938, error=biz error: err_code=10006, err_msg=Failed to use relation RPC","span_id":"0000000000000000","time":"2023-02-21T23:15:20+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T23:15:21+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T23:15:21+08:00"}
+{"level":"info","msg":"client address: [::1]:43938\n","time":"2023-02-21T23:15:21+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T23:15:21+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:15:21+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:15:21+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\" follow_count:3 follower_count:9}}\n","time":"2023-02-21T23:15:21+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-21T23:15:21+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-21T23:15:21+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:15:21+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:1 name:\"1\" follow_count:1 follower_count:3}}\n","time":"2023-02-21T23:15:21+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2 to_user_id:2}\n","time":"2023-02-21T23:15:21+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T23:15:21+08:00"}
+{"level":"info","msg":"server address: [::]:9002, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T23:15:21+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=api, remoteAddr=[::1]:43938, error=biz error: err_code=10006, err_msg=Failed to use relation RPC","span_id":"0000000000000000","time":"2023-02-21T23:15:21+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:9021","time":"2023-02-21T23:16:26+08:00"}
+{"level":"info","msg":"start keepalive lease 694d8674871fd788 for etcd registry","time":"2023-02-21T23:16:27+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:latest_time:1676992605955 user_id:2}\n","time":"2023-02-21T23:16:46+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T23:16:46+08:00"}
+{"level":"info","msg":"client address: [::1]:52354\n","time":"2023-02-21T23:16:46+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:\u003cnil\u003e}\n","time":"2023-02-21T23:16:46+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T23:16:47+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T23:16:47+08:00"}
+{"level":"info","msg":"client address: [::1]:52354\n","time":"2023-02-21T23:16:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:\u003cnil\u003e}\n","time":"2023-02-21T23:16:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:latest_time:1676992696893 user_id:2}\n","time":"2023-02-21T23:18:16+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T23:18:16+08:00"}
+{"level":"info","msg":"client address: [::1]:52354\n","time":"2023-02-21T23:18:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:\u003cnil\u003e}\n","time":"2023-02-21T23:18:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-21T23:18:18+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: Feed\n","time":"2023-02-21T23:18:18+08:00"}
+{"level":"info","msg":"client address: [::1]:52354\n","time":"2023-02-21T23:18:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:\u003cnil\u003e}\n","time":"2023-02-21T23:18:18+08:00"}
