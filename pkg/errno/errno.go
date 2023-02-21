@@ -15,6 +15,11 @@ var (
 	UserAlreadyExistErr    = NewErrNo(int32(10003), "User already exists")
 	UserNotExistErr        = NewErrNo(int32(10004), "User not exists")
 	AuthorizationFailedErr = NewErrNo(int32(10005), "Authorization failed")
+
+	// favorite模块错误码
+	FavoriteNotExistErr   = NewErrNo(int32(10006), "Favorite not exist")
+	FavouriteActionErr    = NewErrNo(int32(10007), "FavoriteAction failed")
+	FavoriteActionTypeErr = NewErrNo(int32(10008), "FavoriteActionType is wrong")
 )
 
 type ErrNo struct {

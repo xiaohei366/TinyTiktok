@@ -1,4 +1,4 @@
-package ApiServer
+package pack
 
 import (
 	"github.com/cloudwego/hertz/pkg/app"

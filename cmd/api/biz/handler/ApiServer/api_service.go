@@ -4,9 +4,9 @@ package ApiServer
 
 import (
 	"context"
-
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
+	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/handler/pack"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/UserServer"
 	mw "github.com/xiaohei366/TinyTiktok/cmd/api/biz/middleware"
 	ApiServer "github.com/xiaohei366/TinyTiktok/cmd/api/biz/model/ApiServer"
@@ -32,17 +32,17 @@ func Register(ctx context.Context, c *app.RequestContext) {
 		Password: req.Password,
 	})
 	if err != nil {
-		SendRegisterResponse(c, errno.ConvertErr(err), -1, "")
+		pack.SendRegisterResponse(c, errno.ConvertErr(err), -1, "")
 		return
 	}
 	// 使用JWT来产生Token--注意是使用id，因为这个将作为存储信息在token中
 	token, _, err = mw.JwtMiddleware.TokenGenerator(user_id)
 	if err != nil {
-		SendRegisterResponse(c, errno.ConvertErr(err), -1, "")
+		pack.SendRegisterResponse(c, errno.ConvertErr(err), -1, "")
 		return
 	}
 	//成功响应
-	SendRegisterResponse(c, errno.Success, user_id, token)
+	pack.SendRegisterResponse(c, errno.Success, user_id, token)
 }
 
 // Login .
@@ -71,11 +71,11 @@ func GetUserInfo(ctx context.Context, c *app.RequestContext) {
 		UserId: req.UserId,
 	})
 	if err != nil {
-		SendUesrInfoResponse(c, errno.ConvertErr(err), nil)
+		pack.SendUesrInfoResponse(c, errno.ConvertErr(err), nil)
 		return
 	}
 	//成功响应
-	SendUesrInfoResponse(c, errno.Success, u)
+	pack.SendUesrInfoResponse(c, errno.Success, u)
 }
 
 // Feed .
@@ -126,37 +126,46 @@ func PublishList(ctx context.Context, c *app.RequestContext) {
 	c.JSON(consts.StatusOK, resp)
 }
 
-// FavoriteAction .
-// @router /douyin/favorite/action/ [POST]
-func FavoriteAction(ctx context.Context, c *app.RequestContext) {
-	var err error
-	var req ApiServer.DouyinFavoriteActionRequest
-	err = c.BindAndValidate(&req)
-	if err != nil {
-		c.String(consts.StatusBadRequest, err.Error())
-		return
-	}
-
-	resp := new(ApiServer.DouyinFavoriteActionResponse)
-
-	c.JSON(consts.StatusOK, resp)
-}
-
-// FavoriteList .
-// @router /douyin/favorite/list/ [GET]
-func FavoriteList(ctx context.Context, c *app.RequestContext) {
-	var err error
-	var req ApiServer.DouyinFavoriteListRequest
-	err = c.BindAndValidate(&req)
-	if err != nil {
-		c.String(consts.StatusBadRequest, err.Error())
-		return
-	}
-
-	resp := new(ApiServer.DouyinFavoriteActionResponse)
-
-	c.JSON(consts.StatusOK, resp)
-}
+//// FavoriteAction .
+//// @router /douyin/favorite/action/ [POST]
+//func FavoriteAction(ctx context.Context, c *app.RequestContext) {
+//	var err error
+//	var req ApiServer.DouyinFavoriteActionRequest
+//	err = c.BindAndValidate(&req)
+//	if err != nil {
+//		c.String(consts.StatusBadRequest, err.Error())
+//		return
+//	}
+//	v, _ := c.Get(shared.IdentityKey) // 取出token的id
+//	//调用PRC方法，在follow服务器上完成关注操作
+//	resp, err := rpc.FavoriteAction(context.Background(), &FavoriteServer.DouyinFavoriteActionRequest{
+//		UserId:     v.(*ApiServer.User).Id,
+//		ToUserId:   req.ToUserId,
+//		ActionType: req.ActionType,
+//	})
+//	if err != nil {
+//		pack.SendFavoriteActionResponse(c, err)
+//		return
+//	}
+//	//成功响应
+//	pack.SendFavoriteActionResponse(c, resp)
+//}
+//
+//// FavoriteList .
+//// @router /douyin/favorite/list/ [GET]
+//func FavoriteList(ctx context.Context, c *app.RequestContext) {
+//	var err error
+//	var req ApiServer.DouyinFavoriteListRequest
+//	err = c.BindAndValidate(&req)
+//	if err != nil {
+//		c.String(consts.StatusBadRequest, err.Error())
+//		return
+//	}
+//
+//	resp := new(ApiServer.DouyinFavoriteActionResponse)
+//
+//	c.JSON(consts.StatusOK, resp)
+//}
 
 // CommentAction .
 // @router /douyin/comment/action/ [POST]
