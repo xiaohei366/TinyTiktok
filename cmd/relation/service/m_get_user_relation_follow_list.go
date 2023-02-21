@@ -27,7 +27,7 @@ func (s *MGetUserRelationFollowService) MGetUserRelationFollow(userID int64) ([]
 	followIDs := make([]int64, 0)
 	//先尝试使用Redis
 	ids, _ := redis.Follow.MGet(redis.Ctx, strconv.Itoa(int(userID))).Result()
-	if len(ids) == 0 {
+	if len(ids)-1 == 0 {
 		//不行再用数据库
 		follows, err := dal.MGetFollowList(s.ctx, userID)
 		if err != nil {
@@ -36,6 +36,8 @@ func (s *MGetUserRelationFollowService) MGetUserRelationFollow(userID int64) ([]
 		for _, v := range follows {
 			followIDs = append(followIDs, v.ToUserID)
 		}
+		//更新Redis
+		redis.AddFollow(userID, followIDs)
 	} else {
 		for _, v := range ids {
 			followIDs = append(followIDs, v.(int64))

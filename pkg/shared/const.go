@@ -1,6 +1,8 @@
 // 用于保存一些全局的变量和一些配置
 package shared
 
+import "time"
+
 const (
 	//数据库的预留格式
 	DBName   = "TinyTiktok"
@@ -26,7 +28,7 @@ const (
 	DefaultLimit = 10
 
 	//minio
-	MinioUrl       = "172.27.51.171" //这个地方需要用虚拟机ip。不能用localhost，否则客户端不播放视频
+	MinioUrl       = "172.22.199.45" //这个地方需要用虚拟机ip。不能用localhost，否则客户端不播放视频
 	MinioPort      = "9000"
 	MinioAccessKey = "minio"
 	MinioSecretKey = "minio123"
@@ -39,5 +41,18 @@ const (
 
 	//消息队列
 	RabbitMqURI = "amqp://%s:%s@%s:%d/"
+	//消息队列设置
+	MQUser     = "admin"
+	MQPassword = "admin"
+	MQHost     = "172.22.199.45"
+	MQPort     = 5672
 
+	//Redis
+	RedisExpireTime = time.Hour * 48
+	RedisAddr       = "172.22.199.45:6379"
+	RedisPassword   = "123"
+	RedisFollower   = 0
+	RedisFollow     = 1
+	RedisRelation1  = 2
+	RedisRelation2  = 3
 )

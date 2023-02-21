@@ -23,12 +23,14 @@ func NewRelationActionService(ctx context.Context) *RelationActionService {
 
 // 关注/取关操作---先保证user服务器是正常的，才能实行关注与否操作
 func (s *RelationActionService) FollowAction(isFollow bool, relation db.Follow) error {
+	if relation.UserID == relation.ToUserID {
+		return nil
+	}
 	//组装成一个消息，为发送至消息队列作准备
 	sb := strings.Builder{}
 	sb.WriteString(strconv.Itoa(int(relation.UserID)))
 	sb.WriteString("&")
 	sb.WriteString(strconv.Itoa(int(relation.ToUserID)))
-
 	//先尝试修改user模块的数据库
 	err := rpc.ChangeFollowCount(s.ctx, &UserServer.DouyinChangeUserFollowRequest{
 		UserId:   relation.UserID,

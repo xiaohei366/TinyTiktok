@@ -12,6 +12,7 @@ func AddRelation(UserId int64, ToUserId int64) {
 	//将热key分散到不同的服务器中
 	rand.Seed(time.Now().UnixNano())
 	id := rand.Intn(2) // 有几个机器是几
+
 	switch id {
 	case 0:
 		// 将查询到的关注关系注入Redis.---若键值存在，自动不增加

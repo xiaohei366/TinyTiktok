@@ -30,7 +30,7 @@ func (s *MGetUserRelationFollowerService) MGetUserRelationFollower(userID int64)
 	followerIDs := make([]int64, 0)
 	//先查看Redis里面是否存在
 	ids, _ := redis.Follower.MGet(redis.Ctx, strconv.Itoa(int(userID))).Result()
-	if len(ids) == 0 {
+	if len(ids)-1 == 0 {
 		//从数据库取出所有粉丝的ID
 		followers, err := dal.MGetFollowerList(s.ctx, userID)
 		if err != nil {
@@ -69,7 +69,7 @@ func (s *MGetUserRelationFollowerService) MGetUserRelationFollower(userID int64)
 		var err error
 		//先尝试使用Redis获取
 		follows, _ := redis.Follow.MGet(redis.Ctx, strconv.Itoa(int(userID))).Result()
-		if len(follows) != 0 {
+		if len(follows)-1 != 0 {
 			for _, v := range follows {
 				followSet[v.(int64)] = struct{}{}
 			}

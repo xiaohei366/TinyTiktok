@@ -21,6 +21,9 @@ func NewQueryRelationService(ctx context.Context) *QueryRelationService {
 }
 
 func (s *QueryRelationService) QueryRelation(relation db.Follow) (bool, error) {
+	if relation.UserID == relation.ToUserID {
+		return true, nil
+	}
 	//先在Redis里找到它俩之间是否有关系--多个机器查询
 	if flag, err := redis.Relation1.SIsMember(redis.Ctx, strconv.Itoa(int(relation.UserID)), relation.ToUserID).Result(); flag {
 		//刷新过期时间
@@ -34,7 +37,7 @@ func (s *QueryRelationService) QueryRelation(relation db.Follow) (bool, error) {
 	//若关系Redis没有，则取出UserId的关注列表进行对比比较
 	//先去关注Redis看
 	ids, _ := redis.Follower.MGet(redis.Ctx, strconv.Itoa(int(relation.UserID))).Result()
-	if len(ids) != 0 {
+	if len(ids)-1 != 0 {
 		for _, v := range ids {
 			if v.(int64) == relation.ToUserID {
 				//加入缓存
@@ -49,8 +52,9 @@ func (s *QueryRelationService) QueryRelation(relation db.Follow) (bool, error) {
 	if err != nil {
 		return false, errno.QueryFollowErr
 	}
+	//fmt.Print("******321321312******************", follows)
 	for _, v := range follows {
-		if v.UserID == relation.ToUserID {
+		if v.ToUserID == relation.ToUserID {
 			//加入缓存
 			redis.AddRelation(relation.UserID, relation.ToUserID)
 			return true, nil
