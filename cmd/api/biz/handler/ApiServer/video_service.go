@@ -109,6 +109,7 @@ func PublishList(ctx context.Context, c *app.RequestContext) {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
+	fmt.Println("req:", req.UserId, req.Token)
 	//拿userid
 	userId, _ := c.Get(shared.IdentityKey)
 	request := &VideoServer.DouyinPublishListRequest{

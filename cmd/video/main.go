@@ -2,6 +2,7 @@ package main
 
 import (
 	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
+	"github.com/xiaohei366/TinyTiktok/pkg/pprof"
 	"net"
 
 	"github.com/cloudwego/kitex/pkg/klog"
@@ -19,6 +20,8 @@ import (
 func main() {
 	//init db and minio
 	initialize.Init()
+	//init pprof
+	pprof.Init()
 	//init etcd register
 	r, err := etcd.NewEtcdRegistry([]string{shared.ETCDAddress})
 	if err != nil {

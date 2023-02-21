@@ -62,4 +62,11 @@ var (
 	GetFollowListErr   = NewErrNo(GetFollowListErrCode, "Failed to get follow list")
 	GetFollowerListErr = NewErrNo(GetFollowerListErrCode, "Failed to get follower list")
 	GetFollowSetErr    = NewErrNo(GetFollowSetErrCode, "Failed to get follow set")
+	//video模块错误码
+	PublishActionErr    = NewErrNo(PublishActionErrCode, "Publish Action failed")
+	PublishListErr      = NewErrNo(PublishListErrCode, "Publish List failed")
+	FeedErr             = NewErrNo(FeedErrCode, "Feed videos failed")
+	VideoRpcUserErr     = NewErrNo(VideoRpcUserErrCode, "Video rpc User failed")
+	VideoRpcRelationErr = NewErrNo(VideoRpcRelationErrCode, "Video rpc relation failed")
+	VideoListNotFound   = NewErrNo(VideoListNotFoundErrCode, "Video List is empty")
 )

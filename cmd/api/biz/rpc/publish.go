@@ -58,6 +58,11 @@ func PublishList(ctx context.Context, req *VideoServer.DouyinPublishListRequest)
 	if err != nil {
 		return nil, err
 	}
+
+	if len(resp.VideoList) == 0 {
+		return []*VideoServer.Video{}, nil
+	}
+
 	if resp.BaseResp.StatusCode != 0 {
 		return nil, errno.NewErrNo(resp.BaseResp.StatusCode, resp.BaseResp.StatusMsg)
 	}

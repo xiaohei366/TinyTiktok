@@ -32,3 +32,13 @@ const (
 	GetFollowerListErrCode
 	GetFollowSetErrCode
 )
+
+// video模块错误码
+const (
+	PublishActionErrCode int32 = iota + 10201
+	PublishListErrCode
+	FeedErrCode
+	VideoRpcUserErrCode
+	VideoRpcRelationErrCode
+	VideoListNotFoundErrCode
+)

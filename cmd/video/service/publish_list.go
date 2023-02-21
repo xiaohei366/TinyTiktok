@@ -25,7 +25,7 @@ func (s *PublishListService) PublishList(req *VideoServer.DouyinPublishListReque
 	}
 	users := []*UserServer.User{}
 	relations := []bool{}
-	if len(UserVideos) != 0 {
+	if len(UserVideos) != 0 { //这是感觉还可以再优化的地方
 		//rpc调用拿取user信息
 		for _, v := range UserVideos {
 			user, relation := getUserInfo(s.ctx, v, req.UserId)
@@ -33,7 +33,7 @@ func (s *PublishListService) PublishList(req *VideoServer.DouyinPublishListReque
 			relations = append(relations, relation)
 		}
 	} else {
-		return videoList, nil //todo
+		return videoList, nil //没有视频，也不传错误信息
 	}
 
 	videoList = pack.VideoList(UserVideos, users, relations)

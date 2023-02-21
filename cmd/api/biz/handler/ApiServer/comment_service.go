@@ -2,12 +2,12 @@ package ApiServer
 
 import (
 	"context"
+	"strconv"
 
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 	ApiServer "github.com/xiaohei366/TinyTiktok/cmd/api/biz/model/ApiServer"
 )
-
 
 // CommentAction .
 // @router /douyin/comment/action/ [POST]
@@ -19,6 +19,9 @@ func CommentAction(ctx context.Context, c *app.RequestContext) {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
+
+	commId, _ := strconv.Atoi(c.PostForm("comment_id"))
+	req.CommentId = int64(commId)
 
 	resp := new(ApiServer.DouyinCommentActionResponse)
 
