@@ -9,7 +9,6 @@ message User {
     string name = 2; // 用户名称
     int64 follow_count = 3; // 关注总数--可选
     int64 follower_count = 4; // 粉丝总数--可选
-    bool is_follow = 5; // true-已关注，false-未关注
 }
 
 message BaseResp {
@@ -49,8 +48,26 @@ message DouyinUserResponse {
     User user = 2; // 用户信息
 }
 
+//MGet User info
+message DouyinMUserRequest {
+    repeated int64 user_id = 1;// 用户id
+}
+message DouyinMUserResponse {
+    BaseResp base_resp = 1;
+    repeated User user = 2; // 用户信息
+}
+
+// Change User follow
+message DouyinChangeUserFollowRequest {
+    int64 user_id = 1;// 关注用户id
+    int64 to_user_id = 2;// 被关注用户id
+    bool is_follow = 3; //是关注还是取关
+}
+
 service UserService {
     rpc Register (DouyinUserRegisterRequest) returns (DouyinUserRegisterResponse) {}  
     rpc Login (DouyinUserLoginRequest ) returns (DouyinUserLoginResponse) {}
     rpc GetUserInfo (DouyinUserRequest) returns (DouyinUserResponse) {}
+    rpc MGetUserInfo (DouyinMUserRequest) returns (DouyinMUserResponse) {}
+    rpc ChangeUserFollowCount(DouyinChangeUserFollowRequest) returns (BaseResp) {}
 }

@@ -5,23 +5,6 @@ import (
 	"fmt"
 )
 
-// 错误码定义---统一在此定义-防止错误码冲突
-var (
-	Success    = NewErrNo(int32(0), "Success")
-	ServiceErr = NewErrNo(int32(10001), "Service is unable to start successfully")
-	ParamErr   = NewErrNo(int32(10002), "Wrong Parameter has been given")
-
-	// user模块错误码
-	UserAlreadyExistErr    = NewErrNo(int32(10003), "User already exists")
-	UserNotExistErr        = NewErrNo(int32(10004), "User not exists")
-	AuthorizationFailedErr = NewErrNo(int32(10005), "Authorization failed")
-
-	// favorite模块错误码
-	FavoriteNotExistErr   = NewErrNo(int32(10006), "Favorite not exist")
-	FavouriteActionErr    = NewErrNo(int32(10007), "FavoriteAction failed")
-	FavoriteActionTypeErr = NewErrNo(int32(10008), "FavoriteActionType is wrong")
-)
-
 type ErrNo struct {
 	ErrCode int32
 	ErrMsg  string
@@ -48,10 +31,39 @@ func (e ErrNo) WithMessage(msg string) ErrNo {
 // ConvertErr convert error to Errno
 func ConvertErr(err error) ErrNo {
 	Err := ErrNo{}
+	//// Errno格式直接返回即可
 	if errors.As(err, &Err) {
 		return Err
 	}
-	//s := ServiceErr
-	//s.ErrMsg = err.Error()
+	s := FuncErr
+	s.ErrMsg = err.Error()
 	return Err
 }
+
+// 错误码定义---统一在此定义-防止错误码冲突
+var (
+	Success    = NewErrNo(SuccessCode, "Success")
+	ServiceErr = NewErrNo(ServiceErrCode, "Service is unable to start successfully")
+	ParamErr   = NewErrNo(ParamErrCode, "Wrong Parameter has been given")
+	FuncErr    = NewErrNo(FuncErrCode, "Error!")
+	// user模块错误码
+	UserAlreadyExistErr      = NewErrNo(UserAlreadyExistErrCode, "User already exists")
+	UserNotExistErr          = NewErrNo(UserNotExistErrCode, "User not exists")
+	AuthorizationFailedErr   = NewErrNo(AuthorizationFailedErrCode, "Authorization failed")
+	StructConvertFailedErr   = NewErrNo(StructConvertFailedErrCode, "Struct Convert failed")
+	ChangeUserFollowCountErr = NewErrNo(ChangeUserFollowCountErrCode, "Failed to modify the follow count")
+	RelationRPCErr           = NewErrNo(RelationRPCErrCode, "Failed to use relation RPC")
+	FindUserErr              = NewErrNo(FindUserErrCode, "Failed to use relation RPC")
+	//follow模块错误码
+	FollowActionErr    = NewErrNo(FollowActionErrCode, "Follow action failed")
+	ActionTypeErr      = NewErrNo(ActionTypeErrCode, "Wrong action-type has been given")
+	QueryFollowErr     = NewErrNo(QueryFollowErrCode, "Query relation failed")
+	UserRPCErr         = NewErrNo(UserRPCErrCode, "Failed to use user RPC")
+	GetFollowListErr   = NewErrNo(GetFollowListErrCode, "Failed to get follow list")
+	GetFollowerListErr = NewErrNo(GetFollowerListErrCode, "Failed to get follower list")
+	GetFollowSetErr    = NewErrNo(GetFollowSetErrCode, "Failed to get follow set")
+	//favorite模块错误码
+	FavoriteNotExistErr   = NewErrNo(FavoriteNotExistErrCode, "Favorite not exist")
+	FavouriteActionErr    = NewErrNo(FavouriteActionErrCode, "FavoriteAction failed")
+	FavoriteActionTypeErr = NewErrNo(FavoriteActionTypeErrCode, "FavoriteActionType is wrong")
+)

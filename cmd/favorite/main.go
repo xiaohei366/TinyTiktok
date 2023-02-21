@@ -7,7 +7,7 @@ import (
 	"github.com/cloudwego/kitex/server"
 	etcd "github.com/kitex-contrib/registry-etcd"
 	Init "github.com/xiaohei366/TinyTiktok/cmd/favorite/initialize"
-	"github.com/xiaohei366/TinyTiktok/cmd/favorite/kitex_gen/FavoriteServer/favoriteservice"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer/favoriteservice"
 	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 	"net"

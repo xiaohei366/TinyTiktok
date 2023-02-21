@@ -13,7 +13,7 @@ import (
 type FavoriteListResponse struct {
 	StatusCode int32                   `json:"status_code"`
 	StatusMsg  string                  `json:"status_msg"`
-	VideoList  []*FavoriteServer.Video `json:"user_list"`
+	VideoList  []*FavoriteServer.Video `json:"video_list"`
 }
 
 // 点赞/取消赞的报文格式

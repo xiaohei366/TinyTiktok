@@ -3,8 +3,8 @@ package service
 import (
 	"context"
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/initialize/db"
-	"github.com/xiaohei366/TinyTiktok/cmd/favorite/kitex_gen/FavoriteServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/service/dal"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
 

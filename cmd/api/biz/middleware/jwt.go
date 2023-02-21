@@ -8,9 +8,9 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/common/utils"
 	"github.com/hertz-contrib/jwt"
-	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/kitex_gen/UserServer"
 	api "github.com/xiaohei366/TinyTiktok/cmd/api/biz/model/ApiServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/rpc"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 )
@@ -42,7 +42,7 @@ func InitJWT() {
 				Username: req.Username,
 				Password: req.Password,
 			})
-			c.Set("id", id) //将ID存到上下文中，然后返回报文时再取
+			c.Set(shared.IdentityKey, id) //将ID存到上下文中，然后返回报文时再取
 			return id, err
 		},
 		//用于设置获取身份信息的函数，此处提取 token 的负载，并配合 IdentityKey 将用户id存入上下文信息。

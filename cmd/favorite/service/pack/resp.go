@@ -2,7 +2,7 @@ package pack
 
 import (
 	"errors"
-	"github.com/xiaohei366/TinyTiktok/cmd/favorite/kitex_gen/FavoriteServer"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
 

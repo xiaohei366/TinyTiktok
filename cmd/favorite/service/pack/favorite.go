@@ -1,7 +1,7 @@
 package pack
 
 import (
-	"github.com/xiaohei366/TinyTiktok/cmd/favorite/kitex_gen/FavoriteServer"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer"
 )
 
 /* 拼接用户信息--服务于获取用户信息的接口*/

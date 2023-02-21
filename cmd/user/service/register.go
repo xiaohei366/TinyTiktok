@@ -2,11 +2,12 @@ package service
 
 import (
 	"context"
-	"crypto/sha256"
+	"crypto/md5"
 	"fmt"
 	"io"
 
-	"github.com/xiaohei366/TinyTiktok/cmd/user/kitex_gen/UserServer"
+	"github.com/xiaohei366/TinyTiktok/cmd/user/initialize/db"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/service/dal"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
@@ -31,14 +32,14 @@ func (s *RegisterService) CreateUser(req *UserServer.DouyinUserRegisterRequest) 
 	if req.Username == u.Name {
 		return errno.UserAlreadyExistErr
 	}
-	//使用sha256进行密码加密，数据库不明文存放密码
-	h := sha256.New()
+	//使用md5进行密码加密，数据库不明文存放密码
+	h := md5.New()
 	if _, err = io.WriteString(h, req.Password); err != nil {
 		return err
 	}
 	password := fmt.Sprintf("%x", h.Sum(nil))
 	//完成写入账号操作
-	return dal.CreateUser(s.ctx, &dal.User{
+	return dal.CreateUser(s.ctx, &db.User{
 		Name:     req.Username,
 		Password: password,
 	})

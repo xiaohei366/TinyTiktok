@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"github.com/xiaohei366/TinyTiktok/cmd/user/initialize/db"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/service/dal"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
@@ -16,7 +17,7 @@ func NewGetUserService(ctx context.Context) *GetUserService {
 }
 
 // 根据username获得TableUser对象
-func (s *GetUserService) GetUserByName(name string) (dal.User, error) {
+func (s *GetUserService) GetUserByName(name string) (db.User, error) {
 	u, err := dal.GetUserByName(s.ctx, name)
 	if err != nil {
 		return u, errno.UserNotExistErr
@@ -25,7 +26,7 @@ func (s *GetUserService) GetUserByName(name string) (dal.User, error) {
 }
 
 // 根据userId获得TableUser对象
-func (s *GetUserService) GetUserById(id int64) (dal.User, error) {
+func (s *GetUserService) GetUserById(id int64) (db.User, error) {
 	u, err := dal.GetUserById(s.ctx, id)
 	if err != nil {
 		return u, errno.UserNotExistErr

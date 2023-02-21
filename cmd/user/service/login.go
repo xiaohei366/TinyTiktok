@@ -2,11 +2,11 @@ package service
 
 import (
 	"context"
-	"crypto/sha256"
+	"crypto/md5"
 	"fmt"
 	"io"
 
-	"github.com/xiaohei366/TinyTiktok/cmd/user/kitex_gen/UserServer"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/service/dal"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
@@ -25,7 +25,7 @@ func NewCheckUserService(ctx context.Context) *CheckUserService {
 // CheckUser check user info
 func (s *CheckUserService) CheckUser(req *UserServer.DouyinUserLoginRequest) (int64, error) {
 	//生成暗文密码
-	h := sha256.New()
+	h := md5.New()
 	if _, err := io.WriteString(h, req.Password); err != nil {
 		return 0, err
 	}

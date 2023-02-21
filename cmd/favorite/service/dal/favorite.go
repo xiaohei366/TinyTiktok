@@ -6,7 +6,7 @@ import (
 	"github.com/cloudwego/kitex/pkg/klog"
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/config"
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/initialize/db"
-	"github.com/xiaohei366/TinyTiktok/cmd/favorite/kitex_gen/FavoriteServer"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer"
 )
 
 // GetLikeUserIdList 根据videoId获取点赞userId

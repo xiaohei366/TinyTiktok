@@ -4,37 +4,25 @@ package main
 
 import (
 	"github.com/cloudwego/hertz/pkg/app/server"
-	"github.com/cloudwego/hertz/pkg/common/hlog"
-	hertzlogrus "github.com/hertz-contrib/obs-opentelemetry/logging/logrus"
+	hertztracing "github.com/hertz-contrib/obs-opentelemetry/tracing"
 	"github.com/hertz-contrib/pprof"
-
-	//"github.com/hertz-contrib/obs-opentelemetry/tracing"
-	mw "github.com/xiaohei366/TinyTiktok/cmd/api/biz/middleware"
-	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/rpc"
+	"github.com/xiaohei366/TinyTiktok/cmd/api/initialize"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 )
 
-func Init() {
-	//RPC框架初始化
-	rpc.Init()
-	//中间件jwt鉴权
-	mw.InitJWT()
-	// 日志 初始化
-	hlog.SetLogger(hertzlogrus.NewLogger())
-	hlog.SetLevel(hlog.LevelInfo)
-}
-
 func main() {
-	Init()
-	//tracer, cfg := tracing.NewServerTracer()
+	initialize.Init()
+	//链路追踪
+	tracer, cfg := hertztracing.NewServerTracer()
 	h := server.New(
 		server.WithHostPorts(shared.ApiServiceAddr),
 		server.WithHandleMethodNotAllowed(true), // coordinate with NoMethod
-		//tracer,
+		server.WithMaxRequestBodySize(10000000000),
+		tracer,
 	)
-	// use pprof mw
+	// 使用 pprof 和 tracer 两个中间件
 	pprof.Register(h)
-
+	h.Use(hertztracing.ServerMiddleware(cfg))
 	//设定好路由并启动
 	register(h)
 	h.Spin()

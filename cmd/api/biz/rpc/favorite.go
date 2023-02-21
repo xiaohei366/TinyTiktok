@@ -76,7 +76,7 @@ func GetFavoriteUser(ctx context.Context, req *FavoriteServer.DouyinUserFavorite
 	return resp, nil
 }
 
-func GetFavoriteVideo(ctx context.Context, req *FavoriteServer.DouyinUserFavoriteRequest) (resp *FavoriteServer.DouyinUserFavoriteResponse, err error) {
+func GetFavoriteVideo(ctx context.Context, req *FavoriteServer.DouyinVideoFavoriteRequest) (resp *FavoriteServer.DouyinVideoFavoriteResponse, err error) {
 	resp, err = favoriteClient.GetFavoriteVideo(ctx, req)
 	if err != nil {
 		return nil, err

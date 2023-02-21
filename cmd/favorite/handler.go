@@ -2,9 +2,9 @@ package main
 
 import (
 	"context"
-	FavoriteServer "github.com/xiaohei366/TinyTiktok/cmd/favorite/kitex_gen/FavoriteServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/service"
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/service/pack"
+	FavoriteServer "github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
 

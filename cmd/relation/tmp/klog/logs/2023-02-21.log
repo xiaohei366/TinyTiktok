@@ -1,0 +1,8 @@
+{"level":"info","msg":"KITEX: server listen at addr=[::]:9002","time":"2023-02-21T14:07:57+08:00"}
+{"level":"info","msg":"start keepalive lease 694d8671f322920a for etcd registry","time":"2023-02-21T14:07:58+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:9002","time":"2023-02-21T21:39:24+08:00"}
+{"level":"info","msg":"start keepalive lease 694d8674312be40d for etcd registry","time":"2023-02-21T21:39:25+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1 to_user_id:1}\n","time":"2023-02-21T23:21:27+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T23:21:27+08:00"}
+{"level":"info","msg":"client address: [::1]:47686\n","time":"2023-02-21T23:21:27+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T23:21:27+08:00"}
