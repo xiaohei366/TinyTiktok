@@ -2,11 +2,12 @@ package service
 
 import (
 	"context"
+	"time"
+
 	"github.com/xiaohei366/TinyTiktok/cmd/video/rpc"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/RelationServer"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
-	"time"
 
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/dal"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/pack"
@@ -55,8 +56,8 @@ func (s *FeedService) Feed(req *VideoServer.DouyinFeedRequest) (videos []*VideoS
 	relations := []bool{}
 	for _, u := range users {
 		relation, err := rpc.QueryRelation(s.ctx, &RelationServer.DouyinQueryRelationRequest{
-			UserId:   u.Id,
-			ToUserId: req.UserId,
+			UserId:   req.UserId,
+			ToUserId: u.Id,
 		})
 		if err != nil {
 			return videos, nextTime, errno.RelationRPCErr
