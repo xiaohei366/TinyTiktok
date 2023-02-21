@@ -2,13 +2,9 @@ package service
 
 import (
 	"context"
-	"github.com/xiaohei366/TinyTiktok/cmd/video/rpc"
-	"github.com/xiaohei366/TinyTiktok/kitex_gen/RelationServer"
-	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
-	"github.com/xiaohei366/TinyTiktok/pkg/errno"
-
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/dal"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/pack"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
 )
 
@@ -27,30 +23,17 @@ func (s *PublishListService) PublishList(req *VideoServer.DouyinPublishListReque
 	if err != nil {
 		return nil, err
 	}
-	//rpc调用拿取user信息
 	users := []*UserServer.User{}
-	for _, v := range UserVideos {
-		user, err := rpc.GetUserInfo(s.ctx, &UserServer.DouyinUserRequest{
-			UserId: v.AuthorID,
-		})
-
-		if err != nil {
-			return videoList, errno.UserRPCErr
-		}
-		users = append(users, user)
-	}
-
-	//queryRelation
 	relations := []bool{}
-	for _, u := range users {
-		relation, err := rpc.QueryRelation(s.ctx, &RelationServer.DouyinQueryRelationRequest{
-			UserId:   u.Id,
-			ToUserId: req.UserId,
-		})
-		if err != nil {
-			return videoList, errno.RelationRPCErr
+	if len(UserVideos) != 0 {
+		//rpc调用拿取user信息
+		for _, v := range UserVideos {
+			user, relation := getUserInfo(s.ctx, v, req.UserId)
+			users = append(users, user)
+			relations = append(relations, relation)
 		}
-		relations = append(relations, relation)
+	} else {
+		return videoList, nil //todo
 	}
 
 	videoList = pack.VideoList(UserVideos, users, relations)

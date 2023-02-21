@@ -2,10 +2,7 @@ package service
 
 import (
 	"context"
-	"github.com/xiaohei366/TinyTiktok/cmd/video/rpc"
-	"github.com/xiaohei366/TinyTiktok/kitex_gen/RelationServer"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
-	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 	"time"
 
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/dal"
@@ -31,39 +28,20 @@ func (s *FeedService) Feed(req *VideoServer.DouyinFeedRequest) (videos []*VideoS
 		cur_time := int64(time.Now().UnixMilli())
 		latestTime = &cur_time
 	}
+	users := []*UserServer.User{}
+	relations := []bool{}
 	feedModels, err := dal.MGetVideos(s.ctx, latestTime)
 	if len(feedModels) == 0 {
 		nextTime = time.Now().UnixMilli()
-		return videos, nextTime, err
+		return videos, nextTime, nil
 	} else {
+		for _, v := range feedModels {
+			user, relation := getUserInfo(s.ctx, v, req.UserId)
+			users = append(users, user)
+			relations = append(relations, relation)
+		}
 		nextTime = feedModels[len(feedModels)-1].UpdatedAt.UnixMilli()
 	}
-	//rpc 拿取视频信息
-	users := []*UserServer.User{}
-	for _, v := range feedModels {
-		user, err := rpc.GetUserInfo(s.ctx, &UserServer.DouyinUserRequest{
-			UserId: v.AuthorID,
-		})
-
-		if err != nil {
-			return videos, nextTime, errno.UserRPCErr
-		}
-		users = append(users, user)
-	}
-
-	//queryRelation
-	relations := []bool{}
-	for _, u := range users {
-		relation, err := rpc.QueryRelation(s.ctx, &RelationServer.DouyinQueryRelationRequest{
-			UserId:   u.Id,
-			ToUserId: req.UserId,
-		})
-		if err != nil {
-			return videos, nextTime, errno.RelationRPCErr
-		}
-		relations = append(relations, relation)
-	}
-
 	videos = pack.VideoList(feedModels, users, relations)
 
 	return videos, nextTime, nil

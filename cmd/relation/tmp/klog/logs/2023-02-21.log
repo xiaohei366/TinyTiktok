@@ -1,0 +1,309 @@
+{"level":"info","msg":"KITEX: server listen at addr=[::]:9002","time":"2023-02-21T11:18:21+08:00"}
+{"level":"info","msg":"start keepalive lease 694d8671da739741 for etcd registry","time":"2023-02-21T11:18:22+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:9  to_user_id:9}\n","time":"2023-02-21T11:18:48+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:18:48+08:00"}
+{"level":"info","msg":"client address: [::1]:43352\n","time":"2023-02-21T11:18:48+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:18:48+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:9  to_user_id:9}\n","time":"2023-02-21T11:19:14+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:19:14+08:00"}
+{"level":"info","msg":"client address: [::1]:49816\n","time":"2023-02-21T11:19:14+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:19:14+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:9  to_user_id:9}\n","time":"2023-02-21T11:22:36+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:22:36+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:22:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:22:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:9  to_user_id:9}\n","time":"2023-02-21T11:22:48+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:22:48+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:22:48+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:22:48+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:9  to_user_id:9}\n","time":"2023-02-21T11:22:48+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:22:48+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:22:48+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:22:48+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:9  to_user_id:9}\n","time":"2023-02-21T11:26:24+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:26:24+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:26:24+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:26:24+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:9  to_user_id:9}\n","time":"2023-02-21T11:26:24+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:26:24+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:26:24+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:26:24+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:9  to_user_id:9}\n","time":"2023-02-21T11:26:28+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:26:28+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:26:28+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:26:28+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:9  to_user_id:9}\n","time":"2023-02-21T11:26:28+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:26:28+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:26:28+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:26:28+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:to_user_id:9}\n","time":"2023-02-21T11:26:31+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:26:31+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:26:31+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:26:31+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:to_user_id:9}\n","time":"2023-02-21T11:26:31+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:26:31+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:26:31+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:26:31+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:to_user_id:9}\n","time":"2023-02-21T11:26:31+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:26:31+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:26:31+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:26:31+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:to_user_id:9}\n","time":"2023-02-21T11:26:31+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:26:31+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:26:31+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:26:31+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:10}\n","time":"2023-02-21T11:26:39+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:26:39+08:00"}
+{"level":"info","msg":"client address: [::1]:43352\n","time":"2023-02-21T11:26:39+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:26:39+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:10}\n","time":"2023-02-21T11:26:56+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:26:56+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:26:56+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:26:56+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:10}\n","time":"2023-02-21T11:26:56+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:26:56+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:26:56+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:26:56+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:9}\n","time":"2023-02-21T11:26:56+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:26:56+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:26:56+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:26:56+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:9}\n","time":"2023-02-21T11:26:56+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:26:56+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:26:56+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:26:56+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:10}\n","time":"2023-02-21T11:26:57+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:26:57+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:26:57+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:26:57+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:10}\n","time":"2023-02-21T11:26:58+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:26:58+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:26:58+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:26:58+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:10}\n","time":"2023-02-21T11:26:59+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:26:59+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:26:59+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:10}\n","time":"2023-02-21T11:26:59+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:26:59+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:26:59+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:26:59+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:26:59+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:9}\n","time":"2023-02-21T11:26:59+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:26:59+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:26:59+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:26:59+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:9}\n","time":"2023-02-21T11:26:59+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:26:59+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:26:59+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:26:59+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:10}\n","time":"2023-02-21T11:27:01+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:27:01+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:27:01+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:27:01+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:9  action_type:1}\n","time":"2023-02-21T11:27:16+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: RelationAction\n","time":"2023-02-21T11:27:16+08:00"}
+{"level":"info","msg":"client address: [::1]:43352\n","time":"2023-02-21T11:27:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:9  is_follow:true}\n","time":"2023-02-21T11:27:16+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: ChangeUserFollowCount\n","time":"2023-02-21T11:27:16+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T11:27:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:status_msg:\"Success\"}\n","time":"2023-02-21T11:27:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:27:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:10}\n","time":"2023-02-21T11:27:19+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:27:19+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:27:19+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:27:19+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:10}\n","time":"2023-02-21T11:27:26+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:27:26+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:27:26+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:27:26+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:10}\n","time":"2023-02-21T11:27:35+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:27:35+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:27:35+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:27:35+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:10}\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:9}\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  is_follow:true}\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:9}\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  is_follow:true}\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:10}\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:10}\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:10}\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:9}\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  is_follow:true}\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:10  to_user_id:9}\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"client address: [::1]:33798\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  is_follow:true}\n","time":"2023-02-21T11:27:42+08:00"}
+{"level":"error","msg":"KITEX: server listen failed, addr=:9002 error=listen tcp :9002: bind: address already in use","time":"2023-02-21T13:06:22+08:00"}
+{"level":"error","msg":"KITEX: server start error: error=listen tcp :9002: bind: address already in use","time":"2023-02-21T13:06:22+08:00"}
+{"level":"fatal","msg":"listen tcp :9002: bind: address already in use","time":"2023-02-21T13:06:22+08:00"}
+{"level":"error","msg":"KITEX: server listen failed, addr=:9002 error=listen tcp :9002: bind: address already in use","time":"2023-02-21T13:06:28+08:00"}
+{"level":"error","msg":"KITEX: server start error: error=listen tcp :9002: bind: address already in use","time":"2023-02-21T13:06:28+08:00"}
+{"level":"fatal","msg":"listen tcp :9002: bind: address already in use","time":"2023-02-21T13:06:28+08:00"}
+{"level":"error","msg":"KITEX: server listen failed, addr=:9002 error=listen tcp :9002: bind: address already in use","time":"2023-02-21T13:06:54+08:00"}
+{"level":"error","msg":"KITEX: server start error: error=listen tcp :9002: bind: address already in use","time":"2023-02-21T13:06:54+08:00"}
+{"level":"fatal","msg":"listen tcp :9002: bind: address already in use","time":"2023-02-21T13:06:54+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:13125","time":"2023-02-21T13:07:58+08:00"}
+{"level":"info","msg":"start keepalive lease 694d86724519da0a for etcd registry","time":"2023-02-21T13:07:59+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:1}\n","time":"2023-02-21T13:08:39+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:08:39+08:00"}
+{"level":"info","msg":"client address: [::1]:33684\n","time":"2023-02-21T13:08:39+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:08:39+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:1}\n","time":"2023-02-21T13:09:00+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:00+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:00+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:00+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:1}\n","time":"2023-02-21T13:09:08+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:08+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:1}\n","time":"2023-02-21T13:09:08+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:08+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:1}\n","time":"2023-02-21T13:09:08+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:08+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:1}\n","time":"2023-02-21T13:09:08+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:08+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:1}\n","time":"2023-02-21T13:09:08+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:08+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:1}\n","time":"2023-02-21T13:09:10+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:10+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:10+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:1}\n","time":"2023-02-21T13:09:10+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:10+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:10+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:10+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:10+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:1}\n","time":"2023-02-21T13:09:10+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:10+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:10+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:1}\n","time":"2023-02-21T13:09:10+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:10+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:10+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:10+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:10+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:1}\n","time":"2023-02-21T13:09:12+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:12+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:12+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:1}\n","time":"2023-02-21T13:09:12+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:12+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:12+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:12+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:12+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:1}\n","time":"2023-02-21T13:09:13+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:13+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:13+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:1}\n","time":"2023-02-21T13:09:13+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:13+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:13+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:13+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:13+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:1}\n","time":"2023-02-21T13:09:13+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:13+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:13+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:1}\n","time":"2023-02-21T13:09:13+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:13+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:13+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:13+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:13+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  to_user_id:1}\n","time":"2023-02-21T13:09:15+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:15+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:15+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:15+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:to_user_id:1}\n","time":"2023-02-21T13:09:17+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:17+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:17+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:17+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:to_user_id:1}\n","time":"2023-02-21T13:09:17+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:17+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:17+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:17+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:to_user_id:1}\n","time":"2023-02-21T13:09:18+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:18+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2  to_user_id:2}\n","time":"2023-02-21T13:09:29+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:29+08:00"}
+{"level":"info","msg":"client address: [::1]:33684\n","time":"2023-02-21T13:09:29+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:29+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2  to_user_id:2}\n","time":"2023-02-21T13:09:48+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:48+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:48+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:48+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2  to_user_id:2}\n","time":"2023-02-21T13:09:51+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:51+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:51+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2  to_user_id:2}\n","time":"2023-02-21T13:09:51+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:51+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:51+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:51+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:51+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2  to_user_id:1}\n","time":"2023-02-21T13:09:51+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:51+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:51+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:51+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2  to_user_id:2}\n","time":"2023-02-21T13:09:52+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:52+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:52+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2  to_user_id:2}\n","time":"2023-02-21T13:09:52+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:52+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:52+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:52+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:52+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2  to_user_id:1}\n","time":"2023-02-21T13:09:52+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:52+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:52+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:52+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2  to_user_id:2}\n","time":"2023-02-21T13:09:53+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:53+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:53+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:53+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2  to_user_id:2}\n","time":"2023-02-21T13:09:55+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:55+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:55+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2  to_user_id:2}\n","time":"2023-02-21T13:09:55+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:55+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:55+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:55+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:55+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2  to_user_id:1}\n","time":"2023-02-21T13:09:55+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:09:55+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:09:55+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:55+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2  to_user_id:1  action_type:1}\n","time":"2023-02-21T13:09:57+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: RelationAction\n","time":"2023-02-21T13:09:57+08:00"}
+{"level":"info","msg":"client address: [::1]:33684\n","time":"2023-02-21T13:09:57+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2  to_user_id:1  is_follow:true}\n","time":"2023-02-21T13:09:57+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: ChangeUserFollowCount\n","time":"2023-02-21T13:09:57+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-21T13:09:57+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:status_msg:\"Success\"}\n","time":"2023-02-21T13:09:57+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:09:57+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2  to_user_id:2}\n","time":"2023-02-21T13:10:14+08:00"}
+{"level":"info","msg":"remote service name: relation, remote method: QueryRelation\n","time":"2023-02-21T13:10:14+08:00"}
+{"level":"info","msg":"client address: [::1]:47300\n","time":"2023-02-21T13:10:14+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-21T13:10:14+08:00"}

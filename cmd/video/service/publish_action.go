@@ -13,9 +13,10 @@ import (
 	dal2 "github.com/xiaohei366/TinyTiktok/cmd/video/service/dal"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
 	"github.com/xiaohei366/TinyTiktok/pkg/minio"
+	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 	"image/jpeg"
 	"os"
-	"strings"
+	"sync"
 )
 
 type PublishActionService struct { //还是没太明白为什么要new一个videoPost
@@ -42,39 +43,39 @@ func (s *PublishActionService) PublishAction(req *VideoServer.DouyinPublishActio
 	}
 
 	// prepare videoName
-	fileName := u2.String() + "." + "mp4"
-	klog.Info("filename:", fileName)
+	videoName := u2.String() + "." + "mp4"
 	videoReader := bytes.NewReader(videoData)
 
 	// upload video into minio video bucket and get video playUrl
-	url, err := minio.UploadObject(minioCli.Client, "video", config.PublishVideosBucket, fileName, videoReader, int64(len(videoData)), 0) //
+	err = minio.UploadObject(minioCli.Client, "video", config.PublishVideosBucket, videoName, videoReader, int64(len(videoData))) //
 	if err != nil {
 		return err
 	}
-	playUrl := strings.Split(url.String(), "?")[0] //做截取
-	klog.Info("playUrl:", playUrl)
+	playUrl := "http://" + shared.MinioUrl + ":9000/videos/" + videoName
 
 	// prepare cover name
 	u3, err := uuid.NewV4()
 	if err != nil {
 		return err
 	}
-
-	// prepare cover image data
 	coverName := u3.String() + "." + "jpg"
-	coverImages, err := readFrameAsJpeg(playUrl) //封面数据
-	coverReader := bytes.NewReader(coverImages)
-	if err != nil {
-		return err
-	}
+	coverUrl := "http://" + shared.MinioUrl + ":9000/images/" + coverName //之前这个地方写localhost是可以的？
+	var wg sync.WaitGroup
+	wg.Add(1)
+	go func() {
+		coverImages, err := readFrameAsJpeg(playUrl) //封面数据
+		coverReader := bytes.NewReader(coverImages)
+		if err != nil {
+			klog.Info("Publish action read Frame as jpeg failed")
+		}
+		err = minio.UploadObject(minioCli.Client, "image", config.PublishImagesBucket, coverName, coverReader, int64(len(coverImages)))
+		if err != nil {
+			klog.Info("Publish action read Frame as jpeg failed")
+		}
+		wg.Done()
+	}()
 
 	// upload cover image and get coverUrl
-	url2, err := minio.UploadObject(minioCli.Client, "image", config.PublishImagesBucket, coverName, coverReader, int64(len(coverImages)), 0)
-	coverUrl := strings.Split(url2.String(), "?")[0] // 做截取
-	if err != nil {
-		return err
-	}
-	klog.Info("coverUrl:", coverUrl)
 
 	// publish action response model prepare
 	videoModel := &db.Video{
@@ -91,6 +92,7 @@ func (s *PublishActionService) PublishAction(req *VideoServer.DouyinPublishActio
 	if err != nil {
 		return err
 	}
+	wg.Wait()
 	return nil
 }
 

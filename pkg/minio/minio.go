@@ -8,7 +8,6 @@ import (
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 	"io"
 	"net/url"
-	"os"
 	"time"
 )
 
@@ -51,7 +50,7 @@ func CreateBucket(minioClient *minio.Client, bucketName string) error {
 
 // 上传对象
 func UploadObject(minioClient *minio.Client, filetype string,
-	bulkName, objectName string, reader io.Reader, size int64, expires time.Duration) (*url.URL, error) {
+	bulkName, objectName string, reader io.Reader, size int64) error {
 	var contentType string
 	if filetype == "video" {
 		contentType = "video/mp4"
@@ -68,9 +67,15 @@ func UploadObject(minioClient *minio.Client, filetype string,
 		})
 	if err != nil {
 		klog.Fatalf("upload object error " + err.Error())
-		return nil, err
+		return err
 	}
 	klog.Infof("upload %s success", objectName)
+
+	return nil
+}
+
+func GetMinioUrl(minioClient *minio.Client,
+	bulkName, objectName string, expires time.Duration) (*url.URL, error) {
 	//返回url
 	ctx := context.Background()
 	reqParams := make(url.Values)
@@ -83,28 +88,7 @@ func UploadObject(minioClient *minio.Client, filetype string,
 		return nil, err
 	}
 	klog.Info("presignedUrl:", presignedUrl)
-
 	return presignedUrl, nil
-}
-
-// localFileName是下载下来的目标地址
-func DownObject(minioClient *minio.Client, bulkName, objectName, localFileName string) (*minio.Object, error) {
-	object, err := minioClient.GetObject(context.Background(), bulkName, objectName, minio.GetObjectOptions{})
-	if err != nil {
-		klog.Fatalf("download object error " + err.Error())
-		return nil, err
-	}
-	localFile, err := os.Create(localFileName)
-	if err != nil {
-		klog.Fatalf("create local object error " + err.Error())
-		return nil, err
-	}
-	_, err = io.Copy(localFile, object)
-	if err != nil {
-		klog.Fatalf("write object from object to local file error " + err.Error())
-		return nil, err
-	}
-	return object, nil
 }
 
 // 删除对象
@@ -114,20 +98,4 @@ func RemoveObject(minioClient *minio.Client, bulkName, objectName string) {
 		klog.Fatalf("remove object eror " + err.Error())
 		return
 	}
-}
-
-// GetFileUrl 从 minio 获取文件Url
-func GetFileUrl(minioClient *minio.Client, bucketName string, fileName string, expires time.Duration) (*url.URL, error) {
-	ctx := context.Background()
-	reqParams := make(url.Values)
-	if expires <= 0 {
-		expires = time.Second * 60 * 60 * 24
-	}
-	presignedUrl, err := minioClient.PresignedGetObject(ctx, bucketName, fileName, expires, reqParams)
-	if err != nil {
-		klog.Errorf("get url of file %s from bucket %s failed, %s", fileName, bucketName, err)
-		return nil, err
-	}
-	// TODO: url可能要做截取
-	return presignedUrl, nil
 }
