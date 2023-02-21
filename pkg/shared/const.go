@@ -26,7 +26,7 @@ const (
 	DefaultLimit = 10
 
 	//minio
-	MinioUrl       = "172.27.28.184" //这个地方需要用虚拟机ip。不能用localhost，否则客户端不播放视频
+	MinioUrl       = "172.27.51.171" //这个地方需要用虚拟机ip。不能用localhost，否则客户端不播放视频
 	MinioPort      = "9000"
 	MinioAccessKey = "minio"
 	MinioSecretKey = "minio123"

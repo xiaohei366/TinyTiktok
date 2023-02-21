@@ -64,6 +64,9 @@ func DelFollow(ctx context.Context, userId int64, toUserId int64) error {
 
 // 查看两人是否有关系
 func QueryFollowInfo(ctx context.Context, userID int64, toUserID int64) (bool, error) {
+	if userID == toUserID {
+		return true, nil
+	}
 	follow := make([]*db.Follow, 0)
 	err := db.DB.WithContext(ctx).Find(&follow, "user_id = ? and to_user_id = ?", userID, toUserID).Error
 	if err != nil {
