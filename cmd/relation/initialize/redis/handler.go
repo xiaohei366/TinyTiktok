@@ -5,6 +5,7 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/xiaohei366/TinyTiktok/cmd/relation/config"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 )
 
@@ -40,6 +41,10 @@ func AddFollower(userId int64, ids []int64) {
 }
 
 func AddFollow(userId int64, ids []int64) {
+	//不是所有粉丝都加进去，如果粉丝大于N，才加入至缓存。
+	if len(ids) < int(config.FansNum) {
+		return
+	}
 	//更新粉丝列表缓存&关系缓存
 	for _, id := range ids {
 		Follow.SAdd(Ctx, strconv.Itoa(int(userId)), id)
@@ -61,7 +66,7 @@ func RedisWithDel(UserId int64, ToUserId int64) (bool, error) {
 	}
 	// 删除关注缓存的两者关系
 	if cnt, _ := Follow.SCard(Ctx, UserIdStr).Result(); cnt != 0 {
-		Follow.SRem(Ctx, UserIdStr, ToUserIdStr)
+		Follow.SRem(Ctx, UserIdStr, ToUserId)
 		Follow.Expire(Ctx, UserIdStr, shared.RedisExpireTime)
 	}
 	// 删除关系缓存的两者关系
@@ -70,8 +75,8 @@ func RedisWithDel(UserId int64, ToUserId int64) (bool, error) {
 		Relation1.Expire(Ctx, UserIdStr, shared.RedisExpireTime)
 	}
 	if cnt, _ := Relation2.Exists(Ctx, UserIdStr).Result(); cnt != 0 {
-		Relation1.SRem(Ctx, UserIdStr, ToUserId)
-		Relation1.Expire(Ctx, UserIdStr, shared.RedisExpireTime)
+		Relation2.SRem(Ctx, UserIdStr, ToUserId)
+		Relation2.Expire(Ctx, UserIdStr, shared.RedisExpireTime)
 	}
 	return true, nil
 }

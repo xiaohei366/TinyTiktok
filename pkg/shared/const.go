@@ -28,7 +28,7 @@ const (
 	DefaultLimit = 10
 
 	//minio
-	MinioUrl       = "172.22.199.45" //这个地方需要用虚拟机ip。不能用localhost，否则客户端不播放视频
+	MinioUrl       = "172.22.201.214" //这个地方需要用虚拟机ip。不能用localhost，否则客户端不播放视频
 	MinioPort      = "9000"
 	MinioAccessKey = "minio"
 	MinioSecretKey = "minio123"
@@ -44,15 +44,18 @@ const (
 	//消息队列设置
 	MQUser     = "admin"
 	MQPassword = "admin"
-	MQHost     = "172.22.199.45"
+	MQHost     = "172.22.201.214"
 	MQPort     = 5672
 
 	//Redis
 	RedisExpireTime = time.Hour * 48
-	RedisAddr       = "172.22.199.45:6379"
+	RedisAddr       = "172.22.201.214:6379"
 	RedisPassword   = "123"
 	RedisFollower   = 0
 	RedisFollow     = 1
 	RedisRelation1  = 2
 	RedisRelation2  = 3
+	RedisName       = 4
+	RedisCount1     = 5
+	RedisCount2     = 6
 )
