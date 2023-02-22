@@ -33,6 +33,7 @@ const (
 	GetFollowSetErrCode
 )
 
+<<<<<<< HEAD
 // video模块错误码
 const (
 	PublishActionErrCode int32 = iota + 10201
@@ -41,4 +42,12 @@ const (
 	VideoRpcUserErrCode
 	VideoRpcRelationErrCode
 	VideoListNotFoundErrCode
+=======
+// favorite模块错误码
+const (
+	// favorite模块错误码
+	FavoriteActionTypeErrCode int32 = iota + 10201
+	FavoriteNotExistErrCode
+	FavouriteActionErrCode
+>>>>>>> origin/feature_favorite
 )
