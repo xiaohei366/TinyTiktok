@@ -17,13 +17,14 @@ const (
 	UserServiceAddr     = ":13123"
 	VideoServiceAddr    = ":13124"
 	RelationServiceAddr = ":13125"
+	FavoriteServiceAddr = ":13126"
 
 	ApiServiceName      = "api"
 	UserServiceName     = "user"
 	VideoServiceName    = "video"
 	RelationServiceName = "relation"
-
-	DefaultLimit = 10
+	FavoriteServiceName = "favorite"
+	DefaultLimit        = 10
 
 	//minio
 	MinioUrl       = "172.19.134.195" //这个地方需要用虚拟机ip。不能用localhost，否则客户端不播放视频

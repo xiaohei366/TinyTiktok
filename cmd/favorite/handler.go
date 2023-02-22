@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/service"
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/service/pack"
 	FavoriteServer "github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer"
@@ -15,6 +16,7 @@ type FavoriteServiceImpl struct{}
 func (s *FavoriteServiceImpl) FavoriteAction(ctx context.Context, req *FavoriteServer.DouyinFavoriteActionRequest) (resp *FavoriteServer.DouyinFavoriteActionResponse, err error) {
 	// TODO: Your code here...
 	//检验格式
+	fmt.Println("req:", req.ActionType, req.VideoId, req.Id)
 	if req.ActionType != 1 && req.ActionType != 2 {
 		resp = pack.BuildfavoriteActionResp(errno.FavoriteActionTypeErr)
 		return resp, nil

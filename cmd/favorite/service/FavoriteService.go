@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"fmt"
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/initialize/db"
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/service/dal"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer"
@@ -36,6 +37,7 @@ func (s *GetFavoriteService) GetFavouriteCount(videoId int64) (int64, error) {
 
 // FavouriteAction 根据userId，videoId,actionType对视频进行点赞或者取消赞操作;
 func (s *GetFavoriteService) FavouriteAction(userId int64, videoId int64, actionType int32) error {
+	fmt.Println("Favourite Action:", userId, videoId)
 	err := dal.UpdateLike(s.ctx, userId, videoId, actionType)
 	if err != nil {
 		return errno.FavouriteActionErr

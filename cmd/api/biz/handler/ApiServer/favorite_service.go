@@ -2,6 +2,7 @@ package ApiServer
 
 import (
 	"context"
+	"fmt"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/handler/pack"
@@ -20,7 +21,7 @@ func FavoriteAction(ctx context.Context, c *app.RequestContext) {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
-
+	fmt.Println("req:", req.ActionType, req.VideoId)
 	resp, err := rpc.FavoriteAction(ctx, &FavoriteServer.DouyinFavoriteActionRequest{
 		VideoId:    req.VideoId,
 		ActionType: req.ActionType,

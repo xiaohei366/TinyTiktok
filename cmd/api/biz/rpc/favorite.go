@@ -62,6 +62,9 @@ func GetFavoriteList(ctx context.Context, req *FavoriteServer.DouyinFavoriteList
 	if resp.BaseResp.StatusCode != 0 {
 		return nil, errno.NewErrNo(resp.BaseResp.StatusCode, resp.BaseResp.StatusMsg)
 	}
+	if len(resp.VideoList) == 0 {
+		return nil, nil
+	}
 	return resp, nil
 }
 
