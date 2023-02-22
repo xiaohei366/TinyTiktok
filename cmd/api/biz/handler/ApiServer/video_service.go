@@ -32,7 +32,7 @@ func Feed(ctx context.Context, c *app.RequestContext) {
 			laststTime = int64(latesttime)
 		}
 	}
-	//todo 后续要确认feed如果是登录状态下怎么推荐。
+	
 	user, _ := c.Get(shared.IdentityKey)
 	if user == nil {
 		useID = 0

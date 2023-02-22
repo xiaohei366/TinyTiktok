@@ -41,17 +41,13 @@ func DelCount(UserId int64, ToUserId int64) (bool, error) {
 	ToUserIdStr := strconv.Itoa(int(ToUserId))
 	// 删除粉丝缓存的两者关系
 	//scard计算集合大小,SRem移除关系
-	if ok, _ := Count1.HExists(Ctx, UserIdStr, FollowField).Result(); ok {
-		Count1.HDel(Ctx, UserIdStr, FollowField)
-		Count1.HDel(Ctx, ToUserIdStr, FollowerField)
-		Count1.Expire(Ctx, UserIdStr, shared.RedisExpireTime)
-		Count1.Expire(Ctx, ToUserIdStr, shared.RedisExpireTime)
-	}
-	if ok, _ := Count2.HExists(Ctx, UserIdStr, FollowField).Result(); ok {
-		Count2.HDel(Ctx, UserIdStr, FollowField)
-		Count2.HDel(Ctx, ToUserIdStr, FollowerField)
-		Count2.Expire(Ctx, UserIdStr, shared.RedisExpireTime)
-		Count2.Expire(Ctx, ToUserIdStr, shared.RedisExpireTime)
-	}
+	Count1.HDel(Ctx, UserIdStr, FollowField)
+	Count1.HDel(Ctx, ToUserIdStr, FollowerField)
+	Count1.Expire(Ctx, UserIdStr, shared.RedisExpireTime)
+	Count1.Expire(Ctx, ToUserIdStr, shared.RedisExpireTime)
+	Count2.HDel(Ctx, UserIdStr, FollowField)
+	Count2.HDel(Ctx, ToUserIdStr, FollowerField)
+	Count2.Expire(Ctx, UserIdStr, shared.RedisExpireTime)
+	Count2.Expire(Ctx, ToUserIdStr, shared.RedisExpireTime)
 	return true, nil
 }

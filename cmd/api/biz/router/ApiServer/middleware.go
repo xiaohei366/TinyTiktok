@@ -23,8 +23,9 @@ func _commentMw() []app.HandlerFunc {
 }
 
 func _actionMw() []app.HandlerFunc {
-	// your code...
-	return nil
+	return []app.HandlerFunc{
+		mw.JwtMiddleware.MiddlewareFunc(),
+	}
 }
 
 func _comment_ctionMw() []app.HandlerFunc {
@@ -33,8 +34,9 @@ func _comment_ctionMw() []app.HandlerFunc {
 }
 
 func _listMw() []app.HandlerFunc {
-	// your code...
-	return nil
+	return []app.HandlerFunc{
+		mw.MiddlewareFuncOptional(),
+	}
 }
 
 func _commentlistMw() []app.HandlerFunc {

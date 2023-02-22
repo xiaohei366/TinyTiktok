@@ -4,7 +4,7 @@ import (
 	"github.com/xiaohei366/TinyTiktok/cmd/user/initialize/db"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/initialize/mq"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/initialize/redis"
-	"github.com/xiaohei366/TinyTiktok/cmd/user/initialize/rpc"
+	"github.com/xiaohei366/TinyTiktok/cmd/user/rpc"
 )
 
 func Init() {

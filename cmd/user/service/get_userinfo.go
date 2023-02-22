@@ -42,14 +42,15 @@ func (s *GetUserService) GetUserById(id int64) (db.User, error) {
 	switch Randid {
 	case 0:
 		FollowNum, _ = redis.Count1.HGet(redis.Ctx, strconv.Itoa(int(id)), redis.FollowField).Result()
-		FollowerNum, _ = redis.Count1.HGet(redis.Ctx, strconv.Itoa(int(id)), redis.FollowField).Result()
+		FollowerNum, _ = redis.Count1.HGet(redis.Ctx, strconv.Itoa(int(id)), redis.FollowerField).Result()
 	case 1:
 		FollowNum, _ = redis.Count2.HGet(redis.Ctx, strconv.Itoa(int(id)), redis.FollowField).Result()
-		FollowerNum, _ = redis.Count2.HGet(redis.Ctx, strconv.Itoa(int(id)), redis.FollowField).Result()
+		FollowerNum, _ = redis.Count2.HGet(redis.Ctx, strconv.Itoa(int(id)), redis.FollowerField).Result()
 	}
 	//再查询Name
+	cnt, err := redis.Name.Exists(redis.Ctx, strconv.Itoa(int(id))).Result()
 	Name, _ := redis.Name.Get(redis.Ctx, strconv.Itoa(int(id))).Result()
-	if Name != "" && len(FollowNum) != 0 && len(FollowerNum) != 0 && FollowNum != "0" && FollowerNum != "0" {
+	if cnt == 1 && len(FollowNum) > 0 && len(FollowerNum) > 0 && err == nil {
 		FollowInt, _ := strconv.ParseInt(FollowNum, 10, 64)
 		FollowerInt, _ := strconv.ParseInt(FollowerNum, 10, 64)
 		u = db.User{

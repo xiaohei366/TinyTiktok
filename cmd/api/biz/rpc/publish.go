@@ -2,6 +2,7 @@ package rpc
 
 import (
 	"context"
+
 	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 
 	"github.com/cloudwego/kitex/pkg/rpcinfo"
@@ -12,6 +13,7 @@ import (
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 
 	"github.com/cloudwego/kitex/client"
+	"github.com/kitex-contrib/obs-opentelemetry/provider"
 	"github.com/kitex-contrib/obs-opentelemetry/tracing"
 	etcd "github.com/kitex-contrib/registry-etcd"
 )
@@ -24,6 +26,12 @@ func initPublishRpc() {
 	if err != nil {
 		panic(err)
 	}
+
+	provider.NewOpenTelemetryProvider(
+		provider.WithServiceName(shared.ApiServiceName),
+		provider.WithExportEndpoint(shared.ExportEndpoint),
+		provider.WithInsecure(),
+	)
 
 	c, err := videosrv.NewClient(
 		shared.VideoServiceName,

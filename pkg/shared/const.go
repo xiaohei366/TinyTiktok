@@ -19,11 +19,13 @@ const (
 	UserServiceAddr     = ":13123"
 	VideoServiceAddr    = ":9021"
 	RelationServiceAddr = ":9002"
+	CommentServiceAddr  = ":13126"
 
 	ApiServiceName      = "api"
 	UserServiceName     = "user"
 	VideoServiceName    = "video"
 	RelationServiceName = "relation"
+	CommentServiceName  = "comment"
 
 	DefaultLimit = 10
 

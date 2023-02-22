@@ -9,7 +9,7 @@ import (
 	"github.com/xiaohei366/TinyTiktok/cmd/user/config"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/initialize/mq"
 	"github.com/xiaohei366/TinyTiktok/cmd/user/initialize/redis"
-	"github.com/xiaohei366/TinyTiktok/cmd/user/initialize/rpc"
+	"github.com/xiaohei366/TinyTiktok/cmd/user/rpc"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/RelationServer"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )

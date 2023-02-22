@@ -62,4 +62,7 @@ var (
 	GetFollowListErr   = NewErrNo(GetFollowListErrCode, "Failed to get follow list")
 	GetFollowerListErr = NewErrNo(GetFollowerListErrCode, "Failed to get follower list")
 	GetFollowSetErr    = NewErrNo(GetFollowSetErrCode, "Failed to get follow set")
+	//comment模块错误码
+	CommentActionErr  = NewErrNo(CommentActionErrCode, "Comment action failed")
+	GetCommentListErr = NewErrNo(GetCommentListErrCode, "Failed to get comment list")
 )

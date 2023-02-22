@@ -32,3 +32,9 @@ const (
 	GetFollowerListErrCode
 	GetFollowSetErrCode
 )
+
+// comment模块错误码
+const (
+	CommentActionErrCode int32 = iota + 10201
+	GetCommentListErrCode
+)
