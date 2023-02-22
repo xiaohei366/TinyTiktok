@@ -4,6 +4,8 @@ package shared
 import "time"
 
 const (
+	//ip
+	host_ip = "172.19.134.195"
 	//数据库的预留格式
 	DBName   = "TinyTiktok"
 	MySqlDSN = "%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local"
@@ -29,11 +31,8 @@ const (
 	DefaultLimit        = 10
 
 	//minio
-<<<<<<< HEAD
-	MinioUrl       = "172.19.134.195" //这个地方需要用虚拟机ip。不能用localhost，否则客户端不播放视频
-=======
-	MinioUrl       = "172.22.199.45" //这个地方需要用虚拟机ip。不能用localhost，否则客户端不播放视频
->>>>>>> origin/redis
+
+	MinioUrl       = host_ip //这个地方需要用虚拟机ip。不能用localhost，否则客户端不播放视频
 	MinioPort      = "9000"
 	MinioAccessKey = "minio"
 	MinioSecretKey = "minio123"
@@ -49,12 +48,12 @@ const (
 	//消息队列设置
 	MQUser     = "admin"
 	MQPassword = "admin"
-	MQHost     = "172.22.199.45"
+	MQHost     = host_ip //这个地方要改ip，最好统一一个ip
 	MQPort     = 5672
 
 	//Redis
 	RedisExpireTime = time.Hour * 48
-	RedisAddr       = "172.22.199.45:6379"
+	RedisAddr       = host_ip + ":6379" //这个地方ip也要改
 	RedisPassword   = "123"
 	RedisFollower   = 0
 	RedisFollow     = 1

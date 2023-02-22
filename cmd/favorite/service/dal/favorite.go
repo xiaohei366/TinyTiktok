@@ -29,14 +29,15 @@ func GetLikeUserIdList(ctx context.Context, videoId int64) ([]*db.Favorite, erro
 // UpdateLike 根据userId，videoId,actionType点赞或者取消赞
 func UpdateLike(ctx context.Context, userId int64, videoId int64, actionType int32) error {
 	//更新当前用户观看视频的点赞状态“cancel”，返回错误结果
-	fmt.Println("UpdateLike:", userId)
-	err := db.DB.WithContext(ctx).Where(map[string]interface{}{"user_id": userId, "video_id": videoId}).
-		Update("cancel", actionType).Error
+	fmt.Println("UpdateLike:", userId, videoId, actionType)
+	err := db.DB.WithContext(ctx).Where(map[string]interface{}{"user_id": userId, "video_id": videoId}). //这儿有问题。
+														Update("cancel", actionType).Error
 	//如果出现错误，返回更新数据库失败
 	if err != nil {
 		klog.Info("update data failed")
 		return err
 	}
+	fmt.Println("UpdateLike DB res:")
 	//更新操作成功
 	return nil
 }
