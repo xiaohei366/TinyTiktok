@@ -1,0 +1,8 @@
+
+/data
+/minio
+/cmd/user/output
+/cmd/video/output
+/cmd/relation/output
+/cmd/comment/output
+/cmd/favorite/output
