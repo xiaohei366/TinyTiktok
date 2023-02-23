@@ -46,7 +46,7 @@ func (s *MGetCommentService) MGetComment(videoID int64) ([]*CommentServer.Commen
 	r_comments := make([]*CommentServer.Comment, 0)
 
 	for i, c := range comments {
-		//fmt.Print(c, "\n")
+
 		r_comments = append(r_comments, pack.CommentInfoConvert(users[i], c))
 	}
 	if len(comments) != len(r_comments) {

@@ -5,7 +5,7 @@ import "time"
 
 const (
 	//host_ip
-	host_ip = "172.19.134.195"
+	host_ip = "172.22.201.214"
 	//数据库的预留格式
 	DBName   = "TinyTiktok"
 	MySqlDSN = "%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local"
@@ -34,7 +34,7 @@ const (
 	DefaultLimit = 10
 
 	//minio
-	MinioUrl       = host_ip //这个地方需要用虚拟机ip。不能用localhost，否则客户端不播放视频
+	MinioUrl       = host_ip 
 	MinioPort      = "9000"
 	MinioAccessKey = "minio"
 	MinioSecretKey = "minio123"

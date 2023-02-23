@@ -26,9 +26,9 @@ func AddComment(ctx context.Context, comment *db.Comment) (*db.Comment, error) {
 func DelComment(ctx context.Context, req *CommentServer.DouyinCommentActionRequest) error {
 	// 需不需要检验是否为自己的id （用户只能删除自己的评论）采用事务处理机制
 	err := db.DB.WithContext(ctx).Transaction(func(tx *gorm.DB) error {
-
 		comment := new(db.Comment)
-		err := tx.Where("video_id = ? And comment_id = ?", req.VideoId, req.CommentId).Find(&comment).Error
+		fmt.Print(req)
+		err := tx.Where("video_id = ? And id = ?", req.VideoId, req.CommentId).Find(&comment).Error
 		if err != nil {
 			klog.Info("不存在此评论！")
 			return err
@@ -50,7 +50,6 @@ func DelComment(ctx context.Context, req *CommentServer.DouyinCommentActionReque
 
 // 获取评论列表
 func MGetCommentList(ctx context.Context, videoID int64) ([]*db.Comment, error) {
-	fmt.Println("列表数据库操作")
 
 	commentList := make([]*db.Comment, 0)
 

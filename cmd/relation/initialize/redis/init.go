@@ -41,6 +41,6 @@ func InitRedis() {
 	Relation2 = redis.NewClient(&redis.Options{
 		Addr:     shared.RedisAddr,
 		Password: shared.RedisPassword,
-		DB:       shared.RedisRelation2, // 当前用户是否关注了自己粉丝信息.
+		DB:       shared.RedisRelation2,
 	})
 }
