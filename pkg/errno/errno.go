@@ -5,18 +5,6 @@ import (
 	"fmt"
 )
 
-// 错误码定义---统一在此定义-防止错误码冲突
-var (
-	Success    = NewErrNo(int32(0), "Success")
-	ServiceErr = NewErrNo(int32(10001), "Service is unable to start successfully")
-	ParamErr   = NewErrNo(int32(10002), "Wrong Parameter has been given")
-
-	// user模块错误码
-	UserAlreadyExistErr    = NewErrNo(int32(10003), "User already exists")
-	UserNotExistErr        = NewErrNo(int32(10004), "User not exists")
-	AuthorizationFailedErr = NewErrNo(int32(10005), "Authorization failed")
-)
-
 type ErrNo struct {
 	ErrCode int32
 	ErrMsg  string
@@ -50,3 +38,44 @@ func ConvertErr(err error) ErrNo {
 	//s.ErrMsg = err.Error()
 	return Err
 }
+
+// 错误码定义---统一在此定义-防止错误码冲突
+var (
+	Success    = NewErrNo(SuccessCode, "Success")
+	ServiceErr = NewErrNo(ServiceErrCode, "Service is unable to start successfully")
+	ParamErr   = NewErrNo(ParamErrCode, "Wrong Parameter has been given")
+	FuncErr    = NewErrNo(FuncErrCode, "Error!")
+	// user模块错误码
+	UserAlreadyExistErr      = NewErrNo(UserAlreadyExistErrCode, "User already exists")
+	UserNotExistErr          = NewErrNo(UserNotExistErrCode, "User not exists")
+	AuthorizationFailedErr   = NewErrNo(AuthorizationFailedErrCode, "Authorization failed")
+	StructConvertFailedErr   = NewErrNo(StructConvertFailedErrCode, "Struct Convert failed")
+	ChangeUserFollowCountErr = NewErrNo(ChangeUserFollowCountErrCode, "Failed to modify the follow count")
+	RelationRPCErr           = NewErrNo(RelationRPCErrCode, "Failed to use relation RPC")
+	FindUserErr              = NewErrNo(FindUserErrCode, "Failed to use relation RPC")
+	//follow模块错误码
+	FollowActionErr    = NewErrNo(FollowActionErrCode, "Follow action failed")
+	ActionTypeErr      = NewErrNo(ActionTypeErrCode, "Wrong action-type has been given")
+	QueryFollowErr     = NewErrNo(QueryFollowErrCode, "Query relation failed")
+	UserRPCErr         = NewErrNo(UserRPCErrCode, "Failed to use user RPC")
+	GetFollowListErr   = NewErrNo(GetFollowListErrCode, "Failed to get follow list")
+	GetFollowerListErr = NewErrNo(GetFollowerListErrCode, "Failed to get follower list")
+	GetFollowSetErr    = NewErrNo(GetFollowSetErrCode, "Failed to get follow set")
+	//video模块错误码
+	PublishActionErr         = NewErrNo(PublishActionErrCode, "Publish Action failed")
+	PublishListErr           = NewErrNo(PublishListErrCode, "Publish List failed")
+	FeedErr                  = NewErrNo(FeedErrCode, "Feed videos failed")
+	VideoRpcUserErr          = NewErrNo(VideoRpcUserErrCode, "Video rpc User failed")
+	VideoRpcRelationErr      = NewErrNo(VideoRpcRelationErrCode, "Video rpc relation failed")
+	VideoListNotFound        = NewErrNo(VideoListNotFoundErrCode, "Video List is empty")
+	GetVideoListByVideoIdErr = NewErrNo(GetVideoListByVideoIdErrCode, "Get Video List By Video Id Err")
+	//favorite模块错误码
+	FavoriteVideoListNotExistErr = NewErrNo(FavoriteVideoListNotExistErrCode, "Favorite not exist")
+	FavoriteActionErr            = NewErrNo(FavoriteActionErrCode, "FavoriteAction failed")
+	FavoriteActionTypeErr        = NewErrNo(FavoriteActionTypeErrCode, "FavoriteActionType is wrong")
+	FavoriteVideoListErr         = NewErrNo(FavoriteVideoListErrCode, "FavoriteVideoListErrCode rpc List err")
+	QueryUserLikeVideoErr        = NewErrNo(FavoriteQueryUserLikeVideoErrCode, "FavoriteQueryUserLikeVideoErr rpc err")
+	//comment模块错误码
+	CommentActionErr  = NewErrNo(CommentActionErrCode, "Comment action failed")
+	GetCommentListErr = NewErrNo(GetCommentListErrCode, "Failed to get comment list")
+)

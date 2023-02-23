@@ -1,0 +1,4 @@
+{"level":"info","msg":"KITEX: server listen at addr=[::]:9001","time":"2023-02-21T18:46:36+08:00"}
+{"level":"info","msg":"start keepalive lease 694d8673927e780a for etcd registry","time":"2023-02-21T18:46:37+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:9001","time":"2023-02-21T21:38:38+08:00"}
+{"level":"info","msg":"start keepalive lease 694d8674312be40a for etcd registry","time":"2023-02-21T21:38:39+08:00"}

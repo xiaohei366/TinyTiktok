@@ -23,8 +23,9 @@ func _commentMw() []app.HandlerFunc {
 }
 
 func _actionMw() []app.HandlerFunc {
-	// your code...
-	return nil
+	return []app.HandlerFunc{
+		mw.JwtMiddleware.MiddlewareFunc(),
+	}
 }
 
 func _comment_ctionMw() []app.HandlerFunc {
@@ -33,8 +34,9 @@ func _comment_ctionMw() []app.HandlerFunc {
 }
 
 func _listMw() []app.HandlerFunc {
-	// your code...
-	return nil
+	return []app.HandlerFunc{
+		mw.MiddlewareFuncOptional(),
+	}
 }
 
 func _commentlistMw() []app.HandlerFunc {
@@ -54,7 +56,9 @@ func _action0Mw() []app.HandlerFunc {
 
 func _favorite_ctionMw() []app.HandlerFunc {
 	// your code...
-	return nil
+	return []app.HandlerFunc{
+		mw.JwtMiddleware.MiddlewareFunc(),
+	}
 }
 
 func _list0Mw() []app.HandlerFunc {
@@ -68,8 +72,9 @@ func _favoritelistMw() []app.HandlerFunc {
 }
 
 func _feedMw() []app.HandlerFunc {
-	// your code...
-	return nil
+	return []app.HandlerFunc{
+		mw.MiddlewareFuncOptional(),
+	}
 }
 
 func _feed0Mw() []app.HandlerFunc {
@@ -78,8 +83,9 @@ func _feed0Mw() []app.HandlerFunc {
 }
 
 func _publishMw() []app.HandlerFunc {
-	// your code...
-	return nil
+	return []app.HandlerFunc{
+		mw.JwtMiddleware.MiddlewareFunc(),
+	}
 }
 
 func _action1Mw() []app.HandlerFunc {
@@ -89,7 +95,9 @@ func _action1Mw() []app.HandlerFunc {
 
 func _publish_ctionMw() []app.HandlerFunc {
 	// your code...
-	return nil
+	return []app.HandlerFunc{
+		mw.JwtMiddleware.MiddlewareFunc(),
+	}
 }
 
 func _list1Mw() []app.HandlerFunc {
@@ -98,7 +106,6 @@ func _list1Mw() []app.HandlerFunc {
 }
 
 func _publishlistMw() []app.HandlerFunc {
-	// your code...
 	return nil
 }
 
@@ -131,5 +138,51 @@ func _registerMw() []app.HandlerFunc {
 
 func _register0Mw() []app.HandlerFunc {
 	// your code...
+	return nil
+}
+
+func _relationMw() []app.HandlerFunc {
+	return []app.HandlerFunc{
+		// use jwt mw
+		mw.JwtMiddleware.MiddlewareFunc(),
+	}
+}
+
+func _action2Mw() []app.HandlerFunc {
+	// your code...
+	return nil
+}
+
+func _relation_ctionMw() []app.HandlerFunc {
+	// your code...
+	return nil
+}
+
+func _followMw() []app.HandlerFunc {
+	// your code...
+	return nil
+}
+
+func _list2Mw() []app.HandlerFunc {
+	// your code...
+	return nil
+}
+
+func _relationfollowlistMw() []app.HandlerFunc {
+	// your code...
+	return nil
+}
+
+func _followerMw() []app.HandlerFunc {
+	// your code...
+	return nil
+}
+
+func _list3Mw() []app.HandlerFunc {
+	// your code...
+	return nil
+}
+
+func _relationfollowerlistMw() []app.HandlerFunc {
 	return nil
 }

@@ -149,6 +149,38 @@ message DouyinCommentListResponse {
     repeated  Comment comment_list = 2; // 评论列表
 }
 
+//Relation--action
+message DouyinRelationActionRequest {
+    string token = 1[(api.query)="token"]; // 用户鉴权token
+    int64 to_user_id = 2[(api.query)="to_user_id" , (api.vd)="len($) > 0"]; // 对方用户id
+    int32 action_type = 3[(api.query)="action_type" , (api.vd)="len($) > 0"]; // 1-关注，2-取消关注
+}
+message DouyinRelationActionResponse {
+    BaseResp base_resp = 1;
+}
+
+//Relation--follow
+message DouyinRelationFollowListRequest {
+    int64 user_id = 1[(api.query)="user_id"];// 用户id
+    string token = 2[(api.query)="token"];// 用户鉴权token
+}
+  
+message DouyinRelationFollowListResponse {
+    BaseResp base_resp = 1;
+    repeated User user_list = 2; // 用户信息列表
+}
+
+//Relation--follower
+message DouyinRelationFollowerListRequest {
+    int64 user_id = 1[(api.query)="user_id"];// 用户id
+    string token = 2[(api.query)="token"];// 用户鉴权token
+}  
+message DouyinRelationFollowerListResponse {
+    BaseResp base_resp = 1;
+    repeated User user_list = 2; // 用户列表
+}
+
+
 service ApiService {
     //Base-api
     //User
@@ -167,4 +199,10 @@ service ApiService {
     //Comment
     rpc CommentAction  (DouyinCommentActionRequest) returns (DouyinCommentActionResponse) {option (api.post) = "/douyin/comment/action/";}
     rpc CommentList  (DouyinCommentListRequest) returns (DouyinCommentListResponse) {option (api.get) = "/douyin/comment/list/";}
+    
+    ////Extra-api-II
+    //Relation
+    rpc RelationAction (DouyinRelationActionRequest) returns (DouyinRelationActionResponse) {option (api.post) = "/douyin/relation/action/";}
+    rpc RelationFollowList (DouyinRelationFollowListRequest) returns (DouyinRelationFollowListResponse) {option (api.get) = "/douyin/relation/follow/list/";}
+    rpc RelationFollowerList (DouyinRelationFollowerListRequest) returns (DouyinRelationFollowerListResponse) {option (api.get) = "/douyin/relation/follower/list/";}
 }

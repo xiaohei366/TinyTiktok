@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="Go" enabled="true">
+    <buildTags>
+      <option name="os" value="linux" />
+    </buildTags>
+  </component>
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/cmd/comment/output/log" />
+      <excludeFolder url="file://$MODULE_DIR$/cmd/favorite/output/log" />
+      <excludeFolder url="file://$MODULE_DIR$/cmd/relation/output/log" />
+      <excludeFolder url="file://$MODULE_DIR$/cmd/user/output/log" />
+      <excludeFolder url="file://$MODULE_DIR$/cmd/video/output/log" />
+      <excludeFolder url="file://$MODULE_DIR$/data/data1/.minio.sys/multipart" />
+      <excludeFolder url="file://$MODULE_DIR$/data/data1/.minio.sys/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/data/data2/.minio.sys/multipart" />
+      <excludeFolder url="file://$MODULE_DIR$/data/data2/.minio.sys/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/data/data3/.minio.sys/multipart" />
+      <excludeFolder url="file://$MODULE_DIR$/data/data3/.minio.sys/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/data/data4/.minio.sys/multipart" />
+      <excludeFolder url="file://$MODULE_DIR$/data/data4/.minio.sys/tmp" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
