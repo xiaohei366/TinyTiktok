@@ -74,7 +74,7 @@ func (s *UserServiceImpl) GetUserInfo(ctx context.Context, req *UserServer.Douyi
 func (s *UserServiceImpl) MGetUserInfo(ctx context.Context, req *UserServer.DouyinMUserRequest) (resp *UserServer.DouyinMUserResponse, err error) {
 	//正常则拼接信息返回响应
 	//调用服务逻辑
-	users, err := service.NewGetMUserService(ctx).GetMUserById(req.UserId)
+	users, err := service.NewGetUserService(ctx).GetMUserById(req.UserId)
 	if err != nil {
 		resp = pack.BuildMuserInfoResp(err, nil)
 		return resp, nil

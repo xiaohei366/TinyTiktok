@@ -26,8 +26,8 @@ func (s *MGetUserRelationFollowService) MGetUserRelationFollow(userID int64) ([]
 	//先取出所有关注的ID
 	followIDs := make([]int64, 0)
 	//先尝试使用Redis
-	ids, _ := redis.Follow.MGet(redis.Ctx, strconv.Itoa(int(userID))).Result()
-	if len(ids)-1 == 0 {
+	ids, err := redis.Follow.MGet(redis.Ctx, strconv.Itoa(int(userID))).Result()
+	if err != nil || len(ids)-1 == 0 {
 		//不行再用数据库
 		follows, err := dal.MGetFollowList(s.ctx, userID)
 		if err != nil {
@@ -49,7 +49,6 @@ func (s *MGetUserRelationFollowService) MGetUserRelationFollow(userID int64) ([]
 	}
 	//随后通过RPC 由这些ID获得 用户信息
 	var users []*UserServer.User
-	var err error
 	users, err = rpc.MGetUserInfo(s.ctx, &UserServer.DouyinMUserRequest{
 		UserId: followIDs,
 	})

@@ -4,5 +4,4 @@ func Init() {
 	initUser()
 	initPublishRpc()
 	initRelation()
-	initFavorite()
 }

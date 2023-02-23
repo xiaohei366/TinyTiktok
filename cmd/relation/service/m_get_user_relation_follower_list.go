@@ -29,8 +29,8 @@ func (s *MGetUserRelationFollowerService) MGetUserRelationFollower(userID int64)
 	wg.Add(2)
 	followerIDs := make([]int64, 0)
 	//先查看Redis里面是否存在
-	ids, _ := redis.Follower.MGet(redis.Ctx, strconv.Itoa(int(userID))).Result()
-	if len(ids)-1 == 0 {
+	ids, err := redis.Follower.MGet(redis.Ctx, strconv.Itoa(int(userID))).Result()
+	if err != nil || len(ids)-1 == 0 {
 		//从数据库取出所有粉丝的ID
 		followers, err := dal.MGetFollowerList(s.ctx, userID)
 		if err != nil {
@@ -67,16 +67,16 @@ func (s *MGetUserRelationFollowerService) MGetUserRelationFollower(userID int64)
 	//随后得到该用户的关注列表，用于补充用户信息
 	go func() {
 		var err error
-		//先尝试使用Redis获取
-		follows, _ := redis.Follow.MGet(redis.Ctx, strconv.Itoa(int(userID))).Result()
-		if len(follows)-1 != 0 {
-			for _, v := range follows {
-				followSet[v.(int64)] = struct{}{}
-			}
-		} else {
+		//先尝试使用Redis获取---Redis为空则会返回redis.Nil
+		follows, err := redis.Follow.MGet(redis.Ctx, strconv.Itoa(int(userID))).Result()
+		if err != nil || len(follows)-1 == 0 {
 			followSet, err = dal.GetFollowSet(s.ctx, userID)
 			if err != nil {
 				klog.Errorf("未获得关注列表：%v", err)
+			}
+		} else {
+			for _, v := range follows {
+				followSet[v.(int64)] = struct{}{}
 			}
 		}
 		wg.Done()
