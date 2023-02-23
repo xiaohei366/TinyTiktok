@@ -2,7 +2,6 @@ package ApiServer
 
 import (
 	"context"
-	"fmt"
 
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
@@ -25,11 +24,8 @@ func CommentAction(ctx context.Context, c *app.RequestContext) {
 		return
 	}
 	v, _ := c.Get(shared.IdentityKey) // 取出token的id
-
-	fmt.Println("req:", req.Token, req.VideoId, v.(*ApiServer.User).Id, req.ActionType, req.CommentText, req.CommentId)
-
+	// fmt.Print(req.VideoId, "&", req.ActionType, "&", req.CommentText, "&", req.CommentId, "&")
 	//调用PRC方法，在follow服务器上完成关注操作
-
 	resp, err := rpc.CommentAction(context.Background(), &CommentServer.DouyinCommentActionRequest{
 		UserId:      v.(*ApiServer.User).Id,
 		VideoId:     req.VideoId,
@@ -69,7 +65,6 @@ func CommentList(ctx context.Context, c *app.RequestContext) {
 		Token:   req.Token,
 		VideoId: req.VideoId,
 	})
-
 	//再调用RPC方法，查询他们的关系
 	for _, v := range resp.CommentList {
 		isFollow, _ := rpc.QueryRelation(context.Background(), &RelationServer.DouyinQueryRelationRequest{

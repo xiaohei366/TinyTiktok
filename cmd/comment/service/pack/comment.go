@@ -12,7 +12,7 @@ func CommentInfoConvert(u *UserServer.User, v *db.Comment) *CommentServer.Commen
 		return nil
 	}
 	return &CommentServer.Comment{
-		Id: v.User_id,
+		Id: int64(v.Model.ID),
 		User: &CommentServer.User{
 			Id:            u.Id,
 			Name:          u.Name,
