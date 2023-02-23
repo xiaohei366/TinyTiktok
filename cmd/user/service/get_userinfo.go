@@ -34,7 +34,7 @@ func (s *GetUserService) GetUserByName(name string) (db.User, error) {
 func (s *GetUserService) GetUserById(id int64) (db.User, error) {
 	var u db.User
 	var err error
-	var FollowNum, FollowerNum string
+	var FollowNum, FollowerNum, Name string
 	//先在Redis上查询---多机防止热key
 	//将热key分散到不同的服务器中
 	rand.Seed(time.Now().UnixNano())
@@ -43,14 +43,16 @@ func (s *GetUserService) GetUserById(id int64) (db.User, error) {
 	case 0:
 		FollowNum, _ = redis.Count1.HGet(redis.Ctx, strconv.Itoa(int(id)), redis.FollowField).Result()
 		FollowerNum, _ = redis.Count1.HGet(redis.Ctx, strconv.Itoa(int(id)), redis.FollowerField).Result()
+		Name, _ = redis.Name1.Get(redis.Ctx, strconv.Itoa(int(id))).Result()
+
 	case 1:
 		FollowNum, _ = redis.Count2.HGet(redis.Ctx, strconv.Itoa(int(id)), redis.FollowField).Result()
 		FollowerNum, _ = redis.Count2.HGet(redis.Ctx, strconv.Itoa(int(id)), redis.FollowerField).Result()
+		Name, _ = redis.Name2.Get(redis.Ctx, strconv.Itoa(int(id))).Result()
+
 	}
 	//再查询Name
-	cnt, err := redis.Name.Exists(redis.Ctx, strconv.Itoa(int(id))).Result()
-	Name, _ := redis.Name.Get(redis.Ctx, strconv.Itoa(int(id))).Result()
-	if cnt == 1 && len(FollowNum) > 0 && len(FollowerNum) > 0 && err == nil {
+	if len(Name) > 0 && len(FollowNum) > 0 && len(FollowerNum) > 0 && err == nil {
 		FollowInt, _ := strconv.ParseInt(FollowNum, 10, 64)
 		FollowerInt, _ := strconv.ParseInt(FollowerNum, 10, 64)
 		u = db.User{

@@ -34,7 +34,7 @@ const (
 	DefaultLimit = 10
 
 	//minio
-	MinioUrl       = host_ip 
+	MinioUrl       = host_ip
 	MinioPort      = "9000"
 	MinioAccessKey = "minio"
 	MinioSecretKey = "minio123"
@@ -61,7 +61,8 @@ const (
 	RedisFollow     = 1
 	RedisRelation1  = 2
 	RedisRelation2  = 3
-	RedisName       = 4
-	RedisCount1     = 5
-	RedisCount2     = 6
+	RedisName1      = 4
+	RedisName2      = 5
+	RedisCount1     = 6
+	RedisCount2     = 7
 )

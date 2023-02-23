@@ -12,7 +12,8 @@ import (
 var Ctx = context.Background()
 
 // 用户id和用户名对应信息表
-var Name *redis.Client
+var Name1 *redis.Client
+var Name2 *redis.Client
 // 下面两个为了解决热Key而使用
 var Count1 *redis.Client
 var Count2 *redis.Client
@@ -22,10 +23,15 @@ const FollowerField = "FollowerNum"
 
 func InitRedis() {
 
-	Name = redis.NewClient(&redis.Options{
+	Name1 = redis.NewClient(&redis.Options{
 		Addr:     shared.RedisAddr,
 		Password: shared.RedisPassword,
-		DB:       shared.RedisName,
+		DB:       shared.RedisName1,
+	})
+	Name2 = redis.NewClient(&redis.Options{
+		Addr:     shared.RedisAddr,
+		Password: shared.RedisPassword,
+		DB:       shared.RedisName2,
 	})
 	Count1 = redis.NewClient(&redis.Options{
 		Addr:     shared.RedisAddr,

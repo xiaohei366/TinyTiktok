@@ -31,8 +31,17 @@ func UpdateCount(UserId int64, FollowNum int64, FollowerNum int64) {
 }
 
 func AddName(userId int64, name string) {
-	//string类型数据操作
-	Name.Set(Ctx, strconv.Itoa(int(userId)), name, shared.RedisExpireTime)
+	//将热key分散到不同的服务器中
+	rand.Seed(time.Now().UnixNano())
+	id := rand.Intn(2) // 有几个机器是几
+
+	switch id {
+	case 0:
+		//string类型数据操作
+		Name1.Set(Ctx, strconv.Itoa(int(userId)), name, shared.RedisExpireTime)
+	case 1:
+		Name2.Set(Ctx, strconv.Itoa(int(userId)), name, shared.RedisExpireTime)
+	}
 }
 
 // 删除UserId的关注数和ToUserId的粉丝数

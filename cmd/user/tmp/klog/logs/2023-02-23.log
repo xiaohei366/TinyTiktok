@@ -7213,3 +7213,37 @@
 {"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T17:09:50+08:00"}
 {"level":"info","msg":"client address: [::1]:55608\n","time":"2023-02-23T17:09:50+08:00"}
 {"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:6 name:\"jacob7\"} user:{id:5 name:\"jacob6\" follower_count:1}}\n","time":"2023-02-23T17:09:50+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:13123","time":"2023-02-23T20:03:11+08:00"}
+{"level":"info","msg":"start keepalive lease 694d86789f054f17 for etcd registry","time":"2023-02-23T20:03:12+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3}\n","time":"2023-02-23T20:04:26+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-23T20:04:26+08:00"}
+{"level":"info","msg":"client address: [::1]:38116\n","time":"2023-02-23T20:04:26+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:3  name:\"3\"  follow_count:2}}\n","time":"2023-02-23T20:04:26+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-23T20:04:26+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-23T20:04:26+08:00"}
+{"level":"info","msg":"client address: [::1]:38116\n","time":"2023-02-23T20:04:26+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:2  name:\"2\"  follow_count:1  follower_count:1}}\n","time":"2023-02-23T20:04:26+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T20:04:26+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T20:04:26+08:00"}
+{"level":"info","msg":"client address: [::1]:38120\n","time":"2023-02-23T20:04:26+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T20:04:26+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-23T20:04:26+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-23T20:04:26+08:00"}
+{"level":"info","msg":"client address: [::1]:38116\n","time":"2023-02-23T20:04:26+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T20:04:26+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:3}\n","time":"2023-02-23T20:04:26+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-23T20:04:26+08:00"}
+{"level":"info","msg":"client address: [::1]:38116\n","time":"2023-02-23T20:04:26+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:3  name:\"3\"  follow_count:2}}\n","time":"2023-02-23T20:04:27+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-23T20:04:27+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-23T20:04:27+08:00"}
+{"level":"info","msg":"client address: [::1]:38116\n","time":"2023-02-23T20:04:27+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T20:04:27+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T20:04:27+08:00"}
+{"level":"info","msg":"client address: [::1]:38120\n","time":"2023-02-23T20:04:27+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:2  name:\"2\"  follow_count:1  follower_count:1}}\n","time":"2023-02-23T20:04:27+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T20:04:27+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-23T20:04:27+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-23T20:04:27+08:00"}
+{"level":"info","msg":"client address: [::1]:38116\n","time":"2023-02-23T20:04:27+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T20:04:27+08:00"}
