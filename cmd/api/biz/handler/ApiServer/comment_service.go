@@ -24,7 +24,6 @@ func CommentAction(ctx context.Context, c *app.RequestContext) {
 		return
 	}
 	v, _ := c.Get(shared.IdentityKey) // 取出token的id
-	// fmt.Print(req.VideoId, "&", req.ActionType, "&", req.CommentText, "&", req.CommentId, "&")
 	//调用PRC方法，在follow服务器上完成关注操作
 	resp, err := rpc.CommentAction(context.Background(), &CommentServer.DouyinCommentActionRequest{
 		UserId:      v.(*ApiServer.User).Id,

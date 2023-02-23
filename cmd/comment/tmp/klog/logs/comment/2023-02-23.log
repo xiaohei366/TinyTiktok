@@ -1,0 +1,621 @@
+{"level":"info","msg":"KITEX: server listen at addr=[::]:13126","time":"2023-02-23T22:20:50+08:00"}
+{"level":"info","msg":"start keepalive lease 694d86789f054f97 for etcd registry","time":"2023-02-23T22:20:51+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:23:22+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:22+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:22+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:23:22+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:23:24+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:24+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:24+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:23:24+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:23:24+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:24+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:24+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:23:24+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T22:23:24+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:24+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:24+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T22:23:24+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:23:24+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:23:24+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T22:23:24+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:3  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀笨蛋\"  create_date:\"2023-02-22 18:59:41\"}  comment_list:{id:2  user:{id:1  name:\"1\"  follower_count:2}  content:\"hello\"  create_date:\"2023-02-22 18:58:17\"}  comment_list:{id:1  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀\"  create_date:\"2023-02-22 18:52:09\"}}\n","time":"2023-02-23T22:23:24+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T22:23:24+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:24+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:24+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:23:24+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:23:25+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:25+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:25+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:23:25+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzcxNjU3OTEsImlkIjo0LCJvcmlnX2lhdCI6MTY3NzE2MjE5MX0.yfvua6DbRqZaF0dpF8Y-GDP4m1066lUtZTCc4M86x-o\"  video_id:4}\n","time":"2023-02-23T22:23:26+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:26+08:00"}
+{"level":"info","msg":"client address: [::1]:54510\n","time":"2023-02-23T22:23:26+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:23:26+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4  video_id:4  action_type:1  comment_text:\"我得第一个视频哦\"}\n","time":"2023-02-23T22:23:34+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentAction\n","time":"2023-02-23T22:23:34+08:00"}
+{"level":"info","msg":"client address: [::1]:54510\n","time":"2023-02-23T22:23:34+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:23:34+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-23T22:23:34+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:23:34+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"}}\n","time":"2023-02-23T22:23:34+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment:{id:5  user:{id:4  name:\"xiaohei\"}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:23:34+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"}}\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"}}\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:3  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀笨蛋\"  create_date:\"2023-02-22 18:59:41\"}  comment_list:{id:2  user:{id:1  name:\"1\"  follower_count:2}  content:\"hello\"  create_date:\"2023-02-22 18:58:17\"}  comment_list:{id:1  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀\"  create_date:\"2023-02-22 18:52:09\"}}\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:23:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:23:38+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:38+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:38+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:23:38+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:23:38+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:23:38+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"}}\n","time":"2023-02-23T22:23:38+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:23:38+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"}}\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:3  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀笨蛋\"  create_date:\"2023-02-22 18:59:41\"}  comment_list:{id:2  user:{id:1  name:\"1\"  follower_count:2}  content:\"hello\"  create_date:\"2023-02-22 18:58:17\"}  comment_list:{id:1  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀\"  create_date:\"2023-02-22 18:52:09\"}}\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:23:48+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:23:49+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:49+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:49+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:23:49+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:23:49+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:23:49+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"}}\n","time":"2023-02-23T22:23:49+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:23:49+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzcxNjU3OTEsImlkIjo0LCJvcmlnX2lhdCI6MTY3NzE2MjE5MX0.yfvua6DbRqZaF0dpF8Y-GDP4m1066lUtZTCc4M86x-o\"  video_id:4}\n","time":"2023-02-23T22:23:50+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:50+08:00"}
+{"level":"info","msg":"client address: [::1]:54510\n","time":"2023-02-23T22:23:50+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:23:50+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:23:50+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:23:50+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"}}\n","time":"2023-02-23T22:23:50+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:23:50+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"}}\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:3  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀笨蛋\"  create_date:\"2023-02-22 18:59:41\"}  comment_list:{id:2  user:{id:1  name:\"1\"  follower_count:2}  content:\"hello\"  create_date:\"2023-02-22 18:58:17\"}  comment_list:{id:1  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀\"  create_date:\"2023-02-22 18:52:09\"}}\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"}}\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:23:56+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:23:58+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:23:58+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:23:58+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:23:58+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:23:58+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:23:58+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"}}\n","time":"2023-02-23T22:23:58+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:23:58+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"}}\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:3  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀笨蛋\"  create_date:\"2023-02-22 18:59:41\"}  comment_list:{id:2  user:{id:1  name:\"1\"  follower_count:2}  content:\"hello\"  create_date:\"2023-02-22 18:58:17\"}  comment_list:{id:1  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀\"  create_date:\"2023-02-22 18:52:09\"}}\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:24:00+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:3  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀笨蛋\"  create_date:\"2023-02-22 18:59:41\"}  comment_list:{id:2  user:{id:1  name:\"1\"  follower_count:2}  content:\"hello\"  create_date:\"2023-02-22 18:58:17\"}  comment_list:{id:1  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀\"  create_date:\"2023-02-22 18:52:09\"}}\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:24:21+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:3  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀笨蛋\"  create_date:\"2023-02-22 18:59:41\"}  comment_list:{id:2  user:{id:1  name:\"1\"  follower_count:2}  content:\"hello\"  create_date:\"2023-02-22 18:58:17\"}  comment_list:{id:1  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀\"  create_date:\"2023-02-22 18:52:09\"}}\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:24:33+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:3  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀笨蛋\"  create_date:\"2023-02-22 18:59:41\"}  comment_list:{id:2  user:{id:1  name:\"1\"  follower_count:2}  content:\"hello\"  create_date:\"2023-02-22 18:58:17\"}  comment_list:{id:1  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀\"  create_date:\"2023-02-22 18:52:09\"}}\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:24:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:24:45+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:45+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:45+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:24:45+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:24:45+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:24:45+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:24:45+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:24:45+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:3  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀笨蛋\"  create_date:\"2023-02-22 18:59:41\"}  comment_list:{id:2  user:{id:1  name:\"1\"  follower_count:2}  content:\"hello\"  create_date:\"2023-02-22 18:58:17\"}  comment_list:{id:1  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀\"  create_date:\"2023-02-22 18:52:09\"}}\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:24:51+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:3  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀笨蛋\"  create_date:\"2023-02-22 18:59:41\"}  comment_list:{id:2  user:{id:1  name:\"1\"  follower_count:2}  content:\"hello\"  create_date:\"2023-02-22 18:58:17\"}  comment_list:{id:1  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀\"  create_date:\"2023-02-22 18:52:09\"}}\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:24:52+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:24:54+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:54+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:54+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:24:54+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:24:54+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:24:54+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:24:54+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:24:54+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:24:54+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:24:54+08:00"}
+{"level":"info","msg":"client address: [::1]:50678\n","time":"2023-02-23T22:24:54+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:24:54+08:00"}
+{"level":"warning","msg":"KITEX: signal connection closing error:protobuf just support 'framed' trans proto[::]:13126=\u003e[::1]:50678","time":"2023-02-23T22:39:53+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:13126","time":"2023-02-23T22:39:56+08:00"}
+{"level":"info","msg":"start keepalive lease 694d86789f055073 for etcd registry","time":"2023-02-23T22:39:57+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:3  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀笨蛋\"  create_date:\"2023-02-22 18:59:41\"}  comment_list:{id:2  user:{id:1  name:\"1\"  follower_count:2}  content:\"hello\"  create_date:\"2023-02-22 18:58:17\"}  comment_list:{id:1  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀\"  create_date:\"2023-02-22 18:52:09\"}}\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:41:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzcxNjU4NTMsImlkIjo1LCJvcmlnX2lhdCI6MTY3NzE2MjI1M30.eLEx4WfTsEToBkc2nlm269oVlvbnBAq8LfQ_qe7UVHE\"  video_id:4}\n","time":"2023-02-23T22:41:39+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:41:39+08:00"}
+{"level":"info","msg":"client address: [::1]:56826\n","time":"2023-02-23T22:41:39+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:41:39+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:41:39+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:41:39+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:41:39+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:41:39+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:3  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀笨蛋\"  create_date:\"2023-02-22 18:59:41\"}  comment_list:{id:2  user:{id:1  name:\"1\"  follower_count:2}  content:\"hello\"  create_date:\"2023-02-22 18:58:17\"}  comment_list:{id:1  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀\"  create_date:\"2023-02-22 18:52:09\"}}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:3  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀笨蛋\"  create_date:\"2023-02-22 18:59:41\"}  comment_list:{id:2  user:{id:1  name:\"1\"  follower_count:2}  content:\"hello\"  create_date:\"2023-02-22 18:58:17\"}  comment_list:{id:1  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀\"  create_date:\"2023-02-22 18:52:09\"}}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:41:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:3  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀笨蛋\"  create_date:\"2023-02-22 18:59:41\"}  comment_list:{id:2  user:{id:1  name:\"1\"  follower_count:2}  content:\"hello\"  create_date:\"2023-02-22 18:58:17\"}  comment_list:{id:1  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀\"  create_date:\"2023-02-22 18:52:09\"}}\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:42:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:3  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀笨蛋\"  create_date:\"2023-02-22 18:59:41\"}  comment_list:{id:2  user:{id:1  name:\"1\"  follower_count:2}  content:\"hello\"  create_date:\"2023-02-22 18:58:17\"}  comment_list:{id:1  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀\"  create_date:\"2023-02-22 18:52:09\"}}\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:42:29+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:3  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀笨蛋\"  create_date:\"2023-02-22 18:59:41\"}  comment_list:{id:2  user:{id:1  name:\"1\"  follower_count:2}  content:\"hello\"  create_date:\"2023-02-22 18:58:17\"}  comment_list:{id:1  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀\"  create_date:\"2023-02-22 18:52:09\"}}\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"client address: [::1]:56810\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:42:31+08:00"}
+{"level":"warning","msg":"KITEX: resolver refresh failed, key=user error=no instance remains for user","time":"2023-02-23T22:42:53+08:00"}
+{"level":"warning","msg":"KITEX: signal connection closing error:protobuf just support 'framed' trans proto[::]:13126=\u003e[::1]:56826","time":"2023-02-23T22:43:00+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:13126","time":"2023-02-23T22:43:41+08:00"}
+{"level":"info","msg":"start keepalive lease 694d86789f0550f1 for etcd registry","time":"2023-02-23T22:43:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"client address: [::1]:35758\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"client address: [::1]:35758\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"client address: [::1]:35758\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:3  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀笨蛋\"  create_date:\"2023-02-22 18:59:41\"}  comment_list:{id:2  user:{id:1  name:\"1\"  follower_count:2}  content:\"hello\"  create_date:\"2023-02-22 18:58:17\"}  comment_list:{id:1  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀\"  create_date:\"2023-02-22 18:52:09\"}}\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"client address: [::1]:35758\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:44:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"client address: [::1]:35758\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"client address: [::1]:35758\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"client address: [::1]:35758\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:3  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀笨蛋\"  create_date:\"2023-02-22 18:59:41\"}  comment_list:{id:2  user:{id:1  name:\"1\"  follower_count:2}  content:\"hello\"  create_date:\"2023-02-22 18:58:17\"}  comment_list:{id:1  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀\"  create_date:\"2023-02-22 18:52:09\"}}\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"client address: [::1]:35758\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:44:04+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"client address: [::1]:35758\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"client address: [::1]:35758\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"client address: [::1]:35758\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:3  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀笨蛋\"  create_date:\"2023-02-22 18:59:41\"}  comment_list:{id:2  user:{id:1  name:\"1\"  follower_count:2}  content:\"hello\"  create_date:\"2023-02-22 18:58:17\"}  comment_list:{id:1  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀\"  create_date:\"2023-02-22 18:52:09\"}}\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"client address: [::1]:35758\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:44:12+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:44:18+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:18+08:00"}
+{"level":"info","msg":"client address: [::1]:35758\n","time":"2023-02-23T22:44:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:44:18+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:44:18+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:44:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:44:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:44:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:44:18+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:18+08:00"}
+{"level":"info","msg":"client address: [::1]:35758\n","time":"2023-02-23T22:44:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:44:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:44:25+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:25+08:00"}
+{"level":"info","msg":"client address: [::1]:35758\n","time":"2023-02-23T22:44:25+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:44:25+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:44:25+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:44:25+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:44:25+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:44:25+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:44:25+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:25+08:00"}
+{"level":"info","msg":"client address: [::1]:35758\n","time":"2023-02-23T22:44:25+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:44:25+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"client address: [::1]:35758\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"client address: [::1]:35758\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"client address: [::1]:35758\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1  user_id:1  user_id:1}\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}  user:{id:1  name:\"1\"  follower_count:2}}\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:3  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀笨蛋\"  create_date:\"2023-02-22 18:59:41\"}  comment_list:{id:2  user:{id:1  name:\"1\"  follower_count:2}  content:\"hello\"  create_date:\"2023-02-22 18:58:17\"}  comment_list:{id:1  user:{id:1  name:\"1\"  follower_count:2}  content:\"你好呀\"  create_date:\"2023-02-22 18:52:09\"}}\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"client address: [::1]:35758\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:44:28+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzcxNjU4NTMsImlkIjo1LCJvcmlnX2lhdCI6MTY3NzE2MjI1M30.eLEx4WfTsEToBkc2nlm269oVlvbnBAq8LfQ_qe7UVHE\"  video_id:4}\n","time":"2023-02-23T22:44:36+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-02-23T22:44:36+08:00"}
+{"level":"info","msg":"client address: [::1]:57378\n","time":"2023-02-23T22:44:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:44:36+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-02-23T22:44:36+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:44:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:4  name:\"xiaohei\"  follower_count:1}}\n","time":"2023-02-23T22:44:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment_list:{id:5  user:{id:4  name:\"xiaohei\"  follower_count:1}  content:\"我得第一个视频哦\"  create_date:\"2023-02-23 22:23:34\"}}\n","time":"2023-02-23T22:44:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5  video_id:4  action_type:1  comment_text:\"hi\"}\n","time":"2023-02-23T22:44:40+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentAction\n","time":"2023-02-23T22:44:40+08:00"}
+{"level":"info","msg":"client address: [::1]:57378\n","time":"2023-02-23T22:44:40+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5}\n","time":"2023-02-23T22:44:40+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: GetUserInfo\n","time":"2023-02-23T22:44:40+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:44:40+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  user:{id:5  name:\"xiaobai\"  follow_count:1}}\n","time":"2023-02-23T22:44:40+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}  comment:{id:6  user:{id:5  name:\"xiaobai\"  follow_count:1}  content:\"hi\"  create_date:\"2023-02-23 22:44:40\"}}\n","time":"2023-02-23T22:44:40+08:00"}

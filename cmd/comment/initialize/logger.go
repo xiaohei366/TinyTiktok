@@ -15,7 +15,7 @@ import (
 // InitLogger to init logrus
 func InitLogger() {
 	// Customizable output directory.
-	logFilePath := shared.KlogFilePath
+	logFilePath := shared.KlogFilePath + shared.CommentServiceName
 	if err := os.MkdirAll(logFilePath, 0o777); err != nil {
 		panic(err)
 	}

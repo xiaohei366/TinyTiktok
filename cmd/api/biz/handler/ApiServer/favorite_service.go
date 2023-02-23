@@ -2,7 +2,6 @@ package ApiServer
 
 import (
 	"context"
-	"fmt"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/handler/pack"
@@ -54,11 +53,9 @@ func FavoriteList(ctx context.Context, c *app.RequestContext) {
 	resp, err := rpc.GetFavoriteList(ctx, &FavoriteServer.DouyinFavoriteListRequest{
 		UserId: req.UserId,
 	})
-	fmt.Println("resp:")
 	if err != nil {
 		pack.SendFavoriteListResponse(c, errno.ConvertErr(err), nil)
 		return
 	}
-	fmt.Println("api action list :", resp)
 	pack.SendFavoriteListResponse(c, errno.Success, resp)
 }

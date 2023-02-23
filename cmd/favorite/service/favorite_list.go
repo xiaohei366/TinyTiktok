@@ -1,7 +1,7 @@
 package service
 
 import (
-	"fmt"
+
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/rpc"
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/service/dal"
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/service/pack"
@@ -21,7 +21,6 @@ func (s *GetFavoriteService) GetFavouriteList(req *FavoriteServer.DouyinFavorite
 		videoIds = append(videoIds, fav.VideoId)
 	}
 	//调用rpc获取视频列表
-	fmt.Println("video Ids:", videoIds)
 	videoList, err := rpc.GetVideoListByVideoId(s.ctx, &VideoServer.DouyinVideoListByVideoId{
 		VideoId: videoIds,
 		UserId:  req.UserId,
@@ -29,7 +28,7 @@ func (s *GetFavoriteService) GetFavouriteList(req *FavoriteServer.DouyinFavorite
 	if err != nil {
 		return nil, errno.FavoriteVideoListErr
 	}
-	fmt.Println("videoList:", videoList)
+
 	resp := pack.ConvertVideos(videoList)
 	return resp, nil
 }

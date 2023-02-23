@@ -10,7 +10,7 @@ import (
 	"github.com/xiaohei366/TinyTiktok/cmd/comment/service/dal"
 	"github.com/xiaohei366/TinyTiktok/cmd/comment/service/pack"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/CommentServer"
-	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer" // 对rpc中video修改时要添加回来
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer" 
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
 

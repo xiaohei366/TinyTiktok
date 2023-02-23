@@ -34,7 +34,7 @@ func main() {
 	}
 	//链路追踪相关设置
 	provider.NewOpenTelemetryProvider(
-		provider.WithServiceName(shared.UserServiceName),
+		provider.WithServiceName(shared.VideoServiceName),
 		provider.WithExportEndpoint(shared.ExportEndpoint),
 		provider.WithInsecure(),
 	)

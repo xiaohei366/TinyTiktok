@@ -21,7 +21,7 @@ func GetMinioClient() MinioClient {
 	return client
 }
 
-func Init_minio() { //这个地方链接似乎可以放到别的地方
+func Init_minio() { 
 	//初始化配置
 	minioEndpoint := shared.MinioUrl + ":" + shared.MinioPort
 
@@ -31,7 +31,7 @@ func Init_minio() { //这个地方链接似乎可以放到别的地方
 		klog.Fatalf("connect minio server fail %s url %s ", err.Error(), minioEndpoint)
 		return
 	}
-	// fmt.Println(client)
+
 	klog.Debug("minio client init successfully")
 	client = MinioClient{
 		Client:      minioClient,

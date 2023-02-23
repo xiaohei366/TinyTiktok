@@ -3,7 +3,6 @@ package dal
 import (
 	"context"
 	"errors"
-	"fmt"
 	"github.com/cloudwego/kitex/pkg/klog"
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/config"
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/initialize/db"
@@ -73,7 +72,7 @@ func GetFavoriteInfo(ctx context.Context, userId int64, videoId int64) (db.Favor
 func GetFavoriteVideoIdList(ctx context.Context, userId int64) ([]db.Favorite, error) {
 	favList := make([]db.Favorite, 0)
 	res := db.DB.WithContext(ctx).Where(map[string]interface{}{"user_id": userId, "favorite": 1}).Find(&favList)
-	fmt.Println("DB like video list:", favList)
+
 	if res.RowsAffected == 0 {
 		//没查询到数据
 		klog.Info("user favorite video list info not found")

@@ -24,7 +24,7 @@ func AddComment(ctx context.Context, comment *db.Comment) (*db.Comment, error) {
 
 // 删除关系操作
 func DelComment(ctx context.Context, req *CommentServer.DouyinCommentActionRequest) error {
-	// 需不需要检验是否为自己的id （用户只能删除自己的评论）采用事务处理机制
+
 	err := db.DB.WithContext(ctx).Transaction(func(tx *gorm.DB) error {
 		comment := new(db.Comment)
 		fmt.Print(req)

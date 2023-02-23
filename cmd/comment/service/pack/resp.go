@@ -8,9 +8,7 @@ import (
 )
 
 /* 根据状态码来拼接基础的响应报文（包括状态码和信息）--这里完成一个RPC响应类型的完整包装*/
-//报文的封装
-//封装修改！！！与操作一致
-//输入这种操作的错误类型（在errno中定义），然后指针指向这种操作的响应地址
+
 func CommentActionResp(err errno.ErrNo, comment *CommentServer.Comment) *CommentServer.DouyinCommentActionResponse {
 	resp := new(CommentServer.DouyinCommentActionResponse) //创建一个大小等同于响应格式的空间
 	resp.BaseResp = &CommentServer.BaseResp{               //指定响应状态，与errno种返回的错误一致

@@ -2,14 +2,12 @@ package main
 
 import (
 	"context"
-	"fmt"
 
-	//"github.com/xiaohei366/TinyTiktok/cmd/comment/initialize/db"
+
 	"github.com/xiaohei366/TinyTiktok/cmd/comment/service"
 	"github.com/xiaohei366/TinyTiktok/cmd/comment/service/pack"
 	CommentServer "github.com/xiaohei366/TinyTiktok/kitex_gen/CommentServer"
-	//"github.com/xiaohei366/TinyTiktok/pkg/errno"
-	//"github.com/xiaohei366/TinyTiktok/pkg/errno"
+
 )
 
 // CommentServerImpl implements the last service interface defined in the IDL.
@@ -18,7 +16,6 @@ type CommentServerImpl struct{}
 // CommentAction implements the CommentServerImpl interface.
 func (s *CommentServerImpl) CommentAction(ctx context.Context, req *CommentServer.DouyinCommentActionRequest) (resp *CommentServer.DouyinCommentActionResponse, err error) {
 
-	fmt.Println(req)
 	//进行创建或删除评论
 	//var comment *CommentServer.Comment
 	comment, err := service.NewCommentActionService(ctx).CommentAction(req) //在service中创建响应的.go文件（具体内容还没看，刚看到创建文件，文件里面大致是对数据库的操作）

@@ -2,7 +2,7 @@ package rpc
 
 import (
 	"context"
-	"fmt"
+
 	"github.com/cloudwego/kitex/client"
 	"github.com/cloudwego/kitex/pkg/rpcinfo"
 	"github.com/kitex-contrib/obs-opentelemetry/provider"
@@ -50,7 +50,7 @@ func GetVideosFavoriteCount(ctx context.Context, req *FavoriteServer.DouyinVideo
 	if resp.BaseResp.StatusCode != 0 {
 		return 0, errno.NewErrNo(resp.BaseResp.StatusCode, resp.BaseResp.StatusMsg)
 	}
-	fmt.Println("resp videoList")
+	//fmt.Println("resp videoList")
 	return resp.FavoriteCount, nil
 }
 

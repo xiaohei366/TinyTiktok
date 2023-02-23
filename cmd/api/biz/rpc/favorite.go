@@ -2,6 +2,7 @@ package rpc
 
 import (
 	"context"
+
 	"github.com/kitex-contrib/obs-opentelemetry/provider"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer/favoriteservice"
@@ -11,8 +12,8 @@ import (
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
-	//"github.com/kitex-contrib/obs-opentelemetry/provider"
-	//"github.com/kitex-contrib/obs-opentelemetry/tracing"
+
+	"github.com/kitex-contrib/obs-opentelemetry/tracing"
 	etcd "github.com/kitex-contrib/registry-etcd"
 )
 
@@ -34,7 +35,7 @@ func initFavorite() {
 		client.WithMuxConnection(1),
 		client.WithMiddleware(mw.CommonMiddleware),
 		client.WithInstanceMW(mw.ClientMiddleware),
-		//client.WithSuite(tracing.NewClientSuite()),
+		client.WithSuite(tracing.NewClientSuite()),
 		client.WithClientBasicInfo(&rpcinfo.EndpointBasicInfo{ServiceName: shared.ApiServiceName}),
 	)
 	if err != nil {
