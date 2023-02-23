@@ -29,7 +29,6 @@ message BaseResp {
 }
 message douyin_feed_response{
   BaseResp base_resp = 1;
-
   repeated Video video_list = 2; // 视频列表
   int64 next_time = 3; // 本次返回的视频中，发布最早的时间，作为下次请求的latest_time
 }

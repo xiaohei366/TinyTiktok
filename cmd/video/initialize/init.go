@@ -12,7 +12,6 @@ func Init() {
 	db.Init_DB()
 	//Minio init
 	minio.Init_minio()
-
 	//RPC init
 	rpc.Init()
 	//klog日志初始化

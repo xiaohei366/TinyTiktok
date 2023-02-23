@@ -64,4 +64,5 @@ const (
 	RedisName       = 4
 	RedisCount1     = 5
 	RedisCount2     = 6
+	Favorite        = 7
 )

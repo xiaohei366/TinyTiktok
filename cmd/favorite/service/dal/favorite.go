@@ -7,6 +7,7 @@ import (
 	"github.com/cloudwego/kitex/pkg/klog"
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/config"
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/initialize/db"
+	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
 
 // 根据videoId获取点赞userId //这儿似乎没用上
@@ -23,6 +24,34 @@ func GetFavoriteUserIdList(ctx context.Context, videoId int64) ([]*db.Favorite, 
 		//没查询到或者查询到结果，返回数量以及无报错
 		return favUserIdList, nil
 	}
+}
+func FavoriteAction(ctx context.Context, userId, videoId int64, actionType int32) error {
+	//
+	fav := &db.Favorite{
+		UserId:   userId,
+		VideoId:  videoId,
+		Favorite: actionType,
+	}
+	favInfo, err := GetFavoriteInfo(ctx, fav.UserId, fav.VideoId)
+	if err != nil {
+		klog.Info("cannot find user and video fav info")
+		return errno.FavoriteActionErr
+	} else {
+		if favInfo == (db.Favorite{}) {
+			//没有数据，插入新的数据
+			if err := InsertFavorite(ctx, fav); err != nil {
+				klog.Info("Insert fav info error")
+				return err
+			}
+		} else {
+			//查到数据，更新
+			if err := UpdateFavorite(ctx, fav); err != nil {
+				klog.Info("update like info error")
+				return err
+			}
+		}
+	}
+	return nil
 }
 
 // 根据userId，videoId,actionType点赞或者取消赞
