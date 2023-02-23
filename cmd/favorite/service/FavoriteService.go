@@ -77,15 +77,15 @@ func (s *GetFavoriteService) FavouriteAction(req *FavoriteServer.DouyinFavoriteA
 //	return int64(len(f)), nil
 //}
 
-//// FavouriteVideoCount 根据userId获取这个用户点赞视频数量
-//func (s *GetFavoriteService) FavouriteVideoCount(userId int64) (int64, error) {
-//	//查询两者关系
-//	f, err := dal.GetLikeVideoIdList(s.ctx, userId)
-//	if err != nil {
-//		return int64(len(f)), errno.UserNotExistErr
-//	}
-//	return int64(len(f)), nil
-//}
+// FavouriteVideoCount 根据userId获取这个用户点赞视频数量
+func (s *GetFavoriteService) FavouriteVideoCount(userId int64) (int64, error) {
+	//查询两者关系
+	f, err := dal.GetLikeVideoIdList(s.ctx, userId)
+	if err != nil {
+		return int64(len(f)), errno.UserNotExistErr
+	}
+	return int64(len(f)), nil
+}
 
 // GetFavouriteList 获取当前用户的所有点赞视频
 func (s *GetFavoriteService) GetFavouriteList(req *FavoriteServer.DouyinFavoriteListRequest) ([]*FavoriteServer.Video, error) {

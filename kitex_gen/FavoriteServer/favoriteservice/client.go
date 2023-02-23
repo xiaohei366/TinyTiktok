@@ -15,6 +15,7 @@ type Client interface {
 	GetFavoriteList(ctx context.Context, Req *FavoriteServer.DouyinFavoriteListRequest, callOptions ...callopt.Option) (r *FavoriteServer.DouyinFavoriteListResponse, err error)
 	GetFavoriteUser(ctx context.Context, Req *FavoriteServer.DouyinUserFavoriteRequest, callOptions ...callopt.Option) (r *FavoriteServer.DouyinUserFavoriteResponse, err error)
 	GetFavoriteVideo(ctx context.Context, Req *FavoriteServer.DouyinVideoFavoriteRequest, callOptions ...callopt.Option) (r *FavoriteServer.DouyinVideoFavoriteResponse, err error)
+	QueryUserLikeVideo(ctx context.Context, Req *FavoriteServer.DouyinQueryFavoriteRequest, callOptions ...callopt.Option) (r *FavoriteServer.DouyinQueryFavoriteResponse, err error)
 }
 
 // NewClient creates a client for the service defined in IDL.
@@ -64,4 +65,9 @@ func (p *kFavoriteServiceClient) GetFavoriteUser(ctx context.Context, Req *Favor
 func (p *kFavoriteServiceClient) GetFavoriteVideo(ctx context.Context, Req *FavoriteServer.DouyinVideoFavoriteRequest, callOptions ...callopt.Option) (r *FavoriteServer.DouyinVideoFavoriteResponse, err error) {
 	ctx = client.NewCtxWithCallOptions(ctx, callOptions)
 	return p.kClient.GetFavoriteVideo(ctx, Req)
+}
+
+func (p *kFavoriteServiceClient) QueryUserLikeVideo(ctx context.Context, Req *FavoriteServer.DouyinQueryFavoriteRequest, callOptions ...callopt.Option) (r *FavoriteServer.DouyinQueryFavoriteResponse, err error) {
+	ctx = client.NewCtxWithCallOptions(ctx, callOptions)
+	return p.kClient.QueryUserLikeVideo(ctx, Req)
 }

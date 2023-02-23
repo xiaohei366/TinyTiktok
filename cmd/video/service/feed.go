@@ -2,7 +2,7 @@ package service
 
 import (
 	"context"
-	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
+	"fmt"
 	"time"
 
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/dal"
@@ -28,21 +28,14 @@ func (s *FeedService) Feed(req *VideoServer.DouyinFeedRequest) (videos []*VideoS
 		cur_time := int64(time.Now().UnixMilli())
 		latestTime = &cur_time
 	}
-	users := []*UserServer.User{}
-	relations := []bool{}
 	feedModels, err := dal.MGetVideos(s.ctx, latestTime)
 	if len(feedModels) == 0 {
 		nextTime = time.Now().UnixMilli()
 		return videos, nextTime, nil
 	} else {
-		for _, v := range feedModels {
-			user, relation := getUserInfo(s.ctx, v, req.UserId)
-			users = append(users, user)
-			relations = append(relations, relation)
-		}
 		nextTime = feedModels[len(feedModels)-1].UpdatedAt.UnixMilli()
 	}
-	videos = pack.VideoList(feedModels, users, relations)
-
+	videos = pack.VideoList(feedModels, req.UserId)
+	fmt.Println("feed list:", videos)
 	return videos, nextTime, nil
 }

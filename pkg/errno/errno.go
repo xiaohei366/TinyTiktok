@@ -61,7 +61,6 @@ var (
 	GetFollowListErr   = NewErrNo(GetFollowListErrCode, "Failed to get follow list")
 	GetFollowerListErr = NewErrNo(GetFollowerListErrCode, "Failed to get follower list")
 	GetFollowSetErr    = NewErrNo(GetFollowSetErrCode, "Failed to get follow set")
-<<<<<<< HEAD
 	//video模块错误码
 	PublishActionErr    = NewErrNo(PublishActionErrCode, "Publish Action failed")
 	PublishListErr      = NewErrNo(PublishListErrCode, "Publish List failed")
@@ -75,9 +74,8 @@ var (
 	FavoriteActionErr            = NewErrNo(FavoriteActionErrCode, "FavoriteAction failed")
 	FavoriteActionTypeErr        = NewErrNo(FavoriteActionTypeErrCode, "FavoriteActionType is wrong")
 	FavoriteVideoListErr         = NewErrNo(FavoriteVideoListErrCode, "FavoriteVideoListErrCode rpc List err")
-=======
+	QueryUserLikeVideoErr        = NewErrNo(FavoriteQueryUserLikeVideoErrCode, "FavoriteQueryUserLikeVideoErr rpc err")
 	//comment模块错误码
 	CommentActionErr  = NewErrNo(CommentActionErrCode, "Comment action failed")
 	GetCommentListErr = NewErrNo(GetCommentListErrCode, "Failed to get comment list")
->>>>>>> origin/redis
 )

@@ -2,9 +2,9 @@ package service
 
 import (
 	"context"
+	"fmt"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/dal"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/pack"
-	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
 )
 
@@ -23,19 +23,7 @@ func (s *PublishListService) PublishList(req *VideoServer.DouyinPublishListReque
 	if err != nil {
 		return nil, err
 	}
-	users := []*UserServer.User{}
-	relations := []bool{}
-	if len(UserVideos) != 0 { //这是感觉还可以再优化的地方
-		//rpc调用拿取user信息
-		for _, v := range UserVideos {
-			user, relation := getUserInfo(s.ctx, v, req.UserId)
-			users = append(users, user)
-			relations = append(relations, relation)
-		}
-	} else {
-		return videoList, nil //没有视频，也不传错误信息
-	}
-
-	videoList = pack.VideoList(UserVideos, users, relations)
+	videoList = pack.VideoList(UserVideos, req.UserId)
+	fmt.Println("Publish list:", videoList)
 	return videoList, nil
 }

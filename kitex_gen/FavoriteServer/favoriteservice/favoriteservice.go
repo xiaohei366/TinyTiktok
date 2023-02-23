@@ -22,10 +22,11 @@ func NewServiceInfo() *kitex.ServiceInfo {
 	serviceName := "FavoriteService"
 	handlerType := (*FavoriteServer.FavoriteService)(nil)
 	methods := map[string]kitex.MethodInfo{
-		"FavoriteAction":   kitex.NewMethodInfo(favoriteActionHandler, newFavoriteActionArgs, newFavoriteActionResult, false),
-		"GetFavoriteList":  kitex.NewMethodInfo(getFavoriteListHandler, newGetFavoriteListArgs, newGetFavoriteListResult, false),
-		"GetFavoriteUser":  kitex.NewMethodInfo(getFavoriteUserHandler, newGetFavoriteUserArgs, newGetFavoriteUserResult, false),
-		"GetFavoriteVideo": kitex.NewMethodInfo(getFavoriteVideoHandler, newGetFavoriteVideoArgs, newGetFavoriteVideoResult, false),
+		"FavoriteAction":     kitex.NewMethodInfo(favoriteActionHandler, newFavoriteActionArgs, newFavoriteActionResult, false),
+		"GetFavoriteList":    kitex.NewMethodInfo(getFavoriteListHandler, newGetFavoriteListArgs, newGetFavoriteListResult, false),
+		"GetFavoriteUser":    kitex.NewMethodInfo(getFavoriteUserHandler, newGetFavoriteUserArgs, newGetFavoriteUserResult, false),
+		"GetFavoriteVideo":   kitex.NewMethodInfo(getFavoriteVideoHandler, newGetFavoriteVideoArgs, newGetFavoriteVideoResult, false),
+		"QueryUserLikeVideo": kitex.NewMethodInfo(queryUserLikeVideoHandler, newQueryUserLikeVideoArgs, newQueryUserLikeVideoResult, false),
 	}
 	extra := map[string]interface{}{
 		"PackageName": "FavoriteServer",
@@ -621,6 +622,151 @@ func (p *GetFavoriteVideoResult) IsSetSuccess() bool {
 	return p.Success != nil
 }
 
+func queryUserLikeVideoHandler(ctx context.Context, handler interface{}, arg, result interface{}) error {
+	switch s := arg.(type) {
+	case *streaming.Args:
+		st := s.Stream
+		req := new(FavoriteServer.DouyinQueryFavoriteRequest)
+		if err := st.RecvMsg(req); err != nil {
+			return err
+		}
+		resp, err := handler.(FavoriteServer.FavoriteService).QueryUserLikeVideo(ctx, req)
+		if err != nil {
+			return err
+		}
+		if err := st.SendMsg(resp); err != nil {
+			return err
+		}
+	case *QueryUserLikeVideoArgs:
+		success, err := handler.(FavoriteServer.FavoriteService).QueryUserLikeVideo(ctx, s.Req)
+		if err != nil {
+			return err
+		}
+		realResult := result.(*QueryUserLikeVideoResult)
+		realResult.Success = success
+	}
+	return nil
+}
+func newQueryUserLikeVideoArgs() interface{} {
+	return &QueryUserLikeVideoArgs{}
+}
+
+func newQueryUserLikeVideoResult() interface{} {
+	return &QueryUserLikeVideoResult{}
+}
+
+type QueryUserLikeVideoArgs struct {
+	Req *FavoriteServer.DouyinQueryFavoriteRequest
+}
+
+func (p *QueryUserLikeVideoArgs) FastRead(buf []byte, _type int8, number int32) (n int, err error) {
+	if !p.IsSetReq() {
+		p.Req = new(FavoriteServer.DouyinQueryFavoriteRequest)
+	}
+	return p.Req.FastRead(buf, _type, number)
+}
+
+func (p *QueryUserLikeVideoArgs) FastWrite(buf []byte) (n int) {
+	if !p.IsSetReq() {
+		return 0
+	}
+	return p.Req.FastWrite(buf)
+}
+
+func (p *QueryUserLikeVideoArgs) Size() (n int) {
+	if !p.IsSetReq() {
+		return 0
+	}
+	return p.Req.Size()
+}
+
+func (p *QueryUserLikeVideoArgs) Marshal(out []byte) ([]byte, error) {
+	if !p.IsSetReq() {
+		return out, fmt.Errorf("No req in QueryUserLikeVideoArgs")
+	}
+	return proto.Marshal(p.Req)
+}
+
+func (p *QueryUserLikeVideoArgs) Unmarshal(in []byte) error {
+	msg := new(FavoriteServer.DouyinQueryFavoriteRequest)
+	if err := proto.Unmarshal(in, msg); err != nil {
+		return err
+	}
+	p.Req = msg
+	return nil
+}
+
+var QueryUserLikeVideoArgs_Req_DEFAULT *FavoriteServer.DouyinQueryFavoriteRequest
+
+func (p *QueryUserLikeVideoArgs) GetReq() *FavoriteServer.DouyinQueryFavoriteRequest {
+	if !p.IsSetReq() {
+		return QueryUserLikeVideoArgs_Req_DEFAULT
+	}
+	return p.Req
+}
+
+func (p *QueryUserLikeVideoArgs) IsSetReq() bool {
+	return p.Req != nil
+}
+
+type QueryUserLikeVideoResult struct {
+	Success *FavoriteServer.DouyinQueryFavoriteResponse
+}
+
+var QueryUserLikeVideoResult_Success_DEFAULT *FavoriteServer.DouyinQueryFavoriteResponse
+
+func (p *QueryUserLikeVideoResult) FastRead(buf []byte, _type int8, number int32) (n int, err error) {
+	if !p.IsSetSuccess() {
+		p.Success = new(FavoriteServer.DouyinQueryFavoriteResponse)
+	}
+	return p.Success.FastRead(buf, _type, number)
+}
+
+func (p *QueryUserLikeVideoResult) FastWrite(buf []byte) (n int) {
+	if !p.IsSetSuccess() {
+		return 0
+	}
+	return p.Success.FastWrite(buf)
+}
+
+func (p *QueryUserLikeVideoResult) Size() (n int) {
+	if !p.IsSetSuccess() {
+		return 0
+	}
+	return p.Success.Size()
+}
+
+func (p *QueryUserLikeVideoResult) Marshal(out []byte) ([]byte, error) {
+	if !p.IsSetSuccess() {
+		return out, fmt.Errorf("No req in QueryUserLikeVideoResult")
+	}
+	return proto.Marshal(p.Success)
+}
+
+func (p *QueryUserLikeVideoResult) Unmarshal(in []byte) error {
+	msg := new(FavoriteServer.DouyinQueryFavoriteResponse)
+	if err := proto.Unmarshal(in, msg); err != nil {
+		return err
+	}
+	p.Success = msg
+	return nil
+}
+
+func (p *QueryUserLikeVideoResult) GetSuccess() *FavoriteServer.DouyinQueryFavoriteResponse {
+	if !p.IsSetSuccess() {
+		return QueryUserLikeVideoResult_Success_DEFAULT
+	}
+	return p.Success
+}
+
+func (p *QueryUserLikeVideoResult) SetSuccess(x interface{}) {
+	p.Success = x.(*FavoriteServer.DouyinQueryFavoriteResponse)
+}
+
+func (p *QueryUserLikeVideoResult) IsSetSuccess() bool {
+	return p.Success != nil
+}
+
 type kClient struct {
 	c client.Client
 }
@@ -666,6 +812,16 @@ func (p *kClient) GetFavoriteVideo(ctx context.Context, Req *FavoriteServer.Douy
 	_args.Req = Req
 	var _result GetFavoriteVideoResult
 	if err = p.c.Call(ctx, "GetFavoriteVideo", &_args, &_result); err != nil {
+		return
+	}
+	return _result.GetSuccess(), nil
+}
+
+func (p *kClient) QueryUserLikeVideo(ctx context.Context, Req *FavoriteServer.DouyinQueryFavoriteRequest) (r *FavoriteServer.DouyinQueryFavoriteResponse, err error) {
+	var _args QueryUserLikeVideoArgs
+	_args.Req = Req
+	var _result QueryUserLikeVideoResult
+	if err = p.c.Call(ctx, "QueryUserLikeVideo", &_args, &_result); err != nil {
 		return
 	}
 	return _result.GetSuccess(), nil

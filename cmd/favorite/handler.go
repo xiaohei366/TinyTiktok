@@ -65,11 +65,21 @@ func (s *FavoriteServiceImpl) GetFavoriteUser(ctx context.Context, req *Favorite
 // GetFavoriteVideo implements the FavoriteServiceImpl interface.
 func (s *FavoriteServiceImpl) GetFavoriteVideo(ctx context.Context, req *FavoriteServer.DouyinVideoFavoriteRequest) (resp *FavoriteServer.DouyinVideoFavoriteResponse, err error) {
 	// TODO: Your code here...
-	//count, err := service.NewGetFavoriteService(ctx).GetFavouriteCount(req.Id)
-	//if err != nil {
-	//	resp = pack.BuildfavoriteVideoQueryResp(err, count, count != 0)
-	//	return resp, nil
-	//}
-	//resp = pack.BuildfavoriteVideoQueryResp(errno.Success, count, count != 0)
+	count, err := service.NewGetFavoriteService(ctx).GetVideoFavCount(req.VideoId)
+	if err != nil {
+		resp = pack.BuildfavoriteVideoQueryResp(err, count, count != 0)
+		return resp, nil
+	}
+	resp = pack.BuildfavoriteVideoQueryResp(errno.Success, count, count != 0)
 	return resp, nil
+}
+
+// QueryUserLikeVideo implements the FavoriteServiceImpl interface.
+func (s *FavoriteServiceImpl) QueryUserLikeVideo(ctx context.Context, req *FavoriteServer.DouyinQueryFavoriteRequest) (resp *FavoriteServer.DouyinQueryFavoriteResponse, err error) {
+	// TODO: Your code here...
+	fav, err := service.NewGetFavoriteService(ctx).QueryUserVideo(req.UserId, req.VideoId)
+	if err != nil {
+		return pack.BuildQueryUserLikeVideoResp(err, false), nil
+	}
+	return pack.BuildQueryUserLikeVideoResp(nil, fav), nil
 }

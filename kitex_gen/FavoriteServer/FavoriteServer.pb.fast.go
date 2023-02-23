@@ -473,7 +473,7 @@ ReadFieldError:
 }
 
 func (x *DouyinVideoFavoriteRequest) fastReadField1(buf []byte, _type int8) (offset int, err error) {
-	x.Id, offset, err = fastpb.ReadInt64(buf, _type)
+	x.VideoId, offset, err = fastpb.ReadInt64(buf, _type)
 	return offset, err
 }
 
@@ -524,6 +524,81 @@ func (x *DouyinVideoFavoriteResponse) fastReadField2(buf []byte, _type int8) (of
 
 func (x *DouyinVideoFavoriteResponse) fastReadField3(buf []byte, _type int8) (offset int, err error) {
 	x.IsFavorite, offset, err = fastpb.ReadBool(buf, _type)
+	return offset, err
+}
+
+func (x *DouyinQueryFavoriteRequest) FastRead(buf []byte, _type int8, number int32) (offset int, err error) {
+	switch number {
+	case 1:
+		offset, err = x.fastReadField1(buf, _type)
+		if err != nil {
+			goto ReadFieldError
+		}
+	case 2:
+		offset, err = x.fastReadField2(buf, _type)
+		if err != nil {
+			goto ReadFieldError
+		}
+	default:
+		offset, err = fastpb.Skip(buf, _type, number)
+		if err != nil {
+			goto SkipFieldError
+		}
+	}
+	return offset, nil
+SkipFieldError:
+	return offset, fmt.Errorf("%T cannot parse invalid wire-format data, error: %s", x, err)
+ReadFieldError:
+	return offset, fmt.Errorf("%T read field %d '%s' error: %s", x, number, fieldIDToName_DouyinQueryFavoriteRequest[number], err)
+}
+
+func (x *DouyinQueryFavoriteRequest) fastReadField1(buf []byte, _type int8) (offset int, err error) {
+	x.UserId, offset, err = fastpb.ReadInt64(buf, _type)
+	return offset, err
+}
+
+func (x *DouyinQueryFavoriteRequest) fastReadField2(buf []byte, _type int8) (offset int, err error) {
+	x.VideoId, offset, err = fastpb.ReadInt64(buf, _type)
+	return offset, err
+}
+
+func (x *DouyinQueryFavoriteResponse) FastRead(buf []byte, _type int8, number int32) (offset int, err error) {
+	switch number {
+	case 1:
+		offset, err = x.fastReadField1(buf, _type)
+		if err != nil {
+			goto ReadFieldError
+		}
+	case 2:
+		offset, err = x.fastReadField2(buf, _type)
+		if err != nil {
+			goto ReadFieldError
+		}
+	default:
+		offset, err = fastpb.Skip(buf, _type, number)
+		if err != nil {
+			goto SkipFieldError
+		}
+	}
+	return offset, nil
+SkipFieldError:
+	return offset, fmt.Errorf("%T cannot parse invalid wire-format data, error: %s", x, err)
+ReadFieldError:
+	return offset, fmt.Errorf("%T read field %d '%s' error: %s", x, number, fieldIDToName_DouyinQueryFavoriteResponse[number], err)
+}
+
+func (x *DouyinQueryFavoriteResponse) fastReadField1(buf []byte, _type int8) (offset int, err error) {
+	var v BaseResp
+	offset, err = fastpb.ReadMessage(buf, _type, &v)
+	if err != nil {
+		return offset, err
+	}
+	x.BaseResp = &v
+	return offset, nil
+}
+
+func (x *DouyinQueryFavoriteResponse) fastReadField2(buf []byte, _type int8) (offset int, err error) {
+	x.Favorite, offset, err = fastpb.ReadBool(buf, _type)
 	return offset, err
 }
 
@@ -853,10 +928,10 @@ func (x *DouyinVideoFavoriteRequest) FastWrite(buf []byte) (offset int) {
 }
 
 func (x *DouyinVideoFavoriteRequest) fastWriteField1(buf []byte) (offset int) {
-	if x.Id == 0 {
+	if x.VideoId == 0 {
 		return offset
 	}
-	offset += fastpb.WriteInt64(buf[offset:], 1, x.Id)
+	offset += fastpb.WriteInt64(buf[offset:], 1, x.VideoId)
 	return offset
 }
 
@@ -891,6 +966,56 @@ func (x *DouyinVideoFavoriteResponse) fastWriteField3(buf []byte) (offset int) {
 		return offset
 	}
 	offset += fastpb.WriteBool(buf[offset:], 3, x.IsFavorite)
+	return offset
+}
+
+func (x *DouyinQueryFavoriteRequest) FastWrite(buf []byte) (offset int) {
+	if x == nil {
+		return offset
+	}
+	offset += x.fastWriteField1(buf[offset:])
+	offset += x.fastWriteField2(buf[offset:])
+	return offset
+}
+
+func (x *DouyinQueryFavoriteRequest) fastWriteField1(buf []byte) (offset int) {
+	if x.UserId == 0 {
+		return offset
+	}
+	offset += fastpb.WriteInt64(buf[offset:], 1, x.UserId)
+	return offset
+}
+
+func (x *DouyinQueryFavoriteRequest) fastWriteField2(buf []byte) (offset int) {
+	if x.VideoId == 0 {
+		return offset
+	}
+	offset += fastpb.WriteInt64(buf[offset:], 2, x.VideoId)
+	return offset
+}
+
+func (x *DouyinQueryFavoriteResponse) FastWrite(buf []byte) (offset int) {
+	if x == nil {
+		return offset
+	}
+	offset += x.fastWriteField1(buf[offset:])
+	offset += x.fastWriteField2(buf[offset:])
+	return offset
+}
+
+func (x *DouyinQueryFavoriteResponse) fastWriteField1(buf []byte) (offset int) {
+	if x.BaseResp == nil {
+		return offset
+	}
+	offset += fastpb.WriteMessage(buf[offset:], 1, x.BaseResp)
+	return offset
+}
+
+func (x *DouyinQueryFavoriteResponse) fastWriteField2(buf []byte) (offset int) {
+	if !x.Favorite {
+		return offset
+	}
+	offset += fastpb.WriteBool(buf[offset:], 2, x.Favorite)
 	return offset
 }
 
@@ -1220,10 +1345,10 @@ func (x *DouyinVideoFavoriteRequest) Size() (n int) {
 }
 
 func (x *DouyinVideoFavoriteRequest) sizeField1() (n int) {
-	if x.Id == 0 {
+	if x.VideoId == 0 {
 		return n
 	}
-	n += fastpb.SizeInt64(1, x.Id)
+	n += fastpb.SizeInt64(1, x.VideoId)
 	return n
 }
 
@@ -1258,6 +1383,56 @@ func (x *DouyinVideoFavoriteResponse) sizeField3() (n int) {
 		return n
 	}
 	n += fastpb.SizeBool(3, x.IsFavorite)
+	return n
+}
+
+func (x *DouyinQueryFavoriteRequest) Size() (n int) {
+	if x == nil {
+		return n
+	}
+	n += x.sizeField1()
+	n += x.sizeField2()
+	return n
+}
+
+func (x *DouyinQueryFavoriteRequest) sizeField1() (n int) {
+	if x.UserId == 0 {
+		return n
+	}
+	n += fastpb.SizeInt64(1, x.UserId)
+	return n
+}
+
+func (x *DouyinQueryFavoriteRequest) sizeField2() (n int) {
+	if x.VideoId == 0 {
+		return n
+	}
+	n += fastpb.SizeInt64(2, x.VideoId)
+	return n
+}
+
+func (x *DouyinQueryFavoriteResponse) Size() (n int) {
+	if x == nil {
+		return n
+	}
+	n += x.sizeField1()
+	n += x.sizeField2()
+	return n
+}
+
+func (x *DouyinQueryFavoriteResponse) sizeField1() (n int) {
+	if x.BaseResp == nil {
+		return n
+	}
+	n += fastpb.SizeMessage(1, x.BaseResp)
+	return n
+}
+
+func (x *DouyinQueryFavoriteResponse) sizeField2() (n int) {
+	if !x.Favorite {
+		return n
+	}
+	n += fastpb.SizeBool(2, x.Favorite)
 	return n
 }
 
@@ -1317,11 +1492,21 @@ var fieldIDToName_DouyinUserFavoriteResponse = map[int32]string{
 }
 
 var fieldIDToName_DouyinVideoFavoriteRequest = map[int32]string{
-	1: "Id",
+	1: "VideoId",
 }
 
 var fieldIDToName_DouyinVideoFavoriteResponse = map[int32]string{
 	1: "BaseResp",
 	2: "FavoriteCount",
 	3: "IsFavorite",
+}
+
+var fieldIDToName_DouyinQueryFavoriteRequest = map[int32]string{
+	1: "UserId",
+	2: "VideoId",
+}
+
+var fieldIDToName_DouyinQueryFavoriteResponse = map[int32]string{
+	1: "BaseResp",
+	2: "Favorite",
 }

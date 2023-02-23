@@ -62,7 +62,7 @@ message DouyinUserFavoriteResponse {
 }
 
 message DouyinVideoFavoriteRequest {
-  int64 id = 1; // 视频唯一标识
+  int64 video_id = 1; // 视频唯一标识
 }
 
 message DouyinVideoFavoriteResponse {
@@ -71,9 +71,18 @@ message DouyinVideoFavoriteResponse {
   bool is_favorite = 3; // true-已点赞，false-未点赞
 }
 
+message DouyinQueryFavoriteRequest{
+  int64 user_id = 1;
+  int64 video_id = 2;
+}
+message DouyinQueryFavoriteResponse{
+  BaseResp base_resp = 1;
+  bool favorite = 2; //true 已点赞，false未点赞
+}
 service FavoriteService {
-  rpc FavoriteAction (DouyinFavoriteActionRequest) returns (DouyinFavoriteActionResponse) {}
-  rpc GetFavoriteList (DouyinFavoriteListRequest) returns (DouyinFavoriteListResponse) {}
-  rpc GetFavoriteUser (DouyinUserFavoriteRequest) returns (DouyinUserFavoriteResponse) {}
-  rpc GetFavoriteVideo (DouyinVideoFavoriteRequest) returns (DouyinVideoFavoriteResponse) {}
+  rpc FavoriteAction (DouyinFavoriteActionRequest) returns (DouyinFavoriteActionResponse);
+  rpc GetFavoriteList (DouyinFavoriteListRequest) returns (DouyinFavoriteListResponse);
+  rpc GetFavoriteUser (DouyinUserFavoriteRequest) returns (DouyinUserFavoriteResponse);
+  rpc GetFavoriteVideo (DouyinVideoFavoriteRequest) returns (DouyinVideoFavoriteResponse) ;
+  rpc QueryUserLikeVideo(DouyinQueryFavoriteRequest) returns(DouyinQueryFavoriteResponse);
 }

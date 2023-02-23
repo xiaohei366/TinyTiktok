@@ -3,6 +3,7 @@ package rpc
 import (
 	"context"
 	"fmt"
+	"github.com/kitex-contrib/obs-opentelemetry/provider"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer/favoriteservice"
 
@@ -23,11 +24,11 @@ func initFavorite() {
 	if err != nil {
 		panic(err)
 	}
-	// provider.NewOpenTelemetryProvider(
-	// 	provider.WithServiceName(shared.ApiServiceName),
-	// 	provider.WithExportEndpoint(shared.ExportEndpoint),
-	// 	provider.WithInsecure(),
-	// )
+	provider.NewOpenTelemetryProvider(
+		provider.WithServiceName(shared.ApiServiceName),
+		provider.WithExportEndpoint(shared.ExportEndpoint),
+		provider.WithInsecure(),
+	)
 	c, err := favoriteservice.NewClient(
 		shared.FavoriteServiceName,
 		client.WithResolver(r),
@@ -70,6 +71,28 @@ func GetFavoriteList(ctx context.Context, req *FavoriteServer.DouyinFavoriteList
 	}
 	fmt.Println("resp videoList")
 	return resp.VideoList, nil
+}
+
+// 拿取视频中点赞数量//这个可以用
+func GetVideosFavoriteCount(ctx context.Context, req *FavoriteServer.DouyinVideoFavoriteRequest) (int64, error) {
+	resp, err := favoriteClient.GetFavoriteVideo(ctx, req)
+	if err != nil {
+		return 0, err
+	}
+	if resp.BaseResp.StatusCode != 0 {
+		return 0, errno.NewErrNo(resp.BaseResp.StatusCode, resp.BaseResp.StatusMsg)
+	}
+	fmt.Println("resp videoList")
+	return resp.FavoriteCount, nil
+}
+
+// 查询user是否喜欢这个视频
+func QueryUserLikeVideo(ctx context.Context, req *FavoriteServer.DouyinQueryFavoriteRequest) (bool, error) {
+	resp, err := favoriteClient.QueryUserLikeVideo(ctx, req)
+	if err != nil {
+		return false, err
+	}
+	return resp.Favorite, nil
 }
 
 func GetFavoriteUser(ctx context.Context, req *FavoriteServer.DouyinUserFavoriteRequest) (resp *FavoriteServer.DouyinUserFavoriteResponse, err error) {

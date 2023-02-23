@@ -93,3 +93,30 @@ func GetLikeVideoIdList(ctx context.Context, userId int64) ([]db.Favorite, error
 	}
 	return favList, nil
 }
+
+func GetVideoFavCountByVideoId(ctx context.Context, videoId int64) (int64, error) {
+	favList := make([]db.Favorite, 0)
+	err := db.DB.WithContext(ctx).Where(map[string]interface{}{"video_id": videoId, "cancel": 1}).
+		Find(&favList).Error
+	if err != nil {
+		return int64(len(favList)), nil
+	}
+	return int64(len(favList)), nil
+}
+
+func QueryUserVideo(ctx context.Context, userId int64, videoId int64) (bool, error) {
+	var fav []*db.Favorite
+	//根据userid,videoId查询是否有该条信息，如果有，返回查询结果
+	fmt.Println("QueryUserVideo db:", userId, videoId)
+	err := db.DB.WithContext(ctx).Where(map[string]interface{}{"user_id": userId, "video_id": videoId}).
+		First(&fav).Error //这儿出错了，查不出来。
+	if err != nil {
+		return false, nil
+	}
+	if len(fav) == 0 {
+		return false, nil
+	} else if fav[0].Cancel == 1 {
+		return true, nil
+	}
+	return false, nil
+}

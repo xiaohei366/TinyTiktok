@@ -93,6 +93,28 @@ func BuildfavoriteUserQueryResp(err error, TotalFavorited int64, FavoriteCount i
 	return favoriteUserQueryResp(s, TotalFavorited, FavoriteCount)
 
 }
+func queryUserLikeVideoResp(err errno.ErrNo, isFav bool) *FavoriteServer.DouyinQueryFavoriteResponse {
+	resp := new(FavoriteServer.DouyinQueryFavoriteResponse)
+	resp.BaseResp = &FavoriteServer.BaseResp{
+		StatusCode: err.ErrCode,
+		StatusMsg:  err.ErrMsg,
+	}
+	resp.Favorite = isFav
+	return resp
+}
+func BuildQueryUserLikeVideoResp(err error, isFav bool) *FavoriteServer.DouyinQueryFavoriteResponse {
+	if err == nil {
+		return queryUserLikeVideoResp(errno.Success, isFav)
+	}
+
+	e := errno.ErrNo{}
+	if errors.As(err, &e) {
+		return queryUserLikeVideoResp(e, isFav)
+	}
+
+	s := errno.ServiceErr.WithMessage(err.Error())
+	return queryUserLikeVideoResp(s, isFav)
+}
 
 func BuildgetFavoriteListResp(err error, videos []*FavoriteServer.Video) *FavoriteServer.DouyinFavoriteListResponse {
 	if err == nil {
