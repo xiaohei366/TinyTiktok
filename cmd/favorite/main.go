@@ -6,6 +6,7 @@ import (
 	"github.com/cloudwego/kitex/pkg/rpcinfo"
 	"github.com/cloudwego/kitex/server"
 	"github.com/kitex-contrib/obs-opentelemetry/provider"
+	"github.com/kitex-contrib/obs-opentelemetry/tracing"
 	etcd "github.com/kitex-contrib/registry-etcd"
 	Init "github.com/xiaohei366/TinyTiktok/cmd/favorite/initialize"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer/favoriteservice"
@@ -41,7 +42,7 @@ func main() {
 		server.WithMuxTransport(),
 		server.WithMiddleware(mw.CommonMiddleware),
 		server.WithMiddleware(mw.ServerMiddleware),
-		//server.WithSuite(tracing.NewServerSuite()),
+		server.WithSuite(tracing.NewServerSuite()),
 		server.WithServerBasicInfo(&rpcinfo.EndpointBasicInfo{ServiceName: shared.FavoriteServiceName}),
 	)
 	//启动

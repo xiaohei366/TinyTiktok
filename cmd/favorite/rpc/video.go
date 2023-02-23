@@ -43,9 +43,9 @@ func initPublishRpc() {
 	publishClient = c
 }
 
+// 通过视频id获取视频列表
 func GetVideoListByVideoId(ctx context.Context, req *VideoServer.DouyinVideoListByVideoId) ([]*VideoServer.Video, error) {
-	resp, err := publishClient.
-		GetVideoListByVideoId(ctx, req)
+	resp, err := publishClient.GetVideoListByVideoId(ctx, req)
 	if err != nil {
 		return nil, err
 	}

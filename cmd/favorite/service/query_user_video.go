@@ -1,17 +1,15 @@
 package service
 
 import (
-	"fmt"
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/service/dal"
+	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
 
-// FavouriteVideoCount 根据videoId获取这个视频点赞数量
+// 查询user是否点赞该视频
 func (s *GetFavoriteService) QueryUserVideo(userid, videoId int64) (bool, error) {
-	//查询两者关系
-	fmt.Println("userId,videoId:", userid, videoId)
 	f, err := dal.QueryUserVideo(s.ctx, userid, videoId)
 	if err != nil {
-		return f, nil
+		return f, errno.QueryUserLikeVideoErr
 	}
 	return f, nil
 }

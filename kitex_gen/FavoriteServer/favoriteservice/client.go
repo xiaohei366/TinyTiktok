@@ -13,8 +13,8 @@ import (
 type Client interface {
 	FavoriteAction(ctx context.Context, Req *FavoriteServer.DouyinFavoriteActionRequest, callOptions ...callopt.Option) (r *FavoriteServer.DouyinFavoriteActionResponse, err error)
 	GetFavoriteList(ctx context.Context, Req *FavoriteServer.DouyinFavoriteListRequest, callOptions ...callopt.Option) (r *FavoriteServer.DouyinFavoriteListResponse, err error)
-	GetFavoriteUser(ctx context.Context, Req *FavoriteServer.DouyinUserFavoriteRequest, callOptions ...callopt.Option) (r *FavoriteServer.DouyinUserFavoriteResponse, err error)
-	GetFavoriteVideo(ctx context.Context, Req *FavoriteServer.DouyinVideoFavoriteRequest, callOptions ...callopt.Option) (r *FavoriteServer.DouyinVideoFavoriteResponse, err error)
+	GetFavoriteUser(ctx context.Context, Req *FavoriteServer.DouyinUserBeFavoriteRequest, callOptions ...callopt.Option) (r *FavoriteServer.DouyinUserBeFavoriteResponse, err error)
+	GetFavoriteVideo(ctx context.Context, Req *FavoriteServer.DouyinVideoBeFavoriteRequest, callOptions ...callopt.Option) (r *FavoriteServer.DouyinVideoBeFavoriteResponse, err error)
 	QueryUserLikeVideo(ctx context.Context, Req *FavoriteServer.DouyinQueryFavoriteRequest, callOptions ...callopt.Option) (r *FavoriteServer.DouyinQueryFavoriteResponse, err error)
 }
 
@@ -57,12 +57,12 @@ func (p *kFavoriteServiceClient) GetFavoriteList(ctx context.Context, Req *Favor
 	return p.kClient.GetFavoriteList(ctx, Req)
 }
 
-func (p *kFavoriteServiceClient) GetFavoriteUser(ctx context.Context, Req *FavoriteServer.DouyinUserFavoriteRequest, callOptions ...callopt.Option) (r *FavoriteServer.DouyinUserFavoriteResponse, err error) {
+func (p *kFavoriteServiceClient) GetFavoriteUser(ctx context.Context, Req *FavoriteServer.DouyinUserBeFavoriteRequest, callOptions ...callopt.Option) (r *FavoriteServer.DouyinUserBeFavoriteResponse, err error) {
 	ctx = client.NewCtxWithCallOptions(ctx, callOptions)
 	return p.kClient.GetFavoriteUser(ctx, Req)
 }
 
-func (p *kFavoriteServiceClient) GetFavoriteVideo(ctx context.Context, Req *FavoriteServer.DouyinVideoFavoriteRequest, callOptions ...callopt.Option) (r *FavoriteServer.DouyinVideoFavoriteResponse, err error) {
+func (p *kFavoriteServiceClient) GetFavoriteVideo(ctx context.Context, Req *FavoriteServer.DouyinVideoBeFavoriteRequest, callOptions ...callopt.Option) (r *FavoriteServer.DouyinVideoBeFavoriteResponse, err error) {
 	ctx = client.NewCtxWithCallOptions(ctx, callOptions)
 	return p.kClient.GetFavoriteVideo(ctx, Req)
 }

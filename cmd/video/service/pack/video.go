@@ -2,7 +2,6 @@ package pack
 
 import (
 	"context"
-	"fmt"
 	"github.com/cloudwego/kitex/pkg/klog"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/initialize/db"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/rpc"
@@ -16,10 +15,9 @@ import (
 
 // Video pack feed info
 func VideoInfo(v *db.Video, reqId int64) *VideoServer.Video {
-	//明天这个地方是要优化的，拿Favcount和ComCount
-	//开启协程
+	//根据视频信息从其他服务rpc调用获取信息
 	ctx := context.Background()
-	author, isFol, comCount, favCount, isFav := getUserInfo(ctx, v, reqId) //这个是请求这条视频的人拿的token信息
+	author, isFol, comCount, favCount, isFav := getUserInfo(ctx, v, reqId)
 	return &VideoServer.Video{
 		Id: v.BaseModel.ID,
 		Author: &VideoServer.User{
@@ -33,9 +31,8 @@ func VideoInfo(v *db.Video, reqId int64) *VideoServer.Video {
 		CoverUrl:      v.CoverUrl,
 		FavoriteCount: favCount,
 		CommentCount:  comCount,
-		IsFavorite:    isFav, //这个地方请求的是请求PublishList的人 Id去查询这些视频
-
-		Title: v.Title,
+		IsFavorite:    isFav,
+		Title:         v.Title,
 	}
 }
 
@@ -54,9 +51,13 @@ func getUserInfo(ctx context.Context, v *db.Video, reqId int64) (author *UserSer
 	var wg sync.WaitGroup
 	wg.Add(5)
 	var err error
-	//插入Author，这里需要将视频的发布者和当前登录的用户传入，才能正确获得isFollow，
-	//如果出现错误，不能直接返回失败，将默认值返回，保证稳定
+	//开启协程去进行RPC调用获取视频信息其他部分。
 	go func() {
+		defer func() {
+			if err := recover(); err != nil { //防止协程崩溃，保持健壮性
+				klog.Fatalf("Work failed with %s in %v", err, v.AuthorID)
+			}
+		}()
 		author, err = rpc.GetUserInfo(ctx, &UserServer.DouyinUserRequest{
 			UserId: v.AuthorID,
 		})
@@ -69,6 +70,11 @@ func getUserInfo(ctx context.Context, v *db.Video, reqId int64) (author *UserSer
 	}()
 	//拿是否关注的信息
 	go func() {
+		defer func() {
+			if err := recover(); err != nil { //防止协程崩溃，保持健壮性
+				klog.Fatalf("Work failed with %s in %v", err, v.AuthorID)
+			}
+		}()
 		relation, err = rpc.QueryRelation(ctx, &RelationServer.DouyinQueryRelationRequest{
 			UserId:   reqId,
 			ToUserId: v.AuthorID,
@@ -82,6 +88,11 @@ func getUserInfo(ctx context.Context, v *db.Video, reqId int64) (author *UserSer
 	}()
 	//拿评论数量
 	go func() {
+		defer func() {
+			if err := recover(); err != nil { //防止协程崩溃，保持健壮性
+				klog.Fatalf("Work failed with %s in %v", err, v.AuthorID)
+			}
+		}()
 		comList, err := rpc.CommentList(ctx, &CommentServer.DouyinCommentListRequest{
 			VideoId: v.ID,
 		})
@@ -91,12 +102,16 @@ func getUserInfo(ctx context.Context, v *db.Video, reqId int64) (author *UserSer
 			klog.Info("getUserInfo rpc.CommentList success")
 		}
 		comCount = int64(len(comList.CommentList))
-		fmt.Println("comment count:", comCount)
 		wg.Done()
 	}()
 	// 拿Favorite数量：
 	go func() {
-		favCount, err = rpc.GetVideosFavoriteCount(ctx, &FavoriteServer.DouyinVideoFavoriteRequest{
+		defer func() {
+			if err := recover(); err != nil { //防止协程崩溃，保持健壮性
+				klog.Fatalf("Work failed with %s in %v", err, v.AuthorID)
+			}
+		}()
+		favCount, err = rpc.GetVideosFavoriteCount(ctx, &FavoriteServer.DouyinVideoBeFavoriteRequest{
 			VideoId: v.ID,
 		})
 		if err != nil {
@@ -104,11 +119,15 @@ func getUserInfo(ctx context.Context, v *db.Video, reqId int64) (author *UserSer
 		} else {
 			klog.Info("getUserInfo rpc.GetVideosFavoriteCount success")
 		}
-		fmt.Println("fav count:", favCount)
 		wg.Done()
 	}()
+	// 拿是否点赞
 	go func() {
-		fmt.Println("fav query:")
+		defer func() {
+			if err := recover(); err != nil { //防止协程崩溃，保持健壮性
+				klog.Fatalf("Work failed with %s in %v", err, v.AuthorID)
+			}
+		}()
 		isFav, err = rpc.QueryUserLikeVideo(ctx, &FavoriteServer.DouyinQueryFavoriteRequest{
 			UserId:  reqId,
 			VideoId: v.ID,
@@ -118,7 +137,6 @@ func getUserInfo(ctx context.Context, v *db.Video, reqId int64) (author *UserSer
 		} else {
 			klog.Info("getUserInfo rpc.QueryUserLikeVideo success")
 		}
-		fmt.Println("fav query:", isFav)
 		wg.Done()
 	}()
 	wg.Wait()

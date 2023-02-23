@@ -377,7 +377,7 @@ func (x *DouyinFavoriteListResponse) fastReadField2(buf []byte, _type int8) (off
 	return offset, nil
 }
 
-func (x *DouyinUserFavoriteRequest) FastRead(buf []byte, _type int8, number int32) (offset int, err error) {
+func (x *DouyinUserBeFavoriteRequest) FastRead(buf []byte, _type int8, number int32) (offset int, err error) {
 	switch number {
 	case 1:
 		offset, err = x.fastReadField1(buf, _type)
@@ -394,15 +394,15 @@ func (x *DouyinUserFavoriteRequest) FastRead(buf []byte, _type int8, number int3
 SkipFieldError:
 	return offset, fmt.Errorf("%T cannot parse invalid wire-format data, error: %s", x, err)
 ReadFieldError:
-	return offset, fmt.Errorf("%T read field %d '%s' error: %s", x, number, fieldIDToName_DouyinUserFavoriteRequest[number], err)
+	return offset, fmt.Errorf("%T read field %d '%s' error: %s", x, number, fieldIDToName_DouyinUserBeFavoriteRequest[number], err)
 }
 
-func (x *DouyinUserFavoriteRequest) fastReadField1(buf []byte, _type int8) (offset int, err error) {
+func (x *DouyinUserBeFavoriteRequest) fastReadField1(buf []byte, _type int8) (offset int, err error) {
 	x.UserId, offset, err = fastpb.ReadInt64(buf, _type)
 	return offset, err
 }
 
-func (x *DouyinUserFavoriteResponse) FastRead(buf []byte, _type int8, number int32) (offset int, err error) {
+func (x *DouyinUserBeFavoriteResponse) FastRead(buf []byte, _type int8, number int32) (offset int, err error) {
 	switch number {
 	case 1:
 		offset, err = x.fastReadField1(buf, _type)
@@ -429,10 +429,10 @@ func (x *DouyinUserFavoriteResponse) FastRead(buf []byte, _type int8, number int
 SkipFieldError:
 	return offset, fmt.Errorf("%T cannot parse invalid wire-format data, error: %s", x, err)
 ReadFieldError:
-	return offset, fmt.Errorf("%T read field %d '%s' error: %s", x, number, fieldIDToName_DouyinUserFavoriteResponse[number], err)
+	return offset, fmt.Errorf("%T read field %d '%s' error: %s", x, number, fieldIDToName_DouyinUserBeFavoriteResponse[number], err)
 }
 
-func (x *DouyinUserFavoriteResponse) fastReadField1(buf []byte, _type int8) (offset int, err error) {
+func (x *DouyinUserBeFavoriteResponse) fastReadField1(buf []byte, _type int8) (offset int, err error) {
 	var v BaseResp
 	offset, err = fastpb.ReadMessage(buf, _type, &v)
 	if err != nil {
@@ -442,17 +442,17 @@ func (x *DouyinUserFavoriteResponse) fastReadField1(buf []byte, _type int8) (off
 	return offset, nil
 }
 
-func (x *DouyinUserFavoriteResponse) fastReadField2(buf []byte, _type int8) (offset int, err error) {
+func (x *DouyinUserBeFavoriteResponse) fastReadField2(buf []byte, _type int8) (offset int, err error) {
 	x.TotalBeFavorite, offset, err = fastpb.ReadInt64(buf, _type)
 	return offset, err
 }
 
-func (x *DouyinUserFavoriteResponse) fastReadField3(buf []byte, _type int8) (offset int, err error) {
+func (x *DouyinUserBeFavoriteResponse) fastReadField3(buf []byte, _type int8) (offset int, err error) {
 	x.FavoriteCount, offset, err = fastpb.ReadInt64(buf, _type)
 	return offset, err
 }
 
-func (x *DouyinVideoFavoriteRequest) FastRead(buf []byte, _type int8, number int32) (offset int, err error) {
+func (x *DouyinVideoBeFavoriteRequest) FastRead(buf []byte, _type int8, number int32) (offset int, err error) {
 	switch number {
 	case 1:
 		offset, err = x.fastReadField1(buf, _type)
@@ -469,15 +469,15 @@ func (x *DouyinVideoFavoriteRequest) FastRead(buf []byte, _type int8, number int
 SkipFieldError:
 	return offset, fmt.Errorf("%T cannot parse invalid wire-format data, error: %s", x, err)
 ReadFieldError:
-	return offset, fmt.Errorf("%T read field %d '%s' error: %s", x, number, fieldIDToName_DouyinVideoFavoriteRequest[number], err)
+	return offset, fmt.Errorf("%T read field %d '%s' error: %s", x, number, fieldIDToName_DouyinVideoBeFavoriteRequest[number], err)
 }
 
-func (x *DouyinVideoFavoriteRequest) fastReadField1(buf []byte, _type int8) (offset int, err error) {
+func (x *DouyinVideoBeFavoriteRequest) fastReadField1(buf []byte, _type int8) (offset int, err error) {
 	x.VideoId, offset, err = fastpb.ReadInt64(buf, _type)
 	return offset, err
 }
 
-func (x *DouyinVideoFavoriteResponse) FastRead(buf []byte, _type int8, number int32) (offset int, err error) {
+func (x *DouyinVideoBeFavoriteResponse) FastRead(buf []byte, _type int8, number int32) (offset int, err error) {
 	switch number {
 	case 1:
 		offset, err = x.fastReadField1(buf, _type)
@@ -504,10 +504,10 @@ func (x *DouyinVideoFavoriteResponse) FastRead(buf []byte, _type int8, number in
 SkipFieldError:
 	return offset, fmt.Errorf("%T cannot parse invalid wire-format data, error: %s", x, err)
 ReadFieldError:
-	return offset, fmt.Errorf("%T read field %d '%s' error: %s", x, number, fieldIDToName_DouyinVideoFavoriteResponse[number], err)
+	return offset, fmt.Errorf("%T read field %d '%s' error: %s", x, number, fieldIDToName_DouyinVideoBeFavoriteResponse[number], err)
 }
 
-func (x *DouyinVideoFavoriteResponse) fastReadField1(buf []byte, _type int8) (offset int, err error) {
+func (x *DouyinVideoBeFavoriteResponse) fastReadField1(buf []byte, _type int8) (offset int, err error) {
 	var v BaseResp
 	offset, err = fastpb.ReadMessage(buf, _type, &v)
 	if err != nil {
@@ -517,12 +517,12 @@ func (x *DouyinVideoFavoriteResponse) fastReadField1(buf []byte, _type int8) (of
 	return offset, nil
 }
 
-func (x *DouyinVideoFavoriteResponse) fastReadField2(buf []byte, _type int8) (offset int, err error) {
+func (x *DouyinVideoBeFavoriteResponse) fastReadField2(buf []byte, _type int8) (offset int, err error) {
 	x.FavoriteCount, offset, err = fastpb.ReadInt64(buf, _type)
 	return offset, err
 }
 
-func (x *DouyinVideoFavoriteResponse) fastReadField3(buf []byte, _type int8) (offset int, err error) {
+func (x *DouyinVideoBeFavoriteResponse) fastReadField3(buf []byte, _type int8) (offset int, err error) {
 	x.IsFavorite, offset, err = fastpb.ReadBool(buf, _type)
 	return offset, err
 }
@@ -869,7 +869,7 @@ func (x *DouyinFavoriteListResponse) fastWriteField2(buf []byte) (offset int) {
 	return offset
 }
 
-func (x *DouyinUserFavoriteRequest) FastWrite(buf []byte) (offset int) {
+func (x *DouyinUserBeFavoriteRequest) FastWrite(buf []byte) (offset int) {
 	if x == nil {
 		return offset
 	}
@@ -877,7 +877,7 @@ func (x *DouyinUserFavoriteRequest) FastWrite(buf []byte) (offset int) {
 	return offset
 }
 
-func (x *DouyinUserFavoriteRequest) fastWriteField1(buf []byte) (offset int) {
+func (x *DouyinUserBeFavoriteRequest) fastWriteField1(buf []byte) (offset int) {
 	if x.UserId == 0 {
 		return offset
 	}
@@ -885,7 +885,7 @@ func (x *DouyinUserFavoriteRequest) fastWriteField1(buf []byte) (offset int) {
 	return offset
 }
 
-func (x *DouyinUserFavoriteResponse) FastWrite(buf []byte) (offset int) {
+func (x *DouyinUserBeFavoriteResponse) FastWrite(buf []byte) (offset int) {
 	if x == nil {
 		return offset
 	}
@@ -895,7 +895,7 @@ func (x *DouyinUserFavoriteResponse) FastWrite(buf []byte) (offset int) {
 	return offset
 }
 
-func (x *DouyinUserFavoriteResponse) fastWriteField1(buf []byte) (offset int) {
+func (x *DouyinUserBeFavoriteResponse) fastWriteField1(buf []byte) (offset int) {
 	if x.BaseResp == nil {
 		return offset
 	}
@@ -903,7 +903,7 @@ func (x *DouyinUserFavoriteResponse) fastWriteField1(buf []byte) (offset int) {
 	return offset
 }
 
-func (x *DouyinUserFavoriteResponse) fastWriteField2(buf []byte) (offset int) {
+func (x *DouyinUserBeFavoriteResponse) fastWriteField2(buf []byte) (offset int) {
 	if x.TotalBeFavorite == 0 {
 		return offset
 	}
@@ -911,7 +911,7 @@ func (x *DouyinUserFavoriteResponse) fastWriteField2(buf []byte) (offset int) {
 	return offset
 }
 
-func (x *DouyinUserFavoriteResponse) fastWriteField3(buf []byte) (offset int) {
+func (x *DouyinUserBeFavoriteResponse) fastWriteField3(buf []byte) (offset int) {
 	if x.FavoriteCount == 0 {
 		return offset
 	}
@@ -919,7 +919,7 @@ func (x *DouyinUserFavoriteResponse) fastWriteField3(buf []byte) (offset int) {
 	return offset
 }
 
-func (x *DouyinVideoFavoriteRequest) FastWrite(buf []byte) (offset int) {
+func (x *DouyinVideoBeFavoriteRequest) FastWrite(buf []byte) (offset int) {
 	if x == nil {
 		return offset
 	}
@@ -927,7 +927,7 @@ func (x *DouyinVideoFavoriteRequest) FastWrite(buf []byte) (offset int) {
 	return offset
 }
 
-func (x *DouyinVideoFavoriteRequest) fastWriteField1(buf []byte) (offset int) {
+func (x *DouyinVideoBeFavoriteRequest) fastWriteField1(buf []byte) (offset int) {
 	if x.VideoId == 0 {
 		return offset
 	}
@@ -935,7 +935,7 @@ func (x *DouyinVideoFavoriteRequest) fastWriteField1(buf []byte) (offset int) {
 	return offset
 }
 
-func (x *DouyinVideoFavoriteResponse) FastWrite(buf []byte) (offset int) {
+func (x *DouyinVideoBeFavoriteResponse) FastWrite(buf []byte) (offset int) {
 	if x == nil {
 		return offset
 	}
@@ -945,7 +945,7 @@ func (x *DouyinVideoFavoriteResponse) FastWrite(buf []byte) (offset int) {
 	return offset
 }
 
-func (x *DouyinVideoFavoriteResponse) fastWriteField1(buf []byte) (offset int) {
+func (x *DouyinVideoBeFavoriteResponse) fastWriteField1(buf []byte) (offset int) {
 	if x.BaseResp == nil {
 		return offset
 	}
@@ -953,7 +953,7 @@ func (x *DouyinVideoFavoriteResponse) fastWriteField1(buf []byte) (offset int) {
 	return offset
 }
 
-func (x *DouyinVideoFavoriteResponse) fastWriteField2(buf []byte) (offset int) {
+func (x *DouyinVideoBeFavoriteResponse) fastWriteField2(buf []byte) (offset int) {
 	if x.FavoriteCount == 0 {
 		return offset
 	}
@@ -961,7 +961,7 @@ func (x *DouyinVideoFavoriteResponse) fastWriteField2(buf []byte) (offset int) {
 	return offset
 }
 
-func (x *DouyinVideoFavoriteResponse) fastWriteField3(buf []byte) (offset int) {
+func (x *DouyinVideoBeFavoriteResponse) fastWriteField3(buf []byte) (offset int) {
 	if !x.IsFavorite {
 		return offset
 	}
@@ -1286,7 +1286,7 @@ func (x *DouyinFavoriteListResponse) sizeField2() (n int) {
 	return n
 }
 
-func (x *DouyinUserFavoriteRequest) Size() (n int) {
+func (x *DouyinUserBeFavoriteRequest) Size() (n int) {
 	if x == nil {
 		return n
 	}
@@ -1294,7 +1294,7 @@ func (x *DouyinUserFavoriteRequest) Size() (n int) {
 	return n
 }
 
-func (x *DouyinUserFavoriteRequest) sizeField1() (n int) {
+func (x *DouyinUserBeFavoriteRequest) sizeField1() (n int) {
 	if x.UserId == 0 {
 		return n
 	}
@@ -1302,7 +1302,7 @@ func (x *DouyinUserFavoriteRequest) sizeField1() (n int) {
 	return n
 }
 
-func (x *DouyinUserFavoriteResponse) Size() (n int) {
+func (x *DouyinUserBeFavoriteResponse) Size() (n int) {
 	if x == nil {
 		return n
 	}
@@ -1312,7 +1312,7 @@ func (x *DouyinUserFavoriteResponse) Size() (n int) {
 	return n
 }
 
-func (x *DouyinUserFavoriteResponse) sizeField1() (n int) {
+func (x *DouyinUserBeFavoriteResponse) sizeField1() (n int) {
 	if x.BaseResp == nil {
 		return n
 	}
@@ -1320,7 +1320,7 @@ func (x *DouyinUserFavoriteResponse) sizeField1() (n int) {
 	return n
 }
 
-func (x *DouyinUserFavoriteResponse) sizeField2() (n int) {
+func (x *DouyinUserBeFavoriteResponse) sizeField2() (n int) {
 	if x.TotalBeFavorite == 0 {
 		return n
 	}
@@ -1328,7 +1328,7 @@ func (x *DouyinUserFavoriteResponse) sizeField2() (n int) {
 	return n
 }
 
-func (x *DouyinUserFavoriteResponse) sizeField3() (n int) {
+func (x *DouyinUserBeFavoriteResponse) sizeField3() (n int) {
 	if x.FavoriteCount == 0 {
 		return n
 	}
@@ -1336,7 +1336,7 @@ func (x *DouyinUserFavoriteResponse) sizeField3() (n int) {
 	return n
 }
 
-func (x *DouyinVideoFavoriteRequest) Size() (n int) {
+func (x *DouyinVideoBeFavoriteRequest) Size() (n int) {
 	if x == nil {
 		return n
 	}
@@ -1344,7 +1344,7 @@ func (x *DouyinVideoFavoriteRequest) Size() (n int) {
 	return n
 }
 
-func (x *DouyinVideoFavoriteRequest) sizeField1() (n int) {
+func (x *DouyinVideoBeFavoriteRequest) sizeField1() (n int) {
 	if x.VideoId == 0 {
 		return n
 	}
@@ -1352,7 +1352,7 @@ func (x *DouyinVideoFavoriteRequest) sizeField1() (n int) {
 	return n
 }
 
-func (x *DouyinVideoFavoriteResponse) Size() (n int) {
+func (x *DouyinVideoBeFavoriteResponse) Size() (n int) {
 	if x == nil {
 		return n
 	}
@@ -1362,7 +1362,7 @@ func (x *DouyinVideoFavoriteResponse) Size() (n int) {
 	return n
 }
 
-func (x *DouyinVideoFavoriteResponse) sizeField1() (n int) {
+func (x *DouyinVideoBeFavoriteResponse) sizeField1() (n int) {
 	if x.BaseResp == nil {
 		return n
 	}
@@ -1370,7 +1370,7 @@ func (x *DouyinVideoFavoriteResponse) sizeField1() (n int) {
 	return n
 }
 
-func (x *DouyinVideoFavoriteResponse) sizeField2() (n int) {
+func (x *DouyinVideoBeFavoriteResponse) sizeField2() (n int) {
 	if x.FavoriteCount == 0 {
 		return n
 	}
@@ -1378,7 +1378,7 @@ func (x *DouyinVideoFavoriteResponse) sizeField2() (n int) {
 	return n
 }
 
-func (x *DouyinVideoFavoriteResponse) sizeField3() (n int) {
+func (x *DouyinVideoBeFavoriteResponse) sizeField3() (n int) {
 	if !x.IsFavorite {
 		return n
 	}
@@ -1481,21 +1481,21 @@ var fieldIDToName_DouyinFavoriteListResponse = map[int32]string{
 	2: "VideoList",
 }
 
-var fieldIDToName_DouyinUserFavoriteRequest = map[int32]string{
+var fieldIDToName_DouyinUserBeFavoriteRequest = map[int32]string{
 	1: "UserId",
 }
 
-var fieldIDToName_DouyinUserFavoriteResponse = map[int32]string{
+var fieldIDToName_DouyinUserBeFavoriteResponse = map[int32]string{
 	1: "BaseResp",
 	2: "TotalBeFavorite",
 	3: "FavoriteCount",
 }
 
-var fieldIDToName_DouyinVideoFavoriteRequest = map[int32]string{
+var fieldIDToName_DouyinVideoBeFavoriteRequest = map[int32]string{
 	1: "VideoId",
 }
 
-var fieldIDToName_DouyinVideoFavoriteResponse = map[int32]string{
+var fieldIDToName_DouyinVideoBeFavoriteResponse = map[int32]string{
 	1: "BaseResp",
 	2: "FavoriteCount",
 	3: "IsFavorite",

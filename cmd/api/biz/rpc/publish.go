@@ -46,7 +46,7 @@ func initPublishRpc() {
 	publishClient = c
 }
 
-// PublishVideos is used to publish videos by user.
+// 发布视频rpc
 func PublishVideos(ctx context.Context, req *VideoServer.DouyinPublishActionRequest) (*VideoServer.DouyinPublishActionResponse, error) {
 	resp, err := publishClient.PublishAction(ctx, req)
 	if err != nil {
@@ -58,7 +58,7 @@ func PublishVideos(ctx context.Context, req *VideoServer.DouyinPublishActionRequ
 	return resp, nil
 }
 
-// PublishList get the video list by user id or token.
+// 根据用户id获取其视频列表rpc
 func PublishList(ctx context.Context, req *VideoServer.DouyinPublishListRequest) ([]*VideoServer.Video, error) {
 	resp, err := publishClient.PublishList(ctx, req)
 	if err != nil {
@@ -66,7 +66,7 @@ func PublishList(ctx context.Context, req *VideoServer.DouyinPublishListRequest)
 	}
 
 	if len(resp.VideoList) == 0 {
-		return []*VideoServer.Video{}, nil
+		return resp.VideoList, nil
 	}
 
 	if resp.BaseResp.StatusCode != 0 {
@@ -75,7 +75,7 @@ func PublishList(ctx context.Context, req *VideoServer.DouyinPublishListRequest)
 	return resp.VideoList, nil
 }
 
-// FeedVideos Get the videos by latestTime without user id.
+// 通过时间戳获取视频流rpc
 func FeedVideos(ctx context.Context, req *VideoServer.DouyinFeedRequest) ([]*VideoServer.Video, error) {
 	resp, err := publishClient.Feed(ctx, req)
 	if err != nil {
@@ -87,6 +87,7 @@ func FeedVideos(ctx context.Context, req *VideoServer.DouyinFeedRequest) ([]*Vid
 	return resp.VideoList, nil
 }
 
+// 通过视频id获取视频列表rpc，供favorite server调用。
 func GetVideoListByVideoId(ctx context.Context, req *VideoServer.DouyinVideoListByVideoId) ([]*VideoServer.Video, error) {
 	resp, err := publishClient.
 		GetVideoListByVideoId(ctx, req)

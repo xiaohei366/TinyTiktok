@@ -3,11 +3,9 @@ package ApiServer
 import (
 	"bytes"
 	"context"
-	"fmt"
 	"io"
 	"strconv"
 
-	"github.com/cloudwego/kitex/pkg/klog"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/handler/pack"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/rpc"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
@@ -24,6 +22,7 @@ import (
 func Feed(ctx context.Context, c *app.RequestContext) {
 	var err error
 	var laststTime, useID int64
+	// 获取最近的时间并判断处理
 	lastst_time := c.Query("latest_time")
 	if len(lastst_time) != 0 {
 		if latesttime, err := strconv.Atoi(lastst_time); err != nil {
@@ -33,19 +32,18 @@ func Feed(ctx context.Context, c *app.RequestContext) {
 			laststTime = int64(latesttime)
 		}
 	}
-	
+	//获取token中传来的user id
 	user, _ := c.Get(shared.IdentityKey)
 	if user == nil {
 		useID = 0
 	} else {
 		useID = user.(*ApiServer.User).Id
 	}
-
+	//rpc调用获取视频feed
 	videos, err := rpc.FeedVideos(context.Background(), &VideoServer.DouyinFeedRequest{
 		LatestTime: laststTime,
 		UserId:     useID,
 	})
-	klog.Info("feed videos:", videos)
 	if err != nil {
 		pack.SendFeedResponse(c, errno.ConvertErr(err), nil)
 	}
@@ -58,33 +56,30 @@ func PublishAction(ctx context.Context, c *app.RequestContext) {
 
 	var err error
 	var req ApiServer.DouyinPublishActionRequest
-	//_ = c.BindAndValidate(&req) //验证参数
 
 	req.Title = c.PostForm("title")
 	req.Token = c.PostForm("token")
-	//拿取视频文件。
+	//接收视频文件并处理。
 	fileHeader, err := c.Request.FormFile("data")
 	if err != nil {
 		pack.SendPublishActionResponse(c, errno.ConvertErr(err), nil)
 		return
 	}
-
 	file, err := fileHeader.Open()
 	if err != nil {
 		pack.SendPublishActionResponse(c, errno.ConvertErr(err), nil)
 		return
 	}
 	defer file.Close()
-
+	//copy为[]byte格式
 	buf := bytes.NewBuffer(nil)
 	_, _ = io.Copy(buf, file)
 	if err != nil {
 		pack.SendPublishActionResponse(c, errno.ConvertErr(err), nil)
 		return
 	}
-	//拿userid
+	//获取
 	userId, _ := c.Get(shared.IdentityKey)
-	klog.Info("publish action:", req.Title, userId)
 	request := &VideoServer.DouyinPublishActionRequest{
 		Token:  req.Token,
 		Title:  req.Title,
@@ -101,7 +96,6 @@ func PublishAction(ctx context.Context, c *app.RequestContext) {
 // PublishList .
 // @router /douyin/publish/list/ [GET]
 func PublishList(ctx context.Context, c *app.RequestContext) {
-	//测试可用
 	var err error
 	var req ApiServer.DouyinPublishListRequest
 	err = c.BindAndValidate(&req)
@@ -109,14 +103,13 @@ func PublishList(ctx context.Context, c *app.RequestContext) {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
-	fmt.Println("req:", req.UserId, req.Token)
 	//拿userid
 	userId, _ := c.Get(shared.IdentityKey)
 	request := &VideoServer.DouyinPublishListRequest{
 		UserId: userId.(*ApiServer.User).Id,
 		Token:  req.Token,
 	}
-
+	//调用rpc获取该用户已经发布的视频。
 	resp, err := rpc.PublishList(ctx, request)
 	if err != nil {
 		pack.SendFeedResponse(c, errno.ConvertErr(err), nil)
