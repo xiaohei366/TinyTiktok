@@ -22,7 +22,7 @@ type FavoriteActionResponse struct {
 	StatusMsg  string `json:"status_msg"`
 }
 
-// 点赞/取消赞的响应报文
+// 点赞/取消点赞操作的响应报文
 func SendFavoriteActionResponse(c *app.RequestContext, resp interface{}) {
 	switch value := resp.(type) {
 	case error:

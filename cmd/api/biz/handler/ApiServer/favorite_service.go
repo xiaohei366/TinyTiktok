@@ -23,10 +23,9 @@ func FavoriteAction(ctx context.Context, c *app.RequestContext) {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
-	fmt.Println("api req:", req.ActionType, req.VideoId)
-
+	// get user id
 	user, _ := c.Get(shared.IdentityKey)
-
+	// rpc user do the favorite action to the video
 	resp, err := rpc.FavoriteAction(ctx, &FavoriteServer.DouyinFavoriteActionRequest{
 		UserId:     user.(*ApiServer.User).Id,
 		VideoId:    req.VideoId,
@@ -50,7 +49,8 @@ func FavoriteList(ctx context.Context, c *app.RequestContext) {
 		pack.SendFavoriteListResponse(c, errno.ConvertErr(err), nil)
 		return
 	}
-	fmt.Println("api Fav List : ", req.UserId)
+
+	// rpc Get user's favorite video list
 	resp, err := rpc.GetFavoriteList(ctx, &FavoriteServer.DouyinFavoriteListRequest{
 		UserId: req.UserId,
 	})

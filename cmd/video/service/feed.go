@@ -2,7 +2,6 @@ package service
 
 import (
 	"context"
-	"fmt"
 	"time"
 
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/dal"
@@ -28,6 +27,7 @@ func (s *FeedService) Feed(req *VideoServer.DouyinFeedRequest) (videos []*VideoS
 		cur_time := int64(time.Now().UnixMilli())
 		latestTime = &cur_time
 	}
+	//查询视频
 	feedModels, err := dal.MGetVideos(s.ctx, latestTime)
 	if len(feedModels) == 0 {
 		nextTime = time.Now().UnixMilli()
@@ -36,6 +36,5 @@ func (s *FeedService) Feed(req *VideoServer.DouyinFeedRequest) (videos []*VideoS
 		nextTime = feedModels[len(feedModels)-1].UpdatedAt.UnixMilli()
 	}
 	videos = pack.VideoList(feedModels, req.UserId)
-	fmt.Println("feed list:", videos)
 	return videos, nextTime, nil
 }

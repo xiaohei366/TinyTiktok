@@ -7,21 +7,20 @@ import (
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
 
-// FeedResponse
+// Feed响应报文格式
 type FeedResponse struct {
 	StatusCode int32                `json:"status_code"`
 	StatusMsg  string               `json:"status_msg"`
 	VideoList  []*VideoServer.Video `json:"video_list"`
 }
 
-// PublishActionResponse
+// 发布视频操作响应报文格式
 type PublishActionResponse struct {
 	StatusCode int32  `json:"status_code"`
 	StatusMsg  string `json:"status_msg"`
 }
 
-// SendResponse feed pack response
-// 发送关注/粉丝列表的响应报文
+// 发送Feed视频流响应报文
 func SendFeedResponse(c *app.RequestContext, err error, videoList []*VideoServer.Video) {
 	Err := errno.ConvertErr(err)
 	c.JSON(consts.StatusOK, FeedResponse{
@@ -31,7 +30,7 @@ func SendFeedResponse(c *app.RequestContext, err error, videoList []*VideoServer
 	})
 }
 
-// 关注/取关的响应报文
+// 发送发布视频操作响应报文
 func SendPublishActionResponse(c *app.RequestContext, err error, resp interface{}) {
 	Err := errno.ConvertErr(err)
 	c.JSON(consts.StatusOK, PublishActionResponse{

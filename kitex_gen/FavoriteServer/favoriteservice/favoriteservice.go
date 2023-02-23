@@ -336,7 +336,7 @@ func getFavoriteUserHandler(ctx context.Context, handler interface{}, arg, resul
 	switch s := arg.(type) {
 	case *streaming.Args:
 		st := s.Stream
-		req := new(FavoriteServer.DouyinUserFavoriteRequest)
+		req := new(FavoriteServer.DouyinUserBeFavoriteRequest)
 		if err := st.RecvMsg(req); err != nil {
 			return err
 		}
@@ -366,12 +366,12 @@ func newGetFavoriteUserResult() interface{} {
 }
 
 type GetFavoriteUserArgs struct {
-	Req *FavoriteServer.DouyinUserFavoriteRequest
+	Req *FavoriteServer.DouyinUserBeFavoriteRequest
 }
 
 func (p *GetFavoriteUserArgs) FastRead(buf []byte, _type int8, number int32) (n int, err error) {
 	if !p.IsSetReq() {
-		p.Req = new(FavoriteServer.DouyinUserFavoriteRequest)
+		p.Req = new(FavoriteServer.DouyinUserBeFavoriteRequest)
 	}
 	return p.Req.FastRead(buf, _type, number)
 }
@@ -398,7 +398,7 @@ func (p *GetFavoriteUserArgs) Marshal(out []byte) ([]byte, error) {
 }
 
 func (p *GetFavoriteUserArgs) Unmarshal(in []byte) error {
-	msg := new(FavoriteServer.DouyinUserFavoriteRequest)
+	msg := new(FavoriteServer.DouyinUserBeFavoriteRequest)
 	if err := proto.Unmarshal(in, msg); err != nil {
 		return err
 	}
@@ -406,9 +406,9 @@ func (p *GetFavoriteUserArgs) Unmarshal(in []byte) error {
 	return nil
 }
 
-var GetFavoriteUserArgs_Req_DEFAULT *FavoriteServer.DouyinUserFavoriteRequest
+var GetFavoriteUserArgs_Req_DEFAULT *FavoriteServer.DouyinUserBeFavoriteRequest
 
-func (p *GetFavoriteUserArgs) GetReq() *FavoriteServer.DouyinUserFavoriteRequest {
+func (p *GetFavoriteUserArgs) GetReq() *FavoriteServer.DouyinUserBeFavoriteRequest {
 	if !p.IsSetReq() {
 		return GetFavoriteUserArgs_Req_DEFAULT
 	}
@@ -420,14 +420,14 @@ func (p *GetFavoriteUserArgs) IsSetReq() bool {
 }
 
 type GetFavoriteUserResult struct {
-	Success *FavoriteServer.DouyinUserFavoriteResponse
+	Success *FavoriteServer.DouyinUserBeFavoriteResponse
 }
 
-var GetFavoriteUserResult_Success_DEFAULT *FavoriteServer.DouyinUserFavoriteResponse
+var GetFavoriteUserResult_Success_DEFAULT *FavoriteServer.DouyinUserBeFavoriteResponse
 
 func (p *GetFavoriteUserResult) FastRead(buf []byte, _type int8, number int32) (n int, err error) {
 	if !p.IsSetSuccess() {
-		p.Success = new(FavoriteServer.DouyinUserFavoriteResponse)
+		p.Success = new(FavoriteServer.DouyinUserBeFavoriteResponse)
 	}
 	return p.Success.FastRead(buf, _type, number)
 }
@@ -454,7 +454,7 @@ func (p *GetFavoriteUserResult) Marshal(out []byte) ([]byte, error) {
 }
 
 func (p *GetFavoriteUserResult) Unmarshal(in []byte) error {
-	msg := new(FavoriteServer.DouyinUserFavoriteResponse)
+	msg := new(FavoriteServer.DouyinUserBeFavoriteResponse)
 	if err := proto.Unmarshal(in, msg); err != nil {
 		return err
 	}
@@ -462,7 +462,7 @@ func (p *GetFavoriteUserResult) Unmarshal(in []byte) error {
 	return nil
 }
 
-func (p *GetFavoriteUserResult) GetSuccess() *FavoriteServer.DouyinUserFavoriteResponse {
+func (p *GetFavoriteUserResult) GetSuccess() *FavoriteServer.DouyinUserBeFavoriteResponse {
 	if !p.IsSetSuccess() {
 		return GetFavoriteUserResult_Success_DEFAULT
 	}
@@ -470,7 +470,7 @@ func (p *GetFavoriteUserResult) GetSuccess() *FavoriteServer.DouyinUserFavoriteR
 }
 
 func (p *GetFavoriteUserResult) SetSuccess(x interface{}) {
-	p.Success = x.(*FavoriteServer.DouyinUserFavoriteResponse)
+	p.Success = x.(*FavoriteServer.DouyinUserBeFavoriteResponse)
 }
 
 func (p *GetFavoriteUserResult) IsSetSuccess() bool {
@@ -481,7 +481,7 @@ func getFavoriteVideoHandler(ctx context.Context, handler interface{}, arg, resu
 	switch s := arg.(type) {
 	case *streaming.Args:
 		st := s.Stream
-		req := new(FavoriteServer.DouyinVideoFavoriteRequest)
+		req := new(FavoriteServer.DouyinVideoBeFavoriteRequest)
 		if err := st.RecvMsg(req); err != nil {
 			return err
 		}
@@ -511,12 +511,12 @@ func newGetFavoriteVideoResult() interface{} {
 }
 
 type GetFavoriteVideoArgs struct {
-	Req *FavoriteServer.DouyinVideoFavoriteRequest
+	Req *FavoriteServer.DouyinVideoBeFavoriteRequest
 }
 
 func (p *GetFavoriteVideoArgs) FastRead(buf []byte, _type int8, number int32) (n int, err error) {
 	if !p.IsSetReq() {
-		p.Req = new(FavoriteServer.DouyinVideoFavoriteRequest)
+		p.Req = new(FavoriteServer.DouyinVideoBeFavoriteRequest)
 	}
 	return p.Req.FastRead(buf, _type, number)
 }
@@ -543,7 +543,7 @@ func (p *GetFavoriteVideoArgs) Marshal(out []byte) ([]byte, error) {
 }
 
 func (p *GetFavoriteVideoArgs) Unmarshal(in []byte) error {
-	msg := new(FavoriteServer.DouyinVideoFavoriteRequest)
+	msg := new(FavoriteServer.DouyinVideoBeFavoriteRequest)
 	if err := proto.Unmarshal(in, msg); err != nil {
 		return err
 	}
@@ -551,9 +551,9 @@ func (p *GetFavoriteVideoArgs) Unmarshal(in []byte) error {
 	return nil
 }
 
-var GetFavoriteVideoArgs_Req_DEFAULT *FavoriteServer.DouyinVideoFavoriteRequest
+var GetFavoriteVideoArgs_Req_DEFAULT *FavoriteServer.DouyinVideoBeFavoriteRequest
 
-func (p *GetFavoriteVideoArgs) GetReq() *FavoriteServer.DouyinVideoFavoriteRequest {
+func (p *GetFavoriteVideoArgs) GetReq() *FavoriteServer.DouyinVideoBeFavoriteRequest {
 	if !p.IsSetReq() {
 		return GetFavoriteVideoArgs_Req_DEFAULT
 	}
@@ -565,14 +565,14 @@ func (p *GetFavoriteVideoArgs) IsSetReq() bool {
 }
 
 type GetFavoriteVideoResult struct {
-	Success *FavoriteServer.DouyinVideoFavoriteResponse
+	Success *FavoriteServer.DouyinVideoBeFavoriteResponse
 }
 
-var GetFavoriteVideoResult_Success_DEFAULT *FavoriteServer.DouyinVideoFavoriteResponse
+var GetFavoriteVideoResult_Success_DEFAULT *FavoriteServer.DouyinVideoBeFavoriteResponse
 
 func (p *GetFavoriteVideoResult) FastRead(buf []byte, _type int8, number int32) (n int, err error) {
 	if !p.IsSetSuccess() {
-		p.Success = new(FavoriteServer.DouyinVideoFavoriteResponse)
+		p.Success = new(FavoriteServer.DouyinVideoBeFavoriteResponse)
 	}
 	return p.Success.FastRead(buf, _type, number)
 }
@@ -599,7 +599,7 @@ func (p *GetFavoriteVideoResult) Marshal(out []byte) ([]byte, error) {
 }
 
 func (p *GetFavoriteVideoResult) Unmarshal(in []byte) error {
-	msg := new(FavoriteServer.DouyinVideoFavoriteResponse)
+	msg := new(FavoriteServer.DouyinVideoBeFavoriteResponse)
 	if err := proto.Unmarshal(in, msg); err != nil {
 		return err
 	}
@@ -607,7 +607,7 @@ func (p *GetFavoriteVideoResult) Unmarshal(in []byte) error {
 	return nil
 }
 
-func (p *GetFavoriteVideoResult) GetSuccess() *FavoriteServer.DouyinVideoFavoriteResponse {
+func (p *GetFavoriteVideoResult) GetSuccess() *FavoriteServer.DouyinVideoBeFavoriteResponse {
 	if !p.IsSetSuccess() {
 		return GetFavoriteVideoResult_Success_DEFAULT
 	}
@@ -615,7 +615,7 @@ func (p *GetFavoriteVideoResult) GetSuccess() *FavoriteServer.DouyinVideoFavorit
 }
 
 func (p *GetFavoriteVideoResult) SetSuccess(x interface{}) {
-	p.Success = x.(*FavoriteServer.DouyinVideoFavoriteResponse)
+	p.Success = x.(*FavoriteServer.DouyinVideoBeFavoriteResponse)
 }
 
 func (p *GetFavoriteVideoResult) IsSetSuccess() bool {
@@ -797,7 +797,7 @@ func (p *kClient) GetFavoriteList(ctx context.Context, Req *FavoriteServer.Douyi
 	return _result.GetSuccess(), nil
 }
 
-func (p *kClient) GetFavoriteUser(ctx context.Context, Req *FavoriteServer.DouyinUserFavoriteRequest) (r *FavoriteServer.DouyinUserFavoriteResponse, err error) {
+func (p *kClient) GetFavoriteUser(ctx context.Context, Req *FavoriteServer.DouyinUserBeFavoriteRequest) (r *FavoriteServer.DouyinUserBeFavoriteResponse, err error) {
 	var _args GetFavoriteUserArgs
 	_args.Req = Req
 	var _result GetFavoriteUserResult
@@ -807,7 +807,7 @@ func (p *kClient) GetFavoriteUser(ctx context.Context, Req *FavoriteServer.Douyi
 	return _result.GetSuccess(), nil
 }
 
-func (p *kClient) GetFavoriteVideo(ctx context.Context, Req *FavoriteServer.DouyinVideoFavoriteRequest) (r *FavoriteServer.DouyinVideoFavoriteResponse, err error) {
+func (p *kClient) GetFavoriteVideo(ctx context.Context, Req *FavoriteServer.DouyinVideoBeFavoriteRequest) (r *FavoriteServer.DouyinVideoBeFavoriteResponse, err error) {
 	var _args GetFavoriteVideoArgs
 	_args.Req = Req
 	var _result GetFavoriteVideoResult

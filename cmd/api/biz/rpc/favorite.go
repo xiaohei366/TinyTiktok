@@ -2,7 +2,6 @@ package rpc
 
 import (
 	"context"
-	"fmt"
 	"github.com/kitex-contrib/obs-opentelemetry/provider"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer/favoriteservice"
@@ -44,9 +43,8 @@ func initFavorite() {
 	favoriteClient = c
 }
 
-// 传递点赞操作请求，获取rpc响应//这个暂时OK了。有消息了。
+// 传递点赞操作请求，获取rpc响应
 func FavoriteAction(ctx context.Context, req *FavoriteServer.DouyinFavoriteActionRequest) (resp *FavoriteServer.DouyinFavoriteActionResponse, err error) {
-	fmt.Println("favoriteAction:", req.UserId, req.VideoId, req.ActionType)
 	resp, err = favoriteClient.FavoriteAction(ctx, req)
 	if err != nil {
 		return nil, err
@@ -57,8 +55,8 @@ func FavoriteAction(ctx context.Context, req *FavoriteServer.DouyinFavoriteActio
 	return resp, nil
 }
 
+// 获取当前用户点赞状态的视频列表rpc
 func GetFavoriteList(ctx context.Context, req *FavoriteServer.DouyinFavoriteListRequest) ([]*FavoriteServer.Video, error) {
-	fmt.Println("rpc get fav list:", req.UserId)
 	resp, err := favoriteClient.GetFavoriteList(ctx, req)
 	if err != nil {
 		return nil, err
@@ -69,24 +67,10 @@ func GetFavoriteList(ctx context.Context, req *FavoriteServer.DouyinFavoriteList
 	if len(resp.VideoList) == 0 {
 		return nil, nil
 	}
-	fmt.Println("resp videoList")
 	return resp.VideoList, nil
 }
 
-// 拿取视频中点赞数量//这个可以用
-func GetVideosFavoriteCount(ctx context.Context, req *FavoriteServer.DouyinVideoFavoriteRequest) (int64, error) {
-	resp, err := favoriteClient.GetFavoriteVideo(ctx, req)
-	if err != nil {
-		return 0, err
-	}
-	if resp.BaseResp.StatusCode != 0 {
-		return 0, errno.NewErrNo(resp.BaseResp.StatusCode, resp.BaseResp.StatusMsg)
-	}
-	fmt.Println("resp videoList")
-	return resp.FavoriteCount, nil
-}
-
-// 查询user是否喜欢这个视频
+// 查询user是否喜欢这个视频，供video server打包视频信息时使用
 func QueryUserLikeVideo(ctx context.Context, req *FavoriteServer.DouyinQueryFavoriteRequest) (bool, error) {
 	resp, err := favoriteClient.QueryUserLikeVideo(ctx, req)
 	if err != nil {
@@ -95,8 +79,9 @@ func QueryUserLikeVideo(ctx context.Context, req *FavoriteServer.DouyinQueryFavo
 	return resp.Favorite, nil
 }
 
-func GetFavoriteUser(ctx context.Context, req *FavoriteServer.DouyinUserFavoriteRequest) (resp *FavoriteServer.DouyinUserFavoriteResponse, err error) {
-	resp, err = favoriteClient.GetFavoriteUser(ctx, req)
+// 获取某个视频被赞数量的rpc，供video server打包视频信息时使用
+func GetFavoriteVideo(ctx context.Context, req *FavoriteServer.DouyinVideoBeFavoriteRequest) (resp *FavoriteServer.DouyinVideoBeFavoriteResponse, err error) {
+	resp, err = favoriteClient.GetFavoriteVideo(ctx, req)
 	if err != nil {
 		return nil, err
 	}
@@ -106,13 +91,7 @@ func GetFavoriteUser(ctx context.Context, req *FavoriteServer.DouyinUserFavorite
 	return resp, nil
 }
 
-func GetFavoriteVideo(ctx context.Context, req *FavoriteServer.DouyinVideoFavoriteRequest) (resp *FavoriteServer.DouyinVideoFavoriteResponse, err error) {
-	resp, err = favoriteClient.GetFavoriteVideo(ctx, req)
-	if err != nil {
-		return nil, err
-	}
-	if resp.BaseResp.StatusCode != 0 {
-		return nil, errno.NewErrNo(resp.BaseResp.StatusCode, resp.BaseResp.StatusMsg)
-	}
-	return resp, nil
+// todo 获取某个用户总计被赞数量
+func GetFavoriteUser(ctx context.Context, req *FavoriteServer.DouyinUserBeFavoriteRequest) (resp *FavoriteServer.DouyinUserBeFavoriteResponse, err error) {
+	return nil, nil
 }

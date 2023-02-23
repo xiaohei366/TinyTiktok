@@ -47,6 +47,7 @@ const (
 	VideoRpcUserErrCode
 	VideoRpcRelationErrCode
 	VideoListNotFoundErrCode
+	GetVideoListByVideoIdErrCode
 )
 
 // favorite模块错误码

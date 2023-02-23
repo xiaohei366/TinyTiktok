@@ -29,6 +29,8 @@ func feedResp(err errno.ErrNo, videoList []*VideoServer.Video, nextTime int64) *
 	resp.NextTime = nextTime
 	return resp
 }
+
+// 封装发布视频操作
 func BuildPublishActionResp(err error) *VideoServer.DouyinPublishActionResponse {
 	if err == nil {
 		return publishActionResp(errno.Success)
@@ -49,6 +51,8 @@ func publishActionResp(err errno.ErrNo) *VideoServer.DouyinPublishActionResponse
 	}
 	return resp
 }
+
+// 封装视频列表返回报文
 func BuildPublishListResp(err error, videoList []*VideoServer.Video) *VideoServer.DouyinPublishListResponse {
 	if err == nil {
 		return publishListResp(errno.Success, videoList)

@@ -2,10 +2,10 @@ package service
 
 import (
 	"context"
-	"fmt"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/dal"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/pack"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
+	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
 
 type PublishListService struct {
@@ -21,9 +21,8 @@ func NewPublishListService(ctx context.Context) *PublishListService {
 func (s *PublishListService) PublishList(req *VideoServer.DouyinPublishListRequest) (videoList []*VideoServer.Video, err error) {
 	UserVideos, err := dal.MGetUserVideos(s.ctx, req.UserId)
 	if err != nil {
-		return nil, err
+		return nil, errno.PublishListErr
 	}
 	videoList = pack.VideoList(UserVideos, req.UserId)
-	fmt.Println("Publish list:", videoList)
 	return videoList, nil
 }

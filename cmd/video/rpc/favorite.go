@@ -42,7 +42,7 @@ func initFavorite() {
 }
 
 // 拿取视频中点赞数量
-func GetVideosFavoriteCount(ctx context.Context, req *FavoriteServer.DouyinVideoFavoriteRequest) (int64, error) {
+func GetVideosFavoriteCount(ctx context.Context, req *FavoriteServer.DouyinVideoBeFavoriteRequest) (int64, error) {
 	resp, err := favoriteClient.GetFavoriteVideo(ctx, req)
 	if err != nil {
 		return 0, err

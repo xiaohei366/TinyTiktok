@@ -12,11 +12,11 @@ import (
 	"github.com/xiaohei366/TinyTiktok/cmd/video/initialize/db"
 	dal2 "github.com/xiaohei366/TinyTiktok/cmd/video/service/dal"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
+	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 	"github.com/xiaohei366/TinyTiktok/pkg/minio"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 	"image/jpeg"
 	"os"
-	"sync"
 )
 
 type PublishActionService struct { //还是没太明白为什么要new一个videoPost
@@ -30,16 +30,14 @@ func NewPublishActionService(ctx context.Context) *PublishActionService {
 
 // PublishAction post video into the minio buckets and database.
 func (s *PublishActionService) PublishAction(req *VideoServer.DouyinPublishActionRequest) error {
-	klog.Info("Publish action start:")
 	// link minio
 	minioCli := minio.GetMinioClient()
-	klog.Info("minioCli:", minioCli)
 
 	// prepare videos data
 	videoData := []byte(req.Data)
 	u2, err := uuid.NewV4() //给视频文件加编号
 	if err != nil {
-		return err
+		return errno.PublishActionErr
 	}
 
 	// prepare videoName
@@ -49,19 +47,18 @@ func (s *PublishActionService) PublishAction(req *VideoServer.DouyinPublishActio
 	// upload video into minio video bucket and get video playUrl
 	err = minio.UploadObject(minioCli.Client, "video", config.PublishVideosBucket, videoName, videoReader, int64(len(videoData))) //
 	if err != nil {
-		return err
+		return errno.PublishActionErr
 	}
 	playUrl := "http://" + shared.MinioUrl + ":9000/videos/" + videoName
 
 	// prepare cover name
 	u3, err := uuid.NewV4()
 	if err != nil {
-		return err
+		return errno.PublishActionErr
 	}
 	coverName := u3.String() + "." + "jpg"
-	coverUrl := "http://" + shared.MinioUrl + ":9000/images/" + coverName //之前这个地方写localhost是可以的？
-	var wg sync.WaitGroup
-	wg.Add(1)
+	coverUrl := "http://" + shared.MinioUrl + ":9000/images/" + coverName
+	//开启协程去做将封面上传的事情
 	go func() {
 		coverImages, err := readFrameAsJpeg(playUrl) //封面数据
 		coverReader := bytes.NewReader(coverImages)
@@ -72,10 +69,7 @@ func (s *PublishActionService) PublishAction(req *VideoServer.DouyinPublishActio
 		if err != nil {
 			klog.Info("Publish action read Frame as jpeg failed")
 		}
-		wg.Done()
 	}()
-
-	// upload cover image and get coverUrl
 
 	// publish action response model prepare
 	videoModel := &db.Video{
@@ -90,15 +84,14 @@ func (s *PublishActionService) PublishAction(req *VideoServer.DouyinPublishActio
 	// store video info into mysql video model.
 	err = dal2.PublishVideo(s.ctx, videoModel)
 	if err != nil {
-		return err
+		return errno.PublishActionErr
 	}
-	wg.Wait()
+	//wg.Wait()
 	return nil
 }
 
 // 从视频流中截取一帧并返
 // readFrameAsJpeg get a frame as cover image of video
-// todo test.
 func readFrameAsJpeg(url string) ([]byte, error) {
 	reader := bytes.NewBuffer(nil)
 	err := ffmpeg.Input(url).
@@ -109,12 +102,12 @@ func readFrameAsJpeg(url string) ([]byte, error) {
 	if err != nil {
 		panic(err)
 	}
-	klog.Info("ffmpeg input success:")
+
 	img, err := imaging.Decode(reader)
 	if err != nil {
 		return nil, err
 	}
-	klog.Info("ffmpeg image Decode success:")
+
 	buf := new(bytes.Buffer)
 	err = jpeg.Encode(buf, img, nil)
 	if err != nil {
