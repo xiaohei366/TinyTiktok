@@ -11,12 +11,12 @@ func FavoriteInfo(f *FavoriteServer.User) *FavoriteServer.User {
 		return nil
 	}
 	return &FavoriteServer.User{
-		Id:             f.Id,
-		Name:           f.Name,
-		FollowCount:    10, //test
-		FollowerCount:  10, //test
-		IsFollow:       false,
-		TotalFavorited: 10, //test
-		FavoriteCount:  10, //test
+		Id:              f.Id,
+		Name:            f.Name,
+		FollowCount:     10, //test
+		FollowerCount:   10, //test
+		IsFollow:        false,
+		TotalBeFavorite: 10, //test
+		FavoriteCount:   10, //test
 	}
 }

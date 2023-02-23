@@ -2,6 +2,7 @@ package rpc
 
 import (
 	"context"
+	"github.com/kitex-contrib/obs-opentelemetry/provider"
 	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 
 	"github.com/cloudwego/kitex/pkg/rpcinfo"
@@ -24,6 +25,11 @@ func initPublishRpc() {
 	if err != nil {
 		panic(err)
 	}
+	provider.NewOpenTelemetryProvider(
+		provider.WithServiceName(shared.ApiServiceName),
+		provider.WithExportEndpoint(shared.ExportEndpoint),
+		provider.WithInsecure(),
+	)
 
 	c, err := videosrv.NewClient(
 		shared.VideoServiceName,
@@ -72,6 +78,18 @@ func PublishList(ctx context.Context, req *VideoServer.DouyinPublishListRequest)
 // FeedVideos Get the videos by latestTime without user id.
 func FeedVideos(ctx context.Context, req *VideoServer.DouyinFeedRequest) ([]*VideoServer.Video, error) {
 	resp, err := publishClient.Feed(ctx, req)
+	if err != nil {
+		return nil, err
+	}
+	if resp.BaseResp.StatusCode != 0 {
+		return nil, errno.NewErrNo(resp.BaseResp.StatusCode, resp.BaseResp.StatusMsg)
+	}
+	return resp.VideoList, nil
+}
+
+func GetVideoListByVideoId(ctx context.Context, req *VideoServer.DouyinVideoListByVideoId) ([]*VideoServer.Video, error) {
+	resp, err := publishClient.
+		GetVideoListByVideoId(ctx, req)
 	if err != nil {
 		return nil, err
 	}

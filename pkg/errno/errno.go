@@ -70,7 +70,8 @@ var (
 	VideoListNotFound   = NewErrNo(VideoListNotFoundErrCode, "Video List is empty")
 
 	//favorite模块错误码
-	FavoriteNotExistErr   = NewErrNo(FavoriteNotExistErrCode, "Favorite not exist")
-	FavouriteActionErr    = NewErrNo(FavouriteActionErrCode, "FavoriteAction failed")
-	FavoriteActionTypeErr = NewErrNo(FavoriteActionTypeErrCode, "FavoriteActionType is wrong")
+	FavoriteVideoListNotExistErr = NewErrNo(FavoriteVideoListNotExistErrCode, "Favorite not exist")
+	FavoriteActionErr            = NewErrNo(FavoriteActionErrCode, "FavoriteAction failed")
+	FavoriteActionTypeErr        = NewErrNo(FavoriteActionTypeErrCode, "FavoriteActionType is wrong")
+	FavoriteVideoListErr         = NewErrNo(FavoriteVideoListErrCode, "FavoriteVideoListErrCode rpc List err")
 )

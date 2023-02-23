@@ -7,5 +7,5 @@ const (
 	SqlHost           = "localhost"
 	SqlPort           = 3306
 	FavoriteTableName = "favorite"
-	IsFavorite        = 0
+	IsFavorite        = 1
 )

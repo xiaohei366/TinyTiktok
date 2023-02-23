@@ -42,22 +42,11 @@ func SendFavoriteActionResponse(c *app.RequestContext, resp interface{}) {
 }
 
 // 发送点赞列表的响应报文
-func SendFavoriteListResponse(c *app.RequestContext, resp interface{}) {
-	switch value := resp.(type) {
-	case error:
-		Err := errno.ConvertErr(value)
-		c.JSON(consts.StatusOK, FavoriteListResponse{
-			StatusCode: Err.ErrCode,
-			StatusMsg:  Err.ErrMsg,
-			VideoList:  nil,
-		})
-	case *FavoriteServer.DouyinFavoriteListResponse:
-		c.JSON(consts.StatusOK, FavoriteListResponse{
-			StatusCode: value.BaseResp.StatusCode,
-			StatusMsg:  value.BaseResp.StatusMsg,
-			VideoList:  value.VideoList,
-		})
-	default:
-		klog.Error("响应报文传入未知类型%v", reflect.TypeOf(resp))
-	}
+func SendFavoriteListResponse(c *app.RequestContext, err error, videoList []*FavoriteServer.Video) {
+	Err := errno.ConvertErr(err)
+	c.JSON(consts.StatusOK, FavoriteListResponse{
+		StatusCode: Err.ErrCode,
+		StatusMsg:  Err.ErrMsg,
+		VideoList:  videoList,
+	})
 }

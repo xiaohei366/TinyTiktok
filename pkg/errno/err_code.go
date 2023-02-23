@@ -47,6 +47,7 @@ const (
 const (
 	// favorite模块错误码
 	FavoriteActionTypeErrCode int32 = iota + 10201
-	FavoriteNotExistErrCode
-	FavouriteActionErrCode
+	FavoriteVideoListNotExistErrCode
+	FavoriteActionErrCode
+	FavoriteVideoListErrCode
 )

@@ -424,3 +424,314 @@
 {"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T17:04:40+08:00"}
 {"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T17:04:40+08:00"}
 {"level":"warning","msg":"KITEX: signal connection closing error:protobuf just support 'framed' trans proto[::]:13126=\u003e[::1]:37972","time":"2023-02-22T17:05:50+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:13126","time":"2023-02-22T22:42:32+08:00"}
+{"level":"info","msg":"start keepalive lease 694d8678536760f1 for etcd registry","time":"2023-02-22T22:42:33+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-22T22:42:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T22:42:36+08:00"}
+{"level":"info","msg":"client address: [::1]:44846\n","time":"2023-02-22T22:42:36+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T22:42:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T22:42:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-22T22:42:39+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T22:42:39+08:00"}
+{"level":"info","msg":"client address: [::1]:44846\n","time":"2023-02-22T22:42:39+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T22:42:39+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T22:42:39+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-22T22:42:39+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T22:42:39+08:00"}
+{"level":"info","msg":"client address: [::1]:44846\n","time":"2023-02-22T22:42:39+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T22:42:39+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T22:42:39+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T22:42:47+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T22:42:47+08:00"}
+{"level":"info","msg":"client address: [::1]:44846\n","time":"2023-02-22T22:42:47+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T22:42:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T22:42:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T22:42:51+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T22:42:51+08:00"}
+{"level":"info","msg":"client address: [::1]:44846\n","time":"2023-02-22T22:42:51+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T22:42:51+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T22:42:51+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-22T22:42:52+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T22:42:52+08:00"}
+{"level":"info","msg":"client address: [::1]:44846\n","time":"2023-02-22T22:42:52+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T22:42:52+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T22:42:52+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:action_type:2}\n","time":"2023-02-22T22:42:54+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T22:42:54+08:00"}
+{"level":"info","msg":"client address: [::1]:44846\n","time":"2023-02-22T22:42:54+08:00"}
+{"level":"info","msg":"update data failed","time":"2023-02-22T22:42:54+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10203 status_msg:\"FavoriteAction failed\"}}\n","time":"2023-02-22T22:42:54+08:00"}
+{"level":"warning","msg":"KITEX: signal connection closing error:protobuf just support 'framed' trans proto[::]:13126=\u003e[::1]:44846","time":"2023-02-22T22:44:06+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:13126","time":"2023-02-22T22:44:15+08:00"}
+{"level":"info","msg":"start keepalive lease 694d867853676120 for etcd registry","time":"2023-02-22T22:44:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T22:44:30+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T22:44:30+08:00"}
+{"level":"info","msg":"client address: [::1]:47410\n","time":"2023-02-22T22:44:30+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T22:44:30+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T22:44:30+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:action_type:1}\n","time":"2023-02-22T22:44:32+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T22:44:32+08:00"}
+{"level":"info","msg":"client address: [::1]:47410\n","time":"2023-02-22T22:44:32+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-22T22:44:32+08:00"}
+{"level":"warning","msg":"KITEX: signal connection closing error:protobuf just support 'framed' trans proto[::]:13126=\u003e[::1]:47410","time":"2023-02-22T22:47:32+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:13126","time":"2023-02-22T22:47:38+08:00"}
+{"level":"info","msg":"start keepalive lease 694d867853676139 for etcd registry","time":"2023-02-22T22:47:39+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-22T22:47:53+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T22:47:53+08:00"}
+{"level":"info","msg":"client address: [::1]:59116\n","time":"2023-02-22T22:47:53+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T22:47:53+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T22:47:53+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:action_type:2}\n","time":"2023-02-22T22:47:55+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T22:47:55+08:00"}
+{"level":"info","msg":"client address: [::1]:59116\n","time":"2023-02-22T22:47:55+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-22T22:47:55+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:action_type:2}\n","time":"2023-02-22T22:48:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T22:48:03+08:00"}
+{"level":"info","msg":"client address: [::1]:59116\n","time":"2023-02-22T22:48:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-22T22:48:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:action_type:2}\n","time":"2023-02-22T22:48:11+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T22:48:11+08:00"}
+{"level":"info","msg":"client address: [::1]:59116\n","time":"2023-02-22T22:48:11+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-22T22:48:11+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:action_type:2}\n","time":"2023-02-22T22:48:13+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T22:48:13+08:00"}
+{"level":"info","msg":"client address: [::1]:59116\n","time":"2023-02-22T22:48:13+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-22T22:48:13+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:action_type:2}\n","time":"2023-02-22T22:48:14+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T22:48:14+08:00"}
+{"level":"info","msg":"client address: [::1]:59116\n","time":"2023-02-22T22:48:14+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-22T22:48:14+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:action_type:2}\n","time":"2023-02-22T22:48:15+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T22:48:15+08:00"}
+{"level":"info","msg":"client address: [::1]:59116\n","time":"2023-02-22T22:48:15+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-22T22:48:15+08:00"}
+{"level":"warning","msg":"KITEX: signal connection closing error:protobuf just support 'framed' trans proto[::]:13126=\u003e[::1]:59116","time":"2023-02-22T22:48:34+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:13126","time":"2023-02-22T22:48:38+08:00"}
+{"level":"info","msg":"start keepalive lease 694d867853676156 for etcd registry","time":"2023-02-22T22:48:39+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T22:48:45+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T22:48:45+08:00"}
+{"level":"info","msg":"client address: [::1]:50144\n","time":"2023-02-22T22:48:45+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T22:48:45+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T22:48:45+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:action_type:1}\n","time":"2023-02-22T22:48:46+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T22:48:46+08:00"}
+{"level":"info","msg":"client address: [::1]:50144\n","time":"2023-02-22T22:48:46+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-22T22:48:46+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:action_type:1}\n","time":"2023-02-22T22:48:49+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T22:48:49+08:00"}
+{"level":"info","msg":"client address: [::1]:50144\n","time":"2023-02-22T22:48:49+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-22T22:48:49+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-22T22:48:53+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T22:48:53+08:00"}
+{"level":"info","msg":"client address: [::1]:50144\n","time":"2023-02-22T22:48:53+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T22:48:53+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T22:48:53+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:action_type:2}\n","time":"2023-02-22T22:48:54+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T22:48:54+08:00"}
+{"level":"info","msg":"client address: [::1]:50144\n","time":"2023-02-22T22:48:54+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-22T22:48:54+08:00"}
+{"level":"warning","msg":"KITEX: signal connection closing error:protobuf just support 'framed' trans proto[::]:13126=\u003e[::1]:50144","time":"2023-02-22T22:52:36+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:13126","time":"2023-02-22T22:58:50+08:00"}
+{"level":"info","msg":"start keepalive lease 694d867853676176 for etcd registry","time":"2023-02-22T22:58:51+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T22:58:55+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T22:58:55+08:00"}
+{"level":"info","msg":"client address: [::1]:36102\n","time":"2023-02-22T22:58:55+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T22:58:55+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T22:58:55+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:action_type:1}\n","time":"2023-02-22T22:59:18+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T22:59:18+08:00"}
+{"level":"info","msg":"client address: [::1]:36102\n","time":"2023-02-22T22:59:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-22T22:59:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-22T22:59:29+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T22:59:29+08:00"}
+{"level":"info","msg":"client address: [::1]:36102\n","time":"2023-02-22T22:59:29+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T22:59:29+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T22:59:29+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:action_type:2}\n","time":"2023-02-22T22:59:30+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T22:59:30+08:00"}
+{"level":"info","msg":"client address: [::1]:36102\n","time":"2023-02-22T22:59:30+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-22T22:59:30+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T22:59:35+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T22:59:35+08:00"}
+{"level":"info","msg":"client address: [::1]:36102\n","time":"2023-02-22T22:59:35+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T22:59:35+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T22:59:35+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-22T22:59:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T22:59:36+08:00"}
+{"level":"info","msg":"client address: [::1]:36102\n","time":"2023-02-22T22:59:36+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T22:59:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T22:59:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T22:59:50+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T22:59:50+08:00"}
+{"level":"info","msg":"client address: [::1]:36102\n","time":"2023-02-22T22:59:50+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T22:59:50+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T22:59:50+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T22:59:52+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T22:59:52+08:00"}
+{"level":"info","msg":"client address: [::1]:36102\n","time":"2023-02-22T22:59:52+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T22:59:52+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T22:59:52+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T22:59:52+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T22:59:52+08:00"}
+{"level":"info","msg":"client address: [::1]:36102\n","time":"2023-02-22T22:59:52+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T22:59:52+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T22:59:52+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-22T22:59:53+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T22:59:53+08:00"}
+{"level":"info","msg":"client address: [::1]:36102\n","time":"2023-02-22T22:59:53+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T22:59:53+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T22:59:53+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-22T23:00:09+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:00:09+08:00"}
+{"level":"info","msg":"client address: [::1]:36102\n","time":"2023-02-22T23:00:09+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:00:09+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:00:09+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T23:00:13+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:00:13+08:00"}
+{"level":"info","msg":"client address: [::1]:36102\n","time":"2023-02-22T23:00:13+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:00:13+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:00:13+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T23:00:15+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:00:15+08:00"}
+{"level":"info","msg":"client address: [::1]:36102\n","time":"2023-02-22T23:00:15+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:00:15+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:00:15+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:action_type:3}\n","time":"2023-02-22T23:00:16+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T23:00:16+08:00"}
+{"level":"info","msg":"client address: [::1]:36102\n","time":"2023-02-22T23:00:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10201 status_msg:\"FavoriteActionType is wrong\"}}\n","time":"2023-02-22T23:00:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-22T23:00:19+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:00:19+08:00"}
+{"level":"info","msg":"client address: [::1]:36102\n","time":"2023-02-22T23:00:19+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:00:19+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:00:19+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:action_type:2}\n","time":"2023-02-22T23:00:20+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T23:00:20+08:00"}
+{"level":"info","msg":"client address: [::1]:36102\n","time":"2023-02-22T23:00:20+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-22T23:00:20+08:00"}
+{"level":"warning","msg":"KITEX: signal connection closing error:protobuf just support 'framed' trans proto[::]:13126=\u003e[::1]:36102","time":"2023-02-22T23:02:10+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:13126","time":"2023-02-22T23:04:32+08:00"}
+{"level":"info","msg":"start keepalive lease 694d8678536761d1 for etcd registry","time":"2023-02-22T23:04:33+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T23:04:35+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:04:35+08:00"}
+{"level":"info","msg":"client address: [::1]:51878\n","time":"2023-02-22T23:04:35+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:04:35+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202  status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:04:35+08:00"}
+{"level":"warning","msg":"KITEX: signal connection closing error:protobuf just support 'framed' trans proto[::]:13126=\u003e[::1]:51878","time":"2023-02-22T23:07:56+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:13126","time":"2023-02-22T23:08:02+08:00"}
+{"level":"info","msg":"start keepalive lease 694d8678536761eb for etcd registry","time":"2023-02-22T23:08:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T23:08:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:08:05+08:00"}
+{"level":"info","msg":"client address: [::1]:49048\n","time":"2023-02-22T23:08:05+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:08:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:08:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-22T23:08:19+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:08:19+08:00"}
+{"level":"info","msg":"client address: [::1]:49048\n","time":"2023-02-22T23:08:19+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:08:19+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:08:19+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:action_type:2}\n","time":"2023-02-22T23:08:21+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T23:08:21+08:00"}
+{"level":"info","msg":"client address: [::1]:49048\n","time":"2023-02-22T23:08:21+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-22T23:08:21+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T23:08:23+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:08:23+08:00"}
+{"level":"info","msg":"client address: [::1]:49048\n","time":"2023-02-22T23:08:23+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:08:23+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:08:23+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:action_type:1}\n","time":"2023-02-22T23:08:24+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T23:08:24+08:00"}
+{"level":"info","msg":"client address: [::1]:49048\n","time":"2023-02-22T23:08:24+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-22T23:08:24+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T23:14:37+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:14:37+08:00"}
+{"level":"info","msg":"client address: [::1]:48540\n","time":"2023-02-22T23:14:37+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:14:37+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:14:37+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2 video_id:3 action_type:1}\n","time":"2023-02-22T23:14:38+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T23:14:38+08:00"}
+{"level":"info","msg":"client address: [::1]:48540\n","time":"2023-02-22T23:14:38+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-22T23:14:38+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-22T23:14:48+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:14:48+08:00"}
+{"level":"info","msg":"client address: [::1]:48540\n","time":"2023-02-22T23:14:48+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:14:48+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202 status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:14:48+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2 video_id:2 action_type:1}\n","time":"2023-02-22T23:14:50+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T23:14:50+08:00"}
+{"level":"info","msg":"client address: [::1]:48540\n","time":"2023-02-22T23:14:50+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-22T23:14:50+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2 video_id:2 action_type:2}\n","time":"2023-02-22T23:15:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T23:15:05+08:00"}
+{"level":"info","msg":"client address: [::1]:48540\n","time":"2023-02-22T23:15:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-22T23:15:05+08:00"}
+{"level":"warning","msg":"KITEX: signal connection closing error:protobuf just support 'framed' trans proto[::]:13126=\u003e[::1]:48540","time":"2023-02-22T23:22:05+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:13126","time":"2023-02-22T23:22:10+08:00"}
+{"level":"info","msg":"start keepalive lease 694d867853676236 for etcd registry","time":"2023-02-22T23:22:12+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T23:22:15+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:22:15+08:00"}
+{"level":"info","msg":"client address: [::1]:37644\n","time":"2023-02-22T23:22:15+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:22:15+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202  status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:22:15+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2  video_id:1  action_type:1}\n","time":"2023-02-22T23:22:20+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T23:22:20+08:00"}
+{"level":"info","msg":"client address: [::1]:37644\n","time":"2023-02-22T23:22:20+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-22T23:22:20+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2  video_id:1  action_type:2}\n","time":"2023-02-22T23:22:22+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-22T23:22:22+08:00"}
+{"level":"info","msg":"client address: [::1]:37644\n","time":"2023-02-22T23:22:22+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-22T23:22:22+08:00"}
+{"level":"warning","msg":"KITEX: signal connection closing error:protobuf just support 'framed' trans proto[::]:13126=\u003e[::1]:37644","time":"2023-02-22T23:22:39+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:13126","time":"2023-02-22T23:22:45+08:00"}
+{"level":"info","msg":"start keepalive lease 694d86785367624d for etcd registry","time":"2023-02-22T23:22:46+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T23:22:53+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:22:53+08:00"}
+{"level":"info","msg":"client address: [::1]:59378\n","time":"2023-02-22T23:22:53+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:22:53+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202  status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:22:53+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T23:22:55+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:22:55+08:00"}
+{"level":"info","msg":"client address: [::1]:59378\n","time":"2023-02-22T23:22:55+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:22:55+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202  status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:22:55+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T23:22:57+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:22:57+08:00"}
+{"level":"info","msg":"client address: [::1]:59378\n","time":"2023-02-22T23:22:57+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:22:57+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202  status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:22:57+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-22T23:23:13+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:23:13+08:00"}
+{"level":"info","msg":"client address: [::1]:59378\n","time":"2023-02-22T23:23:13+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:23:13+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202  status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:23:13+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-22T23:24:08+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:24:08+08:00"}
+{"level":"info","msg":"client address: [::1]:59378\n","time":"2023-02-22T23:24:08+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:24:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202  status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:24:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T23:24:09+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:24:09+08:00"}
+{"level":"info","msg":"client address: [::1]:59378\n","time":"2023-02-22T23:24:09+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:24:09+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202  status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:24:09+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T23:24:10+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:24:10+08:00"}
+{"level":"info","msg":"client address: [::1]:59378\n","time":"2023-02-22T23:24:10+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:24:10+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202  status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:24:10+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T23:24:11+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:24:11+08:00"}
+{"level":"info","msg":"client address: [::1]:59378\n","time":"2023-02-22T23:24:11+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:24:11+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202  status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:24:11+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T23:24:11+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:24:11+08:00"}
+{"level":"info","msg":"client address: [::1]:59378\n","time":"2023-02-22T23:24:11+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:24:11+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202  status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:24:11+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-22T23:24:13+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-22T23:24:13+08:00"}
+{"level":"info","msg":"client address: [::1]:59378\n","time":"2023-02-22T23:24:13+08:00"}
+{"level":"info","msg":"invalid field found for struct github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer.Video's field Author: define a valid foreign key for relations or implement the Valuer/Scanner interface","time":"2023-02-22T23:24:13+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_code:10202  status_msg:\"Favorite not exist\"}}\n","time":"2023-02-22T23:24:13+08:00"}
+{"level":"warning","msg":"KITEX: signal connection closing error:protobuf just support 'framed' trans proto[::]:13126=\u003e[::1]:59378","time":"2023-02-22T23:27:10+08:00"}

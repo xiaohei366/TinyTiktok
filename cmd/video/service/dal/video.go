@@ -58,3 +58,17 @@ func MGetUserVideos(ctx context.Context, userId int64) ([]*db.Video, error) {
 	}
 	return videosList, nil
 }
+
+// GetVideosByVideosId
+func GetVideosByVideosId(ctx context.Context, videoId int64) (*db.Video, error) {
+	var video *db.Video
+	res := db.DB.Where(&db.BaseModel{ID: videoId}).Find(&video)
+	if res.RowsAffected == 0 {
+		return nil, kerrors.NewBizStatusError(404, "videos not exist")
+	}
+	//klog.Info("find db res:", res)
+	if res.Error != nil {
+		return nil, res.Error
+	}
+	return video, nil
+}

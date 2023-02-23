@@ -14,6 +14,7 @@ type Client interface {
 	Feed(ctx context.Context, Req *VideoServer.DouyinFeedRequest, callOptions ...callopt.Option) (r *VideoServer.DouyinFeedResponse, err error)
 	PublishAction(ctx context.Context, Req *VideoServer.DouyinPublishActionRequest, callOptions ...callopt.Option) (r *VideoServer.DouyinPublishActionResponse, err error)
 	PublishList(ctx context.Context, Req *VideoServer.DouyinPublishListRequest, callOptions ...callopt.Option) (r *VideoServer.DouyinPublishListResponse, err error)
+	GetVideoListByVideoId(ctx context.Context, Req *VideoServer.DouyinVideoListByVideoId, callOptions ...callopt.Option) (r *VideoServer.DouyinPublishListResponse, err error)
 }
 
 // NewClient creates a client for the service defined in IDL.
@@ -58,4 +59,9 @@ func (p *kVideoSrvClient) PublishAction(ctx context.Context, Req *VideoServer.Do
 func (p *kVideoSrvClient) PublishList(ctx context.Context, Req *VideoServer.DouyinPublishListRequest, callOptions ...callopt.Option) (r *VideoServer.DouyinPublishListResponse, err error) {
 	ctx = client.NewCtxWithCallOptions(ctx, callOptions)
 	return p.kClient.PublishList(ctx, Req)
+}
+
+func (p *kVideoSrvClient) GetVideoListByVideoId(ctx context.Context, Req *VideoServer.DouyinVideoListByVideoId, callOptions ...callopt.Option) (r *VideoServer.DouyinPublishListResponse, err error) {
+	ctx = client.NewCtxWithCallOptions(ctx, callOptions)
+	return p.kClient.GetVideoListByVideoId(ctx, Req)
 }

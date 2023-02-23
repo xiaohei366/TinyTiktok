@@ -11,6 +11,12 @@ service VideoSrv{
   rpc PublishAction(douyin_publish_action_request) returns (douyin_publish_action_response);//视频投稿
 
   rpc PublishList(douyin_publish_list_request)returns(douyin_publish_list_response);//查询用户投稿的视频列表。
+
+  rpc GetVideoListByVideoId(douyin_video_list_by_video_id)returns(douyin_publish_list_response); //用视频Id查询视频
+}
+message douyin_video_list_by_video_id{
+  repeated int64 video_id = 1;// 视频id
+  int64 user_id =2; // 用户id
 }
 
 message douyin_feed_request{

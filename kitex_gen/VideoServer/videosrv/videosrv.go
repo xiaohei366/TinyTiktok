@@ -22,9 +22,10 @@ func NewServiceInfo() *kitex.ServiceInfo {
 	serviceName := "VideoSrv"
 	handlerType := (*VideoServer.VideoSrv)(nil)
 	methods := map[string]kitex.MethodInfo{
-		"Feed":          kitex.NewMethodInfo(feedHandler, newFeedArgs, newFeedResult, false),
-		"PublishAction": kitex.NewMethodInfo(publishActionHandler, newPublishActionArgs, newPublishActionResult, false),
-		"PublishList":   kitex.NewMethodInfo(publishListHandler, newPublishListArgs, newPublishListResult, false),
+		"Feed":                  kitex.NewMethodInfo(feedHandler, newFeedArgs, newFeedResult, false),
+		"PublishAction":         kitex.NewMethodInfo(publishActionHandler, newPublishActionArgs, newPublishActionResult, false),
+		"PublishList":           kitex.NewMethodInfo(publishListHandler, newPublishListArgs, newPublishListResult, false),
+		"GetVideoListByVideoId": kitex.NewMethodInfo(getVideoListByVideoIdHandler, newGetVideoListByVideoIdArgs, newGetVideoListByVideoIdResult, false),
 	}
 	extra := map[string]interface{}{
 		"PackageName": "VideoServer",
@@ -475,6 +476,151 @@ func (p *PublishListResult) IsSetSuccess() bool {
 	return p.Success != nil
 }
 
+func getVideoListByVideoIdHandler(ctx context.Context, handler interface{}, arg, result interface{}) error {
+	switch s := arg.(type) {
+	case *streaming.Args:
+		st := s.Stream
+		req := new(VideoServer.DouyinVideoListByVideoId)
+		if err := st.RecvMsg(req); err != nil {
+			return err
+		}
+		resp, err := handler.(VideoServer.VideoSrv).GetVideoListByVideoId(ctx, req)
+		if err != nil {
+			return err
+		}
+		if err := st.SendMsg(resp); err != nil {
+			return err
+		}
+	case *GetVideoListByVideoIdArgs:
+		success, err := handler.(VideoServer.VideoSrv).GetVideoListByVideoId(ctx, s.Req)
+		if err != nil {
+			return err
+		}
+		realResult := result.(*GetVideoListByVideoIdResult)
+		realResult.Success = success
+	}
+	return nil
+}
+func newGetVideoListByVideoIdArgs() interface{} {
+	return &GetVideoListByVideoIdArgs{}
+}
+
+func newGetVideoListByVideoIdResult() interface{} {
+	return &GetVideoListByVideoIdResult{}
+}
+
+type GetVideoListByVideoIdArgs struct {
+	Req *VideoServer.DouyinVideoListByVideoId
+}
+
+func (p *GetVideoListByVideoIdArgs) FastRead(buf []byte, _type int8, number int32) (n int, err error) {
+	if !p.IsSetReq() {
+		p.Req = new(VideoServer.DouyinVideoListByVideoId)
+	}
+	return p.Req.FastRead(buf, _type, number)
+}
+
+func (p *GetVideoListByVideoIdArgs) FastWrite(buf []byte) (n int) {
+	if !p.IsSetReq() {
+		return 0
+	}
+	return p.Req.FastWrite(buf)
+}
+
+func (p *GetVideoListByVideoIdArgs) Size() (n int) {
+	if !p.IsSetReq() {
+		return 0
+	}
+	return p.Req.Size()
+}
+
+func (p *GetVideoListByVideoIdArgs) Marshal(out []byte) ([]byte, error) {
+	if !p.IsSetReq() {
+		return out, fmt.Errorf("No req in GetVideoListByVideoIdArgs")
+	}
+	return proto.Marshal(p.Req)
+}
+
+func (p *GetVideoListByVideoIdArgs) Unmarshal(in []byte) error {
+	msg := new(VideoServer.DouyinVideoListByVideoId)
+	if err := proto.Unmarshal(in, msg); err != nil {
+		return err
+	}
+	p.Req = msg
+	return nil
+}
+
+var GetVideoListByVideoIdArgs_Req_DEFAULT *VideoServer.DouyinVideoListByVideoId
+
+func (p *GetVideoListByVideoIdArgs) GetReq() *VideoServer.DouyinVideoListByVideoId {
+	if !p.IsSetReq() {
+		return GetVideoListByVideoIdArgs_Req_DEFAULT
+	}
+	return p.Req
+}
+
+func (p *GetVideoListByVideoIdArgs) IsSetReq() bool {
+	return p.Req != nil
+}
+
+type GetVideoListByVideoIdResult struct {
+	Success *VideoServer.DouyinPublishListResponse
+}
+
+var GetVideoListByVideoIdResult_Success_DEFAULT *VideoServer.DouyinPublishListResponse
+
+func (p *GetVideoListByVideoIdResult) FastRead(buf []byte, _type int8, number int32) (n int, err error) {
+	if !p.IsSetSuccess() {
+		p.Success = new(VideoServer.DouyinPublishListResponse)
+	}
+	return p.Success.FastRead(buf, _type, number)
+}
+
+func (p *GetVideoListByVideoIdResult) FastWrite(buf []byte) (n int) {
+	if !p.IsSetSuccess() {
+		return 0
+	}
+	return p.Success.FastWrite(buf)
+}
+
+func (p *GetVideoListByVideoIdResult) Size() (n int) {
+	if !p.IsSetSuccess() {
+		return 0
+	}
+	return p.Success.Size()
+}
+
+func (p *GetVideoListByVideoIdResult) Marshal(out []byte) ([]byte, error) {
+	if !p.IsSetSuccess() {
+		return out, fmt.Errorf("No req in GetVideoListByVideoIdResult")
+	}
+	return proto.Marshal(p.Success)
+}
+
+func (p *GetVideoListByVideoIdResult) Unmarshal(in []byte) error {
+	msg := new(VideoServer.DouyinPublishListResponse)
+	if err := proto.Unmarshal(in, msg); err != nil {
+		return err
+	}
+	p.Success = msg
+	return nil
+}
+
+func (p *GetVideoListByVideoIdResult) GetSuccess() *VideoServer.DouyinPublishListResponse {
+	if !p.IsSetSuccess() {
+		return GetVideoListByVideoIdResult_Success_DEFAULT
+	}
+	return p.Success
+}
+
+func (p *GetVideoListByVideoIdResult) SetSuccess(x interface{}) {
+	p.Success = x.(*VideoServer.DouyinPublishListResponse)
+}
+
+func (p *GetVideoListByVideoIdResult) IsSetSuccess() bool {
+	return p.Success != nil
+}
+
 type kClient struct {
 	c client.Client
 }
@@ -510,6 +656,16 @@ func (p *kClient) PublishList(ctx context.Context, Req *VideoServer.DouyinPublis
 	_args.Req = Req
 	var _result PublishListResult
 	if err = p.c.Call(ctx, "PublishList", &_args, &_result); err != nil {
+		return
+	}
+	return _result.GetSuccess(), nil
+}
+
+func (p *kClient) GetVideoListByVideoId(ctx context.Context, Req *VideoServer.DouyinVideoListByVideoId) (r *VideoServer.DouyinPublishListResponse, err error) {
+	var _args GetVideoListByVideoIdArgs
+	_args.Req = Req
+	var _result GetVideoListByVideoIdResult
+	if err = p.c.Call(ctx, "GetVideoListByVideoId", &_args, &_result); err != nil {
 		return
 	}
 	return _result.GetSuccess(), nil

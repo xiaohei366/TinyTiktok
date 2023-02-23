@@ -121,5 +121,6 @@ func PublishList(ctx context.Context, c *app.RequestContext) {
 	if err != nil {
 		pack.SendFeedResponse(c, errno.ConvertErr(err), nil)
 	}
+
 	pack.SendFeedResponse(c, errno.Success, resp) //这个只有测试才知道对不对
 }

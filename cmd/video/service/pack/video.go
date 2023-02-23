@@ -8,6 +8,7 @@ import (
 
 // Video pack feed info
 func VideoInfo(v *db.Video, author *UserServer.User, isFol bool) *VideoServer.Video {
+	//明天这个地方是要优化的，拿Favcount和ComCount
 	return &VideoServer.Video{
 		Id: v.BaseModel.ID,
 		Author: &VideoServer.User{
@@ -30,7 +31,6 @@ func VideoList(vs []*db.Video, authors []*UserServer.User, relation []bool) []*V
 	videos := make([]*VideoServer.Video, 0)
 	for i, v := range vs {
 		video2 := VideoInfo(v, authors[i], relation[i])
-		//todo is fav
 		if video2 != nil {
 			videos = append(videos, video2)
 		}

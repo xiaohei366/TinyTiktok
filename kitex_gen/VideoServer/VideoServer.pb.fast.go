@@ -12,6 +12,50 @@ var (
 	_ = fastpb.Skip
 )
 
+func (x *DouyinVideoListByVideoId) FastRead(buf []byte, _type int8, number int32) (offset int, err error) {
+	switch number {
+	case 1:
+		offset, err = x.fastReadField1(buf, _type)
+		if err != nil {
+			goto ReadFieldError
+		}
+	case 2:
+		offset, err = x.fastReadField2(buf, _type)
+		if err != nil {
+			goto ReadFieldError
+		}
+	default:
+		offset, err = fastpb.Skip(buf, _type, number)
+		if err != nil {
+			goto SkipFieldError
+		}
+	}
+	return offset, nil
+SkipFieldError:
+	return offset, fmt.Errorf("%T cannot parse invalid wire-format data, error: %s", x, err)
+ReadFieldError:
+	return offset, fmt.Errorf("%T read field %d '%s' error: %s", x, number, fieldIDToName_DouyinVideoListByVideoId[number], err)
+}
+
+func (x *DouyinVideoListByVideoId) fastReadField1(buf []byte, _type int8) (offset int, err error) {
+	offset, err = fastpb.ReadList(buf, _type,
+		func(buf []byte, _type int8) (n int, err error) {
+			var v int64
+			v, offset, err = fastpb.ReadInt64(buf, _type)
+			if err != nil {
+				return offset, err
+			}
+			x.VideoId = append(x.VideoId, v)
+			return offset, err
+		})
+	return offset, err
+}
+
+func (x *DouyinVideoListByVideoId) fastReadField2(buf []byte, _type int8) (offset int, err error) {
+	x.UserId, offset, err = fastpb.ReadInt64(buf, _type)
+	return offset, err
+}
+
 func (x *DouyinFeedRequest) FastRead(buf []byte, _type int8, number int32) (offset int, err error) {
 	switch number {
 	case 1:
@@ -467,6 +511,36 @@ func (x *DouyinPublishListResponse) fastReadField2(buf []byte, _type int8) (offs
 	return offset, nil
 }
 
+func (x *DouyinVideoListByVideoId) FastWrite(buf []byte) (offset int) {
+	if x == nil {
+		return offset
+	}
+	offset += x.fastWriteField1(buf[offset:])
+	offset += x.fastWriteField2(buf[offset:])
+	return offset
+}
+
+func (x *DouyinVideoListByVideoId) fastWriteField1(buf []byte) (offset int) {
+	if len(x.VideoId) == 0 {
+		return offset
+	}
+	offset += fastpb.WriteListPacked(buf[offset:], 1, len(x.VideoId),
+		func(buf []byte, numTagOrKey, numIdxOrVal int32) int {
+			offset := 0
+			offset += fastpb.WriteInt64(buf[offset:], numTagOrKey, x.VideoId[numIdxOrVal])
+			return offset
+		})
+	return offset
+}
+
+func (x *DouyinVideoListByVideoId) fastWriteField2(buf []byte) (offset int) {
+	if x.UserId == 0 {
+		return offset
+	}
+	offset += fastpb.WriteInt64(buf[offset:], 2, x.UserId)
+	return offset
+}
+
 func (x *DouyinFeedRequest) FastWrite(buf []byte) (offset int) {
 	if x == nil {
 		return offset
@@ -795,6 +869,36 @@ func (x *DouyinPublishListResponse) fastWriteField2(buf []byte) (offset int) {
 	return offset
 }
 
+func (x *DouyinVideoListByVideoId) Size() (n int) {
+	if x == nil {
+		return n
+	}
+	n += x.sizeField1()
+	n += x.sizeField2()
+	return n
+}
+
+func (x *DouyinVideoListByVideoId) sizeField1() (n int) {
+	if len(x.VideoId) == 0 {
+		return n
+	}
+	n += fastpb.SizeListPacked(1, len(x.VideoId),
+		func(numTagOrKey, numIdxOrVal int32) int {
+			n := 0
+			n += fastpb.SizeInt64(numTagOrKey, x.VideoId[numIdxOrVal])
+			return n
+		})
+	return n
+}
+
+func (x *DouyinVideoListByVideoId) sizeField2() (n int) {
+	if x.UserId == 0 {
+		return n
+	}
+	n += fastpb.SizeInt64(2, x.UserId)
+	return n
+}
+
 func (x *DouyinFeedRequest) Size() (n int) {
 	if x == nil {
 		return n
@@ -1121,6 +1225,11 @@ func (x *DouyinPublishListResponse) sizeField2() (n int) {
 		n += fastpb.SizeMessage(2, x.VideoList[i])
 	}
 	return n
+}
+
+var fieldIDToName_DouyinVideoListByVideoId = map[int32]string{
+	1: "VideoId",
+	2: "UserId",
 }
 
 var fieldIDToName_DouyinFeedRequest = map[int32]string{

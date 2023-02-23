@@ -10,19 +10,19 @@ message User {
   int64 follow_count = 3; // 关注总数--可选
   int64 follower_count = 4; // 粉丝总数--可选
   bool is_follow = 5; // true-已关注，false-未关注
-  int64 TotalFavorited = 6; // 被赞的总次数
-  int64 FavoriteCount = 7; // 喜欢总数量
+  int64 total_be_favorite = 6; // 被赞的总次数
+  int64 favorite_count = 7; // 喜欢总数量
 }
 
 message Video {
-  int64 id = 1; // 视频唯一标识
-  User author = 2; // 视频作者信息
-  string play_url = 3; // 视频播放地址
-  string cover_url = 4; // 视频封面地址
-  int64 favorite_count = 5; // 视频的点赞总数
+  int64 id = 1;
+  User author = 2;
+  string play_url = 3;
+  string cover_url = 4;
+  int64 favorite_count = 5;
   int64 comment_count = 6; // 视频的评论总数
-  bool is_favorite = 7; // true-已点赞，false-未点赞
-  string title = 8; // 视频标题:
+  bool is_favorite = 7;
+  string title =8;
 }
 
 message BaseResp {
@@ -32,9 +32,9 @@ message BaseResp {
 
 // 点赞/取消赞
 message DouyinFavoriteActionRequest {
-  int64 id = 1; // 用户id
-  int64 videoId = 3; // 视频id
-  int32 action_type = 4; // 1-点赞，2-取消点赞
+  int64 user_id = 1; // 用户id
+  int64 video_id = 2; // 视频id
+  int32 action_type = 3; // 1-点赞，2-取消点赞
 }
 
 message DouyinFavoriteActionResponse {
@@ -57,8 +57,8 @@ message DouyinUserFavoriteRequest {
 
 message DouyinUserFavoriteResponse {
   BaseResp base_resp = 1;
-  int64 TotalFavorited = 2; // 被赞的总次数
-  int64 FavoriteCount = 3; // 喜欢总数量
+  int64 total_be_favorite = 2; // 被赞的总次数
+  int64 favorite_count = 3; // 喜欢总数量
 }
 
 message DouyinVideoFavoriteRequest {

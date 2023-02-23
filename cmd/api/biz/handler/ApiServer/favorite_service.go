@@ -6,23 +6,29 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/handler/pack"
-	api "github.com/xiaohei366/TinyTiktok/cmd/api/biz/model/ApiServer"
+	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/model/ApiServer"
 	"github.com/xiaohei366/TinyTiktok/cmd/api/biz/rpc"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer"
+	"github.com/xiaohei366/TinyTiktok/pkg/errno"
+	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 )
 
 // FavoriteAction .
 // @router /douyin/favorite/action/ [POST]
 func FavoriteAction(ctx context.Context, c *app.RequestContext) {
 	var err error
-	var req api.DouyinFavoriteActionRequest
+	var req ApiServer.DouyinFavoriteActionRequest
 	err = c.Bind(&req)
 	if err != nil {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
-	fmt.Println("req:", req.ActionType, req.VideoId)
+	fmt.Println("api req:", req.ActionType, req.VideoId)
+
+	user, _ := c.Get(shared.IdentityKey)
+
 	resp, err := rpc.FavoriteAction(ctx, &FavoriteServer.DouyinFavoriteActionRequest{
+		UserId:     user.(*ApiServer.User).Id,
 		VideoId:    req.VideoId,
 		ActionType: req.ActionType,
 	})
@@ -38,20 +44,21 @@ func FavoriteAction(ctx context.Context, c *app.RequestContext) {
 // @router /douyin/favorite/list/ [GET]
 func FavoriteList(ctx context.Context, c *app.RequestContext) {
 	var err error
-	var req api.DouyinFavoriteListRequest
+	var req ApiServer.DouyinFavoriteListRequest
 	err = c.Bind(&req)
 	if err != nil {
-		c.String(consts.StatusBadRequest, err.Error())
+		pack.SendFavoriteListResponse(c, errno.ConvertErr(err), nil)
 		return
 	}
-
+	fmt.Println("api Fav List : ", req.UserId)
 	resp, err := rpc.GetFavoriteList(ctx, &FavoriteServer.DouyinFavoriteListRequest{
 		UserId: req.UserId,
 	})
+	fmt.Println("resp:")
 	if err != nil {
-		pack.SendFavoriteListResponse(c, err)
+		pack.SendFavoriteListResponse(c, errno.ConvertErr(err), nil)
 		return
 	}
-
-	pack.SendFavoriteListResponse(c, resp)
+	fmt.Println("api action list :", resp)
+	pack.SendFavoriteListResponse(c, errno.Success, resp)
 }

@@ -3,10 +3,11 @@ package pack
 import (
 	"errors"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/FavoriteServer"
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
 
-//报文的封装
+// 报文的封装
 func favoriteActionResp(err errno.ErrNo) *FavoriteServer.DouyinFavoriteActionResponse {
 	resp := new(FavoriteServer.DouyinFavoriteActionResponse)
 	resp.BaseResp = &FavoriteServer.BaseResp{
@@ -33,7 +34,7 @@ func favoriteUserQueryResp(err errno.ErrNo, TotalFavorited int64, FavoriteCount 
 		StatusCode: err.ErrCode,
 		StatusMsg:  err.ErrMsg,
 	}
-	resp.TotalFavorited = TotalFavorited
+	resp.TotalBeFavorite = TotalFavorited
 	resp.FavoriteCount = FavoriteCount
 	return resp
 }
@@ -45,10 +46,11 @@ func getFavoriteListResp(err errno.ErrNo, videos []*FavoriteServer.Video) *Favor
 		StatusMsg:  err.ErrMsg,
 	}
 	resp.VideoList = videos
+
 	return resp
 }
 
-//报文的封装过程
+// 报文的封装过程
 func BuildfavoriteActionResp(err error) *FavoriteServer.DouyinFavoriteActionResponse {
 	if err == nil {
 		return favoriteActionResp(errno.Success)
@@ -89,6 +91,7 @@ func BuildfavoriteUserQueryResp(err error, TotalFavorited int64, FavoriteCount i
 
 	s := errno.ServiceErr.WithMessage(err.Error())
 	return favoriteUserQueryResp(s, TotalFavorited, FavoriteCount)
+
 }
 
 func BuildgetFavoriteListResp(err error, videos []*FavoriteServer.Video) *FavoriteServer.DouyinFavoriteListResponse {
@@ -103,4 +106,29 @@ func BuildgetFavoriteListResp(err error, videos []*FavoriteServer.Video) *Favori
 
 	s := errno.ServiceErr.WithMessage(err.Error())
 	return getFavoriteListResp(s, nil)
+}
+
+func ConvertVideos(videos []*VideoServer.Video) []*FavoriteServer.Video {
+	videosList := make([]*FavoriteServer.Video, 0)
+	for _, v := range videos {
+		videosList = append(videosList, &FavoriteServer.Video{
+			Id: v.Id,
+			Author: &FavoriteServer.User{
+				Id:            v.Author.Id,
+				Name:          v.Author.Name,
+				FollowCount:   v.Author.FollowCount,
+				FollowerCount: v.Author.FollowerCount,
+				IsFollow:      v.Author.IsFollow,
+				//TotalBeFavorite: ,//没记录这两个数的
+				//FavoriteCount: ,
+			},
+			PlayUrl:       v.PlayUrl,
+			CoverUrl:      v.CoverUrl,
+			FavoriteCount: v.FavoriteCount,
+			CommentCount:  v.CommentCount,
+			IsFavorite:    v.IsFavorite,
+			Title:         v.Title,
+		})
+	}
+	return videosList
 }

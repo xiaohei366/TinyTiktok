@@ -88,7 +88,7 @@ func (x *User) fastReadField5(buf []byte, _type int8) (offset int, err error) {
 }
 
 func (x *User) fastReadField6(buf []byte, _type int8) (offset int, err error) {
-	x.TotalFavorited, offset, err = fastpb.ReadInt64(buf, _type)
+	x.TotalBeFavorite, offset, err = fastpb.ReadInt64(buf, _type)
 	return offset, err
 }
 
@@ -239,13 +239,13 @@ func (x *DouyinFavoriteActionRequest) FastRead(buf []byte, _type int8, number in
 		if err != nil {
 			goto ReadFieldError
 		}
-	case 3:
-		offset, err = x.fastReadField3(buf, _type)
+	case 2:
+		offset, err = x.fastReadField2(buf, _type)
 		if err != nil {
 			goto ReadFieldError
 		}
-	case 4:
-		offset, err = x.fastReadField4(buf, _type)
+	case 3:
+		offset, err = x.fastReadField3(buf, _type)
 		if err != nil {
 			goto ReadFieldError
 		}
@@ -263,16 +263,16 @@ ReadFieldError:
 }
 
 func (x *DouyinFavoriteActionRequest) fastReadField1(buf []byte, _type int8) (offset int, err error) {
-	x.Id, offset, err = fastpb.ReadInt64(buf, _type)
+	x.UserId, offset, err = fastpb.ReadInt64(buf, _type)
 	return offset, err
 }
 
-func (x *DouyinFavoriteActionRequest) fastReadField3(buf []byte, _type int8) (offset int, err error) {
+func (x *DouyinFavoriteActionRequest) fastReadField2(buf []byte, _type int8) (offset int, err error) {
 	x.VideoId, offset, err = fastpb.ReadInt64(buf, _type)
 	return offset, err
 }
 
-func (x *DouyinFavoriteActionRequest) fastReadField4(buf []byte, _type int8) (offset int, err error) {
+func (x *DouyinFavoriteActionRequest) fastReadField3(buf []byte, _type int8) (offset int, err error) {
 	x.ActionType, offset, err = fastpb.ReadInt32(buf, _type)
 	return offset, err
 }
@@ -443,7 +443,7 @@ func (x *DouyinUserFavoriteResponse) fastReadField1(buf []byte, _type int8) (off
 }
 
 func (x *DouyinUserFavoriteResponse) fastReadField2(buf []byte, _type int8) (offset int, err error) {
-	x.TotalFavorited, offset, err = fastpb.ReadInt64(buf, _type)
+	x.TotalBeFavorite, offset, err = fastpb.ReadInt64(buf, _type)
 	return offset, err
 }
 
@@ -582,10 +582,10 @@ func (x *User) fastWriteField5(buf []byte) (offset int) {
 }
 
 func (x *User) fastWriteField6(buf []byte) (offset int) {
-	if x.TotalFavorited == 0 {
+	if x.TotalBeFavorite == 0 {
 		return offset
 	}
-	offset += fastpb.WriteInt64(buf[offset:], 6, x.TotalFavorited)
+	offset += fastpb.WriteInt64(buf[offset:], 6, x.TotalBeFavorite)
 	return offset
 }
 
@@ -706,32 +706,32 @@ func (x *DouyinFavoriteActionRequest) FastWrite(buf []byte) (offset int) {
 		return offset
 	}
 	offset += x.fastWriteField1(buf[offset:])
+	offset += x.fastWriteField2(buf[offset:])
 	offset += x.fastWriteField3(buf[offset:])
-	offset += x.fastWriteField4(buf[offset:])
 	return offset
 }
 
 func (x *DouyinFavoriteActionRequest) fastWriteField1(buf []byte) (offset int) {
-	if x.Id == 0 {
+	if x.UserId == 0 {
 		return offset
 	}
-	offset += fastpb.WriteInt64(buf[offset:], 1, x.Id)
+	offset += fastpb.WriteInt64(buf[offset:], 1, x.UserId)
+	return offset
+}
+
+func (x *DouyinFavoriteActionRequest) fastWriteField2(buf []byte) (offset int) {
+	if x.VideoId == 0 {
+		return offset
+	}
+	offset += fastpb.WriteInt64(buf[offset:], 2, x.VideoId)
 	return offset
 }
 
 func (x *DouyinFavoriteActionRequest) fastWriteField3(buf []byte) (offset int) {
-	if x.VideoId == 0 {
-		return offset
-	}
-	offset += fastpb.WriteInt64(buf[offset:], 3, x.VideoId)
-	return offset
-}
-
-func (x *DouyinFavoriteActionRequest) fastWriteField4(buf []byte) (offset int) {
 	if x.ActionType == 0 {
 		return offset
 	}
-	offset += fastpb.WriteInt32(buf[offset:], 4, x.ActionType)
+	offset += fastpb.WriteInt32(buf[offset:], 3, x.ActionType)
 	return offset
 }
 
@@ -829,10 +829,10 @@ func (x *DouyinUserFavoriteResponse) fastWriteField1(buf []byte) (offset int) {
 }
 
 func (x *DouyinUserFavoriteResponse) fastWriteField2(buf []byte) (offset int) {
-	if x.TotalFavorited == 0 {
+	if x.TotalBeFavorite == 0 {
 		return offset
 	}
-	offset += fastpb.WriteInt64(buf[offset:], 2, x.TotalFavorited)
+	offset += fastpb.WriteInt64(buf[offset:], 2, x.TotalBeFavorite)
 	return offset
 }
 
@@ -949,10 +949,10 @@ func (x *User) sizeField5() (n int) {
 }
 
 func (x *User) sizeField6() (n int) {
-	if x.TotalFavorited == 0 {
+	if x.TotalBeFavorite == 0 {
 		return n
 	}
-	n += fastpb.SizeInt64(6, x.TotalFavorited)
+	n += fastpb.SizeInt64(6, x.TotalBeFavorite)
 	return n
 }
 
@@ -1073,32 +1073,32 @@ func (x *DouyinFavoriteActionRequest) Size() (n int) {
 		return n
 	}
 	n += x.sizeField1()
+	n += x.sizeField2()
 	n += x.sizeField3()
-	n += x.sizeField4()
 	return n
 }
 
 func (x *DouyinFavoriteActionRequest) sizeField1() (n int) {
-	if x.Id == 0 {
+	if x.UserId == 0 {
 		return n
 	}
-	n += fastpb.SizeInt64(1, x.Id)
+	n += fastpb.SizeInt64(1, x.UserId)
+	return n
+}
+
+func (x *DouyinFavoriteActionRequest) sizeField2() (n int) {
+	if x.VideoId == 0 {
+		return n
+	}
+	n += fastpb.SizeInt64(2, x.VideoId)
 	return n
 }
 
 func (x *DouyinFavoriteActionRequest) sizeField3() (n int) {
-	if x.VideoId == 0 {
-		return n
-	}
-	n += fastpb.SizeInt64(3, x.VideoId)
-	return n
-}
-
-func (x *DouyinFavoriteActionRequest) sizeField4() (n int) {
 	if x.ActionType == 0 {
 		return n
 	}
-	n += fastpb.SizeInt32(4, x.ActionType)
+	n += fastpb.SizeInt32(3, x.ActionType)
 	return n
 }
 
@@ -1196,10 +1196,10 @@ func (x *DouyinUserFavoriteResponse) sizeField1() (n int) {
 }
 
 func (x *DouyinUserFavoriteResponse) sizeField2() (n int) {
-	if x.TotalFavorited == 0 {
+	if x.TotalBeFavorite == 0 {
 		return n
 	}
-	n += fastpb.SizeInt64(2, x.TotalFavorited)
+	n += fastpb.SizeInt64(2, x.TotalBeFavorite)
 	return n
 }
 
@@ -1267,7 +1267,7 @@ var fieldIDToName_User = map[int32]string{
 	3: "FollowCount",
 	4: "FollowerCount",
 	5: "IsFollow",
-	6: "TotalFavorited",
+	6: "TotalBeFavorite",
 	7: "FavoriteCount",
 }
 
@@ -1288,9 +1288,9 @@ var fieldIDToName_BaseResp = map[int32]string{
 }
 
 var fieldIDToName_DouyinFavoriteActionRequest = map[int32]string{
-	1: "Id",
-	3: "VideoId",
-	4: "ActionType",
+	1: "UserId",
+	2: "VideoId",
+	3: "ActionType",
 }
 
 var fieldIDToName_DouyinFavoriteActionResponse = map[int32]string{
@@ -1312,7 +1312,7 @@ var fieldIDToName_DouyinUserFavoriteRequest = map[int32]string{
 
 var fieldIDToName_DouyinUserFavoriteResponse = map[int32]string{
 	1: "BaseResp",
-	2: "TotalFavorited",
+	2: "TotalBeFavorite",
 	3: "FavoriteCount",
 }
 

@@ -42,3 +42,13 @@ func (s *VideoSrvImpl) PublishList(ctx context.Context, req *VideoServer.DouyinP
 	}
 	return pack.BuildPublishListResp(nil, userVideos), nil
 }
+
+// GetVideoListByVideoId implements the VideoSrvImpl interface.
+func (s *VideoSrvImpl) GetVideoListByVideoId(ctx context.Context, req *VideoServer.DouyinVideoListByVideoId) (resp *VideoServer.DouyinPublishListResponse, err error) {
+	// TODO: Your code here...
+	videos, err := service.NewVideoListByVideoIdService(ctx).GetVideoListByVideoId(req)
+	if err != nil {
+		return pack.BuildPublishListResp(err, videos), nil
+	}
+	return pack.BuildPublishListResp(nil, videos), nil
+}
