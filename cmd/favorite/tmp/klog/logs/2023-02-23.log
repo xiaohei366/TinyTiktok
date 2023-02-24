@@ -9111,6 +9111,7 @@
 {"level":"error","msg":"KITEX: processing request error, remoteService=, remoteAddr=[::1]:54108, error=biz error: err_code=0, err_msg=Success","span_id":"0000000000000000","time":"2023-02-23T17:09:49+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
 {"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T17:09:49+08:00"}
 {"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T17:09:49+08:00"}
+<<<<<<< HEAD
 {"level":"info","msg":"KITEX: server listen at addr=[::]:13127","time":"2023-02-23T22:21:02+08:00"}
 {"level":"info","msg":"start keepalive lease 694d86789f054f9a for etcd registry","time":"2023-02-23T22:21:03+08:00"}
 {"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T22:23:12+08:00"}
@@ -10219,3 +10220,831 @@
 {"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T22:44:29+08:00"}
 {"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T22:44:29+08:00"}
 {"level":"error","msg":"KITEX: processing request error, remoteService=api, remoteAddr=[::1]:59012, error=biz error: err_code=0, err_msg=Success","span_id":"0000000000000000","time":"2023-02-23T22:44:29+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+=======
+{"level":"warning","msg":"KITEX: signal connection closing error:protobuf just support 'framed' trans proto[::]:13127=\u003e[::1]:54106","time":"2023-02-23T18:21:20+08:00"}
+{"level":"error","msg":"KITEX: stop server error: error=context deadline exceeded","time":"2023-02-23T18:21:21+08:00"}
+{"level":"fatal","msg":"context deadline exceeded","time":"2023-02-23T18:21:21+08:00"}
+{"level":"info","msg":"KITEX: server listen at addr=[::]:13127","time":"2023-02-23T21:00:28+08:00"}
+{"level":"info","msg":"start keepalive lease 694d867e5597eb37 for etcd registry","time":"2023-02-23T21:00:29+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7}\n","time":"2023-02-23T21:01:38+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T21:01:38+08:00"}
+{"level":"info","msg":"client address: [::1]:45796\n","time":"2023-02-23T21:01:38+08:00"}
+{"level":"info","msg":"user favorite video list info not found","time":"2023-02-23T21:01:38+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7}\n","time":"2023-02-23T21:01:38+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T21:01:38+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T21:01:38+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:01:38+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=, remoteAddr=[::1]:45796, error=biz error: err_code=0, err_msg=Success","span_id":"0000000000000000","time":"2023-02-23T21:01:38+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:6}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7 video_id:6}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7 video_id:5}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7 video_id:4}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7 video_id:3}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7 video_id:2}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7 video_id:1}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"client address: [::1]:45796\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4 video_id:5 video_id:2 user_id:6}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:4}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:5}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:2}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:4 author:{id:4 name:\"jacob5\"} play_url:\"http://172.19.134.195:9000/videos/cc7c44f0-dae4-4d67-bccd-0a4fcccc6322.mp4\" cover_url:\"http://172.19.134.195:9000/images/76b1c2a9-2b1e-4d55-b77e-41160bd5ba7a.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob5-test\"} video_list:{id:5 author:{id:5 name:\"jacob6\" follower_count:1} play_url:\"http://172.19.134.195:9000/videos/fe9e4dd1-5b1b-4c01-bd4d-8ec611e99436.mp4\" cover_url:\"http://172.19.134.195:9000/images/cc9642d5-dba4-4ba8-8ab1-049790d60a92.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob6test\"} video_list:{id:2 author:{id:2 name:\"jacob3\" follow_count:1} play_url:\"http://172.19.134.195:9000/videos/b0fde4ab-8dbe-4d08-a6b0-dbbf56cbd829.mp4\" cover_url:\"http://172.19.134.195:9000/images/d9b61ae6-96cc-414e-81d7-08afc2ff6915.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob-redis-test\"}}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:4 author:{id:4 name:\"jacob5\"} play_url:\"http://172.19.134.195:9000/videos/cc7c44f0-dae4-4d67-bccd-0a4fcccc6322.mp4\" cover_url:\"http://172.19.134.195:9000/images/76b1c2a9-2b1e-4d55-b77e-41160bd5ba7a.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob5-test\"} video_list:{id:5 author:{id:5 name:\"jacob6\" follower_count:1} play_url:\"http://172.19.134.195:9000/videos/fe9e4dd1-5b1b-4c01-bd4d-8ec611e99436.mp4\" cover_url:\"http://172.19.134.195:9000/images/cc9642d5-dba4-4ba8-8ab1-049790d60a92.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob6test\"} video_list:{id:2 author:{id:2 name:\"jacob3\" follow_count:1} play_url:\"http://172.19.134.195:9000/videos/b0fde4ab-8dbe-4d08-a6b0-dbbf56cbd829.mp4\" cover_url:\"http://172.19.134.195:9000/images/d9b61ae6-96cc-414e-81d7-08afc2ff6915.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob-redis-test\"}}\n","time":"2023-02-23T21:01:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7}\n","time":"2023-02-23T21:03:02+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T21:03:02+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T21:03:02+08:00"}
+{"level":"info","msg":"user favorite video list info not found","time":"2023-02-23T21:03:02+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7}\n","time":"2023-02-23T21:03:02+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T21:03:02+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T21:03:02+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:02+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=, remoteAddr=[::1]:51326, error=biz error: err_code=0, err_msg=Success","span_id":"0000000000000000","time":"2023-02-23T21:03:02+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:6}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:6}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4 video_id:5 video_id:2 user_id:6}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4 video_id:5 video_id:2 user_id:6}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:4}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:4}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:5}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:5}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:2}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:2}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:4 author:{id:4 name:\"jacob5\"} play_url:\"http://172.19.134.195:9000/videos/cc7c44f0-dae4-4d67-bccd-0a4fcccc6322.mp4\" cover_url:\"http://172.19.134.195:9000/images/76b1c2a9-2b1e-4d55-b77e-41160bd5ba7a.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob5-test\"} video_list:{id:5 author:{id:5 name:\"jacob6\" follower_count:1} play_url:\"http://172.19.134.195:9000/videos/fe9e4dd1-5b1b-4c01-bd4d-8ec611e99436.mp4\" cover_url:\"http://172.19.134.195:9000/images/cc9642d5-dba4-4ba8-8ab1-049790d60a92.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob6test\"} video_list:{id:2 author:{id:2 name:\"jacob3\" follow_count:1} play_url:\"http://172.19.134.195:9000/videos/b0fde4ab-8dbe-4d08-a6b0-dbbf56cbd829.mp4\" cover_url:\"http://172.19.134.195:9000/images/d9b61ae6-96cc-414e-81d7-08afc2ff6915.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob-redis-test\"}}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:4 author:{id:4 name:\"jacob5\"} play_url:\"http://172.19.134.195:9000/videos/cc7c44f0-dae4-4d67-bccd-0a4fcccc6322.mp4\" cover_url:\"http://172.19.134.195:9000/images/76b1c2a9-2b1e-4d55-b77e-41160bd5ba7a.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob5-test\"} video_list:{id:5 author:{id:5 name:\"jacob6\" follower_count:1} play_url:\"http://172.19.134.195:9000/videos/fe9e4dd1-5b1b-4c01-bd4d-8ec611e99436.mp4\" cover_url:\"http://172.19.134.195:9000/images/cc9642d5-dba4-4ba8-8ab1-049790d60a92.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob6test\"} video_list:{id:2 author:{id:2 name:\"jacob3\" follow_count:1} play_url:\"http://172.19.134.195:9000/videos/b0fde4ab-8dbe-4d08-a6b0-dbbf56cbd829.mp4\" cover_url:\"http://172.19.134.195:9000/images/d9b61ae6-96cc-414e-81d7-08afc2ff6915.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob-redis-test\"}}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:4 author:{id:4 name:\"jacob5\"} play_url:\"http://172.19.134.195:9000/videos/cc7c44f0-dae4-4d67-bccd-0a4fcccc6322.mp4\" cover_url:\"http://172.19.134.195:9000/images/76b1c2a9-2b1e-4d55-b77e-41160bd5ba7a.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob5-test\"} video_list:{id:5 author:{id:5 name:\"jacob6\" follower_count:1} play_url:\"http://172.19.134.195:9000/videos/fe9e4dd1-5b1b-4c01-bd4d-8ec611e99436.mp4\" cover_url:\"http://172.19.134.195:9000/images/cc9642d5-dba4-4ba8-8ab1-049790d60a92.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob6test\"} video_list:{id:2 author:{id:2 name:\"jacob3\" follow_count:1} play_url:\"http://172.19.134.195:9000/videos/b0fde4ab-8dbe-4d08-a6b0-dbbf56cbd829.mp4\" cover_url:\"http://172.19.134.195:9000/images/d9b61ae6-96cc-414e-81d7-08afc2ff6915.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob-redis-test\"}}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:4 author:{id:4 name:\"jacob5\"} play_url:\"http://172.19.134.195:9000/videos/cc7c44f0-dae4-4d67-bccd-0a4fcccc6322.mp4\" cover_url:\"http://172.19.134.195:9000/images/76b1c2a9-2b1e-4d55-b77e-41160bd5ba7a.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob5-test\"} video_list:{id:5 author:{id:5 name:\"jacob6\" follower_count:1} play_url:\"http://172.19.134.195:9000/videos/fe9e4dd1-5b1b-4c01-bd4d-8ec611e99436.mp4\" cover_url:\"http://172.19.134.195:9000/images/cc9642d5-dba4-4ba8-8ab1-049790d60a92.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob6test\"} video_list:{id:2 author:{id:2 name:\"jacob3\" follow_count:1} play_url:\"http://172.19.134.195:9000/videos/b0fde4ab-8dbe-4d08-a6b0-dbbf56cbd829.mp4\" cover_url:\"http://172.19.134.195:9000/images/d9b61ae6-96cc-414e-81d7-08afc2ff6915.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob-redis-test\"}}\n","time":"2023-02-23T21:03:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:6}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:6}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4 video_id:5 video_id:2 user_id:6}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:4}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:5}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:2}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:4 author:{id:4 name:\"jacob5\"} play_url:\"http://172.19.134.195:9000/videos/cc7c44f0-dae4-4d67-bccd-0a4fcccc6322.mp4\" cover_url:\"http://172.19.134.195:9000/images/76b1c2a9-2b1e-4d55-b77e-41160bd5ba7a.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob5-test\"} video_list:{id:5 author:{id:5 name:\"jacob6\" follower_count:1} play_url:\"http://172.19.134.195:9000/videos/fe9e4dd1-5b1b-4c01-bd4d-8ec611e99436.mp4\" cover_url:\"http://172.19.134.195:9000/images/cc9642d5-dba4-4ba8-8ab1-049790d60a92.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob6test\"} video_list:{id:2 author:{id:2 name:\"jacob3\" follow_count:1} play_url:\"http://172.19.134.195:9000/videos/b0fde4ab-8dbe-4d08-a6b0-dbbf56cbd829.mp4\" cover_url:\"http://172.19.134.195:9000/images/d9b61ae6-96cc-414e-81d7-08afc2ff6915.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob-redis-test\"}}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:4 author:{id:4 name:\"jacob5\"} play_url:\"http://172.19.134.195:9000/videos/cc7c44f0-dae4-4d67-bccd-0a4fcccc6322.mp4\" cover_url:\"http://172.19.134.195:9000/images/76b1c2a9-2b1e-4d55-b77e-41160bd5ba7a.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob5-test\"} video_list:{id:5 author:{id:5 name:\"jacob6\" follower_count:1} play_url:\"http://172.19.134.195:9000/videos/fe9e4dd1-5b1b-4c01-bd4d-8ec611e99436.mp4\" cover_url:\"http://172.19.134.195:9000/images/cc9642d5-dba4-4ba8-8ab1-049790d60a92.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob6test\"} video_list:{id:2 author:{id:2 name:\"jacob3\" follow_count:1} play_url:\"http://172.19.134.195:9000/videos/b0fde4ab-8dbe-4d08-a6b0-dbbf56cbd829.mp4\" cover_url:\"http://172.19.134.195:9000/images/d9b61ae6-96cc-414e-81d7-08afc2ff6915.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob-redis-test\"}}\n","time":"2023-02-23T21:03:05+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5}\n","time":"2023-02-23T21:03:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T21:03:06+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T21:03:06+08:00"}
+{"level":"info","msg":"user favorite video list info not found","time":"2023-02-23T21:03:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5}\n","time":"2023-02-23T21:03:06+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T21:03:06+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T21:03:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:06+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=, remoteAddr=[::1]:51326, error=biz error: err_code=0, err_msg=Success","span_id":"0000000000000000","time":"2023-02-23T21:03:06+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T21:03:07+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T21:03:07+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T21:03:07+08:00"}
+{"level":"info","msg":"user favorite video list info not found","time":"2023-02-23T21:03:07+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T21:03:07+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T21:03:07+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T21:03:07+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:07+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=, remoteAddr=[::1]:51326, error=biz error: err_code=0, err_msg=Success","span_id":"0000000000000000","time":"2023-02-23T21:03:07+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"user favorite video list info not found","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:6}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:6}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=, remoteAddr=[::1]:51326, error=biz error: err_code=0, err_msg=Success","span_id":"0000000000000000","time":"2023-02-23T21:03:08+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"user favorite video list info not found","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:03:08+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=, remoteAddr=[::1]:51326, error=biz error: err_code=0, err_msg=Success","span_id":"0000000000000000","time":"2023-02-23T21:03:08+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:8}\n","time":"2023-02-23T21:05:42+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T21:05:42+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T21:05:42+08:00"}
+{"level":"info","msg":"user favorite video list info not found","time":"2023-02-23T21:05:42+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:8}\n","time":"2023-02-23T21:05:42+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T21:05:42+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T21:05:42+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:05:42+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=, remoteAddr=[::1]:51326, error=biz error: err_code=0, err_msg=Success","span_id":"0000000000000000","time":"2023-02-23T21:05:42+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-23T21:12:43+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T21:12:43+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T21:12:43+08:00"}
+{"level":"info","msg":"user favorite video list info not found","time":"2023-02-23T21:12:43+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-23T21:12:43+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T21:12:43+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T21:12:43+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T21:12:43+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=, remoteAddr=[::1]:51326, error=biz error: err_code=0, err_msg=Success","span_id":"0000000000000000","time":"2023-02-23T21:12:43+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:8}\n","time":"2023-02-23T23:50:04+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T23:50:04+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T23:50:04+08:00"}
+{"level":"info","msg":"user favorite video list info not found","time":"2023-02-23T23:50:04+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:8}\n","time":"2023-02-23T23:50:04+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T23:50:04+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T23:50:04+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:04+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=, remoteAddr=[::1]:51326, error=biz error: err_code=0, err_msg=Success","span_id":"0000000000000000","time":"2023-02-23T23:50:04+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:6}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:6}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4 video_id:5 video_id:2 user_id:6}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4 video_id:5 video_id:2 user_id:6}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:4}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:5}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:4}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:2}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:5}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:4 author:{id:4 name:\"jacob5\"} play_url:\"http://172.19.134.195:9000/videos/cc7c44f0-dae4-4d67-bccd-0a4fcccc6322.mp4\" cover_url:\"http://172.19.134.195:9000/images/76b1c2a9-2b1e-4d55-b77e-41160bd5ba7a.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob5-test\"} video_list:{id:5 author:{id:5 name:\"jacob6\" follower_count:1} play_url:\"http://172.19.134.195:9000/videos/fe9e4dd1-5b1b-4c01-bd4d-8ec611e99436.mp4\" cover_url:\"http://172.19.134.195:9000/images/cc9642d5-dba4-4ba8-8ab1-049790d60a92.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob6test\"} video_list:{id:2 author:{id:2 name:\"jacob3\" follow_count:1} play_url:\"http://172.19.134.195:9000/videos/b0fde4ab-8dbe-4d08-a6b0-dbbf56cbd829.mp4\" cover_url:\"http://172.19.134.195:9000/images/d9b61ae6-96cc-414e-81d7-08afc2ff6915.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob-redis-test\"}}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:4 author:{id:4 name:\"jacob5\"} play_url:\"http://172.19.134.195:9000/videos/cc7c44f0-dae4-4d67-bccd-0a4fcccc6322.mp4\" cover_url:\"http://172.19.134.195:9000/images/76b1c2a9-2b1e-4d55-b77e-41160bd5ba7a.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob5-test\"} video_list:{id:5 author:{id:5 name:\"jacob6\" follower_count:1} play_url:\"http://172.19.134.195:9000/videos/fe9e4dd1-5b1b-4c01-bd4d-8ec611e99436.mp4\" cover_url:\"http://172.19.134.195:9000/images/cc9642d5-dba4-4ba8-8ab1-049790d60a92.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob6test\"} video_list:{id:2 author:{id:2 name:\"jacob3\" follow_count:1} play_url:\"http://172.19.134.195:9000/videos/b0fde4ab-8dbe-4d08-a6b0-dbbf56cbd829.mp4\" cover_url:\"http://172.19.134.195:9000/images/d9b61ae6-96cc-414e-81d7-08afc2ff6915.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob-redis-test\"}}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:2}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:4 author:{id:4 name:\"jacob5\"} play_url:\"http://172.19.134.195:9000/videos/cc7c44f0-dae4-4d67-bccd-0a4fcccc6322.mp4\" cover_url:\"http://172.19.134.195:9000/images/76b1c2a9-2b1e-4d55-b77e-41160bd5ba7a.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob5-test\"} video_list:{id:5 author:{id:5 name:\"jacob6\" follower_count:1} play_url:\"http://172.19.134.195:9000/videos/fe9e4dd1-5b1b-4c01-bd4d-8ec611e99436.mp4\" cover_url:\"http://172.19.134.195:9000/images/cc9642d5-dba4-4ba8-8ab1-049790d60a92.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob6test\"} video_list:{id:2 author:{id:2 name:\"jacob3\" follow_count:1} play_url:\"http://172.19.134.195:9000/videos/b0fde4ab-8dbe-4d08-a6b0-dbbf56cbd829.mp4\" cover_url:\"http://172.19.134.195:9000/images/d9b61ae6-96cc-414e-81d7-08afc2ff6915.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob-redis-test\"}}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:4 author:{id:4 name:\"jacob5\"} play_url:\"http://172.19.134.195:9000/videos/cc7c44f0-dae4-4d67-bccd-0a4fcccc6322.mp4\" cover_url:\"http://172.19.134.195:9000/images/76b1c2a9-2b1e-4d55-b77e-41160bd5ba7a.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob5-test\"} video_list:{id:5 author:{id:5 name:\"jacob6\" follower_count:1} play_url:\"http://172.19.134.195:9000/videos/fe9e4dd1-5b1b-4c01-bd4d-8ec611e99436.mp4\" cover_url:\"http://172.19.134.195:9000/images/cc9642d5-dba4-4ba8-8ab1-049790d60a92.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob6test\"} video_list:{id:2 author:{id:2 name:\"jacob3\" follow_count:1} play_url:\"http://172.19.134.195:9000/videos/b0fde4ab-8dbe-4d08-a6b0-dbbf56cbd829.mp4\" cover_url:\"http://172.19.134.195:9000/images/d9b61ae6-96cc-414e-81d7-08afc2ff6915.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob-redis-test\"}}\n","time":"2023-02-23T23:50:06+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7}\n","time":"2023-02-23T23:50:14+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T23:50:14+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T23:50:14+08:00"}
+{"level":"info","msg":"user favorite video list info not found","time":"2023-02-23T23:50:14+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7}\n","time":"2023-02-23T23:50:14+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T23:50:14+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T23:50:14+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:14+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=, remoteAddr=[::1]:51326, error=biz error: err_code=0, err_msg=Success","span_id":"0000000000000000","time":"2023-02-23T23:50:14+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7 video_id:6 action_type:1}\n","time":"2023-02-23T23:50:19+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-23T23:50:19+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T23:50:19+08:00"}
+{"level":"info","msg":"user video favorite info not found","time":"2023-02-23T23:50:19+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:19+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5}\n","time":"2023-02-23T23:50:26+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T23:50:26+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T23:50:26+08:00"}
+{"level":"info","msg":"user favorite video list info not found","time":"2023-02-23T23:50:26+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5}\n","time":"2023-02-23T23:50:26+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T23:50:26+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T23:50:26+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:26+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=, remoteAddr=[::1]:51326, error=biz error: err_code=0, err_msg=Success","span_id":"0000000000000000","time":"2023-02-23T23:50:26+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5}\n","time":"2023-02-23T23:50:27+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T23:50:27+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T23:50:27+08:00"}
+{"level":"info","msg":"user favorite video list info not found","time":"2023-02-23T23:50:27+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:5}\n","time":"2023-02-23T23:50:27+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T23:50:27+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T23:50:27+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:27+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=, remoteAddr=[::1]:51326, error=biz error: err_code=0, err_msg=Success","span_id":"0000000000000000","time":"2023-02-23T23:50:27+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T23:50:30+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T23:50:30+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T23:50:30+08:00"}
+{"level":"info","msg":"user favorite video list info not found","time":"2023-02-23T23:50:30+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:4}\n","time":"2023-02-23T23:50:30+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T23:50:30+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T23:50:30+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:30+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=, remoteAddr=[::1]:51326, error=biz error: err_code=0, err_msg=Success","span_id":"0000000000000000","time":"2023-02-23T23:50:30+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"user favorite video list info not found","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=, remoteAddr=[::1]:51326, error=biz error: err_code=0, err_msg=Success","span_id":"0000000000000000","time":"2023-02-23T23:50:40+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:6}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:6}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:40+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7 video_id:3 action_type:1}\n","time":"2023-02-23T23:50:41+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-23T23:50:41+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T23:50:41+08:00"}
+{"level":"info","msg":"user video favorite info not found","time":"2023-02-23T23:50:41+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:41+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7}\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:6 video_id:3 user_id:7}\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7 video_id:6}\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:6}\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7 video_id:3}\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:6 author:{id:6 name:\"jacob7\"} play_url:\"http://172.19.134.195:9000/videos/d054f7ec-3352-4dff-9600-45d4b5c7afb7.mp4\" cover_url:\"http://172.19.134.195:9000/images/76e878cd-ad21-418d-bafb-2a52c5b1e330.jpg\" favorite_count:1 is_favorite:true title:\"jacob7\"} video_list:{id:3 author:{id:1 name:\"jacob2\" follow_count:1 follower_count:1} play_url:\"http://172.19.134.195:9000/videos/ccbfe62f-84ac-4c7f-b046-af735edce451.mp4\" cover_url:\"http://172.19.134.195:9000/images/ee4b77ff-9dbf-4ca1-b174-73193b33971e.jpg\" favorite_count:1 comment_count:5 is_favorite:true title:\"lhlasuidhiqw\"}}\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:6 author:{id:6 name:\"jacob7\"} play_url:\"http://172.19.134.195:9000/videos/d054f7ec-3352-4dff-9600-45d4b5c7afb7.mp4\" cover_url:\"http://172.19.134.195:9000/images/76e878cd-ad21-418d-bafb-2a52c5b1e330.jpg\" favorite_count:1 is_favorite:true title:\"jacob7\"} video_list:{id:3 author:{id:1 name:\"jacob2\" follow_count:1 follower_count:1} play_url:\"http://172.19.134.195:9000/videos/ccbfe62f-84ac-4c7f-b046-af735edce451.mp4\" cover_url:\"http://172.19.134.195:9000/images/ee4b77ff-9dbf-4ca1-b174-73193b33971e.jpg\" favorite_count:1 comment_count:5 is_favorite:true title:\"lhlasuidhiqw\"}}\n","time":"2023-02-23T23:50:43+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-23T23:50:47+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T23:50:47+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T23:50:47+08:00"}
+{"level":"info","msg":"user favorite video list info not found","time":"2023-02-23T23:50:47+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-23T23:50:47+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T23:50:47+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T23:50:47+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:47+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=, remoteAddr=[::1]:51326, error=biz error: err_code=0, err_msg=Success","span_id":"0000000000000000","time":"2023-02-23T23:50:47+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7 video_id:2 action_type:1}\n","time":"2023-02-23T23:50:48+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-23T23:50:48+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T23:50:48+08:00"}
+{"level":"info","msg":"user video favorite info not found","time":"2023-02-23T23:50:48+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:50:48+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-23T23:52:09+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T23:52:09+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T23:52:09+08:00"}
+{"level":"info","msg":"user favorite video list info not found","time":"2023-02-23T23:52:09+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-23T23:52:09+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T23:52:09+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T23:52:09+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:52:09+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=, remoteAddr=[::1]:51326, error=biz error: err_code=0, err_msg=Success","span_id":"0000000000000000","time":"2023-02-23T23:52:09+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-23T23:52:10+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-23T23:52:10+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T23:52:10+08:00"}
+{"level":"info","msg":"user favorite video list info not found","time":"2023-02-23T23:52:10+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2}\n","time":"2023-02-23T23:52:10+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-23T23:52:10+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-23T23:52:10+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:52:10+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=, remoteAddr=[::1]:51326, error=biz error: err_code=0, err_msg=Success","span_id":"0000000000000000","time":"2023-02-23T23:52:10+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7 video_id:2 action_type:2}\n","time":"2023-02-23T23:52:11+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: FavoriteAction\n","time":"2023-02-23T23:52:11+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-23T23:52:11+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-23T23:52:11+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-24T00:18:33+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-24T00:18:33+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-24T00:18:33+08:00"}
+{"level":"info","msg":"user favorite video list info not found","time":"2023-02-24T00:18:33+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:1}\n","time":"2023-02-24T00:18:33+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-24T00:18:33+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-24T00:18:33+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-24T00:18:33+08:00"}
+{"level":"error","msg":"KITEX: processing request error, remoteService=, remoteAddr=[::1]:51326, error=biz error: err_code=0, err_msg=Success","span_id":"0000000000000000","time":"2023-02-24T00:18:33+08:00","trace_flags":"00","trace_id":"00000000000000000000000000000000"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7}\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:6 video_id:3 user_id:7}\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7 video_id:6}\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:6}\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:7 video_id:3}\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:6 author:{id:6 name:\"jacob7\"} play_url:\"http://172.19.134.195:9000/videos/d054f7ec-3352-4dff-9600-45d4b5c7afb7.mp4\" cover_url:\"http://172.19.134.195:9000/images/76e878cd-ad21-418d-bafb-2a52c5b1e330.jpg\" favorite_count:1 is_favorite:true title:\"jacob7\"} video_list:{id:3 author:{id:1 name:\"jacob2\" follow_count:1 follower_count:1} play_url:\"http://172.19.134.195:9000/videos/ccbfe62f-84ac-4c7f-b046-af735edce451.mp4\" cover_url:\"http://172.19.134.195:9000/images/ee4b77ff-9dbf-4ca1-b174-73193b33971e.jpg\" favorite_count:1 comment_count:5 is_favorite:true title:\"lhlasuidhiqw\"}}\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:6 author:{id:6 name:\"jacob7\"} play_url:\"http://172.19.134.195:9000/videos/d054f7ec-3352-4dff-9600-45d4b5c7afb7.mp4\" cover_url:\"http://172.19.134.195:9000/images/76e878cd-ad21-418d-bafb-2a52c5b1e330.jpg\" favorite_count:1 is_favorite:true title:\"jacob7\"} video_list:{id:3 author:{id:1 name:\"jacob2\" follow_count:1 follower_count:1} play_url:\"http://172.19.134.195:9000/videos/ccbfe62f-84ac-4c7f-b046-af735edce451.mp4\" cover_url:\"http://172.19.134.195:9000/images/ee4b77ff-9dbf-4ca1-b174-73193b33971e.jpg\" favorite_count:1 comment_count:5 is_favorite:true title:\"lhlasuidhiqw\"}}\n","time":"2023-02-24T00:18:34+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:6}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:6}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:3}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4 video_id:5 video_id:2 user_id:6}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteList\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:51326\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4 video_id:5 video_id:2 user_id:6}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: video, remote method: GetVideoListByVideoId\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"server address: [::]:13124, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:4}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:4}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:4}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:5}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:5}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:5}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:2}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:6 video_id:2}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: QueryUserLikeVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"remote service name: favorite, remote method: GetFavoriteVideo\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"client address: [::1]:45810\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite:true}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} favorite_count:1}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:4 author:{id:4 name:\"jacob5\"} play_url:\"http://172.19.134.195:9000/videos/cc7c44f0-dae4-4d67-bccd-0a4fcccc6322.mp4\" cover_url:\"http://172.19.134.195:9000/images/76b1c2a9-2b1e-4d55-b77e-41160bd5ba7a.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob5-test\"} video_list:{id:5 author:{id:5 name:\"jacob6\" follower_count:1} play_url:\"http://172.19.134.195:9000/videos/fe9e4dd1-5b1b-4c01-bd4d-8ec611e99436.mp4\" cover_url:\"http://172.19.134.195:9000/images/cc9642d5-dba4-4ba8-8ab1-049790d60a92.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob6test\"} video_list:{id:2 author:{id:2 name:\"jacob3\" follow_count:1} play_url:\"http://172.19.134.195:9000/videos/b0fde4ab-8dbe-4d08-a6b0-dbbf56cbd829.mp4\" cover_url:\"http://172.19.134.195:9000/images/d9b61ae6-96cc-414e-81d7-08afc2ff6915.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob-redis-test\"}}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:4 author:{id:4 name:\"jacob5\"} play_url:\"http://172.19.134.195:9000/videos/cc7c44f0-dae4-4d67-bccd-0a4fcccc6322.mp4\" cover_url:\"http://172.19.134.195:9000/images/76b1c2a9-2b1e-4d55-b77e-41160bd5ba7a.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob5-test\"} video_list:{id:5 author:{id:5 name:\"jacob6\" follower_count:1} play_url:\"http://172.19.134.195:9000/videos/fe9e4dd1-5b1b-4c01-bd4d-8ec611e99436.mp4\" cover_url:\"http://172.19.134.195:9000/images/cc9642d5-dba4-4ba8-8ab1-049790d60a92.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob6test\"} video_list:{id:2 author:{id:2 name:\"jacob3\" follow_count:1} play_url:\"http://172.19.134.195:9000/videos/b0fde4ab-8dbe-4d08-a6b0-dbbf56cbd829.mp4\" cover_url:\"http://172.19.134.195:9000/images/d9b61ae6-96cc-414e-81d7-08afc2ff6915.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob-redis-test\"}}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:4 author:{id:4 name:\"jacob5\"} play_url:\"http://172.19.134.195:9000/videos/cc7c44f0-dae4-4d67-bccd-0a4fcccc6322.mp4\" cover_url:\"http://172.19.134.195:9000/images/76b1c2a9-2b1e-4d55-b77e-41160bd5ba7a.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob5-test\"} video_list:{id:5 author:{id:5 name:\"jacob6\" follower_count:1} play_url:\"http://172.19.134.195:9000/videos/fe9e4dd1-5b1b-4c01-bd4d-8ec611e99436.mp4\" cover_url:\"http://172.19.134.195:9000/images/cc9642d5-dba4-4ba8-8ab1-049790d60a92.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob6test\"} video_list:{id:2 author:{id:2 name:\"jacob3\" follow_count:1} play_url:\"http://172.19.134.195:9000/videos/b0fde4ab-8dbe-4d08-a6b0-dbbf56cbd829.mp4\" cover_url:\"http://172.19.134.195:9000/images/d9b61ae6-96cc-414e-81d7-08afc2ff6915.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob-redis-test\"}}\n","time":"2023-02-24T00:18:36+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} video_list:{id:4 author:{id:4 name:\"jacob5\"} play_url:\"http://172.19.134.195:9000/videos/cc7c44f0-dae4-4d67-bccd-0a4fcccc6322.mp4\" cover_url:\"http://172.19.134.195:9000/images/76b1c2a9-2b1e-4d55-b77e-41160bd5ba7a.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob5-test\"} video_list:{id:5 author:{id:5 name:\"jacob6\" follower_count:1} play_url:\"http://172.19.134.195:9000/videos/fe9e4dd1-5b1b-4c01-bd4d-8ec611e99436.mp4\" cover_url:\"http://172.19.134.195:9000/images/cc9642d5-dba4-4ba8-8ab1-049790d60a92.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob6test\"} video_list:{id:2 author:{id:2 name:\"jacob3\" follow_count:1} play_url:\"http://172.19.134.195:9000/videos/b0fde4ab-8dbe-4d08-a6b0-dbbf56cbd829.mp4\" cover_url:\"http://172.19.134.195:9000/images/d9b61ae6-96cc-414e-81d7-08afc2ff6915.jpg\" favorite_count:1 comment_count:2 is_favorite:true title:\"jacob-redis-test\"}}\n","time":"2023-02-24T00:18:36+08:00"}
+>>>>>>> cbe2414f9157f5efd3058381684cfef71b90e40e
