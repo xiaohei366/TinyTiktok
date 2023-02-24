@@ -60,15 +60,14 @@ message DouyinUserBeFavoriteResponse {
   int64 total_be_favorite = 2; // 被赞的总次数
   int64 favorite_count = 3; // 喜欢总数量
 }
-//todo
+
 message DouyinVideoBeFavoriteRequest {
   int64 video_id = 1; // 视频唯一标识
 }
-// todo
+
 message DouyinVideoBeFavoriteResponse {
   BaseResp base_resp = 1;
   int64 favorite_count = 2; // 视频的点赞总数
-  bool is_favorite = 3; // true-已点赞，false-未点赞
 }
 
 message DouyinQueryFavoriteRequest{
