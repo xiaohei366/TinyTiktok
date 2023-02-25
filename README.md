@@ -105,16 +105,16 @@
 
 1. 下载ffmpeg完成视频截取图片功能：linux下命令`sudo apt-get install ffmpeg`。
 2. 在项目的根目录执行命令`docker-compose up -d`，生成运行环境
-3. 随后在项目的根目录执行命令`go mod tidy`整理go所需要的依赖
-4. 首先修改`./pkg/shared/const.go`的文件，将里面的第一个参数`host_ip`设置为自己服务器的参数。
-5. 先启动ApiServer
+3. 在项目的根目录执行命令`go mod tidy`整理go所需要的依赖
+4. 修改`./pkg/shared/const.go`的文件，将里面的第一个参数`host_ip`设置为自己内网ip，将第二个参数"minio_ip"设置为公网ip（若本地测试，则这个都设置为内网ip）。
+5. 启动ApiServer
 
 ```bash
 cd ./cmd/user
 go run .
 ```
 
-6. 随后再启动各个服务模块的RPC服务器
+6. 启动各个服务模块的RPC服务器
 
 - 启动User服务器
 
