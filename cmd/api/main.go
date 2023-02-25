@@ -18,6 +18,7 @@ func main() {
 		server.WithHostPorts(shared.ApiServiceAddr),
 		server.WithHandleMethodNotAllowed(true), // coordinate with NoMethod
 		server.WithMaxRequestBodySize(10000000000),
+
 		tracer,
 	)
 	// 使用 pprof 和 tracer 两个中间件

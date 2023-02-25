@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/dal"
 	"github.com/xiaohei366/TinyTiktok/cmd/video/service/pack"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
@@ -19,10 +20,10 @@ func NewPublishListService(ctx context.Context) *PublishListService {
 
 // PublishList get the videoList by user id.
 func (s *PublishListService) PublishList(req *VideoServer.DouyinPublishListRequest) (videoList []*VideoServer.Video, err error) {
-	UserVideos, err := dal.MGetUserVideos(s.ctx, req.UserId)
+	UserVideos, err := dal.MGetUserVideos(s.ctx, req.ToUserId)
 	if err != nil {
 		return nil, errno.PublishListErr
 	}
-	videoList = pack.VideoList(UserVideos, req.UserId)
+	videoList = pack.VideoList(UserVideos, req.ToUserId)
 	return videoList, nil
 }

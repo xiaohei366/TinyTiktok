@@ -462,7 +462,7 @@ func (x *DouyinPublishListRequest) fastReadField1(buf []byte, _type int8) (offse
 }
 
 func (x *DouyinPublishListRequest) fastReadField2(buf []byte, _type int8) (offset int, err error) {
-	x.Token, offset, err = fastpb.ReadString(buf, _type)
+	x.ToUserId, offset, err = fastpb.ReadInt64(buf, _type)
 	return offset, err
 }
 
@@ -835,10 +835,10 @@ func (x *DouyinPublishListRequest) fastWriteField1(buf []byte) (offset int) {
 }
 
 func (x *DouyinPublishListRequest) fastWriteField2(buf []byte) (offset int) {
-	if x.Token == "" {
+	if x.ToUserId == 0 {
 		return offset
 	}
-	offset += fastpb.WriteString(buf[offset:], 2, x.Token)
+	offset += fastpb.WriteInt64(buf[offset:], 2, x.ToUserId)
 	return offset
 }
 
@@ -1193,10 +1193,10 @@ func (x *DouyinPublishListRequest) sizeField1() (n int) {
 }
 
 func (x *DouyinPublishListRequest) sizeField2() (n int) {
-	if x.Token == "" {
+	if x.ToUserId == 0 {
 		return n
 	}
-	n += fastpb.SizeString(2, x.Token)
+	n += fastpb.SizeInt64(2, x.ToUserId)
 	return n
 }
 

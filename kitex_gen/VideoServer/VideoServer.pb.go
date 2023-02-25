@@ -555,7 +555,7 @@ type DouyinPublishListRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	UserId int64  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"` //用户id
-	Token  string `protobuf:"bytes,2,opt,name=token,proto3" json:"token,omitempty"`                  //用户鉴权token
+	ToUserId  int64 `protobuf:"bytes,2,opt,name=token,proto3" json:"token,omitempty"`                  //用户鉴权token
 }
 
 func (x *DouyinPublishListRequest) Reset() {
@@ -597,11 +597,11 @@ func (x *DouyinPublishListRequest) GetUserId() int64 {
 	return 0
 }
 
-func (x *DouyinPublishListRequest) GetToken() string {
+func (x *DouyinPublishListRequest) GetToUserId() int64 {
 	if x != nil {
-		return x.Token
+		return x.ToUserId
 	}
-	return ""
+	return 0
 }
 
 type DouyinPublishListResponse struct {

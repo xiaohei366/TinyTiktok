@@ -98,16 +98,22 @@ func PublishAction(ctx context.Context, c *app.RequestContext) {
 func PublishList(ctx context.Context, c *app.RequestContext) {
 	var err error
 	var req ApiServer.DouyinPublishListRequest
+	var useID int64
 	err = c.BindAndValidate(&req)
 	if err != nil {
 		c.String(consts.StatusBadRequest, err.Error())
 		return
 	}
 	//拿userid
-	userId, _ := c.Get(shared.IdentityKey)
+	user, _ := c.Get(shared.IdentityKey)
+	if user == nil {
+		useID = 0
+	} else {
+		useID = user.(*ApiServer.User).Id
+	}
 	request := &VideoServer.DouyinPublishListRequest{
-		UserId: userId.(*ApiServer.User).Id,
-		Token:  req.Token,
+		UserId:   useID,
+		ToUserId: req.UserId,
 	}
 	//调用rpc获取该用户已经发布的视频。
 	resp, err := rpc.PublishList(ctx, request)

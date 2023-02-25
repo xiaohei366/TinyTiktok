@@ -5,9 +5,9 @@ import "time"
 
 const (
 	//net_host_ip---内网ip
-	host_ip = "10.0.4.13"
+	host_ip = "10.0.xxx.xxx"
 	//minio_ip---公网ip（也可以是内网ip，但前提是客户端能访问到的地址）
-	minio_ip = "43.143.122.221"
+	minio_ip = "43.143.xxx.xxx"
 	//数据库的预留格式
 	DBName   = "TinyTiktok"
 	MySqlDSN = "%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local"
