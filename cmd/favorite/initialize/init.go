@@ -3,7 +3,6 @@ package initialize
 import (
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/initialize/db"
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/initialize/mq"
-	"github.com/xiaohei366/TinyTiktok/cmd/favorite/initialize/redis"
 	"github.com/xiaohei366/TinyTiktok/cmd/favorite/rpc"
 )
 
@@ -14,8 +13,6 @@ func Init() {
 	rpc.Init()
 	//mq init
 	mq.InitMq()
-	//redis
-	redis.InitRedis()
 	//klog日志初始化
 	InitLogger()
 }

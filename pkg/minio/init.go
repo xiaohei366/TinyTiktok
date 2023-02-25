@@ -21,7 +21,7 @@ func GetMinioClient() MinioClient {
 	return client
 }
 
-func Init_minio() { 
+func Init_minio() {
 	//初始化配置
 	minioEndpoint := shared.MinioUrl + ":" + shared.MinioPort
 
@@ -45,5 +45,4 @@ func Init_minio() {
 	if err := CreateBucket(client.Client, client.ImageBucket); err != nil {
 		klog.Errorf("minio client init image bucket failed: %v", err)
 	}
-	return
 }

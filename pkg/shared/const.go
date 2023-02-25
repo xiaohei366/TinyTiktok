@@ -4,8 +4,10 @@ package shared
 import "time"
 
 const (
-	//host_ip
-	host_ip = "172.22.201.214"
+	//net_host_ip---内网ip
+	host_ip = "10.0.4.13"
+	//minio_ip---公网ip（也可以是内网ip，但前提是客户端能访问到的地址）
+	minio_ip = "43.143.122.221"
 	//数据库的预留格式
 	DBName   = "TinyTiktok"
 	MySqlDSN = "%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local"
@@ -34,7 +36,7 @@ const (
 	DefaultLimit = 10
 
 	//minio
-	MinioUrl       = host_ip
+	MinioUrl       = minio_ip
 	MinioPort      = "9000"
 	MinioAccessKey = "minio"
 	MinioSecretKey = "minio123"
