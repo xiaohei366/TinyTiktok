@@ -2,8 +2,8 @@ package rpc
 
 import (
 	"context"
+
 	"github.com/kitex-contrib/obs-opentelemetry/provider"
-	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 
 	"github.com/cloudwego/kitex/pkg/rpcinfo"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/VideoServer"
@@ -35,8 +35,8 @@ func initPublishRpc() {
 		shared.VideoServiceName,
 		client.WithResolver(r),
 		client.WithMuxConnection(1),
-		client.WithMiddleware(mw.CommonMiddleware),
-		client.WithInstanceMW(mw.ClientMiddleware),
+		//client.WithMiddleware(mw.CommonMiddleware),
+		//client.WithInstanceMW(mw.ClientMiddleware),
 		client.WithSuite(tracing.NewClientSuite()),
 		client.WithClientBasicInfo(&rpcinfo.EndpointBasicInfo{ServiceName: shared.ApiServiceName}),
 	)

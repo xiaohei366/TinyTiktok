@@ -1,7 +1,6 @@
 package main
 
 import (
-	mw "github.com/xiaohei366/TinyTiktok/pkg/middleware"
 	"net"
 
 	"github.com/cloudwego/kitex/pkg/klog"
@@ -41,8 +40,8 @@ func main() {
 		server.WithRegistry(r),
 		server.WithLimit(&limit.Option{MaxConnections: 1000, MaxQPS: 100}),
 		server.WithMuxTransport(),
-		server.WithMiddleware(mw.CommonMiddleware),
-		server.WithMiddleware(mw.ServerMiddleware),
+		//server.WithMiddleware(mw.CommonMiddleware),
+		//server.WithMiddleware(mw.ServerMiddleware),
 		server.WithSuite(tracing.NewServerSuite()),
 		server.WithServerBasicInfo(&rpcinfo.EndpointBasicInfo{ServiceName: shared.VideoServiceName}),
 	)

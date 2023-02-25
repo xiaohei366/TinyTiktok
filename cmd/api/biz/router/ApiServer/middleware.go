@@ -84,7 +84,7 @@ func _feed0Mw() []app.HandlerFunc {
 
 func _publishMw() []app.HandlerFunc {
 	return []app.HandlerFunc{
-		mw.JwtMiddleware.MiddlewareFunc(),
+		mw.MiddlewareFuncOptional(),
 	}
 }
 

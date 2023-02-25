@@ -6,7 +6,7 @@ import (
 
 	"github.com/cloudwego/kitex/pkg/klog"
 	"github.com/streadway/amqp"
-	"github.com/xiaohei366/TinyTiktok/cmd/relation/initialize/mq/amqpclt"
+	"github.com/xiaohei366/TinyTiktok/cmd/favorite/initialize/mq/amqpclt"
 	"github.com/xiaohei366/TinyTiktok/pkg/shared"
 )
 

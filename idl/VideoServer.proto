@@ -65,7 +65,7 @@ message douyin_publish_action_response{
 
 message douyin_publish_list_request{
   int64 user_id = 1; //用户id
-  string token =2;  //用户鉴权token
+  string to_user_id =2;  //用户鉴权token
 }
 message douyin_publish_list_response{
   BaseResp base_resp = 1;
