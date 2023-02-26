@@ -4,11 +4,11 @@
 </div>
 
 
-## 1. 项目介绍
+## 项目介绍
 
 本项目基于青训营提供的[抖音项目方案说明](https://bytedance.feishu.cn/docs/doccnKrCsU5Iac6eftnFBdsXTof#K6ToR1)实现接口开发，最终实现[极简抖音App](https://bytedance.feishu.cn/docs/doccnM9KkBAdyDhg8qaeGlIz7S7)的服务端。若想得到本项目更详细的信息，可以阅读该项目的答辩文档[点击此处](https://erkuyiphv6.feishu.cn/docx/N71nd9pDloJVjcxJbNJcRE2mnch)。
 
-## 2. 架构
+## 架构
 
 ### 调用关系
 
@@ -22,15 +22,15 @@
 
 ![2](./image/2.png)
 
-## 3. 展示
+## 展示
 
-可通过答辩文档里的视频来查看本项目服务端的表现。
+可[点击此处](https://www.bilibili.com/video/BV16Y4y127Kc/)查看本项目的演示视频
 
 该项目的链路追踪结构如下：
 
 ![4](./image/4.png)
 
-## 4. 项目目录介绍
+## 项目目录介绍
 
 ```bash
 .
@@ -101,7 +101,7 @@
     └── shared                 #存放全局都可用的常量
 ```
 
-## 5. 快速开始
+## 快速开始
 
 1. 下载ffmpeg完成视频截取图片功能：linux下命令`sudo apt-get install ffmpeg`。
 2. 在项目的根目录执行命令`docker-compose up -d`，生成运行环境
@@ -113,7 +113,7 @@
 cd ./cmd/user
 go run .
 ```
-
+PS:如果你部署机器的内存和cpu并不给力，推荐提前在性能较好的机器上执行`go build .`来提前编译，随后只在部署机器上执行`chmod +x ./api`后`./api`即可运行。
 6. 启动各个服务模块的RPC服务器
 
 - 启动User服务器
@@ -155,7 +155,12 @@ go run .
   sh build.sh
   sh output/bootstrap.sh
   ```
-## 6. 鸣谢
+ PS:如果你部署机器的内存和cpu并不给力，推荐提前在性能较好的机器上执行`sh build.sh`来提前编译，随后只在部署机器上执行`chmod +x ./xxxx`后`./xxx`即可运行。
+ 
+##TODO
+- 随后将整理开发过程的文档至README
+- 将完成信息模块
+## 鸣谢
 感谢队员：
 - [@Jacob1215](https://github.com/Jacob1215)
 - [@Vickygaog](https://github.com/Vickygaog)
