@@ -9,7 +9,7 @@ import (
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
 
-// 根据videoId获取点赞userId //这儿似乎没用上
+// 根据videoId获取点赞userId 
 func GetFavoriteUserIdList(ctx context.Context, videoId int64) ([]*db.Favorite, error) {
 	favUserIdList := make([]*db.Favorite, 0) //存所有该视频点赞用户id；
 	//查询likes表对应视频id点赞用户，返回查询结果
@@ -56,7 +56,7 @@ func FavoriteAction(ctx context.Context, userId, videoId int64, actionType int32
 // 根据userId，videoId,actionType点赞或者取消赞
 func UpdateFavorite(ctx context.Context, fav *db.Favorite) error {
 	//更新当前用户观看视频的点赞状态“favorite”，返回错误结果
-	err := db.DB.WithContext(ctx).Model(fav).Where(map[string]interface{}{"user_id": fav.UserId, "video_id": fav.VideoId}). //这儿有问题。
+	err := db.DB.WithContext(ctx).Model(fav).Where(map[string]interface{}{"user_id": fav.UserId, "video_id": fav.VideoId}). 
 		Update("favorite", fav.Favorite).Error
 	if err != nil {
 		klog.Info("update data failed")
@@ -129,7 +129,7 @@ func QueryUserVideo(ctx context.Context, userId int64, videoId int64) (bool, err
 	var fav db.Favorite
 	//根据userid,videoId查询是否有该条信息，如果有，返回查询结果
 	res := db.DB.WithContext(ctx).Where(map[string]interface{}{"user_id": userId, "video_id": videoId}).
-		First(&fav) //这儿出错了，查不出来。
+		First(&fav) 
 	if res.Error != nil {
 		return false, nil
 	}

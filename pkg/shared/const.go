@@ -5,9 +5,9 @@ import "time"
 
 const (
 	//net_host_ip---内网ip
-	host_ip = "10.0.xxx.xxx"
+	host_ip = "172.20.231.55"
 	//minio_ip---公网ip（也可以是内网ip，但前提是客户端能访问到的地址）
-	minio_ip = "43.143.xxx.xxx"
+	minio_ip = "172.20.231.55"
 	//数据库的预留格式
 	DBName   = "TinyTiktok"
 	MySqlDSN = "%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local"
@@ -56,15 +56,20 @@ const (
 	MQPort     = 5672
 
 	//Redis
-	RedisExpireTime = time.Hour * 48
-	RedisAddr       = host_ip + ":6379"
-	RedisPassword   = "123"
-	RedisFollower   = 0
-	RedisFollow     = 1
-	RedisRelation1  = 2
-	RedisRelation2  = 3
-	RedisName1      = 4
-	RedisName2      = 5
-	RedisCount1     = 6
-	RedisCount2     = 7
+	RedisExpireTime         = time.Hour * 48
+	RedisAddr               = host_ip + ":6379"
+	RedisPassword           = "123"
+	RedisFollower           = 0
+	RedisFollow             = 1
+	RedisRelation1          = 2
+	RedisRelation2          = 3
+	RedisName1              = 4
+	RedisName2              = 5
+	RedisCount1             = 6
+	RedisCount2             = 7
+	RedisUserLikeList       = 8
+	RedisCommentList1       = 9
+	RedisCommentList2       = 10
+	RedisCommentUesrList    = 11
+	RedisVedioToCommentList = 12
 )

@@ -1,0 +1,102 @@
+{"level":"info","msg":"KITEX: server listen at addr=[::]:13126","time":"2023-03-09T00:05:02+08:00"}
+{"level":"info","msg":"start keepalive lease 694d86c0f928bdfd for etcd registry","time":"2023-03-09T00:05:03+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"client address: [::1]:40396\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"client address: [::1]:40396\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2 user_id:2 user_id:2 user_id:1}\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\"} user:{id:2 name:\"2\"} user:{id:2 name:\"2\"} user:{id:1 name:\"1\"}}\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} comment_list:{id:5 user:{id:2 name:\"2\"} content:\"3\" create_date:\"2023-03-08 22:45:22\"} comment_list:{id:4 user:{id:2 name:\"2\"} content:\"hi\" create_date:\"2023-03-08 22:43:14\"} comment_list:{id:2 user:{id:2 name:\"2\"} content:\"hi\" create_date:\"2023-03-08 22:42:32\"} comment_list:{id:1 user:{id:1 name:\"1\"} content:\"niaho\" create_date:\"2023-03-08 22:42:00\"}}\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"client address: [::1]:40396\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"client address: [::1]:40396\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"client address: [::1]:40396\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"client address: [::1]:40396\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2 user_id:2 user_id:2 user_id:1}\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2 user_id:2 user_id:2 user_id:1}\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\"} user:{id:2 name:\"2\"} user:{id:2 name:\"2\"} user:{id:1 name:\"1\"}}\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} comment_list:{id:5 user:{id:2 name:\"2\"} content:\"3\" create_date:\"2023-03-08 22:45:22\"} comment_list:{id:4 user:{id:2 name:\"2\"} content:\"hi\" create_date:\"2023-03-08 22:43:14\"} comment_list:{id:2 user:{id:2 name:\"2\"} content:\"hi\" create_date:\"2023-03-08 22:42:32\"} comment_list:{id:1 user:{id:1 name:\"1\"} content:\"niaho\" create_date:\"2023-03-08 22:42:00\"}}\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\"} user:{id:2 name:\"2\"} user:{id:2 name:\"2\"} user:{id:1 name:\"1\"}}\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} comment_list:{id:5 user:{id:2 name:\"2\"} content:\"3\" create_date:\"2023-03-08 22:45:22\"} comment_list:{id:4 user:{id:2 name:\"2\"} content:\"hi\" create_date:\"2023-03-08 22:43:14\"} comment_list:{id:2 user:{id:2 name:\"2\"} content:\"hi\" create_date:\"2023-03-08 22:42:32\"} comment_list:{id:1 user:{id:1 name:\"1\"} content:\"niaho\" create_date:\"2023-03-08 22:42:00\"}}\n","time":"2023-03-09T00:05:16+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"client address: [::1]:40396\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"client address: [::1]:40396\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2 user_id:2 user_id:2 user_id:1}\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\"} user:{id:2 name:\"2\"} user:{id:2 name:\"2\"} user:{id:1 name:\"1\"}}\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} comment_list:{id:5 user:{id:2 name:\"2\"} content:\"3\" create_date:\"2023-03-08 22:45:22\"} comment_list:{id:4 user:{id:2 name:\"2\"} content:\"hi\" create_date:\"2023-03-08 22:43:14\"} comment_list:{id:2 user:{id:2 name:\"2\"} content:\"hi\" create_date:\"2023-03-08 22:42:32\"} comment_list:{id:1 user:{id:1 name:\"1\"} content:\"niaho\" create_date:\"2023-03-08 22:42:00\"}}\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"client address: [::1]:40396\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"client address: [::1]:40396\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"client address: [::1]:40396\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2 user_id:2 user_id:2 user_id:1}\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"client address: [::1]:40396\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\"} user:{id:2 name:\"2\"} user:{id:2 name:\"2\"} user:{id:1 name:\"1\"}}\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} comment_list:{id:5 user:{id:2 name:\"2\"} content:\"3\" create_date:\"2023-03-08 22:45:22\"} comment_list:{id:4 user:{id:2 name:\"2\"} content:\"hi\" create_date:\"2023-03-08 22:43:14\"} comment_list:{id:2 user:{id:2 name:\"2\"} content:\"hi\" create_date:\"2023-03-08 22:42:32\"} comment_list:{id:1 user:{id:1 name:\"1\"} content:\"niaho\" create_date:\"2023-03-08 22:42:00\"}}\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2 user_id:2 user_id:2 user_id:1}\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\"} user:{id:2 name:\"2\"} user:{id:2 name:\"2\"} user:{id:1 name:\"1\"}}\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} comment_list:{id:5 user:{id:2 name:\"2\"} content:\"3\" create_date:\"2023-03-08 22:45:22\"} comment_list:{id:4 user:{id:2 name:\"2\"} content:\"hi\" create_date:\"2023-03-08 22:43:14\"} comment_list:{id:2 user:{id:2 name:\"2\"} content:\"hi\" create_date:\"2023-03-08 22:42:32\"} comment_list:{id:1 user:{id:1 name:\"1\"} content:\"niaho\" create_date:\"2023-03-08 22:42:00\"}}\n","time":"2023-03-09T00:05:18+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-03-09T00:05:20+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-03-09T00:05:20+08:00"}
+{"level":"info","msg":"client address: [::1]:40396\n","time":"2023-03-09T00:05:20+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:2}\n","time":"2023-03-09T00:05:20+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-03-09T00:05:20+08:00"}
+{"level":"info","msg":"client address: [::1]:40396\n","time":"2023-03-09T00:05:20+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"}}\n","time":"2023-03-09T00:05:20+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:video_id:1}\n","time":"2023-03-09T00:05:20+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-03-09T00:05:20+08:00"}
+{"level":"info","msg":"client address: [::1]:40396\n","time":"2023-03-09T00:05:20+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2 user_id:2 user_id:2 user_id:1}\n","time":"2023-03-09T00:05:20+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-03-09T00:05:20+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-03-09T00:05:20+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2 user_id:2 user_id:2 user_id:1}\n","time":"2023-03-09T00:05:20+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-03-09T00:05:20+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-03-09T00:05:20+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\"} user:{id:2 name:\"2\"} user:{id:2 name:\"2\"} user:{id:1 name:\"1\"}}\n","time":"2023-03-09T00:05:20+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} comment_list:{id:5 user:{id:2 name:\"2\"} content:\"3\" create_date:\"2023-03-08 22:45:22\"} comment_list:{id:4 user:{id:2 name:\"2\"} content:\"hi\" create_date:\"2023-03-08 22:43:14\"} comment_list:{id:2 user:{id:2 name:\"2\"} content:\"hi\" create_date:\"2023-03-08 22:42:32\"} comment_list:{id:1 user:{id:1 name:\"1\"} content:\"niaho\" create_date:\"2023-03-08 22:42:00\"}}\n","time":"2023-03-09T00:05:20+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\"} user:{id:2 name:\"2\"} user:{id:2 name:\"2\"} user:{id:1 name:\"1\"}}\n","time":"2023-03-09T00:05:20+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} comment_list:{id:5 user:{id:2 name:\"2\"} content:\"3\" create_date:\"2023-03-08 22:45:22\"} comment_list:{id:4 user:{id:2 name:\"2\"} content:\"hi\" create_date:\"2023-03-08 22:43:14\"} comment_list:{id:2 user:{id:2 name:\"2\"} content:\"hi\" create_date:\"2023-03-08 22:42:32\"} comment_list:{id:1 user:{id:1 name:\"1\"} content:\"niaho\" create_date:\"2023-03-08 22:42:00\"}}\n","time":"2023-03-09T00:05:20+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:token:\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzgyOTIwNTcsImlkIjozLCJvcmlnX2lhdCI6MTY3ODI4ODQ1N30.MKOBazyy4mmers7TxWeC9FJb69KTKrAmliWY85ffWOM\" video_id:1}\n","time":"2023-03-09T00:05:22+08:00"}
+{"level":"info","msg":"remote service name: comment, remote method: CommentList\n","time":"2023-03-09T00:05:22+08:00"}
+{"level":"info","msg":"client address: [::1]:33430\n","time":"2023-03-09T00:05:22+08:00"}
+{"level":"info","msg":"real request: \u0026{Req:user_id:2 user_id:2 user_id:2 user_id:1}\n","time":"2023-03-09T00:05:22+08:00"}
+{"level":"info","msg":"remote service name: user, remote method: MGetUserInfo\n","time":"2023-03-09T00:05:22+08:00"}
+{"level":"info","msg":"server address: [::]:13123, rpc timeout: 0s, readwrite timeout: 50ms\n","time":"2023-03-09T00:05:22+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} user:{id:2 name:\"2\"} user:{id:2 name:\"2\"} user:{id:2 name:\"2\"} user:{id:1 name:\"1\"}}\n","time":"2023-03-09T00:05:22+08:00"}
+{"level":"info","msg":"real response: \u0026{Success:base_resp:{status_msg:\"Success\"} comment_list:{id:5 user:{id:2 name:\"2\"} content:\"3\" create_date:\"2023-03-08 22:45:22\"} comment_list:{id:4 user:{id:2 name:\"2\"} content:\"hi\" create_date:\"2023-03-08 22:43:14\"} comment_list:{id:2 user:{id:2 name:\"2\"} content:\"hi\" create_date:\"2023-03-08 22:42:32\"} comment_list:{id:1 user:{id:1 name:\"1\"} content:\"niaho\" create_date:\"2023-03-08 22:42:00\"}}\n","time":"2023-03-09T00:05:22+08:00"}

@@ -19,9 +19,9 @@ var DB *gorm.DB
 // Favorite 表的结构。
 type Favorite struct {
 	gorm.Model
-	UserId   int64 `json:"user_id" gorm:"not null"`   //点赞用户id
-	VideoId  int64 `json:"video_id" gorm:"not null""` //视频id
-	Favorite int32 `json:"favorite"`                  //是否点赞，1为点赞，2为取消赞
+	UserId   int64 `json:"user_id" gorm:"not null;uniqueIndex:user_video"`   //点赞用户id
+	VideoId  int64 `json:"video_id" gorm:"not null;uniqueIndex:user_video"` //视频id
+	Favorite int32 `json:"favorite"`                                         //是否点赞，1为点赞，2为取消赞
 }
 
 // TableName 修改表名映射
