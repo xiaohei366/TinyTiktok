@@ -46,7 +46,7 @@ func (s *FavoriteServiceImpl) GetFavoriteList(ctx context.Context, req *Favorite
 
 // GetFavoriteUser implements the FavoriteServiceImpl interface.
 func (s *FavoriteServiceImpl) GetFavoriteUser(ctx context.Context, req *FavoriteServer.DouyinUserBeFavoriteRequest) (resp *FavoriteServer.DouyinUserBeFavoriteResponse, err error) {
-	// TODO: Your code here...
+	// 项目未用到..
 	return resp, nil
 }
 

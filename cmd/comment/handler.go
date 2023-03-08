@@ -3,11 +3,9 @@ package main
 import (
 	"context"
 
-
 	"github.com/xiaohei366/TinyTiktok/cmd/comment/service"
 	"github.com/xiaohei366/TinyTiktok/cmd/comment/service/pack"
 	CommentServer "github.com/xiaohei366/TinyTiktok/kitex_gen/CommentServer"
-
 )
 
 // CommentServerImpl implements the last service interface defined in the IDL.

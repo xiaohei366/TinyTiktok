@@ -2,15 +2,17 @@ package service
 
 import (
 	"context"
+	"time"
 
+	"github.com/xiaohei366/TinyTiktok/cmd/comment/config"
 	"github.com/xiaohei366/TinyTiktok/cmd/comment/initialize/db"
-
+	"github.com/xiaohei366/TinyTiktok/cmd/comment/initialize/redis"
 
 	"github.com/xiaohei366/TinyTiktok/cmd/comment/rpc"
 	"github.com/xiaohei366/TinyTiktok/cmd/comment/service/dal"
 	"github.com/xiaohei366/TinyTiktok/cmd/comment/service/pack"
 	"github.com/xiaohei366/TinyTiktok/kitex_gen/CommentServer"
-	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer" 
+	"github.com/xiaohei366/TinyTiktok/kitex_gen/UserServer"
 	"github.com/xiaohei366/TinyTiktok/pkg/errno"
 )
 
@@ -32,7 +34,14 @@ func (s *CommentActionService) CommentAction(req *CommentServer.DouyinCommentAct
 			Video_id:     req.VideoId,
 			Comment_text: req.CommentText,
 		}
+		//step1
+		redis.DelComment(req.VideoId, req.CommentId)
+		//step2
 		comment, err := dal.AddComment(s.ctx, commentModel)
+		//step3
+		time.Sleep(config.SleepTime)
+		//step4
+		redis.DelComment(req.VideoId, req.CommentId)
 		if err != nil {
 			return nil, errno.CommentActionErr
 		}
@@ -49,7 +58,14 @@ func (s *CommentActionService) CommentAction(req *CommentServer.DouyinCommentAct
 		return comment1, nil
 
 	} else {
+		//step1
+		redis.DelComment(req.VideoId, req.CommentId)
+		//step2
 		err = dal.DelComment(s.ctx, req)
+		//step3
+		time.Sleep(config.SleepTime)
+		//step4
+		redis.DelComment(req.VideoId, req.CommentId)
 		if err != nil {
 			return nil, errno.CommentActionErr
 		}

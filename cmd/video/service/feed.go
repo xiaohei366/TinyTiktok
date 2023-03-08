@@ -23,7 +23,10 @@ func NewFeedService(ctx context.Context) *FeedService {
 // Feed used for feed service, get videos by latestTime.
 func (s *FeedService) Feed(req *VideoServer.DouyinFeedRequest) (videos []*VideoServer.Video, nextTime int64, err error) {
 	var latestTime *int64
-	if req == nil && req.LatestTime == 0 {
+	if req == nil {
+		return nil, 0, nil
+	}
+	if req.LatestTime == 0 {
 		cur_time := int64(time.Now().UnixMilli())
 		latestTime = &cur_time
 	}

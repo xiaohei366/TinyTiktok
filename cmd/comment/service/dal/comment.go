@@ -2,7 +2,7 @@ package dal
 
 import (
 	"context"
-	"fmt"
+	
 
 	"github.com/cloudwego/kitex/pkg/klog"
 	"github.com/xiaohei366/TinyTiktok/cmd/comment/initialize/db"
@@ -12,7 +12,6 @@ import (
 
 // 增加评论操作
 func AddComment(ctx context.Context, comment *db.Comment) (*db.Comment, error) {
-
 	err := db.DB.WithContext(ctx).Create(&comment).Error
 	if err != nil {
 		klog.Info("数据库增加出现问题")
@@ -27,7 +26,6 @@ func DelComment(ctx context.Context, req *CommentServer.DouyinCommentActionReque
 
 	err := db.DB.WithContext(ctx).Transaction(func(tx *gorm.DB) error {
 		comment := new(db.Comment)
-		fmt.Print(req)
 		err := tx.Where("video_id = ? And id = ?", req.VideoId, req.CommentId).Find(&comment).Error
 		if err != nil {
 			klog.Info("不存在此评论！")

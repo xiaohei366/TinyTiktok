@@ -19,10 +19,9 @@ var DB *gorm.DB
 // 用户数据库表结构--自动创建(关注、被关注)
 type Comment struct {
 	gorm.Model
-	Video_id     int64  `json:"video_id" gorm:"index:idx_videoid;not null" `
+	Video_id     int64  `json:"video_id" gorm:"index;not null" `
 	Comment_text string `json:"comment_text" gorm:"type:varchar(255);not null"`
-	User_id      int64  `json:"user_id" gorm:"index:idx_userid;not null" `
-	//comment_id   int64  //这个与gorm.Model里面的id冲突了
+	User_id      int64  `json:"user_id" gorm:"not null" `
 }
 
 func (u *Comment) TableName() string {
