@@ -7,6 +7,7 @@
 ## 项目介绍
 
 本项目基于青训营提供的[抖音项目方案说明](https://bytedance.feishu.cn/docs/doccnKrCsU5Iac6eftnFBdsXTof#K6ToR1)实现接口开发，最终实现[极简抖音App](https://bytedance.feishu.cn/docs/doccnM9KkBAdyDhg8qaeGlIz7S7)的服务端。若想得到本项目更详细的信息，可以阅读该项目的答辩文档[点击此处](https://erkuyiphv6.feishu.cn/docx/N71nd9pDloJVjcxJbNJcRE2mnch)。
+![获奖情况](./image/获奖证书.jpg)
 
 ## 架构
 
